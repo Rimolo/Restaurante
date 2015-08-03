@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rb_puestos = new System.Windows.Forms.RadioButton();
+            this.rb_mesas = new System.Windows.Forms.RadioButton();
+            this.rb_Empleados = new System.Windows.Forms.RadioButton();
+            this.rb_especiales = new System.Windows.Forms.RadioButton();
             this.b_cancelar = new System.Windows.Forms.Button();
             this.b_aceptar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.rb_especiales = new System.Windows.Forms.RadioButton();
-            this.rb_Empleados = new System.Windows.Forms.RadioButton();
-            this.rb_mesas = new System.Windows.Forms.RadioButton();
-            this.rb_puestos = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,6 +51,50 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Opciones";
+            // 
+            // rb_puestos
+            // 
+            this.rb_puestos.AutoSize = true;
+            this.rb_puestos.Location = new System.Drawing.Point(144, 96);
+            this.rb_puestos.Name = "rb_puestos";
+            this.rb_puestos.Size = new System.Drawing.Size(63, 17);
+            this.rb_puestos.TabIndex = 7;
+            this.rb_puestos.TabStop = true;
+            this.rb_puestos.Text = "Puestos";
+            this.rb_puestos.UseVisualStyleBackColor = true;
+            // 
+            // rb_mesas
+            // 
+            this.rb_mesas.AutoSize = true;
+            this.rb_mesas.Location = new System.Drawing.Point(144, 30);
+            this.rb_mesas.Name = "rb_mesas";
+            this.rb_mesas.Size = new System.Drawing.Size(56, 17);
+            this.rb_mesas.TabIndex = 6;
+            this.rb_mesas.TabStop = true;
+            this.rb_mesas.Text = "Mesas";
+            this.rb_mesas.UseVisualStyleBackColor = true;
+            // 
+            // rb_Empleados
+            // 
+            this.rb_Empleados.AutoSize = true;
+            this.rb_Empleados.Location = new System.Drawing.Point(17, 96);
+            this.rb_Empleados.Name = "rb_Empleados";
+            this.rb_Empleados.Size = new System.Drawing.Size(77, 17);
+            this.rb_Empleados.TabIndex = 5;
+            this.rb_Empleados.TabStop = true;
+            this.rb_Empleados.Text = "Empleados\r\n";
+            this.rb_Empleados.UseVisualStyleBackColor = true;
+            // 
+            // rb_especiales
+            // 
+            this.rb_especiales.AutoSize = true;
+            this.rb_especiales.Location = new System.Drawing.Point(17, 30);
+            this.rb_especiales.Name = "rb_especiales";
+            this.rb_especiales.Size = new System.Drawing.Size(76, 17);
+            this.rb_especiales.TabIndex = 4;
+            this.rb_especiales.TabStop = true;
+            this.rb_especiales.Text = "Especiales";
+            this.rb_especiales.UseVisualStyleBackColor = true;
             // 
             // b_cancelar
             // 
@@ -69,6 +113,7 @@
             this.b_aceptar.Size = new System.Drawing.Size(58, 38);
             this.b_aceptar.TabIndex = 2;
             this.b_aceptar.UseVisualStyleBackColor = true;
+            this.b_aceptar.Click += new System.EventHandler(this.b_aceptar_Click);
             // 
             // label1
             // 
@@ -78,50 +123,6 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(180, 260);
             this.label1.TabIndex = 0;
-            // 
-            // rb_especiales
-            // 
-            this.rb_especiales.AutoSize = true;
-            this.rb_especiales.Location = new System.Drawing.Point(17, 30);
-            this.rb_especiales.Name = "rb_especiales";
-            this.rb_especiales.Size = new System.Drawing.Size(76, 17);
-            this.rb_especiales.TabIndex = 4;
-            this.rb_especiales.TabStop = true;
-            this.rb_especiales.Text = "Especiales";
-            this.rb_especiales.UseVisualStyleBackColor = true;
-            // 
-            // rb_Empleados
-            // 
-            this.rb_Empleados.AutoSize = true;
-            this.rb_Empleados.Location = new System.Drawing.Point(17, 96);
-            this.rb_Empleados.Name = "rb_Empleados";
-            this.rb_Empleados.Size = new System.Drawing.Size(77, 17);
-            this.rb_Empleados.TabIndex = 5;
-            this.rb_Empleados.TabStop = true;
-            this.rb_Empleados.Text = "Empleados\r\n";
-            this.rb_Empleados.UseVisualStyleBackColor = true;
-            // 
-            // rb_mesas
-            // 
-            this.rb_mesas.AutoSize = true;
-            this.rb_mesas.Location = new System.Drawing.Point(144, 30);
-            this.rb_mesas.Name = "rb_mesas";
-            this.rb_mesas.Size = new System.Drawing.Size(56, 17);
-            this.rb_mesas.TabIndex = 6;
-            this.rb_mesas.TabStop = true;
-            this.rb_mesas.Text = "Mesas";
-            this.rb_mesas.UseVisualStyleBackColor = true;
-            // 
-            // rb_puestos
-            // 
-            this.rb_puestos.AutoSize = true;
-            this.rb_puestos.Location = new System.Drawing.Point(144, 96);
-            this.rb_puestos.Name = "rb_puestos";
-            this.rb_puestos.Size = new System.Drawing.Size(63, 17);
-            this.rb_puestos.TabIndex = 7;
-            this.rb_puestos.TabStop = true;
-            this.rb_puestos.Text = "Puestos";
-            this.rb_puestos.UseVisualStyleBackColor = true;
             // 
             // frm_administracion
             // 

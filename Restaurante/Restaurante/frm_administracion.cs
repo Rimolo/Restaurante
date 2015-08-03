@@ -17,7 +17,9 @@ namespace Restaurante
             InitializeComponent();
         }
 
+        private void b_aceptar_Click(object sender, EventArgs e)
+        {
 
-        
+        }
     }
 }
