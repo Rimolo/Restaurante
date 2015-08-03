@@ -1,0 +1,1196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4F2BBD36-971B-4F93-BC09-7033A0B5A86B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Restaurante</RootNamespace>
+    <AssemblyName>Restaurante</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="frmBebidasGaseosas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBebidasGaseosas.Designer.cs">
+      <DependentUpon>frmBebidasGaseosas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLicores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLicores.Designer.cs">
+      <DependentUpon>frmLicores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmListaBarras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListaBarras.Designer.cs">
+      <DependentUpon>frmListaBarras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmListaLicores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListaLicores.Designer.cs">
+      <DependentUpon>frmListaLicores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_aperturaCaja2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_aperturaCaja2.Designer.cs">
+      <DependentUpon>frm_aperturaCaja2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_aperturaCaja3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_aperturaCaja3.Designer.cs">
+      <DependentUpon>frm_aperturaCaja3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_barra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_barra.Designer.cs">
+      <DependentUpon>frm_barra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_cierreCaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_cierreCaja.Designer.cs">
+      <DependentUpon>frm_cierreCaja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_cierreCaja2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_cierreCaja2.Designer.cs">
+      <DependentUpon>frm_cierreCaja2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_cierreCaja3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_cierreCaja3.Designer.cs">
+      <DependentUpon>frm_cierreCaja3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_clientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_clientes.Designer.cs">
+      <DependentUpon>frm_clientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_listaPagoClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_listaPagoClientes.Designer.cs">
+      <DependentUpon>frm_listaPagoClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_login.Designer.cs">
+      <DependentUpon>frm_login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_NotteDiFuoco.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_NotteDiFuoco.Designer.cs">
+      <DependentUpon>frm_NotteDiFuoco.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUsuarios.Designer.cs">
+      <DependentUpon>frmUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_aperturaCaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_aperturaCaja.Designer.cs">
+      <DependentUpon>frm_aperturaCaja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_bebidasHeladas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_bebidasHeladas.Designer.cs">
+      <DependentUpon>frm_bebidasHeladas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_bitacora.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_bitacora.Designer.cs">
+      <DependentUpon>frm_bitacora.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_catalogoProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_catalogoProductos.Designer.cs">
+      <DependentUpon>frm_catalogoProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_comestible.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_comestible.Designer.cs">
+      <DependentUpon>frm_comestible.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_consecutivos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_consecutivos.Designer.cs">
+      <DependentUpon>frm_consecutivos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_desechablesEmpaques.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_desechablesEmpaques.Designer.cs">
+      <DependentUpon>frm_desechablesEmpaques.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_equiposUtencilios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_equiposUtencilios.Designer.cs">
+      <DependentUpon>frm_equiposUtencilios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_limpiezaHigiene.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_limpiezaHigiene.Designer.cs">
+      <DependentUpon>frm_limpiezaHigiene.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_listaCajas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_listaCajas.Designer.cs">
+      <DependentUpon>frm_listaCajas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_listaConsecutivos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_listaConsecutivos.Designer.cs">
+      <DependentUpon>frm_listaConsecutivos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_listaEmpaques.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_listaEmpaques.Designer.cs">
+      <DependentUpon>frm_listaEmpaques.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_empleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_empleados.Designer.cs">
+      <DependentUpon>frm_empleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_especiales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_especiales.Designer.cs">
+      <DependentUpon>frm_especiales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_listaBebidaHelada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_listaBebidaHelada.Designer.cs">
+      <DependentUpon>frm_listaBebidaHelada.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_administracion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_administracion.Designer.cs">
+      <DependentUpon>frm_administracion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_ayudaLicores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_ayudaLicores.Designer.cs">
+      <DependentUpon>frm_ayudaLicores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_ayudaRestaurante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_ayudaRestaurante.Designer.cs">
+      <DependentUpon>frm_ayudaRestaurante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_ayudaSeguridad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_ayudaSeguridad.Designer.cs">
+      <DependentUpon>frm_ayudaSeguridad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_ayudaSistema.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_ayudaSistema.Designer.cs">
+      <DependentUpon>frm_ayudaSistema.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_ayudaVinos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_ayudaVinos.Designer.cs">
+      <DependentUpon>frm_ayudaVinos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_bebidasCalientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_bebidasCalientes.Designer.cs">
+      <DependentUpon>frm_bebidasCalientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_listaBebidasGaseosas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_listaBebidasGaseosas.Designer.cs">
+      <DependentUpon>frm_listaBebidasGaseosas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_listaBedidasCalientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_listaBedidasCalientes.Designer.cs">
+      <DependentUpon>frm_listaBedidasCalientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Listabuffet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Listabuffet.Designer.cs">
+      <DependentUpon>frm_Listabuffet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_comidaBuffet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_comidaBuffet.Designer.cs">
+      <DependentUpon>frm_comidaBuffet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Especialidades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Especialidades.Designer.cs">
+      <DependentUpon>frm_Especialidades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_listaClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_listaClientes.Designer.cs">
+      <DependentUpon>frm_listaClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_listaComestibles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_listaComestibles.Designer.cs">
+      <DependentUpon>frm_listaComestibles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_listaEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_listaEmpleados.Designer.cs">
+      <DependentUpon>frm_listaEmpleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_listaEquiposUtencilios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_listaEquiposUtencilios.Designer.cs">
+      <DependentUpon>frm_listaEquiposUtencilios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_listaEspecialidades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_listaEspecialidades.Designer.cs">
+      <DependentUpon>frm_listaEspecialidades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_listaLimpieza.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_listaLimpieza.Designer.cs">
+      <DependentUpon>frm_listaLimpieza.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_listaMarcas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_listaMarcas.Designer.cs">
+      <DependentUpon>frm_listaMarcas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_listaMesascs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_listaMesascs.Designer.cs">
+      <DependentUpon>frm_listaMesascs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_ListaPaises.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_ListaPaises.Designer.cs">
+      <DependentUpon>frm_ListaPaises.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_listaProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_listaProveedores.Designer.cs">
+      <DependentUpon>frm_listaProveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_listaPuestos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_listaPuestos.Designer.cs">
+      <DependentUpon>frm_listaPuestos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_listaRestaurantes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_listaRestaurantes.Designer.cs">
+      <DependentUpon>frm_listaRestaurantes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_listaRoles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_listaRoles.Designer.cs">
+      <DependentUpon>frm_listaRoles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_listaTecnologia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_listaTecnologia.Designer.cs">
+      <DependentUpon>frm_listaTecnologia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_listaUnidadesMedida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_listaUnidadesMedida.Designer.cs">
+      <DependentUpon>frm_listaUnidadesMedida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_listaUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_listaUsuarios.Designer.cs">
+      <DependentUpon>frm_listaUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_listaVinos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_listaVinos.Designer.cs">
+      <DependentUpon>frm_listaVinos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_marcas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_marcas.Designer.cs">
+      <DependentUpon>frm_marcas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_menuPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_menuPrincipal.Designer.cs">
+      <DependentUpon>frm_menuPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_mesas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_mesas.Designer.cs">
+      <DependentUpon>frm_mesas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_paises.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_paises.Designer.cs">
+      <DependentUpon>frm_paises.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_PiccollaStella.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_PiccollaStella.Designer.cs">
+      <DependentUpon>frm_PiccollaStella.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_proveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_proveedores.Designer.cs">
+      <DependentUpon>frm_proveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_puestos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_puestos.Designer.cs">
+      <DependentUpon>frm_puestos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Restaurantes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Restaurantes.Designer.cs">
+      <DependentUpon>frm_Restaurantes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_roles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_roles.Designer.cs">
+      <DependentUpon>frm_roles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_tecnologia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_tecnologia.Designer.cs">
+      <DependentUpon>frm_tecnologia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_tipoBebida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_tipoBebida.Designer.cs">
+      <DependentUpon>frm_tipoBebida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_TurinAnivo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_TurinAnivo.Designer.cs">
+      <DependentUpon>frm_TurinAnivo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_unidadesMedida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_unidadesMedida.Designer.cs">
+      <DependentUpon>frm_unidadesMedida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_ventanaProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_ventanaProveedores.Designer.cs">
+      <DependentUpon>frm_ventanaProveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_ventanaReportescs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_ventanaReportescs.Designer.cs">
+      <DependentUpon>frm_ventanaReportescs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_ventanaSeguridad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_ventanaSeguridad.Designer.cs">
+      <DependentUpon>frm_ventanaSeguridad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_vinos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_vinos.Designer.cs">
+      <DependentUpon>frm_vinos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmBebidasGaseosas.resx">
+      <DependentUpon>frmBebidasGaseosas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLicores.resx">
+      <DependentUpon>frmLicores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListaBarras.resx">
+      <DependentUpon>frmListaBarras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListaLicores.resx">
+      <DependentUpon>frmListaLicores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_aperturaCaja2.resx">
+      <DependentUpon>frm_aperturaCaja2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_aperturaCaja3.resx">
+      <DependentUpon>frm_aperturaCaja3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_barra.resx">
+      <DependentUpon>frm_barra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_cierreCaja.resx">
+      <DependentUpon>frm_cierreCaja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_cierreCaja2.resx">
+      <DependentUpon>frm_cierreCaja2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_cierreCaja3.resx">
+      <DependentUpon>frm_cierreCaja3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_clientes.resx">
+      <DependentUpon>frm_clientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_listaPagoClientes.resx">
+      <DependentUpon>frm_listaPagoClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_login.resx">
+      <DependentUpon>frm_login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_NotteDiFuoco.resx">
+      <DependentUpon>frm_NotteDiFuoco.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUsuarios.resx">
+      <DependentUpon>frmUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_aperturaCaja.resx">
+      <DependentUpon>frm_aperturaCaja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_bebidasHeladas.resx">
+      <DependentUpon>frm_bebidasHeladas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_bitacora.resx">
+      <DependentUpon>frm_bitacora.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_catalogoProductos.resx">
+      <DependentUpon>frm_catalogoProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_comestible.resx">
+      <DependentUpon>frm_comestible.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_consecutivos.resx">
+      <DependentUpon>frm_consecutivos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_desechablesEmpaques.resx">
+      <DependentUpon>frm_desechablesEmpaques.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_equiposUtencilios.resx">
+      <DependentUpon>frm_equiposUtencilios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_limpiezaHigiene.resx">
+      <DependentUpon>frm_limpiezaHigiene.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_listaCajas.resx">
+      <DependentUpon>frm_listaCajas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_listaConsecutivos.resx">
+      <DependentUpon>frm_listaConsecutivos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_listaEmpaques.resx">
+      <DependentUpon>frm_listaEmpaques.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_empleados.resx">
+      <DependentUpon>frm_empleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_especiales.resx">
+      <DependentUpon>frm_especiales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_listaBebidaHelada.resx">
+      <DependentUpon>frm_listaBebidaHelada.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_administracion.resx">
+      <DependentUpon>frm_administracion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_ayudaLicores.resx">
+      <DependentUpon>frm_ayudaLicores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_ayudaRestaurante.resx">
+      <DependentUpon>frm_ayudaRestaurante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_ayudaSeguridad.resx">
+      <DependentUpon>frm_ayudaSeguridad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_ayudaSistema.resx">
+      <DependentUpon>frm_ayudaSistema.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_ayudaVinos.resx">
+      <DependentUpon>frm_ayudaVinos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_bebidasCalientes.resx">
+      <DependentUpon>frm_bebidasCalientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_listaBebidasGaseosas.resx">
+      <DependentUpon>frm_listaBebidasGaseosas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_listaBedidasCalientes.resx">
+      <DependentUpon>frm_listaBedidasCalientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Listabuffet.resx">
+      <DependentUpon>frm_Listabuffet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_comidaBuffet.resx">
+      <DependentUpon>frm_comidaBuffet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Especialidades.resx">
+      <DependentUpon>frm_Especialidades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_listaClientes.resx">
+      <DependentUpon>frm_listaClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_listaComestibles.resx">
+      <DependentUpon>frm_listaComestibles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_listaEmpleados.resx">
+      <DependentUpon>frm_listaEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_listaEquiposUtencilios.resx">
+      <DependentUpon>frm_listaEquiposUtencilios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_listaEspecialidades.resx">
+      <DependentUpon>frm_listaEspecialidades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_listaLimpieza.resx">
+      <DependentUpon>frm_listaLimpieza.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_listaMarcas.resx">
+      <DependentUpon>frm_listaMarcas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_listaMesascs.resx">
+      <DependentUpon>frm_listaMesascs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_ListaPaises.resx">
+      <DependentUpon>frm_ListaPaises.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_listaProveedores.resx">
+      <DependentUpon>frm_listaProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_listaPuestos.resx">
+      <DependentUpon>frm_listaPuestos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_listaRestaurantes.resx">
+      <DependentUpon>frm_listaRestaurantes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_listaRoles.resx">
+      <DependentUpon>frm_listaRoles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_listaTecnologia.resx">
+      <DependentUpon>frm_listaTecnologia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_listaUnidadesMedida.resx">
+      <DependentUpon>frm_listaUnidadesMedida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_listaUsuarios.resx">
+      <DependentUpon>frm_listaUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_listaVinos.resx">
+      <DependentUpon>frm_listaVinos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_marcas.resx">
+      <DependentUpon>frm_marcas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_menuPrincipal.resx">
+      <DependentUpon>frm_menuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_mesas.resx">
+      <DependentUpon>frm_mesas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_paises.resx">
+      <DependentUpon>frm_paises.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_PiccollaStella.resx">
+      <DependentUpon>frm_PiccollaStella.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_proveedores.resx">
+      <DependentUpon>frm_proveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_puestos.resx">
+      <DependentUpon>frm_puestos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Restaurantes.resx">
+      <DependentUpon>frm_Restaurantes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_roles.resx">
+      <DependentUpon>frm_roles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_tecnologia.resx">
+      <DependentUpon>frm_tecnologia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_tipoBebida.resx">
+      <DependentUpon>frm_tipoBebida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_TurinAnivo.resx">
+      <DependentUpon>frm_TurinAnivo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_unidadesMedida.resx">
+      <DependentUpon>frm_unidadesMedida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_ventanaProveedores.resx">
+      <DependentUpon>frm_ventanaProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_ventanaReportescs.resx">
+      <DependentUpon>frm_ventanaReportescs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_ventanaSeguridad.resx">
+      <DependentUpon>frm_ventanaSeguridad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_vinos.resx">
+      <DependentUpon>frm_vinos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Eliminar1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Aceptar.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cancelar.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Administrator.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Usuario.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Administrator1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cambio Contraseña.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Folder-Secure.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\spy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cubiertos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\users.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Usuario1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Socios.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Crear.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cambio de Contraseña.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Reportes.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pagos de Socios.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Facturas.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Crear1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Symbol-Help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\printer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Symbol-Delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Eliminar.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Document-print-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Arrow-Right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Undo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cancelar1.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cubiertos1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bar_beer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Wine %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cubiertos2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cubiertos3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Edit-clear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Eliminar11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Aceptar1.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cancelar2.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Aceptar2.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cancelar3.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Procesos.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Config.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Config-Tools.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Config1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Espaghetti.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\best-big-biggest-hamburger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Espaghetti1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Aceptar3.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cubiertos4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Eliminar12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Aceptar4.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cancelar4.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Actualizar.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Wine %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Camara.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cubiertos5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Wine_folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Wine %281%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\beer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bar_beer1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bar_beer2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\martini- glass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Wine %282%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Menu food.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\People.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Crear2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Foto.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Usuario2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Usuarios.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rubros.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rubros1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bitacora.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\French_fries.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\documents-128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Edit-clear1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Piano.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cubiertos6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Usuario3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\40px-Examine_copyright_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clean.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Reportes1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\users1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bitacora1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\User_female.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\green-add-icon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refurl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refrescar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clean1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icono-proveedores.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Procesos1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Config2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\izquierda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flecha.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Facturacion.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cash-register_145504225.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Usuario4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\justice.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1e6e753.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Wallet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icono-mesas-restaurante.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icono-mesas-restaurante1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icono-mesas-restaurante2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icono-mesas-sillas.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icono-mesas-sillas1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icono-mesas-sillas2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\barra llena.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\traje-de-corbata-el-hombre-de-usuario-icono-4877.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Reserved.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icono-mesas-restaurante3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\restaurant-icon-vector-illustration-315602.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icono-proveedores1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blacklist_folder_icon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icono_seguridad.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\barra llena1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\barra llena11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\canstock27624391.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\print.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\User_female1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\10291708-vector-de-dibujo-personas-a-la-mesa-de-caf.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\10291708-vector-de-dibujo-personas-a-la-mesa-de-caf1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\glassy-button-with-question-mark_small.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\left-arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\yesil_ok_isareti.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\print-preview-icone-7826-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\print1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\32773568-s-mbolo-del-candado-en-el-fondo-con-estilo-elegante-icono-de-un-candado-rojo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICONA_CHEF.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bar_beer3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Wine %282%292.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refrescar1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cancelar5.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Aceptar5.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\green-add-icon1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refurl1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cubiertos7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cafe.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\descarga.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\27710310-icono-del-web-bebida-fr-a.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\110_F_26375790_DzvzkfzvicMOdvwoHEpNppbiv4TiQ0yU.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cafe1.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
