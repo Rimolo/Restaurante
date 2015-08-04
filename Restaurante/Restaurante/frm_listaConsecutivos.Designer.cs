@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txt_descripcionConsecutivo = new System.Windows.Forms.TextBox();
             this.txt_codigoConsecutivo = new System.Windows.Forms.TextBox();
@@ -46,11 +47,10 @@
             this.b_borrar = new System.Windows.Forms.Button();
             this.b_cerrar = new System.Windows.Forms.Button();
             this.b_refrescar = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_consecutivos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -61,6 +61,15 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(210, 386);
             this.panel1.TabIndex = 63;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Restaurante.Properties.Resources.Config2;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 61);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(210, 242);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // groupBox1
             // 
@@ -166,6 +175,7 @@
             this.b_agregar.Size = new System.Drawing.Size(51, 42);
             this.b_agregar.TabIndex = 74;
             this.b_agregar.UseVisualStyleBackColor = true;
+            this.b_agregar.Click += new System.EventHandler(this.b_agregar_Click);
             // 
             // b_aceptar
             // 
@@ -204,15 +214,6 @@
             this.b_refrescar.Text = "\r\n";
             this.b_refrescar.UseVisualStyleBackColor = true;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Restaurante.Properties.Resources.Config2;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 61);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(210, 242);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // frm_listaConsecutivos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -231,10 +232,10 @@
             this.Name = "frm_listaConsecutivos";
             this.Text = " Lista de Consecutivos";
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_consecutivos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

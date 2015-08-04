@@ -16,5 +16,11 @@ namespace Restaurante
         {
             InitializeComponent();
         }
+
+        private void b_agregar_Click(object sender, EventArgs e)
+        {
+            frm_consecutivos consecutivos = new frm_consecutivos();
+            consecutivos.Show();
+        }
     }
 }

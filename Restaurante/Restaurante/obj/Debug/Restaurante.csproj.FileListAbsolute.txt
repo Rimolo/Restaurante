@@ -106,3 +106,4 @@ C:\Users\primo\Documents\GitHubVisualStudio\Restaurante\Restaurante\Restaurante\
 C:\Users\primo\Documents\GitHubVisualStudio\Restaurante\Restaurante\Restaurante\obj\Debug\Restaurante.frm_vinos.resources
 C:\Users\primo\Documents\GitHubVisualStudio\Restaurante\Restaurante\Restaurante\obj\Debug\Restaurante.Properties.Resources.resources
 C:\Users\primo\Documents\GitHubVisualStudio\Restaurante\Restaurante\Restaurante\obj\Debug\Restaurante.csproj.GenerateResource.Cache
+C:\Users\primo\Documents\GitHubVisualStudio\Restaurante\Restaurante\Restaurante\obj\Debug\Restaurante.csprojResolveAssemblyReference.cache

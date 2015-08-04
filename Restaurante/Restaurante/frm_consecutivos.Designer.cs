@@ -29,23 +29,23 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.chk_prefijo = new System.Windows.Forms.CheckBox();
-            this.txt_descripcion = new System.Windows.Forms.TextBox();
-            this.txt_prefijo = new System.Windows.Forms.TextBox();
-            this.txt_valorConsecutivo = new System.Windows.Forms.TextBox();
             this.cb_tipoConsecutivo = new System.Windows.Forms.ComboBox();
+            this.txt_valorConsecutivo = new System.Windows.Forms.TextBox();
+            this.txt_prefijo = new System.Windows.Forms.TextBox();
+            this.txt_descripcion = new System.Windows.Forms.TextBox();
+            this.chk_prefijo = new System.Windows.Forms.CheckBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.b_cerrar = new System.Windows.Forms.Button();
             this.b_aceptar = new System.Windows.Forms.Button();
             this.b_borrar = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -56,6 +56,15 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(210, 374);
             this.panel1.TabIndex = 64;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Restaurante.Properties.Resources.Config2;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 61);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(210, 242);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // groupBox1
             // 
@@ -74,42 +83,65 @@
             this.groupBox1.TabIndex = 65;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Informacion del Consecutivo";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // label1
+            // cb_tipoConsecutivo
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 31);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(104, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Tipo de consecutivo";
+            this.cb_tipoConsecutivo.FormattingEnabled = true;
+            this.cb_tipoConsecutivo.Items.AddRange(new object[] {
+            "Clientes",
+            "Personal",
+            "Proveedor",
+            "Puestos",
+            "Eventos o Roles",
+            "Usuarios",
+            "Unidades de Medida",
+            "Paises",
+            "Marcas",
+            "Comestibles",
+            "Desechables y Empaques",
+            "Equipos y Utensilios",
+            "Limpieza e Higiene",
+            "Tecnologia",
+            "Restaurante",
+            "Buffet",
+            "Especiales",
+            "Bebidas Calientes",
+            "Bebidas Heladas",
+            "Bebidas Gaseosas ",
+            "Licores",
+            "Vinos",
+            "Empleados",
+            "Mesas",
+            "Bitacora",
+            "Facturas"});
+            this.cb_tipoConsecutivo.Location = new System.Drawing.Point(132, 22);
+            this.cb_tipoConsecutivo.Name = "cb_tipoConsecutivo";
+            this.cb_tipoConsecutivo.Size = new System.Drawing.Size(184, 21);
+            this.cb_tipoConsecutivo.TabIndex = 8;
+            this.cb_tipoConsecutivo.SelectedIndexChanged += new System.EventHandler(this.cb_tipoConsecutivo_SelectedIndexChanged);
             // 
-            // label2
+            // txt_valorConsecutivo
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(21, 71);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Descripcion";
+            this.txt_valorConsecutivo.Location = new System.Drawing.Point(132, 121);
+            this.txt_valorConsecutivo.Name = "txt_valorConsecutivo";
+            this.txt_valorConsecutivo.Size = new System.Drawing.Size(184, 20);
+            this.txt_valorConsecutivo.TabIndex = 7;
             // 
-            // label3
+            // txt_prefijo
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(21, 121);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(104, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Valor del Consectivo";
+            this.txt_prefijo.Enabled = false;
+            this.txt_prefijo.Location = new System.Drawing.Point(135, 203);
+            this.txt_prefijo.Name = "txt_prefijo";
+            this.txt_prefijo.Size = new System.Drawing.Size(181, 20);
+            this.txt_prefijo.TabIndex = 6;
             // 
-            // label4
+            // txt_descripcion
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(83, 211);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(36, 13);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Prefijo";
+            this.txt_descripcion.Location = new System.Drawing.Point(135, 68);
+            this.txt_descripcion.Name = "txt_descripcion";
+            this.txt_descripcion.Size = new System.Drawing.Size(181, 20);
+            this.txt_descripcion.TabIndex = 5;
             // 
             // chk_prefijo
             // 
@@ -121,34 +153,41 @@
             this.chk_prefijo.Text = "El consecutivo posee prefijo";
             this.chk_prefijo.UseVisualStyleBackColor = true;
             // 
-            // txt_descripcion
+            // label4
             // 
-            this.txt_descripcion.Location = new System.Drawing.Point(135, 68);
-            this.txt_descripcion.Name = "txt_descripcion";
-            this.txt_descripcion.Size = new System.Drawing.Size(181, 20);
-            this.txt_descripcion.TabIndex = 5;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(83, 211);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(36, 13);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Prefijo";
             // 
-            // txt_prefijo
+            // label3
             // 
-            this.txt_prefijo.Location = new System.Drawing.Point(135, 203);
-            this.txt_prefijo.Name = "txt_prefijo";
-            this.txt_prefijo.Size = new System.Drawing.Size(181, 20);
-            this.txt_prefijo.TabIndex = 6;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(21, 121);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(104, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Valor del Consectivo";
             // 
-            // txt_valorConsecutivo
+            // label2
             // 
-            this.txt_valorConsecutivo.Location = new System.Drawing.Point(132, 121);
-            this.txt_valorConsecutivo.Name = "txt_valorConsecutivo";
-            this.txt_valorConsecutivo.Size = new System.Drawing.Size(184, 20);
-            this.txt_valorConsecutivo.TabIndex = 7;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(21, 71);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(63, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Descripcion";
             // 
-            // cb_tipoConsecutivo
+            // label1
             // 
-            this.cb_tipoConsecutivo.FormattingEnabled = true;
-            this.cb_tipoConsecutivo.Location = new System.Drawing.Point(132, 22);
-            this.cb_tipoConsecutivo.Name = "cb_tipoConsecutivo";
-            this.cb_tipoConsecutivo.Size = new System.Drawing.Size(184, 21);
-            this.cb_tipoConsecutivo.TabIndex = 8;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(21, 31);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(104, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Tipo de consecutivo";
             // 
             // b_cerrar
             // 
@@ -177,15 +216,6 @@
             this.b_borrar.TabIndex = 69;
             this.b_borrar.UseVisualStyleBackColor = true;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Restaurante.Properties.Resources.Config2;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 61);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(210, 242);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // frm_consecutivos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -199,10 +229,11 @@
             this.Controls.Add(this.panel1);
             this.Name = "frm_consecutivos";
             this.Text = "Consecutivos";
+            this.Load += new System.EventHandler(this.frm_consecutivos_Load);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
