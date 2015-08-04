@@ -6,12 +6,16 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BLL;
 using System.Windows.Forms;
+
 
 namespace Restaurante
 {
     public partial class frm_consecutivos : Form
     {
+        Consecutivos obj_consecutivos = new Consecutivos();
+
         public frm_consecutivos()
         {
             InitializeComponent();
@@ -142,10 +146,42 @@ namespace Restaurante
                     break;
 
             }
+        }
 
+        private void b_aceptar_Click(object sender, EventArgs e)
+        {
+            if (!cls_validacion.validar(cb_tipoConsecutivo))
+            {
+                MessageBox.Show("Por favor seleccione un tipo de consecutivo", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                cb_tipoConsecutivo.Focus();
+                return;
+            }
 
+            if (!cls_validacion.validar(txt_descripcion))
+            {
+                MessageBox.Show("Por favor escriba una descripcion para el consecutivo", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txt_descripcion.Focus();
+                return;
+            }
 
+            if (!cls_validacion.validar(txt_valorConsecutivo))
+            {
+                MessageBox.Show("Por favor digite el valor inicial del consecutivo", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txt_valorConsecutivo.Focus();
+                return;
+            }
 
+            obj_consecutivos.codConsecutivo = Convert.ToString(txt_valorConsecutivo.Text +"-"+ txt_prefijo.Text.Substring(0, txt_prefijo.Text.Length-1));
+            obj_consecutivos.tipo = Convert.ToString(cb_tipoConsecutivo.SelectedItem.ToString());
+            obj_consecutivos.descripcion = Convert.ToString(txt_descripcion.Text);
+            obj_consecutivos.valor = Convert.ToString(txt_valorConsecutivo.Text);
+            obj_consecutivos.prefijo = Convert.ToString(txt_prefijo.Text);
+
+            if (obj_consecutivos.guardar_consecutivos())
+            {
+                MessageBox.Show("Consecutivo insertado con exito", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
         }
     }
 }

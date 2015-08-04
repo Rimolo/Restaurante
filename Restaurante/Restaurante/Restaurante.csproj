@@ -1186,19 +1186,10 @@
     <None Include="Resources\cafe1.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\green-add-icon2.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\images1.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\..\BLL\BLL.csproj">
       <Project>{43f2b275-e001-4de5-b9e6-2517bd767835}</Project>
       <Name>BLL</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\clean2.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
