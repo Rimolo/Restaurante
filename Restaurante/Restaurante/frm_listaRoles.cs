@@ -17,6 +17,14 @@ namespace Restaurante
             InitializeComponent();
         }
 
-       
+        private void b_agregar_Click(object sender, EventArgs e)
+        {
+            frm_roles roles = new frm_roles();
+            roles.accion = "Insertar";
+            roles.Tag=this;
+            roles.Show(this);
+            Hide();
+           
+        }
     }
 }

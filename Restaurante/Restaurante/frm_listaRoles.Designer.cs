@@ -29,25 +29,25 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txt_nombreRol = new System.Windows.Forms.TextBox();
             this.txt_codigoRol = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.b_eliminar = new System.Windows.Forms.Button();
-            this.b_agregar = new System.Windows.Forms.Button();
-            this.b_refrescar = new System.Windows.Forms.Button();
-            this.b_cerrar = new System.Windows.Forms.Button();
-            this.b_borrar = new System.Windows.Forms.Button();
-            this.b_aceptar = new System.Windows.Forms.Button();
             this.dgv_roles = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.b_aceptar = new System.Windows.Forms.Button();
+            this.b_borrar = new System.Windows.Forms.Button();
+            this.b_cerrar = new System.Windows.Forms.Button();
+            this.b_refrescar = new System.Windows.Forms.Button();
+            this.b_agregar = new System.Windows.Forms.Button();
+            this.b_eliminar = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_roles)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -58,15 +58,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(168, 357);
             this.panel1.TabIndex = 76;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Restaurante.Properties.Resources.Usuario4;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 77);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(168, 206);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // groupBox1
             // 
@@ -113,61 +104,6 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Codigo del Rol";
             // 
-            // b_eliminar
-            // 
-            this.b_eliminar.Image = global::Restaurante.Properties.Resources.refurl;
-            this.b_eliminar.Location = new System.Drawing.Point(563, 51);
-            this.b_eliminar.Name = "b_eliminar";
-            this.b_eliminar.Size = new System.Drawing.Size(51, 39);
-            this.b_eliminar.TabIndex = 79;
-            this.b_eliminar.UseVisualStyleBackColor = true;
-            // 
-            // b_agregar
-            // 
-            this.b_agregar.Image = global::Restaurante.Properties.Resources.green_add_icon;
-            this.b_agregar.Location = new System.Drawing.Point(563, 4);
-            this.b_agregar.Name = "b_agregar";
-            this.b_agregar.Size = new System.Drawing.Size(51, 42);
-            this.b_agregar.TabIndex = 80;
-            this.b_agregar.UseVisualStyleBackColor = true;
-            // 
-            // b_refrescar
-            // 
-            this.b_refrescar.Image = global::Restaurante.Properties.Resources.refrescar;
-            this.b_refrescar.Location = new System.Drawing.Point(174, 4);
-            this.b_refrescar.Name = "b_refrescar";
-            this.b_refrescar.Size = new System.Drawing.Size(39, 43);
-            this.b_refrescar.TabIndex = 81;
-            this.b_refrescar.Text = "\r\n";
-            this.b_refrescar.UseVisualStyleBackColor = true;
-            // 
-            // b_cerrar
-            // 
-            this.b_cerrar.Image = global::Restaurante.Properties.Resources.Cancelar4;
-            this.b_cerrar.Location = new System.Drawing.Point(213, 4);
-            this.b_cerrar.Name = "b_cerrar";
-            this.b_cerrar.Size = new System.Drawing.Size(42, 43);
-            this.b_cerrar.TabIndex = 81;
-            this.b_cerrar.UseVisualStyleBackColor = true;
-            // 
-            // b_borrar
-            // 
-            this.b_borrar.Image = global::Restaurante.Properties.Resources.clean1;
-            this.b_borrar.Location = new System.Drawing.Point(174, 47);
-            this.b_borrar.Name = "b_borrar";
-            this.b_borrar.Size = new System.Drawing.Size(39, 46);
-            this.b_borrar.TabIndex = 82;
-            this.b_borrar.UseVisualStyleBackColor = true;
-            // 
-            // b_aceptar
-            // 
-            this.b_aceptar.Image = global::Restaurante.Properties.Resources.Aceptar4;
-            this.b_aceptar.Location = new System.Drawing.Point(213, 47);
-            this.b_aceptar.Name = "b_aceptar";
-            this.b_aceptar.Size = new System.Drawing.Size(42, 47);
-            this.b_aceptar.TabIndex = 83;
-            this.b_aceptar.UseVisualStyleBackColor = true;
-            // 
             // dgv_roles
             // 
             this.dgv_roles.BackgroundColor = System.Drawing.Color.White;
@@ -190,6 +126,71 @@
             this.Column2.HeaderText = "Nombre del Rol";
             this.Column2.Name = "Column2";
             // 
+            // b_aceptar
+            // 
+            this.b_aceptar.Image = global::Restaurante.Properties.Resources.Aceptar4;
+            this.b_aceptar.Location = new System.Drawing.Point(213, 47);
+            this.b_aceptar.Name = "b_aceptar";
+            this.b_aceptar.Size = new System.Drawing.Size(42, 47);
+            this.b_aceptar.TabIndex = 83;
+            this.b_aceptar.UseVisualStyleBackColor = true;
+            // 
+            // b_borrar
+            // 
+            this.b_borrar.Image = global::Restaurante.Properties.Resources.clean1;
+            this.b_borrar.Location = new System.Drawing.Point(174, 47);
+            this.b_borrar.Name = "b_borrar";
+            this.b_borrar.Size = new System.Drawing.Size(39, 46);
+            this.b_borrar.TabIndex = 82;
+            this.b_borrar.UseVisualStyleBackColor = true;
+            // 
+            // b_cerrar
+            // 
+            this.b_cerrar.Image = global::Restaurante.Properties.Resources.Cancelar4;
+            this.b_cerrar.Location = new System.Drawing.Point(213, 4);
+            this.b_cerrar.Name = "b_cerrar";
+            this.b_cerrar.Size = new System.Drawing.Size(42, 43);
+            this.b_cerrar.TabIndex = 81;
+            this.b_cerrar.UseVisualStyleBackColor = true;
+            // 
+            // b_refrescar
+            // 
+            this.b_refrescar.Image = global::Restaurante.Properties.Resources.refrescar;
+            this.b_refrescar.Location = new System.Drawing.Point(174, 4);
+            this.b_refrescar.Name = "b_refrescar";
+            this.b_refrescar.Size = new System.Drawing.Size(39, 43);
+            this.b_refrescar.TabIndex = 81;
+            this.b_refrescar.Text = "\r\n";
+            this.b_refrescar.UseVisualStyleBackColor = true;
+            // 
+            // b_agregar
+            // 
+            this.b_agregar.Image = global::Restaurante.Properties.Resources.green_add_icon;
+            this.b_agregar.Location = new System.Drawing.Point(563, 4);
+            this.b_agregar.Name = "b_agregar";
+            this.b_agregar.Size = new System.Drawing.Size(51, 42);
+            this.b_agregar.TabIndex = 80;
+            this.b_agregar.UseVisualStyleBackColor = true;
+            this.b_agregar.Click += new System.EventHandler(this.b_agregar_Click);
+            // 
+            // b_eliminar
+            // 
+            this.b_eliminar.Image = global::Restaurante.Properties.Resources.refurl;
+            this.b_eliminar.Location = new System.Drawing.Point(563, 51);
+            this.b_eliminar.Name = "b_eliminar";
+            this.b_eliminar.Size = new System.Drawing.Size(51, 39);
+            this.b_eliminar.TabIndex = 79;
+            this.b_eliminar.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Restaurante.Properties.Resources.Usuario4;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 77);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(168, 206);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // frm_listaRoles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -208,10 +209,10 @@
             this.Name = "frm_listaRoles";
             this.Text = " Lista de Roles";
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_roles)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

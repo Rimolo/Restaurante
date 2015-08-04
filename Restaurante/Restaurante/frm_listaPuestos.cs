@@ -21,5 +21,16 @@ namespace Restaurante
         {
 
         }
+
+        private void b_mas_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frm_puestos puestos = new frm_puestos();
+            puestos.Show();
+            puestos = null;
+            this.Show();
+
+
+        }
     }
 }

@@ -28,30 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cb_rol = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.rb_externo = new System.Windows.Forms.RadioButton();
+            this.rb_interno = new System.Windows.Forms.RadioButton();
             this.txt_nombre = new System.Windows.Forms.TextBox();
             this.txt_codigo = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.rb_interno = new System.Windows.Forms.RadioButton();
-            this.rb_externo = new System.Windows.Forms.RadioButton();
-            this.label3 = new System.Windows.Forms.Label();
-            this.cb_rol = new System.Windows.Forms.ComboBox();
-            this.b_borrar = new System.Windows.Forms.Button();
-            this.b_aceptar = new System.Windows.Forms.Button();
             this.b_cancelar = new System.Windows.Forms.Button();
+            this.b_aceptar = new System.Windows.Forms.Button();
+            this.b_borrar = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.label1.Image = global::Restaurante.Properties.Resources.Foto;
-            this.label1.Location = new System.Drawing.Point(0, -1);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(234, 312);
-            this.label1.TabIndex = 5;
             // 
             // groupBox1
             // 
@@ -69,6 +60,45 @@
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Informacion de la Especialidad";
+            // 
+            // cb_rol
+            // 
+            this.cb_rol.FormattingEnabled = true;
+            this.cb_rol.Location = new System.Drawing.Point(122, 170);
+            this.cb_rol.Name = "cb_rol";
+            this.cb_rol.Size = new System.Drawing.Size(121, 21);
+            this.cb_rol.TabIndex = 48;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 173);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(110, 13);
+            this.label3.TabIndex = 47;
+            this.label3.Text = "Rol en el Restaurante";
+            // 
+            // rb_externo
+            // 
+            this.rb_externo.AutoSize = true;
+            this.rb_externo.Location = new System.Drawing.Point(145, 104);
+            this.rb_externo.Name = "rb_externo";
+            this.rb_externo.Size = new System.Drawing.Size(133, 17);
+            this.rb_externo.TabIndex = 46;
+            this.rb_externo.TabStop = true;
+            this.rb_externo.Text = "Externo al Restaurante\r\n";
+            this.rb_externo.UseVisualStyleBackColor = true;
+            // 
+            // rb_interno
+            // 
+            this.rb_interno.AutoSize = true;
+            this.rb_interno.Location = new System.Drawing.Point(9, 104);
+            this.rb_interno.Name = "rb_interno";
+            this.rb_interno.Size = new System.Drawing.Size(130, 17);
+            this.rb_interno.TabIndex = 45;
+            this.rb_interno.TabStop = true;
+            this.rb_interno.Text = "Interno al Restaurante\r\n";
+            this.rb_interno.UseVisualStyleBackColor = true;
             // 
             // txt_nombre
             // 
@@ -102,53 +132,14 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Codigo";
             // 
-            // rb_interno
+            // b_cancelar
             // 
-            this.rb_interno.AutoSize = true;
-            this.rb_interno.Location = new System.Drawing.Point(9, 104);
-            this.rb_interno.Name = "rb_interno";
-            this.rb_interno.Size = new System.Drawing.Size(130, 17);
-            this.rb_interno.TabIndex = 45;
-            this.rb_interno.TabStop = true;
-            this.rb_interno.Text = "Interno al Restaurante\r\n";
-            this.rb_interno.UseVisualStyleBackColor = true;
-            // 
-            // rb_externo
-            // 
-            this.rb_externo.AutoSize = true;
-            this.rb_externo.Location = new System.Drawing.Point(145, 104);
-            this.rb_externo.Name = "rb_externo";
-            this.rb_externo.Size = new System.Drawing.Size(133, 17);
-            this.rb_externo.TabIndex = 46;
-            this.rb_externo.TabStop = true;
-            this.rb_externo.Text = "Externo al Restaurante\r\n";
-            this.rb_externo.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 173);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(110, 13);
-            this.label3.TabIndex = 47;
-            this.label3.Text = "Rol en el Restaurante";
-            // 
-            // cb_rol
-            // 
-            this.cb_rol.FormattingEnabled = true;
-            this.cb_rol.Location = new System.Drawing.Point(122, 170);
-            this.cb_rol.Name = "cb_rol";
-            this.cb_rol.Size = new System.Drawing.Size(121, 21);
-            this.cb_rol.TabIndex = 48;
-            // 
-            // b_borrar
-            // 
-            this.b_borrar.Image = global::Restaurante.Properties.Resources.Eliminar12;
-            this.b_borrar.Location = new System.Drawing.Point(278, 250);
-            this.b_borrar.Name = "b_borrar";
-            this.b_borrar.Size = new System.Drawing.Size(52, 47);
-            this.b_borrar.TabIndex = 49;
-            this.b_borrar.UseVisualStyleBackColor = true;
+            this.b_cancelar.Image = global::Restaurante.Properties.Resources.Cancelar4;
+            this.b_cancelar.Location = new System.Drawing.Point(420, 250);
+            this.b_cancelar.Name = "b_cancelar";
+            this.b_cancelar.Size = new System.Drawing.Size(52, 47);
+            this.b_cancelar.TabIndex = 51;
+            this.b_cancelar.UseVisualStyleBackColor = true;
             // 
             // b_aceptar
             // 
@@ -158,15 +149,25 @@
             this.b_aceptar.Size = new System.Drawing.Size(52, 47);
             this.b_aceptar.TabIndex = 50;
             this.b_aceptar.UseVisualStyleBackColor = true;
+            this.b_aceptar.Click += new System.EventHandler(this.b_aceptar_Click);
             // 
-            // b_cancelar
+            // b_borrar
             // 
-            this.b_cancelar.Image = global::Restaurante.Properties.Resources.Cancelar4;
-            this.b_cancelar.Location = new System.Drawing.Point(420, 250);
-            this.b_cancelar.Name = "b_cancelar";
-            this.b_cancelar.Size = new System.Drawing.Size(52, 47);
-            this.b_cancelar.TabIndex = 51;
-            this.b_cancelar.UseVisualStyleBackColor = true;
+            this.b_borrar.Image = global::Restaurante.Properties.Resources.clean;
+            this.b_borrar.Location = new System.Drawing.Point(278, 250);
+            this.b_borrar.Name = "b_borrar";
+            this.b_borrar.Size = new System.Drawing.Size(52, 47);
+            this.b_borrar.TabIndex = 49;
+            this.b_borrar.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.label1.Image = global::Restaurante.Properties.Resources.Foto;
+            this.label1.Location = new System.Drawing.Point(0, -1);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(234, 312);
+            this.label1.TabIndex = 5;
             // 
             // frm_puestos
             // 
@@ -181,6 +182,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frm_puestos";
             this.Text = "Puestos";
+            this.Load += new System.EventHandler(this.frm_puestos_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

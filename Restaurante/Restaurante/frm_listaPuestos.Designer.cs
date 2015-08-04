@@ -35,14 +35,14 @@
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rb_externo = new System.Windows.Forms.RadioButton();
+            this.rb_interno = new System.Windows.Forms.RadioButton();
             this.txt_nombreRestaurante = new System.Windows.Forms.TextBox();
             this.txt_codigoRestaurante = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.rb_interno = new System.Windows.Forms.RadioButton();
-            this.rb_externo = new System.Windows.Forms.RadioButton();
-            this.b_mas = new System.Windows.Forms.Button();
             this.b_menos = new System.Windows.Forms.Button();
+            this.b_mas = new System.Windows.Forms.Button();
             this.b_borrar = new System.Windows.Forms.Button();
             this.b_aceptar = new System.Windows.Forms.Button();
             this.b_cancelar = new System.Windows.Forms.Button();
@@ -107,6 +107,28 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Solo Busqueda";
             // 
+            // rb_externo
+            // 
+            this.rb_externo.AutoSize = true;
+            this.rb_externo.Location = new System.Drawing.Point(281, 48);
+            this.rb_externo.Name = "rb_externo";
+            this.rb_externo.Size = new System.Drawing.Size(97, 30);
+            this.rb_externo.TabIndex = 45;
+            this.rb_externo.TabStop = true;
+            this.rb_externo.Text = "Externo\r\n al Restaurante\r\n";
+            this.rb_externo.UseVisualStyleBackColor = true;
+            // 
+            // rb_interno
+            // 
+            this.rb_interno.AutoSize = true;
+            this.rb_interno.Location = new System.Drawing.Point(281, 25);
+            this.rb_interno.Name = "rb_interno";
+            this.rb_interno.Size = new System.Drawing.Size(130, 17);
+            this.rb_interno.TabIndex = 44;
+            this.rb_interno.TabStop = true;
+            this.rb_interno.Text = "Interno al Restaurante\r\n";
+            this.rb_interno.UseVisualStyleBackColor = true;
+            // 
             // txt_nombreRestaurante
             // 
             this.txt_nombreRestaurante.Location = new System.Drawing.Point(143, 59);
@@ -139,45 +161,24 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Codigo del Restaurante\r\n";
             // 
-            // rb_interno
+            // b_menos
             // 
-            this.rb_interno.AutoSize = true;
-            this.rb_interno.Location = new System.Drawing.Point(281, 25);
-            this.rb_interno.Name = "rb_interno";
-            this.rb_interno.Size = new System.Drawing.Size(130, 17);
-            this.rb_interno.TabIndex = 44;
-            this.rb_interno.TabStop = true;
-            this.rb_interno.Text = "Interno al Restaurante\r\n";
-            this.rb_interno.UseVisualStyleBackColor = true;
-            // 
-            // rb_externo
-            // 
-            this.rb_externo.AutoSize = true;
-            this.rb_externo.Location = new System.Drawing.Point(281, 48);
-            this.rb_externo.Name = "rb_externo";
-            this.rb_externo.Size = new System.Drawing.Size(97, 30);
-            this.rb_externo.TabIndex = 45;
-            this.rb_externo.TabStop = true;
-            this.rb_externo.Text = "Externo\r\n al Restaurante\r\n";
-            this.rb_externo.UseVisualStyleBackColor = true;
+            this.b_menos.Image = global::Restaurante.Properties.Resources.refurl;
+            this.b_menos.Location = new System.Drawing.Point(772, 62);
+            this.b_menos.Name = "b_menos";
+            this.b_menos.Size = new System.Drawing.Size(54, 40);
+            this.b_menos.TabIndex = 47;
+            this.b_menos.UseVisualStyleBackColor = true;
             // 
             // b_mas
             // 
-            this.b_mas.Location = new System.Drawing.Point(772, 32);
+            this.b_mas.Image = global::Restaurante.Properties.Resources.green_add_icon2;
+            this.b_mas.Location = new System.Drawing.Point(772, 19);
             this.b_mas.Name = "b_mas";
-            this.b_mas.Size = new System.Drawing.Size(55, 23);
+            this.b_mas.Size = new System.Drawing.Size(55, 36);
             this.b_mas.TabIndex = 46;
-            this.b_mas.Text = "button5";
             this.b_mas.UseVisualStyleBackColor = true;
-            // 
-            // b_menos
-            // 
-            this.b_menos.Location = new System.Drawing.Point(772, 67);
-            this.b_menos.Name = "b_menos";
-            this.b_menos.Size = new System.Drawing.Size(55, 23);
-            this.b_menos.TabIndex = 47;
-            this.b_menos.Text = "button6";
-            this.b_menos.UseVisualStyleBackColor = true;
+            this.b_mas.Click += new System.EventHandler(this.b_mas_Click);
             // 
             // b_borrar
             // 
