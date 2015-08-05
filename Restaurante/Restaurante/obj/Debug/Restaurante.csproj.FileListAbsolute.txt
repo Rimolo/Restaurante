@@ -107,3 +107,7 @@ C:\Users\primo\Documents\GitHubVisualStudio\Restaurante\Restaurante\Restaurante\
 C:\Users\primo\Documents\GitHubVisualStudio\Restaurante\Restaurante\Restaurante\obj\Debug\Restaurante.Properties.Resources.resources
 C:\Users\primo\Documents\GitHubVisualStudio\Restaurante\Restaurante\Restaurante\obj\Debug\Restaurante.csproj.GenerateResource.Cache
 C:\Users\primo\Documents\GitHubVisualStudio\Restaurante\Restaurante\Restaurante\obj\Debug\Restaurante.csprojResolveAssemblyReference.cache
+C:\Users\primo\Documents\GitHubVisualStudio\Restaurante\Restaurante\Restaurante\bin\Debug\BLL.dll
+C:\Users\primo\Documents\GitHubVisualStudio\Restaurante\Restaurante\Restaurante\bin\Debug\DAL.dll
+C:\Users\primo\Documents\GitHubVisualStudio\Restaurante\Restaurante\Restaurante\bin\Debug\BLL.pdb
+C:\Users\primo\Documents\GitHubVisualStudio\Restaurante\Restaurante\Restaurante\bin\Debug\DAL.pdb
