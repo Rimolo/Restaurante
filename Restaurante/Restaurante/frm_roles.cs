@@ -28,6 +28,14 @@ namespace Restaurante
             InitializeComponent();
         }
 
+        private void frm_roles_Load_1(object sender, EventArgs e)
+        {
+            this.mostar_consecutivo();
+            if (accion.Equals("Editar"))
+            {
+
+            }
+        }
         private void b_aceptar_Click(object sender, EventArgs e)
         {
             objRoles.codigo = txt_codigoRol.Text;
@@ -42,5 +50,42 @@ namespace Restaurante
             }
             
         }
+
+        private void mostar_consecutivo()
+        {
+
+            try
+            {
+                DataSet ds1;
+                ds1 = objRoles.retorna_consecutivo_valor();
+                string valor = ds1.Tables[0].Rows[0]["valor"].ToString();
+
+                DataSet ds2;
+                ds2 = objRoles.retorna_consecutivo_prefijo();
+                string pre = ds2.Tables[0].Rows[0]["prefijo"].ToString();
+                txt_codigoRol.Text = pre+valor;
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error al cargar el consecutivo");
+            }
+
+        }
+
+        private void b_borrar_Click(object sender, EventArgs e)
+        {
+            txt_descripcionRol.Text = "";
+            txt_nombreRol.Text = "";
+        }
+
+        private void b_cerrar_Click(object sender, EventArgs e)
+        {
+            var listaRoles = (frm_listaRoles)Tag;
+            listaRoles.Show();
+            this.Close();
+        }
+
+        
     }
 }

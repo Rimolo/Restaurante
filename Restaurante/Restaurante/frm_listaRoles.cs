@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BLL;
 
 namespace Restaurante
 {
     public partial class frm_listaRoles : Form
     {
+        Roles objRoles = new Roles();
+
         public frm_listaRoles()
         {
             InitializeComponent();
@@ -25,6 +28,50 @@ namespace Restaurante
             roles.Show(this);
             Hide();
            
+        }
+
+        private void frm_listaRoles_Load(object sender, EventArgs e)
+        {
+            this.carga_lista_roles();
+        }
+
+        private void carga_lista_roles()
+        {
+            try
+            {
+                dgv_roles.AutoGenerateColumns = false;
+                dgv_roles.DataSource = objRoles.carga_roles().Tables[0];
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Hubo un problema con la conexión a la base de datos", "Validación de Datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+        }
+
+        private void b_refrescar_Click(object sender, EventArgs e)
+        {
+            this.carga_lista_roles();
+        }
+
+        private void b_cerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void b_borrar_Click(object sender, EventArgs e)
+        {
+            txt_codigoRol.Text = "";
+            txt_nombreRol.Text = "";
+        }
+
+        private void b_aceptar_Click(object sender, EventArgs e)
+        {
+            string codigo = "";
+            if (txt_codigoRol.Text != null)
+            {
+
+            }
         }
     }
 }

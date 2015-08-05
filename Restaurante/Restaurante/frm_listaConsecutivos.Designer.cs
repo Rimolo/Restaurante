@@ -231,6 +231,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "frm_listaConsecutivos";
             this.Text = " Lista de Consecutivos";
+            this.Load += new System.EventHandler(this.frm_listaConsecutivos_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);

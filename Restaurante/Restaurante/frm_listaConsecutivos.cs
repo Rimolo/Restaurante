@@ -22,5 +22,10 @@ namespace Restaurante
             frm_consecutivos consecutivos = new frm_consecutivos();
             consecutivos.Show();
         }
+
+        private void frm_listaConsecutivos_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

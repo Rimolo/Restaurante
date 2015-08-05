@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txt_nombreRol = new System.Windows.Forms.TextBox();
             this.txt_codigoRol = new System.Windows.Forms.TextBox();
@@ -43,11 +44,10 @@
             this.b_refrescar = new System.Windows.Forms.Button();
             this.b_agregar = new System.Windows.Forms.Button();
             this.b_eliminar = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_roles)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -58,6 +58,15 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(168, 357);
             this.panel1.TabIndex = 76;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Restaurante.Properties.Resources.Usuario4;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 77);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(168, 206);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // groupBox1
             // 
@@ -134,6 +143,7 @@
             this.b_aceptar.Size = new System.Drawing.Size(42, 47);
             this.b_aceptar.TabIndex = 83;
             this.b_aceptar.UseVisualStyleBackColor = true;
+            this.b_aceptar.Click += new System.EventHandler(this.b_aceptar_Click);
             // 
             // b_borrar
             // 
@@ -143,6 +153,7 @@
             this.b_borrar.Size = new System.Drawing.Size(39, 46);
             this.b_borrar.TabIndex = 82;
             this.b_borrar.UseVisualStyleBackColor = true;
+            this.b_borrar.Click += new System.EventHandler(this.b_borrar_Click);
             // 
             // b_cerrar
             // 
@@ -152,6 +163,7 @@
             this.b_cerrar.Size = new System.Drawing.Size(42, 43);
             this.b_cerrar.TabIndex = 81;
             this.b_cerrar.UseVisualStyleBackColor = true;
+            this.b_cerrar.Click += new System.EventHandler(this.b_cerrar_Click);
             // 
             // b_refrescar
             // 
@@ -162,6 +174,7 @@
             this.b_refrescar.TabIndex = 81;
             this.b_refrescar.Text = "\r\n";
             this.b_refrescar.UseVisualStyleBackColor = true;
+            this.b_refrescar.Click += new System.EventHandler(this.b_refrescar_Click);
             // 
             // b_agregar
             // 
@@ -182,15 +195,6 @@
             this.b_eliminar.TabIndex = 79;
             this.b_eliminar.UseVisualStyleBackColor = true;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Restaurante.Properties.Resources.Usuario4;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 77);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(168, 206);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // frm_listaRoles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -208,11 +212,12 @@
             this.Controls.Add(this.panel1);
             this.Name = "frm_listaRoles";
             this.Text = " Lista de Roles";
+            this.Load += new System.EventHandler(this.frm_listaRoles_Load);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_roles)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
