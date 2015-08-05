@@ -502,6 +502,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RestauranteDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RestauranteDataSet.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmBebidasGaseosas.resx">
       <DependentUpon>frmBebidasGaseosas.cs</DependentUpon>
     </EmbeddedResource>
@@ -749,6 +754,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="RestauranteDataSet.xsc">
+      <DependentUpon>RestauranteDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="RestauranteDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RestauranteDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RestauranteDataSet.xss">
+      <DependentUpon>RestauranteDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

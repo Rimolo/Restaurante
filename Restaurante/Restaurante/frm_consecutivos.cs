@@ -16,6 +16,22 @@ namespace Restaurante
     {
         Consecutivos obj_consecutivos = new Consecutivos();
 
+        private string _accion;
+
+        public string accion
+        {
+            get { return _accion; }
+            set { _accion = value; }
+        }
+
+        private string _codigo;
+
+        public string codigo
+        {
+            get { return _codigo; }
+            set { _codigo = value; }
+        }
+
         public frm_consecutivos()
         {
             InitializeComponent();
@@ -23,7 +39,10 @@ namespace Restaurante
 
         private void frm_consecutivos_Load(object sender, EventArgs e)
         {
-
+            if (accion.Equals("Editar"))
+            {
+                carga_info();
+            }
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -171,7 +190,7 @@ namespace Restaurante
                 return;
             }
 
-            obj_consecutivos.codConsecutivo = Convert.ToString(txt_valorConsecutivo.Text +"-"+ txt_prefijo.Text.Substring(0, txt_prefijo.Text.Length-1));
+            obj_consecutivos.codConsecutivo = Convert.ToString(txt_prefijo.Text + txt_valorConsecutivo.Text);
             obj_consecutivos.tipo = Convert.ToString(cb_tipoConsecutivo.SelectedItem.ToString());
             obj_consecutivos.descripcion = Convert.ToString(txt_descripcion.Text);
             obj_consecutivos.valor = Convert.ToString(txt_valorConsecutivo.Text);
@@ -183,5 +202,31 @@ namespace Restaurante
                 this.Close();
             }
         }
+
+        private void b_borrar_Click(object sender, EventArgs e)
+        {
+            cb_tipoConsecutivo.Text = "";
+            txt_descripcion.Text = "";
+            txt_valorConsecutivo.Text = "";
+            txt_prefijo.Text = "";
+        }
+
+        private void b_cerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void carga_info()
+        {
+            obj_consecutivos.carga_info_Consecutivos(_codigo);
+            if (obj_consecutivos.tipo != "Error")
+            {
+                cb_tipoConsecutivo.Text = obj_consecutivos.tipo; 
+                txt_descripcion.Text = obj_consecutivos.descripcion.ToString(); 
+                txt_valorConsecutivo.Text = obj_consecutivos.valor; 
+                txt_prefijo.Text = obj_consecutivos.prefijo.ToString(); 
+            }
+        }
+
     }
 }

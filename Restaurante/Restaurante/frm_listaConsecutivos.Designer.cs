@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -36,21 +37,26 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dgv_consecutivos = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.b_eliminar = new System.Windows.Forms.Button();
             this.b_agregar = new System.Windows.Forms.Button();
             this.b_aceptar = new System.Windows.Forms.Button();
             this.b_borrar = new System.Windows.Forms.Button();
             this.b_cerrar = new System.Windows.Forms.Button();
             this.b_refrescar = new System.Windows.Forms.Button();
+            this.restauranteDataSet = new Restaurante.RestauranteDataSet();
+            this.consecutivosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.consecutivosTableAdapter = new Restaurante.RestauranteDataSetTableAdapters.ConsecutivosTableAdapter();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Prefijo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_consecutivos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.restauranteDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.consecutivosBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -125,38 +131,13 @@
             this.Column2,
             this.Column3,
             this.Column4,
-            this.Column5});
+            this.Prefijo});
             this.dgv_consecutivos.Location = new System.Drawing.Point(226, 133);
             this.dgv_consecutivos.Name = "dgv_consecutivos";
+            this.dgv_consecutivos.ReadOnly = true;
             this.dgv_consecutivos.Size = new System.Drawing.Size(563, 232);
             this.dgv_consecutivos.TabIndex = 77;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Codigo";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Tipo";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Descripcion";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Valor del Consecutivo";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Contiene Prefijo";
-            this.Column5.Name = "Column5";
-            this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dgv_consecutivos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_consecutivos_CellContentClick);
             // 
             // b_eliminar
             // 
@@ -166,6 +147,7 @@
             this.b_eliminar.Size = new System.Drawing.Size(51, 39);
             this.b_eliminar.TabIndex = 75;
             this.b_eliminar.UseVisualStyleBackColor = true;
+            this.b_eliminar.Click += new System.EventHandler(this.b_eliminar_Click);
             // 
             // b_agregar
             // 
@@ -185,6 +167,7 @@
             this.b_aceptar.Size = new System.Drawing.Size(42, 47);
             this.b_aceptar.TabIndex = 73;
             this.b_aceptar.UseVisualStyleBackColor = true;
+            this.b_aceptar.Click += new System.EventHandler(this.b_aceptar_Click);
             // 
             // b_borrar
             // 
@@ -194,6 +177,7 @@
             this.b_borrar.Size = new System.Drawing.Size(39, 47);
             this.b_borrar.TabIndex = 72;
             this.b_borrar.UseVisualStyleBackColor = true;
+            this.b_borrar.Click += new System.EventHandler(this.b_borrar_Click);
             // 
             // b_cerrar
             // 
@@ -203,6 +187,7 @@
             this.b_cerrar.Size = new System.Drawing.Size(42, 43);
             this.b_cerrar.TabIndex = 71;
             this.b_cerrar.UseVisualStyleBackColor = true;
+            this.b_cerrar.Click += new System.EventHandler(this.b_cerrar_Click);
             // 
             // b_refrescar
             // 
@@ -213,6 +198,50 @@
             this.b_refrescar.TabIndex = 70;
             this.b_refrescar.Text = "\r\n";
             this.b_refrescar.UseVisualStyleBackColor = true;
+            this.b_refrescar.Click += new System.EventHandler(this.b_refrescar_Click);
+            // 
+            // restauranteDataSet
+            // 
+            this.restauranteDataSet.DataSetName = "RestauranteDataSet";
+            this.restauranteDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // consecutivosBindingSource
+            // 
+            this.consecutivosBindingSource.DataMember = "Consecutivos";
+            this.consecutivosBindingSource.DataSource = this.restauranteDataSet;
+            // 
+            // consecutivosTableAdapter
+            // 
+            this.consecutivosTableAdapter.ClearBeforeFill = true;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "codConsecutivo";
+            this.Column1.HeaderText = "Codigo";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "tipo";
+            this.Column2.HeaderText = "Tipo";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "descripcion";
+            this.Column3.HeaderText = "Descripcion";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "valor";
+            this.Column4.HeaderText = "Valor del Consecutivo";
+            this.Column4.Name = "Column4";
+            // 
+            // Prefijo
+            // 
+            this.Prefijo.HeaderText = "Contiene prefijo";
+            this.Prefijo.Name = "Prefijo";
             // 
             // frm_listaConsecutivos
             // 
@@ -237,6 +266,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_consecutivos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.restauranteDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.consecutivosBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -257,10 +288,13 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dgv_consecutivos;
+        private RestauranteDataSet restauranteDataSet;
+        private System.Windows.Forms.BindingSource consecutivosBindingSource;
+        private RestauranteDataSetTableAdapters.ConsecutivosTableAdapter consecutivosTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Prefijo;
     }
 }

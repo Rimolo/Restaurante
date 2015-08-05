@@ -197,6 +197,7 @@
             this.b_cerrar.Size = new System.Drawing.Size(42, 47);
             this.b_cerrar.TabIndex = 75;
             this.b_cerrar.UseVisualStyleBackColor = true;
+            this.b_cerrar.Click += new System.EventHandler(this.b_cerrar_Click);
             // 
             // b_aceptar
             // 
@@ -216,6 +217,7 @@
             this.b_borrar.Size = new System.Drawing.Size(39, 47);
             this.b_borrar.TabIndex = 69;
             this.b_borrar.UseVisualStyleBackColor = true;
+            this.b_borrar.Click += new System.EventHandler(this.b_borrar_Click);
             // 
             // frm_consecutivos
             // 

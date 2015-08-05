@@ -60,6 +60,45 @@ namespace BLL
 
         #region metodos
 
+        public DataSet carga_roles_especificos()
+        {
+            conexion = cls_DAL.trae_conexion("Progra4", ref mensaje_error, ref numero_error);
+            if (conexion == null)
+            {
+                MessageBox.Show(mensaje_error, "Error al obtener cadena de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+            else
+            {
+                string sql1 = "Select codConsecutivo,tipo,descripcion,tipo from Consecutivos ";
+                string condicion = "Where ";
+                if (!string.IsNullOrEmpty(_codConsecutivo))
+                {
+                    sql1 += condicion + "codConsecutivo ='" + _codConsecutivo + "'";
+                    condicion = "and ";
+                }
+                else
+                {
+                    if (!string.IsNullOrEmpty(_tipo))
+                    {
+                        sql1 += condicion + "tipo ='" + _tipo + "'";
+                    }
+                }
+                sql = sql1 + " Order by codConsecutivo";
+
+                ds = cls_DAL.ejecuta_dataset(conexion, sql, false, ref mensaje_error, ref numero_error);
+                if (numero_error != 0)
+                {
+                    MessageBox.Show(mensaje_error, "Error al cargar los consecutivos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return null;
+                }
+                else
+                {
+                    return ds;
+                }
+            }
+        }
+
         public DataSet carga_consecutivos()
         {
             conexion = cls_DAL.trae_conexion("Progra4", ref mensaje_error, ref numero_error);
@@ -70,7 +109,7 @@ namespace BLL
             }
             else
             {
-                sql = "Select * from Consecutivos";
+                sql = "Select codConsecutivo,tipo,descripcion,valor from Consecutivos Order by codConsecutivo";
 
                 ds = cls_DAL.ejecuta_dataset(conexion, sql, false, ref mensaje_error, ref numero_error);
                 if (numero_error != 0)
@@ -119,7 +158,7 @@ namespace BLL
             }
         }
 
-        public bool eliminar_consecutivos(int cod_factura)
+        public bool eliminar_consecutivos(string codConsecutivo)
         {
             conexion = cls_DAL.trae_conexion("Progra4", ref mensaje_error, ref numero_error);
             if (conexion == null)
@@ -129,7 +168,7 @@ namespace BLL
             }
             else
             {
-                sql = "Delete from Consecutivos where codConsecutivos = @codConsecutivos";
+                sql = "Delete from Consecutivos where codConsecutivo = @codConsecutivo";
 
                 ParamStruct[] parametros = new ParamStruct[1];
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@codConsecutivo", SqlDbType.VarChar, codConsecutivo);
@@ -146,6 +185,45 @@ namespace BLL
                     cls_DAL.desconectar(conexion, ref mensaje_error, ref numero_error);
                     return true;
                 }
+            }
+        }
+
+        public void carga_info_Consecutivos(string codConsecutivo)
+        {
+            conexion = cls_DAL.trae_conexion("Progra4", ref mensaje_error, ref numero_error);
+            if (conexion == null)
+            {
+                MessageBox.Show(mensaje_error, "Error al obtener cadena de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                _tipo = "Error";
+            }
+            else
+            {
+                sql = "Select tipo,descripcion,valor,prefijo" +
+                      " from Consecutivos where codConsecutivo='" + codConsecutivo + "'";
+                ParamStruct[] parametros = new ParamStruct[1];
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@cod", SqlDbType.VarChar, codConsecutivo);
+                ds = cls_DAL.ejecuta_dataset(conexion, sql, false, parametros, ref mensaje_error, ref numero_error);
+                if (ds == null)
+                {
+                    MessageBox.Show(mensaje_error, "Error al obtener el consecutivo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    _tipo = "Error";
+                }
+                else
+                {
+                    if (ds.Tables[0].Rows.Count > 0)
+                    {
+                        _tipo = ds.Tables[0].Rows[0]["tipo"].ToString();
+                        _descripcion = ds.Tables[0].Rows[0]["descripcion"].ToString();
+                        _valor = ds.Tables[0].Rows[0]["valor"].ToString();
+                        _prefijo = ds.Tables[0].Rows[0]["prefijo"].ToString();
+
+                    }
+                    else
+                    {
+                        _tipo = "Error";
+                    }
+                }
+
             }
         }
 
