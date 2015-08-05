@@ -204,6 +204,43 @@ namespace BLL
                 }
             }
         }
+
+        public DataSet carga_roles_especificos()
+        {
+            conexion = cls_DAL.trae_conexion("Progra4", ref mensaje_error, ref numero_error);
+            if (conexion == null)
+            {
+                MessageBox.Show(mensaje_error, "Error al obtener cadena de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+            else
+            {
+                string sql1 = "Select CodRol,nombre from Roles ";
+                string condicion = "Where ";
+                if (!string.IsNullOrEmpty(_codigo))
+                {
+                    sql1 += condicion+"CodRol ='"+_codigo + "'";
+                    condicion = "and ";
+                }
+                if (!string.IsNullOrEmpty(_nombre))
+                {
+                    sql1 += condicion + "nombre ='" + _nombre+"'";
+                }
+                sql = sql1+" Order by CodRol";
+
+                ds = cls_DAL.ejecuta_dataset(conexion, sql, false, ref mensaje_error, ref numero_error);
+                if (numero_error != 0)
+                {
+                    MessageBox.Show(mensaje_error, "Error al cargar los roles", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return null;
+                }
+                else
+                {
+                    return ds;
+                }
+            }
+        }
+
         public bool eliminar_Rol(string cod_rol)
         {
             conexion = cls_DAL.trae_conexion("Progra4", ref mensaje_error, ref numero_error);
@@ -234,6 +271,41 @@ namespace BLL
             }
         }
 
+        public void carga_info_Roles(string codRol) { 
+            conexion = cls_DAL.trae_conexion("Progra4", ref mensaje_error, ref numero_error);
+            if (conexion == null)
+            {
+                MessageBox.Show(mensaje_error, "Error al obtener cadena de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                _nombre = "Error";
+            }
+            else
+            {
+                sql = "Select nombre,Descripcion" +
+                      " from Roles where CodRol='"+codRol+"'";
+                ParamStruct[] parametros = new ParamStruct[1];
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@cod", SqlDbType.VarChar, codRol);
+                ds = cls_DAL.ejecuta_dataset(conexion, sql, false,parametros, ref mensaje_error, ref numero_error);
+                if (ds == null)
+                {
+                    MessageBox.Show(mensaje_error, "Error al obtener el rol", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    _nombre = "Error";
+                }
+                else
+                {
+                    if (ds.Tables[0].Rows.Count > 0)
+                    {
+                        _nombre = ds.Tables[0].Rows[0]["nombre"].ToString();
+                        _descripcion = ds.Tables[0].Rows[0]["descripcion"].ToString();
+                        
+                    }
+                    else
+                    {
+                        _nombre = "Error";
+                    }
+                }
+
+            }
+        }
         #endregion
     }
 }
