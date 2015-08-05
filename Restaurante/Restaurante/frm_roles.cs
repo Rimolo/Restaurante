@@ -23,6 +23,14 @@ namespace Restaurante
             set { _accion = value; }
         }
 
+        private string _codigo;
+
+        public string codigo
+        {
+            get { return _codigo; }
+            set { _codigo = value; }
+        }
+
         public frm_roles()
         {
             InitializeComponent();
@@ -33,20 +41,52 @@ namespace Restaurante
             this.mostar_consecutivo();
             if (accion.Equals("Editar"))
             {
-
+                carga_info();
             }
         }
+
         private void b_aceptar_Click(object sender, EventArgs e)
         {
+            if (!cls_validacion.validar(txt_nombreRol))
+            {
+                MessageBox.Show("Por favor escriba un nombre al Rol", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txt_nombreRol.Focus();
+                return;
+            }
+
+            if (!cls_validacion.validar(txt_descripcionRol))
+            {
+                MessageBox.Show("Por favor escriba una descripcion al Rol", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txt_nombreRol.Focus();
+                return;
+            }
             objRoles.codigo = txt_codigoRol.Text;
             objRoles.nombre = txt_nombreRol.Text;
             objRoles.descripcion = txt_descripcionRol.Text;
             if (objRoles.guardar_rol(_accion))
             {
-                MessageBox.Show("Producto insertado con éxito", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                var listaRoles = (frm_listaRoles)Tag;
-                listaRoles.Show();
-                this.Close();
+                int valor = 0;
+                try
+                {
+                    DataSet ds;
+                    ds = objRoles.retorna_consecutivo_valor();
+                    valor = Convert.ToInt32(ds.Tables[0].Rows[0]["valor"]);
+                    valor++;
+
+
+                    if (objRoles.actualizar_consecutivo(valor))
+                    {
+
+                        MessageBox.Show("Rol insertado con éxito", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
+                    }
+
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Error al actualizar el consecutivo");
+                }
+                
             }
             
         }
@@ -81,11 +121,19 @@ namespace Restaurante
 
         private void b_cerrar_Click(object sender, EventArgs e)
         {
-            var listaRoles = (frm_listaRoles)Tag;
-            listaRoles.Show();
             this.Close();
         }
 
-        
+        private void carga_info()
+        {
+            objRoles.carga_info_Roles(_codigo);
+            if (objRoles.nombre != "Error")
+            {
+                txt_nombreRol.Text = objRoles.nombre;
+                txt_descripcionRol.Text = objRoles.descripcion.ToString();
+                txt_codigoRol.Text= _codigo.ToString();
+            }
+        }
+
     }
 }

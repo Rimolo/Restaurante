@@ -24,9 +24,7 @@ namespace Restaurante
         {
             frm_roles roles = new frm_roles();
             roles.accion = "Insertar";
-            roles.Tag=this;
-            roles.Show(this);
-            Hide();
+            roles.Show();
            
         }
 
@@ -41,6 +39,7 @@ namespace Restaurante
             {
                 dgv_roles.AutoGenerateColumns = false;
                 dgv_roles.DataSource = objRoles.carga_roles().Tables[0];
+                
             }
             catch (Exception)
             {
@@ -67,11 +66,56 @@ namespace Restaurante
 
         private void b_aceptar_Click(object sender, EventArgs e)
         {
-            string codigo = "";
-            if (txt_codigoRol.Text != null)
+            objRoles.codigo = null;
+            objRoles.nombre = null;
+            if (txt_codigoRol.Text != "")
             {
+                objRoles.codigo = txt_codigoRol.Text;
+                   
+            }
+            else if(txt_nombreRol.Text != "")
+            {
+                objRoles.nombre = txt_nombreRol.Text;
+            }
+            
+            try
+            {
+                dgv_roles.AutoGenerateColumns = false;
+                dgv_roles.DataSource = objRoles.carga_roles_especificos().Tables[0];
 
             }
+            catch (Exception)
+            {
+                MessageBox.Show("Hubo un problema con la conexión a la base de datos", "Validación de Datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+        }
+
+        private void dgv_roles_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            frm_roles roles = new frm_roles();
+            roles.accion = "Editar";
+            roles.codigo =dgv_roles.Rows[e.RowIndex].Cells[0].Value.ToString().Replace(" ",""); 
+            roles.ShowDialog();
+           
+        }
+
+        private void b_eliminar_Click(object sender, EventArgs e)
+        {
+            string codigo = dgv_roles.CurrentRow.Cells[0].Value.ToString().Replace(" ", "");
+            objRoles.eliminar_Rol(codigo);
+            try
+            {
+                dgv_roles.AutoGenerateColumns = false;
+                dgv_roles.DataSource = objRoles.carga_roles().Tables[0];
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Hubo un problema con la conexión a la base de datos", "Validación de Datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
         }
     }
 }

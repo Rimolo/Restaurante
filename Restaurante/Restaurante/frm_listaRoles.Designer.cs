@@ -36,14 +36,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dgv_roles = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.b_aceptar = new System.Windows.Forms.Button();
             this.b_borrar = new System.Windows.Forms.Button();
             this.b_cerrar = new System.Windows.Forms.Button();
             this.b_refrescar = new System.Windows.Forms.Button();
             this.b_agregar = new System.Windows.Forms.Button();
             this.b_eliminar = new System.Windows.Forms.Button();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -115,25 +115,21 @@
             // 
             // dgv_roles
             // 
+            this.dgv_roles.AllowUserToAddRows = false;
+            this.dgv_roles.AllowUserToDeleteRows = false;
             this.dgv_roles.BackgroundColor = System.Drawing.Color.White;
             this.dgv_roles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_roles.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2});
             this.dgv_roles.Location = new System.Drawing.Point(174, 110);
+            this.dgv_roles.MultiSelect = false;
             this.dgv_roles.Name = "dgv_roles";
+            this.dgv_roles.ReadOnly = true;
+            this.dgv_roles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_roles.Size = new System.Drawing.Size(421, 232);
             this.dgv_roles.TabIndex = 84;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Codigo";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Nombre del Rol";
-            this.Column2.Name = "Column2";
+            this.dgv_roles.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_roles_CellDoubleClick);
             // 
             // b_aceptar
             // 
@@ -194,6 +190,21 @@
             this.b_eliminar.Size = new System.Drawing.Size(51, 39);
             this.b_eliminar.TabIndex = 79;
             this.b_eliminar.UseVisualStyleBackColor = true;
+            this.b_eliminar.Click += new System.EventHandler(this.b_eliminar_Click);
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "CodRol";
+            this.Column1.HeaderText = "Codigo";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "nombre";
+            this.Column2.HeaderText = "Nombre del Rol";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             // 
             // frm_listaRoles
             // 
