@@ -163,7 +163,6 @@ namespace Restaurante
 
                     txt_prefijo.Text = "";
                     break;
-
             }
         }
 
@@ -196,7 +195,7 @@ namespace Restaurante
             obj_consecutivos.valor = Convert.ToString(txt_valorConsecutivo.Text);
             obj_consecutivos.prefijo = Convert.ToString(txt_prefijo.Text);
 
-            if (obj_consecutivos.guardar_consecutivos())
+            if (obj_consecutivos.guardar_consecutivos(accion))
             {
                 MessageBox.Show("Consecutivo insertado con exito", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();

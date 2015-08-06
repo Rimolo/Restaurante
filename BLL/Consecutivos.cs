@@ -60,7 +60,7 @@ namespace BLL
 
         #region metodos
 
-        public DataSet carga_roles_especificos()
+        public DataSet carga_consecutivos_especificos()
         {
             conexion = cls_DAL.trae_conexion("Progra4", ref mensaje_error, ref numero_error);
             if (conexion == null)
@@ -70,7 +70,7 @@ namespace BLL
             }
             else
             {
-                string sql1 = "Select codConsecutivo,tipo,descripcion,tipo from Consecutivos ";
+                string sql1 = "Select codConsecutivo,tipo,descripcion,valor from Consecutivos ";
                 string condicion = "Where ";
                 if (!string.IsNullOrEmpty(_codConsecutivo))
                 {
@@ -124,7 +124,7 @@ namespace BLL
             }
         }
 
-        public bool guardar_consecutivos()
+        public bool guardar_consecutivos(string accion)
         {
             conexion = cls_DAL.trae_conexion("Progra4", ref mensaje_error, ref numero_error);
             if (conexion == null)
@@ -134,7 +134,17 @@ namespace BLL
             }
             else
             {
-                sql = "Insert into Consecutivos values(@codConsecutivo, @tipo, @descripcion, @valor, @prefijo)";
+                if (accion.Equals("Insertar"))
+                {
+                    sql = "Insert into Consecutivos values(@codConsecutivo, @tipo, @descripcion, @valor, @prefijo)";
+                }
+                else
+                {
+                    sql = "Update BebidaCaliente SET" +
+                       " valor=@valor," +
+                       " descripcion=@descripcion" +
+                       " where codConsecutivo=@codConsecutivo";
+                }
 
                 ParamStruct[] parametros = new ParamStruct[5];
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@codConsecutivo", SqlDbType.VarChar, _codConsecutivo);

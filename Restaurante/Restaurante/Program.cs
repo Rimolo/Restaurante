@@ -16,9 +16,10 @@ namespace Restaurante
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-           Application.Run(new frm_login());
-          //Application.Run(new frm_listaConsecutivos());
-          //Application.Run(new frm_listaUsuarios());
+            // Application.Run(new frm_login());
+            Application.Run(new frm_tipoBebida());
+            //Application.Run(new frm_listaConsecutivos());
+          //Application.Run(new frm_listaRoles());
         }
     }
 }

@@ -103,10 +103,10 @@
             this.rb_calientes.AutoSize = true;
             this.rb_calientes.Location = new System.Drawing.Point(40, 31);
             this.rb_calientes.Name = "rb_calientes";
-            this.rb_calientes.Size = new System.Drawing.Size(62, 17);
+            this.rb_calientes.Size = new System.Drawing.Size(68, 17);
             this.rb_calientes.TabIndex = 0;
             this.rb_calientes.TabStop = true;
-            this.rb_calientes.Text = "Clientes";
+            this.rb_calientes.Text = "Calientes";
             this.rb_calientes.UseVisualStyleBackColor = true;
             // 
             // b_cancelar
@@ -117,6 +117,7 @@
             this.b_cancelar.Size = new System.Drawing.Size(63, 47);
             this.b_cancelar.TabIndex = 7;
             this.b_cancelar.UseVisualStyleBackColor = true;
+            this.b_cancelar.Click += new System.EventHandler(this.b_cancelar_Click);
             // 
             // b_aceptar
             // 
@@ -126,6 +127,7 @@
             this.b_aceptar.Size = new System.Drawing.Size(63, 47);
             this.b_aceptar.TabIndex = 5;
             this.b_aceptar.UseVisualStyleBackColor = true;
+            this.b_aceptar.Click += new System.EventHandler(this.b_aceptar_Click);
             // 
             // label1
             // 

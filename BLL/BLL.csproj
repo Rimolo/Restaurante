@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Calientes.cs" />
     <Compile Include="Imprimir.cs" />
     <Compile Include="Login.cs" />
     <Compile Include="Pedidos.cs" />

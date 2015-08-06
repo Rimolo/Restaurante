@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.b_borrar = new System.Windows.Forms.Button();
+            this.b_buscaFoto = new System.Windows.Forms.Button();
+            this.pic_foto = new System.Windows.Forms.PictureBox();
             this.b_cancelar = new System.Windows.Forms.Button();
             this.b_aceptar = new System.Windows.Forms.Button();
             this.txt_restaurantes = new System.Windows.Forms.TextBox();
@@ -44,9 +47,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.pic_foto = new System.Windows.Forms.PictureBox();
-            this.b_buscaFoto = new System.Windows.Forms.Button();
-            this.b_borrar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
@@ -83,6 +83,35 @@
             this.groupBox1.Text = "Informacion de la bebida";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // b_borrar
+            // 
+            this.b_borrar.Image = global::Restaurante.Properties.Resources.clean1;
+            this.b_borrar.Location = new System.Drawing.Point(190, 245);
+            this.b_borrar.Name = "b_borrar";
+            this.b_borrar.Size = new System.Drawing.Size(48, 42);
+            this.b_borrar.TabIndex = 82;
+            this.b_borrar.UseVisualStyleBackColor = true;
+            this.b_borrar.Click += new System.EventHandler(this.b_borrar_Click);
+            // 
+            // b_buscaFoto
+            // 
+            this.b_buscaFoto.Image = global::Restaurante.Properties.Resources._40px_Examine_copyright_icon;
+            this.b_buscaFoto.Location = new System.Drawing.Point(360, 245);
+            this.b_buscaFoto.Name = "b_buscaFoto";
+            this.b_buscaFoto.Size = new System.Drawing.Size(49, 43);
+            this.b_buscaFoto.TabIndex = 81;
+            this.b_buscaFoto.UseVisualStyleBackColor = true;
+            this.b_buscaFoto.Click += new System.EventHandler(this.b_buscaFoto_Click);
+            // 
+            // pic_foto
+            // 
+            this.pic_foto.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pic_foto.Location = new System.Drawing.Point(278, 124);
+            this.pic_foto.Name = "pic_foto";
+            this.pic_foto.Size = new System.Drawing.Size(138, 110);
+            this.pic_foto.TabIndex = 18;
+            this.pic_foto.TabStop = false;
+            // 
             // b_cancelar
             // 
             this.b_cancelar.Image = global::Restaurante.Properties.Resources.Cancelar4;
@@ -91,6 +120,7 @@
             this.b_cancelar.Size = new System.Drawing.Size(52, 43);
             this.b_cancelar.TabIndex = 16;
             this.b_cancelar.UseVisualStyleBackColor = true;
+            this.b_cancelar.Click += new System.EventHandler(this.b_cancelar_Click);
             // 
             // b_aceptar
             // 
@@ -100,11 +130,14 @@
             this.b_aceptar.Size = new System.Drawing.Size(52, 42);
             this.b_aceptar.TabIndex = 15;
             this.b_aceptar.UseVisualStyleBackColor = true;
+            this.b_aceptar.Click += new System.EventHandler(this.b_aceptar_Click);
             // 
             // txt_restaurantes
             // 
+            this.txt_restaurantes.Enabled = false;
             this.txt_restaurantes.Location = new System.Drawing.Point(77, 229);
             this.txt_restaurantes.Name = "txt_restaurantes";
+            this.txt_restaurantes.ReadOnly = true;
             this.txt_restaurantes.Size = new System.Drawing.Size(100, 20);
             this.txt_restaurantes.TabIndex = 13;
             // 
@@ -132,8 +165,10 @@
             // 
             // txt_codigo
             // 
+            this.txt_codigo.Enabled = false;
             this.txt_codigo.Location = new System.Drawing.Point(77, 24);
             this.txt_codigo.Name = "txt_codigo";
+            this.txt_codigo.ReadOnly = true;
             this.txt_codigo.Size = new System.Drawing.Size(100, 20);
             this.txt_codigo.TabIndex = 9;
             // 
@@ -148,7 +183,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(183, 102);
+            this.label8.Location = new System.Drawing.Point(207, 102);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(89, 13);
             this.label8.TabIndex = 6;
@@ -157,7 +192,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(183, 27);
+            this.label7.Location = new System.Drawing.Point(207, 27);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(63, 13);
             this.label7.TabIndex = 5;
@@ -208,33 +243,6 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Codigo";
             // 
-            // pic_foto
-            // 
-            this.pic_foto.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pic_foto.Location = new System.Drawing.Point(195, 118);
-            this.pic_foto.Name = "pic_foto";
-            this.pic_foto.Size = new System.Drawing.Size(138, 110);
-            this.pic_foto.TabIndex = 18;
-            this.pic_foto.TabStop = false;
-            // 
-            // b_buscaFoto
-            // 
-            this.b_buscaFoto.Image = global::Restaurante.Properties.Resources._40px_Examine_copyright_icon;
-            this.b_buscaFoto.Location = new System.Drawing.Point(360, 245);
-            this.b_buscaFoto.Name = "b_buscaFoto";
-            this.b_buscaFoto.Size = new System.Drawing.Size(49, 43);
-            this.b_buscaFoto.TabIndex = 81;
-            this.b_buscaFoto.UseVisualStyleBackColor = true;
-            // 
-            // b_borrar
-            // 
-            this.b_borrar.Image = global::Restaurante.Properties.Resources.clean1;
-            this.b_borrar.Location = new System.Drawing.Point(190, 245);
-            this.b_borrar.Name = "b_borrar";
-            this.b_borrar.Size = new System.Drawing.Size(48, 42);
-            this.b_borrar.TabIndex = 82;
-            this.b_borrar.UseVisualStyleBackColor = true;
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
@@ -263,6 +271,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "frm_bebidasCalientes";
             this.Text = "Bebidas Calientes";
+            this.Load += new System.EventHandler(this.frm_bebidasCalientes_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_foto)).EndInit();

@@ -108,7 +108,7 @@
             "Especiales",
             "Bebidas Calientes",
             "Bebidas Heladas",
-            "Bebidas Gaseosas ",
+            "Bebidas Gaseosas",
             "Licores",
             "Vinos",
             "Empleados",
