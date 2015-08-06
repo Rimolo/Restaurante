@@ -105,6 +105,7 @@
             this.b_cancelar.Size = new System.Drawing.Size(52, 43);
             this.b_cancelar.TabIndex = 6;
             this.b_cancelar.UseVisualStyleBackColor = true;
+            this.b_cancelar.Click += new System.EventHandler(this.b_cancelar_Click);
             // 
             // b_aceptar
             // 
@@ -114,6 +115,7 @@
             this.b_aceptar.Size = new System.Drawing.Size(52, 43);
             this.b_aceptar.TabIndex = 8;
             this.b_aceptar.UseVisualStyleBackColor = true;
+            this.b_aceptar.Click += new System.EventHandler(this.b_aceptar_Click);
             // 
             // dgv_bebidas_calientes
             // 
@@ -128,6 +130,7 @@
             this.dgv_bebidas_calientes.Name = "dgv_bebidas_calientes";
             this.dgv_bebidas_calientes.Size = new System.Drawing.Size(443, 253);
             this.dgv_bebidas_calientes.TabIndex = 9;
+            this.dgv_bebidas_calientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_bebidas_calientes_CellContentClick);
             // 
             // Column1
             // 
@@ -175,6 +178,7 @@
             this.b_refrescar.Size = new System.Drawing.Size(48, 43);
             this.b_refrescar.TabIndex = 73;
             this.b_refrescar.UseVisualStyleBackColor = true;
+            this.b_refrescar.Click += new System.EventHandler(this.b_refrescar_Click);
             // 
             // b_borrar
             // 
@@ -184,6 +188,7 @@
             this.b_borrar.Size = new System.Drawing.Size(48, 42);
             this.b_borrar.TabIndex = 77;
             this.b_borrar.UseVisualStyleBackColor = true;
+            this.b_borrar.Click += new System.EventHandler(this.b_borrar_Click);
             // 
             // b_agregar
             // 
@@ -193,6 +198,7 @@
             this.b_agregar.Size = new System.Drawing.Size(46, 39);
             this.b_agregar.TabIndex = 78;
             this.b_agregar.UseVisualStyleBackColor = true;
+            this.b_agregar.Click += new System.EventHandler(this.b_agregar_Click);
             // 
             // b_eliminar
             // 
@@ -202,6 +208,7 @@
             this.b_eliminar.Size = new System.Drawing.Size(46, 42);
             this.b_eliminar.TabIndex = 79;
             this.b_eliminar.UseVisualStyleBackColor = true;
+            this.b_eliminar.Click += new System.EventHandler(this.b_eliminar_Click);
             // 
             // frm_listaBedidasCalientes
             // 
@@ -220,6 +227,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "frm_listaBedidasCalientes";
             this.Text = "Lista Bedidas Calientes";
+            this.Load += new System.EventHandler(this.frm_listaBedidasCalientes_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_bebidas_calientes)).EndInit();

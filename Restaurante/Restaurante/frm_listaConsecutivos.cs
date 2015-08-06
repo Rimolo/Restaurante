@@ -47,7 +47,7 @@ namespace Restaurante
         {
             frm_consecutivos consecutivos = new frm_consecutivos();
             consecutivos.accion = "Editar";
-            //consecutivos.codigo = dgv_consecutivos.Rows[e.RowIndex].Cells[0].Value.ToString().Replace(" ", "");
+            consecutivos.codigo = dgv_consecutivos.Rows[e.RowIndex].Cells[0].Value.ToString().Replace(" ", "");
             consecutivos.ShowDialog();
         }
 
@@ -71,23 +71,7 @@ namespace Restaurante
                 MessageBox.Show("Hubo un problema con la conexión a la base de datos", "Validación de Datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-        }
-
-
-        private void carga_lista_consecutivos()
-        {
-            try
-            {
-                dgv_consecutivos.AutoGenerateColumns = false;
-                dgv_consecutivos.DataSource = obj_consecutivos.carga_consecutivos().Tables[0];
-
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Hubo un problema con la conexión a la base de datos", "Validación de Datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-        }
+        }        
 
         private void b_aceptar_Click(object sender, EventArgs e)
         {
@@ -106,7 +90,22 @@ namespace Restaurante
             try
             {
                 dgv_consecutivos.AutoGenerateColumns = false;
-                dgv_consecutivos.DataSource = obj_consecutivos.carga_roles_especificos().Tables[0];
+                dgv_consecutivos.DataSource = obj_consecutivos.carga_consecutivos_especificos().Tables[0];
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Hubo un problema con la conexión a la base de datos", "Validación de Datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+        }
+
+        private void carga_lista_consecutivos()
+        {
+            try
+            {
+                dgv_consecutivos.AutoGenerateColumns = false;
+                dgv_consecutivos.DataSource = obj_consecutivos.carga_consecutivos().Tables[0];
 
             }
             catch (Exception)
