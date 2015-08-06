@@ -52,6 +52,7 @@
     <Compile Include="Consecutivos.cs" />
     <Compile Include="Puestos.cs" />
     <Compile Include="Roles.cs" />
+    <Compile Include="Usuarios.cs" />
     <Compile Include="Utilidades.cs" />
   </ItemGroup>
   <ItemGroup>

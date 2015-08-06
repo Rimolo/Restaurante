@@ -118,6 +118,7 @@
             this.chk_cambiarContraseña.TabIndex = 14;
             this.chk_cambiarContraseña.Text = "Cambiar Contraseña";
             this.chk_cambiarContraseña.UseVisualStyleBackColor = true;
+            this.chk_cambiarContraseña.CheckedChanged += new System.EventHandler(this.chk_cambiarContraseña_CheckedChanged);
             // 
             // msk_telefonocelular
             // 
@@ -158,6 +159,7 @@
             // 
             // txt_codigo
             // 
+            this.txt_codigo.Enabled = false;
             this.txt_codigo.Location = new System.Drawing.Point(100, 19);
             this.txt_codigo.Name = "txt_codigo";
             this.txt_codigo.Size = new System.Drawing.Size(138, 20);
@@ -238,6 +240,7 @@
             this.txt_confirmarContraseña.Name = "txt_confirmarContraseña";
             this.txt_confirmarContraseña.Size = new System.Drawing.Size(128, 20);
             this.txt_confirmarContraseña.TabIndex = 5;
+            this.txt_confirmarContraseña.UseSystemPasswordChar = true;
             // 
             // txt_contraseña
             // 
@@ -245,6 +248,7 @@
             this.txt_contraseña.Name = "txt_contraseña";
             this.txt_contraseña.Size = new System.Drawing.Size(128, 20);
             this.txt_contraseña.TabIndex = 4;
+            this.txt_contraseña.UseSystemPasswordChar = true;
             // 
             // txt_login
             // 
@@ -341,6 +345,7 @@
             this.b_cambioContraseña.Size = new System.Drawing.Size(41, 58);
             this.b_cambioContraseña.TabIndex = 72;
             this.b_cambioContraseña.UseVisualStyleBackColor = true;
+            this.b_cambioContraseña.Click += new System.EventHandler(this.b_cambioContraseña_Click);
             // 
             // b_aceptar
             // 
@@ -350,6 +355,7 @@
             this.b_aceptar.Size = new System.Drawing.Size(42, 58);
             this.b_aceptar.TabIndex = 71;
             this.b_aceptar.UseVisualStyleBackColor = true;
+            this.b_aceptar.Click += new System.EventHandler(this.b_aceptar_Click);
             // 
             // b_cerrar
             // 
@@ -359,6 +365,7 @@
             this.b_cerrar.Size = new System.Drawing.Size(42, 58);
             this.b_cerrar.TabIndex = 70;
             this.b_cerrar.UseVisualStyleBackColor = true;
+            this.b_cerrar.Click += new System.EventHandler(this.b_cerrar_Click);
             // 
             // b_borrar
             // 
@@ -368,6 +375,7 @@
             this.b_borrar.Size = new System.Drawing.Size(39, 58);
             this.b_borrar.TabIndex = 69;
             this.b_borrar.UseVisualStyleBackColor = true;
+            this.b_borrar.Click += new System.EventHandler(this.b_borrar_Click);
             // 
             // frmUsuarios
             // 
@@ -383,6 +391,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "frmUsuarios";
             this.Text = "Usuarios";
+            this.Load += new System.EventHandler(this.frmUsuarios_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);

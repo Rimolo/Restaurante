@@ -18,7 +18,7 @@ namespace Restaurante
             Application.SetCompatibleTextRenderingDefault(false);
             // Application.Run(new frm_login());
           //Application.Run(new frm_listaConsecutivos());
-          Application.Run(new frm_listaPuestos());
+          Application.Run(new frm_listaUsuarios());
         }
     }
 }

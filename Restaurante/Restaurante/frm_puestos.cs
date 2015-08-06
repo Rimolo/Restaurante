@@ -179,6 +179,7 @@ namespace Restaurante
             objPuestos.carga_info_Puesto(_codigo);
             if (objPuestos.nombre != "Error")
             {
+                txt_codigo.Text =_codigo;
                 txt_nombre.Text = objPuestos.nombre;
                 if (objPuestos.interno)
                 {

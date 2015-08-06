@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             this.dgv_puestos = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rb_externo = new System.Windows.Forms.RadioButton();
             this.rb_interno = new System.Windows.Forms.RadioButton();
@@ -43,11 +48,6 @@
             this.b_cancelar = new System.Windows.Forms.Button();
             this.b_refrescar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_puestos)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -66,10 +66,46 @@
             this.Column5});
             this.dgv_puestos.Location = new System.Drawing.Point(252, 115);
             this.dgv_puestos.Name = "dgv_puestos";
+            this.dgv_puestos.ReadOnly = true;
             this.dgv_puestos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_puestos.Size = new System.Drawing.Size(557, 232);
             this.dgv_puestos.TabIndex = 37;
             this.dgv_puestos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_puestos_CellDoubleClick);
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "codPuesto";
+            this.Column1.HeaderText = "Codigo";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "nombre";
+            this.Column2.HeaderText = "Nombre";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "codRol";
+            this.Column3.HeaderText = "Rol";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "internoRestaurante";
+            this.Column4.HeaderText = "Interno al Retaurante";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "externoRestaurante";
+            this.Column5.HeaderText = "Externo al Restaurante";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
             // 
             // groupBox1
             // 
@@ -208,36 +244,6 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(234, 360);
             this.label1.TabIndex = 4;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "codPuesto";
-            this.Column1.HeaderText = "Codigo";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "nombre";
-            this.Column2.HeaderText = "Nombre";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "codRol";
-            this.Column3.HeaderText = "Rol";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "internoRestaurante";
-            this.Column4.HeaderText = "Interno al Retaurante";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "externoRestaurante";
-            this.Column5.HeaderText = "Externo al Restaurante";
-            this.Column5.Name = "Column5";
             // 
             // frm_listaPuestos
             // 
