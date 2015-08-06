@@ -93,10 +93,13 @@ namespace Restaurante
 
         private void dgv_roles_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            frm_roles roles = new frm_roles();
-            roles.accion = "Editar";
-            roles.codigo =dgv_roles.Rows[e.RowIndex].Cells[0].Value.ToString().Replace(" ",""); 
-            roles.ShowDialog();
+            if (e.RowIndex > -1)
+            {
+                frm_roles roles = new frm_roles();
+                roles.accion = "Editar";
+                roles.codigo = dgv_roles.Rows[e.RowIndex].Cells[0].Value.ToString().Replace(" ", "");
+                roles.ShowDialog();
+            }
            
         }
 
