@@ -16,5 +16,43 @@ namespace Restaurante
         {
             InitializeComponent();
         }
+
+        private void b_aceptar_Click(object sender, EventArgs e)
+        {
+            if (rb_cajas.Checked)
+            {
+
+            }
+            else if (rb_consecutivos.Checked)
+            {
+                frm_listaConsecutivos consecutivos = new frm_listaConsecutivos();
+                consecutivos.Tag = this;
+                consecutivos.Show(this);
+                this.Hide();
+            }
+            else if (rb_paises.Checked)
+            {
+
+            }
+            else if (rb_usuarios.Checked) {
+                frm_listaUsuarios usuarios = new frm_listaUsuarios();
+                usuarios.Tag = this;
+                usuarios.Show(this);
+                this.Hide();
+            }
+            else if (rb_unidadesMedida.Checked)
+            {
+
+            }
+            else if (rb_rolesEventos.Checked)
+            {
+                
+            }
+        }
+
+        private void b_cerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

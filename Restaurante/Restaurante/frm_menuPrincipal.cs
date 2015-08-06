@@ -62,7 +62,8 @@ namespace Restaurante
 
         private void b_seguridad_Click(object sender, EventArgs e)
         {
-
+            frm_ventanaSeguridad ventana = new frm_ventanaSeguridad();
+            ventana.Show();
         }
 
         private void b_restaurantes_Click(object sender, EventArgs e)

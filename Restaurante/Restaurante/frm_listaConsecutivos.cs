@@ -34,6 +34,8 @@ namespace Restaurante
 
         private void b_cerrar_Click(object sender, EventArgs e)
         {
+            var form1 = (frm_ventanaSeguridad)Tag;
+            form1.Show();
             this.Close();
         }
 

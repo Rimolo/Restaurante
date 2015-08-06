@@ -31,12 +31,12 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rb_unidadesMedida = new System.Windows.Forms.RadioButton();
+            this.rb_rolesEventos = new System.Windows.Forms.RadioButton();
+            this.rb_cajas = new System.Windows.Forms.RadioButton();
             this.rb_paises = new System.Windows.Forms.RadioButton();
             this.rb_consecutivos = new System.Windows.Forms.RadioButton();
             this.rb_usuarios = new System.Windows.Forms.RadioButton();
-            this.rb_cajas = new System.Windows.Forms.RadioButton();
-            this.rb_rolesEventos = new System.Windows.Forms.RadioButton();
-            this.rb_unidadesMedida = new System.Windows.Forms.RadioButton();
             this.b_aceptar = new System.Windows.Forms.Button();
             this.b_cerrar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
@@ -77,6 +77,39 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Opciones";
             // 
+            // rb_unidadesMedida
+            // 
+            this.rb_unidadesMedida.AutoSize = true;
+            this.rb_unidadesMedida.Location = new System.Drawing.Point(145, 139);
+            this.rb_unidadesMedida.Name = "rb_unidadesMedida";
+            this.rb_unidadesMedida.Size = new System.Drawing.Size(123, 17);
+            this.rb_unidadesMedida.TabIndex = 5;
+            this.rb_unidadesMedida.TabStop = true;
+            this.rb_unidadesMedida.Text = "Unidades de Medida";
+            this.rb_unidadesMedida.UseVisualStyleBackColor = true;
+            // 
+            // rb_rolesEventos
+            // 
+            this.rb_rolesEventos.AutoSize = true;
+            this.rb_rolesEventos.Location = new System.Drawing.Point(145, 89);
+            this.rb_rolesEventos.Name = "rb_rolesEventos";
+            this.rb_rolesEventos.Size = new System.Drawing.Size(103, 17);
+            this.rb_rolesEventos.TabIndex = 4;
+            this.rb_rolesEventos.TabStop = true;
+            this.rb_rolesEventos.Text = "Roles o Eventos";
+            this.rb_rolesEventos.UseVisualStyleBackColor = true;
+            // 
+            // rb_cajas
+            // 
+            this.rb_cajas.AutoSize = true;
+            this.rb_cajas.Location = new System.Drawing.Point(145, 39);
+            this.rb_cajas.Name = "rb_cajas";
+            this.rb_cajas.Size = new System.Drawing.Size(51, 17);
+            this.rb_cajas.TabIndex = 3;
+            this.rb_cajas.TabStop = true;
+            this.rb_cajas.Text = "Cajas";
+            this.rb_cajas.UseVisualStyleBackColor = true;
+            // 
             // rb_paises
             // 
             this.rb_paises.AutoSize = true;
@@ -110,39 +143,6 @@
             this.rb_usuarios.Text = "Usuarios\r\n";
             this.rb_usuarios.UseVisualStyleBackColor = true;
             // 
-            // rb_cajas
-            // 
-            this.rb_cajas.AutoSize = true;
-            this.rb_cajas.Location = new System.Drawing.Point(145, 39);
-            this.rb_cajas.Name = "rb_cajas";
-            this.rb_cajas.Size = new System.Drawing.Size(51, 17);
-            this.rb_cajas.TabIndex = 3;
-            this.rb_cajas.TabStop = true;
-            this.rb_cajas.Text = "Cajas";
-            this.rb_cajas.UseVisualStyleBackColor = true;
-            // 
-            // rb_rolesEventos
-            // 
-            this.rb_rolesEventos.AutoSize = true;
-            this.rb_rolesEventos.Location = new System.Drawing.Point(145, 89);
-            this.rb_rolesEventos.Name = "rb_rolesEventos";
-            this.rb_rolesEventos.Size = new System.Drawing.Size(103, 17);
-            this.rb_rolesEventos.TabIndex = 4;
-            this.rb_rolesEventos.TabStop = true;
-            this.rb_rolesEventos.Text = "Roles o Eventos";
-            this.rb_rolesEventos.UseVisualStyleBackColor = true;
-            // 
-            // rb_unidadesMedida
-            // 
-            this.rb_unidadesMedida.AutoSize = true;
-            this.rb_unidadesMedida.Location = new System.Drawing.Point(145, 139);
-            this.rb_unidadesMedida.Name = "rb_unidadesMedida";
-            this.rb_unidadesMedida.Size = new System.Drawing.Size(123, 17);
-            this.rb_unidadesMedida.TabIndex = 5;
-            this.rb_unidadesMedida.TabStop = true;
-            this.rb_unidadesMedida.Text = "Unidades de Medida";
-            this.rb_unidadesMedida.UseVisualStyleBackColor = true;
-            // 
             // b_aceptar
             // 
             this.b_aceptar.Image = global::Restaurante.Properties.Resources.Aceptar4;
@@ -151,6 +151,7 @@
             this.b_aceptar.Size = new System.Drawing.Size(54, 53);
             this.b_aceptar.TabIndex = 68;
             this.b_aceptar.UseVisualStyleBackColor = true;
+            this.b_aceptar.Click += new System.EventHandler(this.b_aceptar_Click);
             // 
             // b_cerrar
             // 
@@ -160,6 +161,7 @@
             this.b_cerrar.Size = new System.Drawing.Size(54, 48);
             this.b_cerrar.TabIndex = 69;
             this.b_cerrar.UseVisualStyleBackColor = true;
+            this.b_cerrar.Click += new System.EventHandler(this.b_cerrar_Click);
             // 
             // frm_ventanaSeguridad
             // 
