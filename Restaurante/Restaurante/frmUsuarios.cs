@@ -52,6 +52,12 @@ namespace Restaurante
             if (chk_administradorRestaurante.Checked)
             {
                 chk_administradorRestaurante.Checked = false;
+                rb_nf.Visible = false;
+                rb_ps.Visible = false;
+                rb_ta.Visible = false;
+                rb_ps.Checked = false;
+                rb_ps.Checked = false;
+                rb_ta.Checked = false;
             }
             if (chk_administradorSeguridad.Checked)
             {
@@ -120,6 +126,18 @@ namespace Restaurante
                 MessageBox.Show("Las contraseñas no coinciden", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txt_confirmarContraseña.Focus();
                 return;
+            }
+            objUsuarios.codigoR = null;
+            if (rb_nf.Checked) {
+                objUsuarios.codigoR = objUsuarios.cargar_cod_res("Notte di Fuoco");
+            }
+            if (rb_ps.Checked)
+            {
+                objUsuarios.codigoR = objUsuarios.cargar_cod_res("Piccola Stella");
+            }
+            if (rb_ta.Checked)
+            {
+                objUsuarios.codigoR = objUsuarios.cargar_cod_res("Turin Anivo");
             }
             objUsuarios.codigo = txt_codigo.Text.Replace(" ", "");
             objUsuarios.nombre = txt_nombre.Text;
@@ -327,6 +345,25 @@ namespace Restaurante
                 txt_contraseña.Enabled = false;
                 txt_confirmarContraseña.Enabled = false;
                 carga_info();
+            }
+        }
+
+        private void chk_administradorRestaurante_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chk_administradorRestaurante.Checked)
+            {
+                rb_nf.Visible = true;
+                rb_ps.Visible = true;
+                rb_ta.Visible = true;
+                rb_ps.Checked = true;
+            }
+            else {
+                rb_nf.Visible = false;
+                rb_ps.Visible = false;
+                rb_ta.Visible = false;
+                rb_ps.Checked = false;
+                rb_ps.Checked = false;
+                rb_ta.Checked = false;
             }
         }
     }

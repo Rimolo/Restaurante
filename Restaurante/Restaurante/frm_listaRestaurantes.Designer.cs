@@ -35,11 +35,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgv_restaurante = new System.Windows.Forms.DataGridView();
-            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clientes = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.b_aceptar = new System.Windows.Forms.Button();
@@ -48,6 +43,11 @@
             this.b_refrescar = new System.Windows.Forms.Button();
             this.b_cerrar = new System.Windows.Forms.Button();
             this.b_borrar = new System.Windows.Forms.Button();
+            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clientes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_restaurante)).BeginInit();
@@ -111,6 +111,8 @@
             // 
             // dgv_restaurante
             // 
+            this.dgv_restaurante.AllowUserToAddRows = false;
+            this.dgv_restaurante.AllowUserToDeleteRows = false;
             this.dgv_restaurante.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_restaurante.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.codigo,
@@ -120,33 +122,11 @@
             this.telefono});
             this.dgv_restaurante.Location = new System.Drawing.Point(12, 17);
             this.dgv_restaurante.Name = "dgv_restaurante";
+            this.dgv_restaurante.ReadOnly = true;
+            this.dgv_restaurante.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_restaurante.Size = new System.Drawing.Size(598, 289);
             this.dgv_restaurante.TabIndex = 0;
-            // 
-            // codigo
-            // 
-            this.codigo.HeaderText = "Codigo";
-            this.codigo.Name = "codigo";
-            // 
-            // nombre
-            // 
-            this.nombre.HeaderText = "Nombre";
-            this.nombre.Name = "nombre";
-            // 
-            // direccion
-            // 
-            this.direccion.HeaderText = "Direccion";
-            this.direccion.Name = "direccion";
-            // 
-            // clientes
-            // 
-            this.clientes.HeaderText = "Cantidad de clientes";
-            this.clientes.Name = "clientes";
-            // 
-            // telefono
-            // 
-            this.telefono.HeaderText = "Telefono";
-            this.telefono.Name = "telefono";
+            this.dgv_restaurante.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_restaurante_CellDoubleClick);
             // 
             // panel1
             // 
@@ -174,6 +154,7 @@
             this.b_aceptar.Size = new System.Drawing.Size(45, 39);
             this.b_aceptar.TabIndex = 1;
             this.b_aceptar.UseVisualStyleBackColor = true;
+            this.b_aceptar.Click += new System.EventHandler(this.b_aceptar_Click);
             // 
             // b_eliminar
             // 
@@ -183,6 +164,7 @@
             this.b_eliminar.Size = new System.Drawing.Size(53, 39);
             this.b_eliminar.TabIndex = 7;
             this.b_eliminar.UseVisualStyleBackColor = true;
+            this.b_eliminar.Click += new System.EventHandler(this.b_eliminar_Click);
             // 
             // b_agregar
             // 
@@ -192,6 +174,7 @@
             this.b_agregar.Size = new System.Drawing.Size(53, 39);
             this.b_agregar.TabIndex = 6;
             this.b_agregar.UseVisualStyleBackColor = true;
+            this.b_agregar.Click += new System.EventHandler(this.b_agregar_Click);
             // 
             // b_refrescar
             // 
@@ -201,6 +184,7 @@
             this.b_refrescar.Size = new System.Drawing.Size(48, 39);
             this.b_refrescar.TabIndex = 5;
             this.b_refrescar.UseVisualStyleBackColor = true;
+            this.b_refrescar.Click += new System.EventHandler(this.b_refrescar_Click);
             // 
             // b_cerrar
             // 
@@ -210,6 +194,7 @@
             this.b_cerrar.Size = new System.Drawing.Size(45, 39);
             this.b_cerrar.TabIndex = 2;
             this.b_cerrar.UseVisualStyleBackColor = true;
+            this.b_cerrar.Click += new System.EventHandler(this.b_cerrar_Click);
             // 
             // b_borrar
             // 
@@ -219,6 +204,42 @@
             this.b_borrar.Size = new System.Drawing.Size(45, 39);
             this.b_borrar.TabIndex = 88;
             this.b_borrar.UseVisualStyleBackColor = true;
+            this.b_borrar.Click += new System.EventHandler(this.b_borrar_Click);
+            // 
+            // codigo
+            // 
+            this.codigo.DataPropertyName = "codRestaurante";
+            this.codigo.HeaderText = "Codigo";
+            this.codigo.Name = "codigo";
+            this.codigo.ReadOnly = true;
+            // 
+            // nombre
+            // 
+            this.nombre.DataPropertyName = "nombre";
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            // 
+            // direccion
+            // 
+            this.direccion.DataPropertyName = "direccion";
+            this.direccion.HeaderText = "Direccion";
+            this.direccion.Name = "direccion";
+            this.direccion.ReadOnly = true;
+            // 
+            // clientes
+            // 
+            this.clientes.DataPropertyName = "cantClientes";
+            this.clientes.HeaderText = "Cantidad de clientes";
+            this.clientes.Name = "clientes";
+            this.clientes.ReadOnly = true;
+            // 
+            // telefono
+            // 
+            this.telefono.DataPropertyName = "telefono";
+            this.telefono.HeaderText = "Telefono";
+            this.telefono.Name = "telefono";
+            this.telefono.ReadOnly = true;
             // 
             // frm_listaRestaurantes
             // 
@@ -237,6 +258,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "frm_listaRestaurantes";
             this.Text = "Listas de Restaurantes";
+            this.Load += new System.EventHandler(this.frm_listaRestaurantes_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -260,14 +282,14 @@
         private System.Windows.Forms.Button b_eliminar;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dgv_restaurante;
+        private System.Windows.Forms.Button b_aceptar;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button b_borrar;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn direccion;
         private System.Windows.Forms.DataGridViewTextBoxColumn clientes;
         private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
-        private System.Windows.Forms.Button b_aceptar;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button b_borrar;
     }
 }

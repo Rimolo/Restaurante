@@ -17,6 +17,14 @@ namespace BLL
             get { return _codigo; }
             set { _codigo = value; }
         }
+
+        private string _codigoR;
+
+        public string codigoR
+        {
+            get { return _codigoR; }
+            set { _codigoR = value; }
+        }
         private string _nombre;
 
         public string nombre
@@ -127,7 +135,7 @@ namespace BLL
             {
                 if (accion.Equals("Insertar"))
                 {
-                    sql = "Insert into Usuario values(@cod,@nombre,@apellido1,@apellido2,@nick,@clave,@adminRes,@adminCuen,@adminSis,@adminSeg,@puesto,@tel,@cel)";
+                    sql = "Insert into Usuario values(@cod,@nombre,@apellido1,@apellido2,@nick,@clave,@adminRes,@adminCuen,@adminSis,@adminSeg,@puesto,@tel,@cel,@codR)";
                 }
                 else
                 {
@@ -143,10 +151,11 @@ namespace BLL
                         " adminSeguridad=@adminSeg," +
                         " telefono1=@tel," +
                         " telefono2=@cel," +
-                        " codPuesto=@puesto" +
+                        " codPuesto=@puesto," +
+                        " codRest=@codR"+
                         " where codUsuario=@cod";
                 }
-                ParamStruct[] parametros = new ParamStruct[13];
+                ParamStruct[] parametros = new ParamStruct[14];
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@nombre", SqlDbType.VarChar, _nombre);
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 1, "@apellido1", SqlDbType.VarChar, _apellido1);
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 2, "@apellido2", SqlDbType.VarChar, _apellido2);
@@ -160,7 +169,7 @@ namespace BLL
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 10, "@cel", SqlDbType.Int, _celular);
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 11, "@puesto", SqlDbType.VarChar, _codPuesto);
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 12, "@cod", SqlDbType.VarChar, _codigo);
-
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 13, "@codR", SqlDbType.VarChar, _codigoR);
                 cls_DAL.conectar(conexion, ref mensaje_error, ref numero_error);
                 cls_DAL.ejecuta_sqlcommand(conexion, sql, false, parametros, ref mensaje_error, ref numero_error);
                 if (numero_error != 0)
@@ -287,7 +296,7 @@ namespace BLL
                 ds = cls_DAL.ejecuta_dataset(conexion, sql, false, ref mensaje_error, ref numero_error);
                 if (numero_error != 0)
                 {
-                    MessageBox.Show(mensaje_error, "Error al cargar los puestos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(mensaje_error, "Error al cargar los usuarios", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return null;
                 }
                 else
@@ -403,7 +412,7 @@ namespace BLL
             else
             {
                 sql = "Select nombre,apellido1,apellido2,nickname,telefono1,telefono2,adminCuentas,adminRestaurante,adminSistema,adminSeguridad,contraseña" +
-                      " from Usuario where codUsuario='" + codUsuario + "'";
+                      " from Usuario where codUsuario=@cod";
                 ParamStruct[] parametros = new ParamStruct[1];
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@cod", SqlDbType.VarChar, codUsuario);
                 ds = cls_DAL.ejecuta_dataset(conexion, sql, false, parametros, ref mensaje_error, ref numero_error);
@@ -435,6 +444,43 @@ namespace BLL
                 }
 
             }
+        }
+
+        public string cargar_cod_res(string nombreR)
+        {
+            conexion = cls_DAL.trae_conexion("Progra4", ref mensaje_error, ref numero_error);
+            if (conexion == null)
+            {
+                MessageBox.Show(mensaje_error, "Error al obtener cadena de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                _nombre = "Error";
+            }
+            else
+            {
+                sql = "Select codRestaurante" +
+                      " from Restaurante where nombre=@nombre";
+                ParamStruct[] parametros = new ParamStruct[1];
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@nombre", SqlDbType.VarChar, nombreR);
+                ds = cls_DAL.ejecuta_dataset(conexion, sql, false, parametros, ref mensaje_error, ref numero_error);
+                if (ds == null)
+                {
+                    MessageBox.Show(mensaje_error, "Error al obtener el restaurante", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    _nombre = "Error";
+                }
+                else
+                {
+                    if (ds.Tables[0].Rows.Count > 0)
+                    {
+                        _codigoR = ds.Tables[0].Rows[0]["codRestaurante"].ToString();
+                                               
+                    }
+                    else
+                    {
+                        _nombre = "Error";
+                    }
+                }
+                                
+            }
+            return _codigoR;
         }
         #endregion
     }

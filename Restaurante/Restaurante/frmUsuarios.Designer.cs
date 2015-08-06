@@ -60,6 +60,9 @@
             this.b_aceptar = new System.Windows.Forms.Button();
             this.b_cerrar = new System.Windows.Forms.Button();
             this.b_borrar = new System.Windows.Forms.Button();
+            this.rb_ps = new System.Windows.Forms.RadioButton();
+            this.rb_ta = new System.Windows.Forms.RadioButton();
+            this.rb_nf = new System.Windows.Forms.RadioButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -87,6 +90,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.rb_nf);
+            this.groupBox1.Controls.Add(this.rb_ta);
+            this.groupBox1.Controls.Add(this.rb_ps);
             this.groupBox1.Controls.Add(this.chk_cambiarContraseña);
             this.groupBox1.Controls.Add(this.msk_telefonocelular);
             this.groupBox1.Controls.Add(this.msk_telfFijo);
@@ -104,7 +110,7 @@
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Location = new System.Drawing.Point(172, 1);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(459, 326);
+            this.groupBox1.Size = new System.Drawing.Size(488, 326);
             this.groupBox1.TabIndex = 63;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Personales del usuario";
@@ -316,6 +322,7 @@
             this.chk_administradorRestaurante.TabIndex = 2;
             this.chk_administradorRestaurante.Text = "Administrador del Restaurante\r\n";
             this.chk_administradorRestaurante.UseVisualStyleBackColor = true;
+            this.chk_administradorRestaurante.CheckedChanged += new System.EventHandler(this.chk_administradorRestaurante_CheckedChanged);
             // 
             // chk_administradorSeguridad
             // 
@@ -377,12 +384,48 @@
             this.b_borrar.UseVisualStyleBackColor = true;
             this.b_borrar.Click += new System.EventHandler(this.b_borrar_Click);
             // 
+            // rb_ps
+            // 
+            this.rb_ps.AutoSize = true;
+            this.rb_ps.Location = new System.Drawing.Point(391, 241);
+            this.rb_ps.Name = "rb_ps";
+            this.rb_ps.Size = new System.Drawing.Size(89, 17);
+            this.rb_ps.TabIndex = 15;
+            this.rb_ps.TabStop = true;
+            this.rb_ps.Text = "Piccola Stella";
+            this.rb_ps.UseVisualStyleBackColor = true;
+            this.rb_ps.Visible = false;
+            // 
+            // rb_ta
+            // 
+            this.rb_ta.AutoSize = true;
+            this.rb_ta.Location = new System.Drawing.Point(391, 265);
+            this.rb_ta.Name = "rb_ta";
+            this.rb_ta.Size = new System.Drawing.Size(79, 17);
+            this.rb_ta.TabIndex = 16;
+            this.rb_ta.TabStop = true;
+            this.rb_ta.Text = "Turin Anivo";
+            this.rb_ta.UseVisualStyleBackColor = true;
+            this.rb_ta.Visible = false;
+            // 
+            // rb_nf
+            // 
+            this.rb_nf.AutoSize = true;
+            this.rb_nf.Location = new System.Drawing.Point(391, 289);
+            this.rb_nf.Name = "rb_nf";
+            this.rb_nf.Size = new System.Drawing.Size(95, 17);
+            this.rb_nf.TabIndex = 17;
+            this.rb_nf.TabStop = true;
+            this.rb_nf.Text = "Notte di Fuoco";
+            this.rb_nf.UseVisualStyleBackColor = true;
+            this.rb_nf.Visible = false;
+            // 
             // frmUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.ClientSize = new System.Drawing.Size(644, 396);
+            this.ClientSize = new System.Drawing.Size(673, 396);
             this.Controls.Add(this.b_cambioContraseña);
             this.Controls.Add(this.b_aceptar);
             this.Controls.Add(this.b_cerrar);
@@ -438,5 +481,8 @@
         private System.Windows.Forms.Button b_cerrar;
         private System.Windows.Forms.Button b_aceptar;
         private System.Windows.Forms.Button b_cambioContraseña;
+        private System.Windows.Forms.RadioButton rb_nf;
+        private System.Windows.Forms.RadioButton rb_ta;
+        private System.Windows.Forms.RadioButton rb_ps;
     }
 }

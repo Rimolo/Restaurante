@@ -90,6 +90,7 @@
             this.txt_contraseña.Name = "txt_contraseña";
             this.txt_contraseña.Size = new System.Drawing.Size(106, 20);
             this.txt_contraseña.TabIndex = 4;
+            this.txt_contraseña.UseSystemPasswordChar = true;
             // 
             // b_borrar
             // 
@@ -99,6 +100,7 @@
             this.b_borrar.Size = new System.Drawing.Size(49, 58);
             this.b_borrar.TabIndex = 70;
             this.b_borrar.UseVisualStyleBackColor = true;
+            this.b_borrar.Click += new System.EventHandler(this.b_borrar_Click);
             // 
             // b_aceptar
             // 
@@ -108,6 +110,7 @@
             this.b_aceptar.Size = new System.Drawing.Size(44, 58);
             this.b_aceptar.TabIndex = 72;
             this.b_aceptar.UseVisualStyleBackColor = true;
+            this.b_aceptar.Click += new System.EventHandler(this.b_aceptar_Click);
             // 
             // b_cerrar
             // 
@@ -117,6 +120,7 @@
             this.b_cerrar.Size = new System.Drawing.Size(46, 58);
             this.b_cerrar.TabIndex = 73;
             this.b_cerrar.UseVisualStyleBackColor = true;
+            this.b_cerrar.Click += new System.EventHandler(this.b_cerrar_Click);
             // 
             // frm_login
             // 
@@ -134,6 +138,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "frm_login";
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.frm_login_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

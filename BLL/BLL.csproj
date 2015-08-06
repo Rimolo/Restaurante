@@ -46,11 +46,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Imprimir.cs" />
+    <Compile Include="Login.cs" />
     <Compile Include="Pedidos.cs" />
     <Compile Include="Productos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Consecutivos.cs" />
     <Compile Include="Puestos.cs" />
+    <Compile Include="Restaurantes.cs" />
     <Compile Include="Roles.cs" />
     <Compile Include="Usuarios.cs" />
     <Compile Include="Utilidades.cs" />
