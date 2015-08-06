@@ -127,7 +127,10 @@ namespace Restaurante
                 txt_confirmarContraseña.Focus();
                 return;
             }
-            objUsuarios.codigoR = null;
+            if (accion.Equals("Insertar")) {
+                objUsuarios.codigoR = "";
+            }
+            
             if (rb_nf.Checked) {
                 objUsuarios.codigoR = objUsuarios.cargar_cod_res("Notte di Fuoco");
             }
@@ -144,25 +147,41 @@ namespace Restaurante
             objUsuarios.apellido1 = txt_apellido1.Text;
             objUsuarios.apellido2 = txt_apellido2.Text;
             objUsuarios.login = txt_login.Text;
-            if (chk_cambiarContraseña.Checked) {
+            if (chk_cambiarContraseña.Checked || accion.Equals("Insertar")) {
                 objUsuarios.contraseña = txt_contraseña.Text;
             }
-            
-            if (chk_administradorCuentas.Checked) {
+
+            if (chk_administradorCuentas.Checked)
+            {
                 objUsuarios.adminCuentas = true;
-                
+
+            }
+            else {
+                objUsuarios.adminCuentas = false;
             }
             if (chk_administradorRestaurante.Checked)
             {
                 objUsuarios.adminRestaurante = true;
             }
+            else
+            {
+                objUsuarios.adminRestaurante = false;
+            }
             if (chk_administradorSeguridad.Checked)
             {
                 objUsuarios.adminSeguridad = true;
             }
+            else
+            {
+                objUsuarios.adminSeguridad = false;
+            }
             if (chk_administradorSistema.Checked)
             {
                 objUsuarios.adminSistema = true;
+            }
+            else
+            {
+                objUsuarios.adminSistema = false;
             }
             int tel = 0;
             string text = msk_telfFijo.Text.Replace("-", "");
@@ -257,6 +276,7 @@ namespace Restaurante
                 return;
             }
             objUsuarios.contraseña = txt_contraseña.Text;
+            objUsuarios.codigo = txt_codigo.Text.Replace(" ", "");
             if (objUsuarios.guardar_usuario(_accion))
             {
                 int valor = 0;
