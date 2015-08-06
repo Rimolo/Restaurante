@@ -43,21 +43,23 @@
             this.vinosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.b_seguridad = new System.Windows.Forms.Button();
+            this.b_reportes = new System.Windows.Forms.Button();
+            this.b_proveedores = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.tmr_hora = new System.Windows.Forms.Timer(this.components);
-            this.b_seguridad = new System.Windows.Forms.Button();
-            this.b_reportes = new System.Windows.Forms.Button();
-            this.b_proveedores = new System.Windows.Forms.Button();
             this.b_clientes = new System.Windows.Forms.Button();
             this.b_administracion = new System.Windows.Forms.Button();
             this.b_restaurantes = new System.Windows.Forms.Button();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tmr_hora = new System.Windows.Forms.Timer(this.components);
+            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -95,12 +97,14 @@
             this.reiniciarToolStripMenuItem.Name = "reiniciarToolStripMenuItem";
             this.reiniciarToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.reiniciarToolStripMenuItem.Text = "Reiniciar Sesion";
+            this.reiniciarToolStripMenuItem.Click += new System.EventHandler(this.reiniciarToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
             this.salirToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.salirToolStripMenuItem.Text = "Salir";
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
             // ayudaToolStripMenuItem
             // 
@@ -182,6 +186,36 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             // 
+            // b_seguridad
+            // 
+            this.b_seguridad.Image = global::Restaurante.Properties.Resources.icono_seguridad;
+            this.b_seguridad.Location = new System.Drawing.Point(51, 32);
+            this.b_seguridad.Name = "b_seguridad";
+            this.b_seguridad.Size = new System.Drawing.Size(133, 133);
+            this.b_seguridad.TabIndex = 16;
+            this.b_seguridad.UseVisualStyleBackColor = true;
+            this.b_seguridad.Click += new System.EventHandler(this.b_seguridad_Click);
+            // 
+            // b_reportes
+            // 
+            this.b_reportes.Image = global::Restaurante.Properties.Resources.blacklist_folder_icon;
+            this.b_reportes.Location = new System.Drawing.Point(469, 198);
+            this.b_reportes.Name = "b_reportes";
+            this.b_reportes.Size = new System.Drawing.Size(142, 142);
+            this.b_reportes.TabIndex = 15;
+            this.b_reportes.UseVisualStyleBackColor = true;
+            this.b_reportes.Click += new System.EventHandler(this.b_reportes_Click);
+            // 
+            // b_proveedores
+            // 
+            this.b_proveedores.Image = global::Restaurante.Properties.Resources.icono_proveedores1;
+            this.b_proveedores.Location = new System.Drawing.Point(51, 198);
+            this.b_proveedores.Name = "b_proveedores";
+            this.b_proveedores.Size = new System.Drawing.Size(133, 128);
+            this.b_proveedores.TabIndex = 14;
+            this.b_proveedores.UseVisualStyleBackColor = true;
+            this.b_proveedores.Click += new System.EventHandler(this.b_proveedores_Click);
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -236,10 +270,42 @@
             this.label2.TabIndex = 8;
             this.label2.Text = "Restaurantes";
             // 
+            // b_clientes
+            // 
+            this.b_clientes.Image = global::Restaurante.Properties.Resources.users;
+            this.b_clientes.Location = new System.Drawing.Point(469, 32);
+            this.b_clientes.Name = "b_clientes";
+            this.b_clientes.Size = new System.Drawing.Size(142, 133);
+            this.b_clientes.TabIndex = 5;
+            this.b_clientes.UseVisualStyleBackColor = true;
+            this.b_clientes.Click += new System.EventHandler(this.b_clientes_Click);
+            // 
+            // b_administracion
+            // 
+            this.b_administracion.Image = global::Restaurante.Properties.Resources.Cambio_de_Contraseña;
+            this.b_administracion.Location = new System.Drawing.Point(261, 198);
+            this.b_administracion.Name = "b_administracion";
+            this.b_administracion.Size = new System.Drawing.Size(144, 142);
+            this.b_administracion.TabIndex = 6;
+            this.b_administracion.UseVisualStyleBackColor = true;
+            this.b_administracion.Click += new System.EventHandler(this.b_administracion_Click);
+            // 
+            // b_restaurantes
+            // 
+            this.b_restaurantes.Image = global::Restaurante.Properties.Resources.Cubiertos;
+            this.b_restaurantes.Location = new System.Drawing.Point(261, 32);
+            this.b_restaurantes.Name = "b_restaurantes";
+            this.b_restaurantes.Size = new System.Drawing.Size(144, 133);
+            this.b_restaurantes.TabIndex = 1;
+            this.b_restaurantes.UseVisualStyleBackColor = true;
+            this.b_restaurantes.Click += new System.EventHandler(this.b_restaurantes_Click);
+            // 
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1});
+            this.toolStripStatusLabel1,
+            this.toolStripStatusLabel2,
+            this.toolStripStatusLabel3});
             this.statusStrip1.Location = new System.Drawing.Point(0, 421);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(807, 22);
@@ -252,59 +318,19 @@
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(47, 17);
             this.toolStripStatusLabel1.Text = "Usuario";
             // 
-            // b_seguridad
+            // tmr_hora
             // 
-            this.b_seguridad.Image = global::Restaurante.Properties.Resources.icono_seguridad;
-            this.b_seguridad.Location = new System.Drawing.Point(51, 32);
-            this.b_seguridad.Name = "b_seguridad";
-            this.b_seguridad.Size = new System.Drawing.Size(133, 133);
-            this.b_seguridad.TabIndex = 16;
-            this.b_seguridad.UseVisualStyleBackColor = true;
+            this.tmr_hora.Tick += new System.EventHandler(this.tmr_hora_Tick);
             // 
-            // b_reportes
+            // toolStripStatusLabel2
             // 
-            this.b_reportes.Image = global::Restaurante.Properties.Resources.blacklist_folder_icon;
-            this.b_reportes.Location = new System.Drawing.Point(469, 198);
-            this.b_reportes.Name = "b_reportes";
-            this.b_reportes.Size = new System.Drawing.Size(142, 142);
-            this.b_reportes.TabIndex = 15;
-            this.b_reportes.UseVisualStyleBackColor = true;
+            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(0, 17);
             // 
-            // b_proveedores
+            // toolStripStatusLabel3
             // 
-            this.b_proveedores.Image = global::Restaurante.Properties.Resources.icono_proveedores1;
-            this.b_proveedores.Location = new System.Drawing.Point(51, 198);
-            this.b_proveedores.Name = "b_proveedores";
-            this.b_proveedores.Size = new System.Drawing.Size(133, 128);
-            this.b_proveedores.TabIndex = 14;
-            this.b_proveedores.UseVisualStyleBackColor = true;
-            // 
-            // b_clientes
-            // 
-            this.b_clientes.Image = global::Restaurante.Properties.Resources.users;
-            this.b_clientes.Location = new System.Drawing.Point(469, 32);
-            this.b_clientes.Name = "b_clientes";
-            this.b_clientes.Size = new System.Drawing.Size(142, 133);
-            this.b_clientes.TabIndex = 5;
-            this.b_clientes.UseVisualStyleBackColor = true;
-            // 
-            // b_administracion
-            // 
-            this.b_administracion.Image = global::Restaurante.Properties.Resources.Cambio_de_Contraseña;
-            this.b_administracion.Location = new System.Drawing.Point(261, 198);
-            this.b_administracion.Name = "b_administracion";
-            this.b_administracion.Size = new System.Drawing.Size(144, 142);
-            this.b_administracion.TabIndex = 6;
-            this.b_administracion.UseVisualStyleBackColor = true;
-            // 
-            // b_restaurantes
-            // 
-            this.b_restaurantes.Image = global::Restaurante.Properties.Resources.Cubiertos;
-            this.b_restaurantes.Location = new System.Drawing.Point(261, 32);
-            this.b_restaurantes.Name = "b_restaurantes";
-            this.b_restaurantes.Size = new System.Drawing.Size(144, 133);
-            this.b_restaurantes.TabIndex = 1;
-            this.b_restaurantes.UseVisualStyleBackColor = true;
+            this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
+            this.toolStripStatusLabel3.Size = new System.Drawing.Size(0, 17);
             // 
             // frm_menuPrincipal
             // 
@@ -319,6 +345,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frm_menuPrincipal";
             this.Text = "Menu Principal";
+            this.Load += new System.EventHandler(this.frm_menuPrincipal_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -361,5 +388,7 @@
         private System.Windows.Forms.Button b_proveedores;
         private System.Windows.Forms.Button b_reportes;
         private System.Windows.Forms.Button b_seguridad;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
     }
 }

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.msk_telefono = new System.Windows.Forms.MaskedTextBox();
             this.chk_activo = new System.Windows.Forms.CheckBox();
             this.txt_direccion = new System.Windows.Forms.TextBox();
             this.txt_especialidad = new System.Windows.Forms.TextBox();
@@ -42,7 +43,6 @@
             this.b_cerrar = new System.Windows.Forms.Button();
             this.b_aceptar = new System.Windows.Forms.Button();
             this.b_borrar = new System.Windows.Forms.Button();
-            this.msk_telefono = new System.Windows.Forms.MaskedTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
@@ -68,6 +68,14 @@
             this.groupBox1.Size = new System.Drawing.Size(289, 272);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
+            // 
+            // msk_telefono
+            // 
+            this.msk_telefono.Location = new System.Drawing.Point(103, 201);
+            this.msk_telefono.Mask = "0000-0000";
+            this.msk_telefono.Name = "msk_telefono";
+            this.msk_telefono.Size = new System.Drawing.Size(135, 20);
+            this.msk_telefono.TabIndex = 11;
             // 
             // chk_activo
             // 
@@ -102,6 +110,7 @@
             // 
             // txt_codigo
             // 
+            this.txt_codigo.Enabled = false;
             this.txt_codigo.Location = new System.Drawing.Point(103, 19);
             this.txt_codigo.Name = "txt_codigo";
             this.txt_codigo.Size = new System.Drawing.Size(135, 20);
@@ -160,6 +169,7 @@
             this.b_cerrar.Size = new System.Drawing.Size(58, 47);
             this.b_cerrar.TabIndex = 4;
             this.b_cerrar.UseVisualStyleBackColor = true;
+            this.b_cerrar.Click += new System.EventHandler(this.b_cerrar_Click);
             // 
             // b_aceptar
             // 
@@ -169,6 +179,7 @@
             this.b_aceptar.Size = new System.Drawing.Size(58, 47);
             this.b_aceptar.TabIndex = 3;
             this.b_aceptar.UseVisualStyleBackColor = true;
+            this.b_aceptar.Click += new System.EventHandler(this.b_aceptar_Click);
             // 
             // b_borrar
             // 
@@ -178,14 +189,7 @@
             this.b_borrar.Size = new System.Drawing.Size(55, 46);
             this.b_borrar.TabIndex = 88;
             this.b_borrar.UseVisualStyleBackColor = true;
-            // 
-            // msk_telefono
-            // 
-            this.msk_telefono.Location = new System.Drawing.Point(103, 201);
-            this.msk_telefono.Mask = "0000-0000";
-            this.msk_telefono.Name = "msk_telefono";
-            this.msk_telefono.Size = new System.Drawing.Size(135, 20);
-            this.msk_telefono.TabIndex = 11;
+            this.b_borrar.Click += new System.EventHandler(this.b_borrar_Click);
             // 
             // panel1
             // 
@@ -218,6 +222,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "frm_Restaurantes";
             this.Text = "Restaurantes";
+            this.Load += new System.EventHandler(this.frm_Restaurantes_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panel1.ResumeLayout(false);

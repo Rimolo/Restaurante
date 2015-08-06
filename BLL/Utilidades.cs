@@ -48,6 +48,13 @@ namespace BLL
                 return false;
         }
 
+        public static bool validar(RadioButton chk)
+        {
+            if (chk.Checked == true)
+                return true;
+            else
+                return false;
+        }
         public static bool estavaciodatagridview(DataGridView dgv)
         {
             if (dgv.Rows.Count == 0)

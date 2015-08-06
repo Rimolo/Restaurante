@@ -66,8 +66,9 @@
             this.cb_rol.FormattingEnabled = true;
             this.cb_rol.Location = new System.Drawing.Point(122, 170);
             this.cb_rol.Name = "cb_rol";
-            this.cb_rol.Size = new System.Drawing.Size(121, 21);
+            this.cb_rol.Size = new System.Drawing.Size(156, 21);
             this.cb_rol.TabIndex = 48;
+            this.cb_rol.SelectedIndexChanged += new System.EventHandler(this.cb_rol_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -88,6 +89,7 @@
             this.rb_externo.TabStop = true;
             this.rb_externo.Text = "Externo al Restaurante\r\n";
             this.rb_externo.UseVisualStyleBackColor = true;
+            this.rb_externo.CheckedChanged += new System.EventHandler(this.rb_externo_CheckedChanged);
             // 
             // rb_interno
             // 
@@ -99,6 +101,7 @@
             this.rb_interno.TabStop = true;
             this.rb_interno.Text = "Interno al Restaurante\r\n";
             this.rb_interno.UseVisualStyleBackColor = true;
+            this.rb_interno.CheckedChanged += new System.EventHandler(this.rb_interno_CheckedChanged);
             // 
             // txt_nombre
             // 
@@ -109,6 +112,7 @@
             // 
             // txt_codigo
             // 
+            this.txt_codigo.Enabled = false;
             this.txt_codigo.Location = new System.Drawing.Point(72, 19);
             this.txt_codigo.Name = "txt_codigo";
             this.txt_codigo.Size = new System.Drawing.Size(160, 20);
@@ -140,6 +144,7 @@
             this.b_cancelar.Size = new System.Drawing.Size(52, 47);
             this.b_cancelar.TabIndex = 51;
             this.b_cancelar.UseVisualStyleBackColor = true;
+            this.b_cancelar.Click += new System.EventHandler(this.b_cancelar_Click);
             // 
             // b_aceptar
             // 
@@ -159,6 +164,7 @@
             this.b_borrar.Size = new System.Drawing.Size(52, 47);
             this.b_borrar.TabIndex = 49;
             this.b_borrar.UseVisualStyleBackColor = true;
+            this.b_borrar.Click += new System.EventHandler(this.b_borrar_Click);
             // 
             // label1
             // 

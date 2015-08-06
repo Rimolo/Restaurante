@@ -31,16 +31,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dgv_usuarios = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txt_privilegios = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -56,6 +46,17 @@
             this.b_borrar = new System.Windows.Forms.Button();
             this.b_cerrar = new System.Windows.Forms.Button();
             this.b_aceptar = new System.Windows.Forms.Button();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Column11 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_usuarios)).BeginInit();
@@ -82,6 +83,8 @@
             // 
             // dgv_usuarios
             // 
+            this.dgv_usuarios.AllowUserToAddRows = false;
+            this.dgv_usuarios.AllowUserToDeleteRows = false;
             this.dgv_usuarios.BackgroundColor = System.Drawing.Color.White;
             this.dgv_usuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_usuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -94,61 +97,15 @@
             this.Column7,
             this.Column8,
             this.Column9,
-            this.Column10});
+            this.Column10,
+            this.Column11});
             this.dgv_usuarios.Location = new System.Drawing.Point(167, 128);
             this.dgv_usuarios.Name = "dgv_usuarios";
+            this.dgv_usuarios.ReadOnly = true;
+            this.dgv_usuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_usuarios.Size = new System.Drawing.Size(655, 248);
             this.dgv_usuarios.TabIndex = 62;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Codigo ";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Nombre";
-            this.Column2.Name = "Column2";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Primer Apellido";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Segundo Apellido";
-            this.Column5.Name = "Column5";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Telefono fijo";
-            this.Column3.Name = "Column3";
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Telefono Celular";
-            this.Column6.Name = "Column6";
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Login";
-            this.Column7.Name = "Column7";
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "Administrador de Sistema";
-            this.Column8.Name = "Column8";
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "Administrador de Seguridad";
-            this.Column9.Name = "Column9";
-            // 
-            // Column10
-            // 
-            this.Column10.HeaderText = "Administrador del Restaurante";
-            this.Column10.Name = "Column10";
+            this.dgv_usuarios.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_usuarios_CellDoubleClick);
             // 
             // groupBox1
             // 
@@ -239,6 +196,7 @@
             this.b_eliminar.Size = new System.Drawing.Size(51, 39);
             this.b_eliminar.TabIndex = 71;
             this.b_eliminar.UseVisualStyleBackColor = true;
+            this.b_eliminar.Click += new System.EventHandler(this.b_eliminar_Click);
             // 
             // b_agregar
             // 
@@ -248,6 +206,7 @@
             this.b_agregar.Size = new System.Drawing.Size(51, 42);
             this.b_agregar.TabIndex = 70;
             this.b_agregar.UseVisualStyleBackColor = true;
+            this.b_agregar.Click += new System.EventHandler(this.b_agregar_Click);
             // 
             // b_refrescar
             // 
@@ -258,6 +217,7 @@
             this.b_refrescar.TabIndex = 69;
             this.b_refrescar.Text = "\r\n";
             this.b_refrescar.UseVisualStyleBackColor = true;
+            this.b_refrescar.Click += new System.EventHandler(this.b_refrescar_Click);
             // 
             // b_borrar
             // 
@@ -267,6 +227,7 @@
             this.b_borrar.Size = new System.Drawing.Size(39, 47);
             this.b_borrar.TabIndex = 68;
             this.b_borrar.UseVisualStyleBackColor = true;
+            this.b_borrar.Click += new System.EventHandler(this.b_borrar_Click);
             // 
             // b_cerrar
             // 
@@ -276,6 +237,7 @@
             this.b_cerrar.Size = new System.Drawing.Size(42, 43);
             this.b_cerrar.TabIndex = 67;
             this.b_cerrar.UseVisualStyleBackColor = true;
+            this.b_cerrar.Click += new System.EventHandler(this.b_cerrar_Click);
             // 
             // b_aceptar
             // 
@@ -285,6 +247,73 @@
             this.b_aceptar.Size = new System.Drawing.Size(42, 47);
             this.b_aceptar.TabIndex = 66;
             this.b_aceptar.UseVisualStyleBackColor = true;
+            this.b_aceptar.Click += new System.EventHandler(this.b_aceptar_Click);
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "CodUsuario";
+            this.Column1.HeaderText = "Codigo ";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "nombre";
+            this.Column2.HeaderText = "Nombre";
+            this.Column2.Name = "Column2";
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "apellido1";
+            this.Column4.HeaderText = "Primer Apellido";
+            this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "apellido2";
+            this.Column5.HeaderText = "Segundo Apellido";
+            this.Column5.Name = "Column5";
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "telefono1";
+            this.Column3.HeaderText = "Telefono fijo";
+            this.Column3.Name = "Column3";
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "telefono2";
+            this.Column6.HeaderText = "Telefono Celular";
+            this.Column6.Name = "Column6";
+            // 
+            // Column7
+            // 
+            this.Column7.DataPropertyName = "nickname";
+            this.Column7.HeaderText = "Login";
+            this.Column7.Name = "Column7";
+            // 
+            // Column8
+            // 
+            this.Column8.DataPropertyName = "adminSistema";
+            this.Column8.HeaderText = "Administrador de Sistema";
+            this.Column8.Name = "Column8";
+            // 
+            // Column9
+            // 
+            this.Column9.DataPropertyName = "adminSeguridad";
+            this.Column9.HeaderText = "Administrador de Seguridad";
+            this.Column9.Name = "Column9";
+            // 
+            // Column10
+            // 
+            this.Column10.DataPropertyName = "adminRestaurante";
+            this.Column10.HeaderText = "Administrador del Restaurante";
+            this.Column10.Name = "Column10";
+            // 
+            // Column11
+            // 
+            this.Column11.DataPropertyName = "adminCuentas";
+            this.Column11.HeaderText = "Administrador de Cuentas";
+            this.Column11.Name = "Column11";
             // 
             // frm_listaUsuarios
             // 
@@ -303,6 +332,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "frm_listaUsuarios";
             this.Text = "Lista de Usuarios";
+            this.Load += new System.EventHandler(this.frm_listaUsuarios_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_usuarios)).EndInit();
@@ -317,16 +347,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridView dgv_usuarios;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Column8;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Column9;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Column10;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txt_privilegios;
         private System.Windows.Forms.Label label5;
@@ -342,5 +362,16 @@
         private System.Windows.Forms.Button b_refrescar;
         private System.Windows.Forms.Button b_agregar;
         private System.Windows.Forms.Button b_eliminar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Column8;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Column9;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Column10;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Column11;
     }
 }
