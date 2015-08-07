@@ -135,7 +135,7 @@ namespace BLL
 
                 if (!string.IsNullOrEmpty(_codigo))
                 {
-                    sql1 += condicion + "c.codMesa ='" + _codigo + "'";
+                    sql1 += condicion + "c.codCaja ='" + _codigo + "'";
                     condicion = " and ";
                 }
                 if (!string.IsNullOrEmpty(_codRest))
@@ -152,7 +152,7 @@ namespace BLL
                 {
                     sql1 += condicion + "m.descripcion='Cierre de caja'";
                 }
-                sql = sql1 + " Order by c.codMesa";
+                sql = sql1 + " Order by c.codCaja";
 
                 ds = cls_DAL.ejecuta_dataset(conexion, sql, false, ref mensaje_error, ref numero_error);
                 if (numero_error != 0)

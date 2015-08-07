@@ -21,6 +21,7 @@ namespace Restaurante
         private void frm_listaCajas_Load(object sender, EventArgs e)
         {
             dt_registro.Value = DateTime.Today;
+            carga_lista_cajas();
         }
 
         private void b_refrescar_Click(object sender, EventArgs e)
