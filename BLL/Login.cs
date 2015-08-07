@@ -112,7 +112,7 @@ namespace BLL
             else
             {
                 sql = "Select nombre" +
-                      " from Restaurante where codRestaurante='@cod'";
+                      " from Restaurante where codRestaurante=@cod";
                 ParamStruct[] parametros = new ParamStruct[1];
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@cod", SqlDbType.VarChar, _codR);
                 ds = cls_DAL.ejecuta_dataset(conexion, sql, false, parametros, ref mensaje_error, ref numero_error);

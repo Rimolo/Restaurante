@@ -69,9 +69,11 @@ namespace Restaurante
                 {
                     roles.Add("administrador de Sistema");
                 }
-                if (roles.Count == 1 && roles.Contains("adminRestaurante")) {
+                if (roles.Count == 1 && roles.Contains("administrador de Restaurante"))
+                {
                     string nombreR = objLogin.nombre_rest();
-                    if (nombreR.Equals("Piccola Stella")) {
+                    if (nombreR.Equals("Piccola Stella"))
+                    {
                         frm_PiccollaStella ps = new frm_PiccollaStella();
                         ps.Tag = this;
                         ps.Show(this);
@@ -93,12 +95,15 @@ namespace Restaurante
 
                     }
                 }
+                else {
+                    menu.lista = this.roles;
+                    menu.Tag = this;
+                    menu.Show(this);
+                    txt_contraseña.Text = "";
+                    this.Hide();
+                }
 
-                menu.lista = this.roles;
-                menu.Tag = this;
-                menu.Show(this);
-                txt_contraseña.Text = "";
-                this.Hide();
+                
 
 
 
