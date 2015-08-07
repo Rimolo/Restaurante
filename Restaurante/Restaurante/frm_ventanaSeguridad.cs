@@ -49,13 +49,21 @@ namespace Restaurante
             }
             else if (rb_rolesEventos.Checked)
             {
-                
+                frm_listaRoles roles = new frm_listaRoles();
+                roles.Tag = this;
+                roles.Show(this);
+                this.Hide();
             }
         }
 
         private void b_cerrar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void frm_ventanaSeguridad_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Restaurante
 {
-    public partial class frm_listaMesascs : Form
+    public partial class frm_listaMesas : Form
     {
-        public frm_listaMesascs()
+        public frm_listaMesas()
         {
             InitializeComponent();
         }

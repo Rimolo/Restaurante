@@ -1,6 +1,6 @@
 ﻿namespace Restaurante
 {
-    partial class frm_listaMesascs
+    partial class frm_listaMesas
     {
         /// <summary>
         /// Required designer variable.
@@ -238,7 +238,7 @@
             this.Column5.HeaderText = "Restaurante";
             this.Column5.Name = "Column5";
             // 
-            // frm_listaMesascs
+            // frm_listaMesas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -253,7 +253,7 @@
             this.Controls.Add(this.b_menos);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
-            this.Name = "frm_listaMesascs";
+            this.Name = "frm_listaMesas";
             this.Text = "Lista de Mesas";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

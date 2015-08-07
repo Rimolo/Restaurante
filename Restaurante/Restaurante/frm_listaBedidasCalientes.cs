@@ -15,6 +15,14 @@ namespace Restaurante
     {
         Calientes obj_calientes = new Calientes();
 
+        private string _nick;
+
+        public string nick
+        {
+            get { return _nick; }
+            set { _nick = value; }
+        }
+
         public frm_listaBedidasCalientes()
         {
             InitializeComponent();
@@ -72,6 +80,7 @@ namespace Restaurante
         {
             frm_bebidasCalientes calientes = new frm_bebidasCalientes();
             calientes.accion = "Insertar";
+            calientes.nick = _nick;
             calientes.Show();
         }
 
@@ -96,6 +105,7 @@ namespace Restaurante
         {
             frm_bebidasCalientes calientes = new frm_bebidasCalientes();
             calientes.accion = "Editar";
+            calientes.nick = _nick;
             calientes.codigo = dgv_bebidas_calientes.Rows[e.RowIndex].Cells[0].Value.ToString().Replace(" ", "");
             calientes.ShowDialog();
         }

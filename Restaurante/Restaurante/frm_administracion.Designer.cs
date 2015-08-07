@@ -104,6 +104,7 @@
             this.b_cancelar.Size = new System.Drawing.Size(57, 38);
             this.b_cancelar.TabIndex = 3;
             this.b_cancelar.UseVisualStyleBackColor = true;
+            this.b_cancelar.Click += new System.EventHandler(this.b_cancelar_Click);
             // 
             // b_aceptar
             // 
@@ -136,6 +137,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frm_administracion";
             this.Text = "Ventana de Administracion";
+            this.Load += new System.EventHandler(this.frm_administracion_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

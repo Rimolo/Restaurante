@@ -14,6 +14,13 @@ namespace Restaurante
     {
         public List<string> lista = new List<string>();
 
+        private string _nick;
+
+        public string nick
+        {
+            get { return _nick; }
+            set { _nick = value; }
+        }
 
         public frm_menuPrincipal()
         {
@@ -52,7 +59,6 @@ namespace Restaurante
         {
             DateTime hora = DateTime.Now;
             toolStripStatusLabel3.Text = hora.ToString();
-
         }
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
@@ -84,7 +90,9 @@ namespace Restaurante
 
         private void b_administracion_Click(object sender, EventArgs e)
         {
-
+            frm_administracion administracion = new frm_administracion();
+            administracion.nick = _nick;
+            administracion.Show();
         }
 
         private void b_reportes_Click(object sender, EventArgs e)

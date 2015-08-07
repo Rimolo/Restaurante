@@ -175,6 +175,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "frm_ventanaSeguridad";
             this.Text = "Ventana de Seguridad";
+            this.Load += new System.EventHandler(this.frm_ventanaSeguridad_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);

@@ -150,6 +150,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frm_tipoBebida";
             this.Text = "Tipos de Bebidas";
+            this.Load += new System.EventHandler(this.frm_tipoBebida_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

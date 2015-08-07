@@ -338,11 +338,11 @@
     <Compile Include="frm_listaMarcas.Designer.cs">
       <DependentUpon>frm_listaMarcas.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_listaMesascs.cs">
+    <Compile Include="frm_listaMesas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_listaMesascs.Designer.cs">
-      <DependentUpon>frm_listaMesascs.cs</DependentUpon>
+    <Compile Include="frm_listaMesas.Designer.cs">
+      <DependentUpon>frm_listaMesas.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_ListaPaises.cs">
       <SubType>Form</SubType>
@@ -654,8 +654,8 @@
     <EmbeddedResource Include="frm_listaMarcas.resx">
       <DependentUpon>frm_listaMarcas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_listaMesascs.resx">
-      <DependentUpon>frm_listaMesascs.cs</DependentUpon>
+    <EmbeddedResource Include="frm_listaMesas.resx">
+      <DependentUpon>frm_listaMesas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_ListaPaises.resx">
       <DependentUpon>frm_ListaPaises.cs</DependentUpon>
