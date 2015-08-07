@@ -35,6 +35,7 @@ namespace Restaurante
         private void b_aceptar_Click(object sender, EventArgs e)
         {
             frm_menuPrincipal menu = new frm_menuPrincipal();
+            menu.nick = txt_usuario.Text;
             if (!cls_validacion.validar(txt_usuario))
             {
                 MessageBox.Show("Por favor escriba un nombre al Usuario", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);

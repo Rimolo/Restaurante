@@ -12,6 +12,14 @@ namespace Restaurante
 {
     public partial class frm_tipoBebida : Form
     {
+        private string _nick;
+
+        public string nick
+        {
+            get { return _nick; }
+            set { _nick = value; }
+        }
+
         public frm_tipoBebida()
         {
             InitializeComponent();
@@ -22,6 +30,7 @@ namespace Restaurante
             if (rb_calientes.Checked == true)
             {
                 frm_listaBedidasCalientes calientes = new frm_listaBedidasCalientes();
+                calientes.nick = _nick;
                 calientes.Show();
             }
             else
@@ -29,6 +38,7 @@ namespace Restaurante
                 if (rb_heladas.Checked == true)
                 {
                     frm_listaBebidaHelada heladas = new frm_listaBebidaHelada();
+                    //   heladas.nick = _nick;
                     heladas.Show();
                 }
                 else
@@ -36,6 +46,7 @@ namespace Restaurante
                     if (rb_gaseosas.Checked == true)
                     {
                         frm_listaBebidasGaseosas gaseosas = new frm_listaBebidasGaseosas();
+                        //  gaseosas.nick = _nick;
                         gaseosas.Show();
                     }
                     else
@@ -43,6 +54,7 @@ namespace Restaurante
                         if (rb_licores.Checked == true)
                         {
                             frmListaLicores licores = new frmListaLicores();
+                            //   licores.nick = _nick;
                             licores.Show();
                         }
                         else
@@ -50,6 +62,7 @@ namespace Restaurante
                             if (rb_vinos.Checked == true)
                             {
                                 frm_listaVinos vinos = new frm_listaVinos();
+                                //vinos.nick = _nick;
                                 vinos.Show();
                             }
                         }
@@ -61,6 +74,11 @@ namespace Restaurante
         private void b_cancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void frm_tipoBebida_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

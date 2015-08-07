@@ -91,6 +91,7 @@
             this.b_cancelar.Size = new System.Drawing.Size(56, 39);
             this.b_cancelar.TabIndex = 3;
             this.b_cancelar.UseVisualStyleBackColor = true;
+            this.b_cancelar.Click += new System.EventHandler(this.b_cancelar_Click);
             // 
             // b_aceptar
             // 
@@ -100,6 +101,7 @@
             this.b_aceptar.Size = new System.Drawing.Size(56, 40);
             this.b_aceptar.TabIndex = 2;
             this.b_aceptar.UseVisualStyleBackColor = true;
+            this.b_aceptar.Click += new System.EventHandler(this.b_aceptar_Click);
             // 
             // label1
             // 

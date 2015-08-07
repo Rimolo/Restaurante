@@ -151,10 +151,10 @@ namespace BLL
             {
                 if (accion.Equals("Insertar"))
                 {
-                    DataSet ds;
+                   /* DataSet ds;
                     ds = retorna_Cod_Restaurante(Restaurante);
-                    codRestaurante = Convert.ToString(ds.Tables[0].Rows[0]["codRestaurante"]);
-                    sql = "Insert into BebidaCaliente values(@codBebidaCal, @nombre, @ingredientes, @precio,'" + codRestaurante +"',  @descripcion,  @imagen)";
+                    codRestaurante = Convert.ToString(ds.Tables[0].Rows[0]["codRestaurante"]);*/
+                    sql = "Insert into BebidaCaliente values(@codBebidaCal, @nombre, @ingredientes, @precio,  @descripcion)";
                 }
                 else
                 {
@@ -163,17 +163,15 @@ namespace BLL
                         " descripcion=@descripcion" +
                         " precio=@precio," +
                         " ingredientes=@ingredientes" +
-                        " imagen=@imagen"+
                         " where codBebidaCal=@codBebidaCal";
                 }
-                ParamStruct[] parametros = new ParamStruct[6];
+                ParamStruct[] parametros = new ParamStruct[5];
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@codBebidaCal", SqlDbType.VarChar, _codBebidaCal);
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 1, "@nombre", SqlDbType.VarChar, _nombre);
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 2, "@ingredientes", SqlDbType.VarChar, _ingredientes);
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 3, "@precio", SqlDbType.Money, _precio);
-               // cls_DAL.agregar_datos_estructura_parametros(ref parametros, 4, "@codRestaurante", SqlDbType.VarChar, _codRestaurante);
+                //cls_DAL.agregar_datos_estructura_parametros(ref parametros, 4, "@codRestaurante", SqlDbType.VarChar, _codRestaurante);
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 4, "@descripcion", SqlDbType.VarChar, _descripcion);
-                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 5, "@imagen", SqlDbType.Image, _imagen);
                 if (numero_error != 0)
                 {
                     MessageBox.Show(mensaje_error, "Error al guardar el producto", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -374,6 +372,34 @@ namespace BLL
                 {
                     cls_DAL.desconectar(conexion, ref mensaje_error, ref numero_error);
                     return true;
+                }
+            }
+        }
+
+        public DataSet retorna_nombre_Restaurante(string nick)
+        {
+            conexion = cls_DAL.trae_conexion("Progra4", ref mensaje_error, ref numero_error);
+            if (conexion == null)
+            {
+                MessageBox.Show(mensaje_error, "Error al obtener cadena de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+            else
+            {
+
+                sql = "Select R.nombre" +
+                      " from Restaurante R INNER JOIN Usuario U ON R.codRestaurante = U.codRest where U.nickname='" + nick + "'";
+
+                ds = cls_DAL.ejecuta_dataset(conexion, sql, false, ref mensaje_error, ref numero_error);
+
+                if (numero_error != 0)
+                {
+                    MessageBox.Show(mensaje_error, "Error al guardar el codigo del Restaurante", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return null;
+                }
+                else
+                {
+                    return ds;
                 }
             }
         }

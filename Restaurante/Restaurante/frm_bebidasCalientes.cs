@@ -30,7 +30,14 @@ namespace Restaurante
             get { return _codigo; }
             set { _codigo = value; }
         }
-        
+        private string _nick;
+
+        public string nick
+        {
+            get { return _nick; }
+            set { _nick = value; }
+        }
+
         public frm_bebidasCalientes()
         {
             InitializeComponent();
@@ -44,6 +51,7 @@ namespace Restaurante
         private void frm_bebidasCalientes_Load(object sender, EventArgs e)
         {
             this.mostar_consecutivo();
+            this.mostar_Restaurante();
             if (accion.Equals("Editar"))
             {
                 carga_info();
@@ -109,7 +117,7 @@ namespace Restaurante
                     if (obj_calientes.actualizar_consecutivo(valor))
                     {
 
-                        MessageBox.Show("Rol insertado con éxito", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Producto insertado con éxito", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();
                     }
 
@@ -129,22 +137,6 @@ namespace Restaurante
 
         private void b_buscaFoto_Click(object sender, EventArgs e)
         {
-            /* int size = -1;
-            DialogResult result = openFileDialog1.ShowDialog(); // Show the dialog.
-            if (result == DialogResult.OK) // Test result.
-            {
-                string file = openFileDialog1.FileName;
-                try
-                {
-                    string text = File.ReadAllText(file);
-                    size = text.Length;
-                }
-                catch (IOException)
-                {
-                }
-            }
-            Console.WriteLine(size); // <-- Shows file size in debugging mode.
-            Console.WriteLine(result); // <-- For debugging use.*/
         }
 
         private void carga_info()
@@ -180,6 +172,24 @@ namespace Restaurante
             catch (Exception)
             {
                 MessageBox.Show("Error al cargar el consecutivo");
+            }
+
+        }
+
+        private void mostar_Restaurante()
+        {
+            try
+            {
+                DataSet ds1;
+                ds1 = obj_calientes.retorna_nombre_Restaurante(_nick);
+                string nombre = ds1.Tables[0].Rows[0]["nombre"].ToString();
+
+                txt_restaurantes.Text = nombre;
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error al cargar el Restaurante" + _nick + "");
             }
 
         }
