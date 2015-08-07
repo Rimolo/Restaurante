@@ -135,11 +135,20 @@ namespace BLL
             {
                 if (accion.Equals("Insertar"))
                 {
-                    sql = "Insert into Usuario values(@cod,@nombre,@apellido1,@apellido2,@nick,@clave,@adminRes,@adminCuen,@adminSis,@adminSeg,@puesto,@tel,@cel,@codR)";
+                    if (!string.IsNullOrEmpty(_codigoR))
+                    {
+                        sql = "Insert into Usuario values(@cod,@nombre,@apellido1,@apellido2,@nick,@clave,@adminSis,@adminSeg,@adminRes,@adminCuen,@puesto,@tel,@cel,@codR)";
+                    }
+                    else {
+                        sql = "Insert into Usuario values(@cod,@nombre,@apellido1,@apellido2,@nick,@clave,@adminSis,@adminSeg,@adminRes,@adminCuen,@puesto,@tel,@cel,null)";
+                    }
+
                 }
                 else
                 {
-                    sql = "Update Usuario SET" +
+                    if (!string.IsNullOrEmpty(_codigoR))
+                    {
+                        sql = "Update Usuario SET" +
                         " nombre=@nombre," +
                         " apellido1=@apellido1," +
                         " apellido2=@apellido2," +
@@ -152,9 +161,28 @@ namespace BLL
                         " telefono1=@tel," +
                         " telefono2=@cel," +
                         " codPuesto=@puesto," +
-                        " codRest=@codR"+
+                        " codRest=@codR" +
                         " where codUsuario=@cod";
-                }
+                    }
+                    else
+                    {
+                        sql = "Update Usuario SET" +
+                    " nombre=@nombre," +
+                    " apellido1=@apellido1," +
+                    " apellido2=@apellido2," +
+                    " nickname=@nick," +
+                    " contraseña=@clave," +
+                    " adminRestaurante=@adminRes," +
+                    " adminCuentas=@adminCuen," +
+                    " adminSistema=@adminSis," +
+                    " adminSeguridad=@adminSeg," +
+                    " telefono1=@tel," +
+                    " telefono2=@cel," +
+                    " codPuesto=@puesto," +
+                    " codRest=null" +
+                    " where codUsuario=@cod";
+                    }
+                    }
                 ParamStruct[] parametros = new ParamStruct[14];
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@nombre", SqlDbType.VarChar, _nombre);
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 1, "@apellido1", SqlDbType.VarChar, _apellido1);
@@ -411,7 +439,7 @@ namespace BLL
             }
             else
             {
-                sql = "Select nombre,apellido1,apellido2,nickname,telefono1,telefono2,adminCuentas,adminRestaurante,adminSistema,adminSeguridad,contraseña" +
+                sql = "Select nombre,apellido1,apellido2,nickname,telefono1,telefono2,adminCuentas,adminRestaurante,adminSistema,adminSeguridad,contraseña,codRest" +
                       " from Usuario where codUsuario=@cod";
                 ParamStruct[] parametros = new ParamStruct[1];
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@cod", SqlDbType.VarChar, codUsuario);
@@ -436,6 +464,7 @@ namespace BLL
                         _adminCuentas = Convert.ToBoolean(ds.Tables[0].Rows[0]["adminCuentas"].ToString());
                         _adminSistema= Convert.ToBoolean(ds.Tables[0].Rows[0]["adminSistema"].ToString());
                         _adminRestaurante = Convert.ToBoolean(Convert.ToBoolean(ds.Tables[0].Rows[0]["adminRestaurante"].ToString()));
+                        _codigoR = ds.Tables[0].Rows[0]["codRest"].ToString();
                     }
                     else
                     {

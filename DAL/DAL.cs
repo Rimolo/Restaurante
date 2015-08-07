@@ -296,7 +296,7 @@ namespace DAL
         {
             SqlParameter param = new SqlParameter();
             param.ParameterName = nombre_parametro;
-            param.Value = valor_parametro;
+            param.Value =valor_parametro;
             param.SqlDbType = tipo_dato;
             sql_data_adapter.SelectCommand.Parameters.Add(param);
         }
@@ -305,7 +305,14 @@ namespace DAL
         {
             parametros[posicion].Nombre_Parametro = nombre_parametro.ToString();
             parametros[posicion].Tipo_Dato = tipo_dato_parametro;
-            parametros[posicion].Valor_Parametro = valor_parametro;
+            if (valor_parametro==null)
+            {
+                parametros[posicion].Valor_Parametro = DBNull.Value;
+            }
+            else
+            {
+                parametros[posicion].Valor_Parametro= valor_parametro;
+            }
         }
     }
 }
