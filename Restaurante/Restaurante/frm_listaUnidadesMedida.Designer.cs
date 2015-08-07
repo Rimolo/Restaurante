@@ -126,6 +126,7 @@
             this.b_agregar.Size = new System.Drawing.Size(51, 42);
             this.b_agregar.TabIndex = 81;
             this.b_agregar.UseVisualStyleBackColor = true;
+            this.b_agregar.Click += new System.EventHandler(this.b_agregar_Click);
             // 
             // b_eliminar
             // 
@@ -135,6 +136,7 @@
             this.b_eliminar.Size = new System.Drawing.Size(51, 39);
             this.b_eliminar.TabIndex = 82;
             this.b_eliminar.UseVisualStyleBackColor = true;
+            this.b_eliminar.Click += new System.EventHandler(this.b_eliminar_Click);
             // 
             // b_refrescar
             // 
@@ -145,6 +147,7 @@
             this.b_refrescar.TabIndex = 83;
             this.b_refrescar.Text = "\r\n";
             this.b_refrescar.UseVisualStyleBackColor = true;
+            this.b_refrescar.Click += new System.EventHandler(this.b_refrescar_Click);
             // 
             // b_cerrar
             // 
@@ -154,6 +157,7 @@
             this.b_cerrar.Size = new System.Drawing.Size(42, 43);
             this.b_cerrar.TabIndex = 84;
             this.b_cerrar.UseVisualStyleBackColor = true;
+            this.b_cerrar.Click += new System.EventHandler(this.b_cerrar_Click);
             // 
             // b_borrar
             // 
@@ -163,6 +167,7 @@
             this.b_borrar.Size = new System.Drawing.Size(39, 46);
             this.b_borrar.TabIndex = 85;
             this.b_borrar.UseVisualStyleBackColor = true;
+            this.b_borrar.Click += new System.EventHandler(this.b_borrar_Click);
             // 
             // b_aceptar
             // 
@@ -172,9 +177,12 @@
             this.b_aceptar.Size = new System.Drawing.Size(42, 47);
             this.b_aceptar.TabIndex = 86;
             this.b_aceptar.UseVisualStyleBackColor = true;
+            this.b_aceptar.Click += new System.EventHandler(this.b_aceptar_Click);
             // 
             // dgv_unidadesMedida
             // 
+            this.dgv_unidadesMedida.AllowUserToAddRows = false;
+            this.dgv_unidadesMedida.AllowUserToDeleteRows = false;
             this.dgv_unidadesMedida.BackgroundColor = System.Drawing.Color.White;
             this.dgv_unidadesMedida.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_unidadesMedida.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -185,33 +193,46 @@
             this.Column5});
             this.dgv_unidadesMedida.Location = new System.Drawing.Point(212, 101);
             this.dgv_unidadesMedida.Name = "dgv_unidadesMedida";
+            this.dgv_unidadesMedida.ReadOnly = true;
+            this.dgv_unidadesMedida.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_unidadesMedida.Size = new System.Drawing.Size(513, 232);
             this.dgv_unidadesMedida.TabIndex = 87;
+            this.dgv_unidadesMedida.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_unidadesMedida_CellDoubleClick);
             // 
             // Column1
             // 
+            this.Column1.DataPropertyName = "codMedida";
             this.Column1.HeaderText = "Codigo";
             this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             // 
             // Column2
             // 
+            this.Column2.DataPropertyName = "unidadMedida";
             this.Column2.HeaderText = "Unidad de Medida";
             this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             // 
             // Column3
             // 
+            this.Column3.DataPropertyName = "escala";
             this.Column3.HeaderText = "Escala";
             this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
             // 
             // Column4
             // 
+            this.Column4.DataPropertyName = "detalle";
             this.Column4.HeaderText = "Detalle";
             this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
             // 
             // Column5
             // 
+            this.Column5.DataPropertyName = "simbologia";
             this.Column5.HeaderText = "Simbologia";
             this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
             // 
             // frm_listaUnidadesMedida
             // 

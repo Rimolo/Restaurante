@@ -45,7 +45,10 @@ namespace Restaurante
             }
             else if (rb_unidadesMedida.Checked)
             {
-
+                frm_listaUnidadesMedida unidades = new frm_listaUnidadesMedida();
+                unidades.Tag = this;
+                unidades.Show(this);
+                this.Hide();
             }
             else if (rb_rolesEventos.Checked)
             {
