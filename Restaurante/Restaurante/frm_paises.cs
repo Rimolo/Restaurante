@@ -48,7 +48,8 @@ namespace Restaurante
         private void b_borrar_Click(object sender, EventArgs e)
         {
             txt_nombrePais.Text = "";
-            pic_bandera.InitialImage = null;
+            pic_bandera.Image = null;
+            hayBandera = false;
         }
         
         private void b_aceptar_Click(object sender, EventArgs e)
@@ -65,11 +66,17 @@ namespace Restaurante
             if (hayBandera) {
                 MemoryStream ms = new MemoryStream();
                 pic_bandera.Image.Save(ms, pic_bandera.Image.RawFormat);
-                objPais.bandera = ms.GetBuffer();
+                byte[] a = ms.GetBuffer();
+                ms.Close();
+                objPais.bandera = a;
             }
             
             if (objPais.guardar_pais(_accion))
             {
+                if (hayBandera) {
+                    objPais.guardar_imagen();
+                }
+                
                 int valor = 0;
                 try
                 {
@@ -125,8 +132,9 @@ namespace Restaurante
                 txt_codigoPais.Text = _codigo;
                 txt_nombrePais.Text = objPais.nombre;
                 MemoryStream ms = new MemoryStream(objPais.bandera);
-                pic_bandera.Image = new Bitmap(ms);
+                pic_bandera.Image = Image.FromStream(ms);
                 pic_bandera.SizeMode = PictureBoxSizeMode.StretchImage;
+                ms.Close();
                 
             }
         }
@@ -138,14 +146,17 @@ namespace Restaurante
 
         private void b_buscaFoto_Click(object sender, EventArgs e)
         {
-            var FD = new System.Windows.Forms.OpenFileDialog();
-            if (FD.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            try
             {
-                string fileToOpen = FD.FileName;
-                pic_bandera.Image = new Bitmap(fileToOpen);
-                pic_bandera.SizeMode = PictureBoxSizeMode.StretchImage;
-                hayBandera = true;
+                OpenFileDialog f = new OpenFileDialog();
+                if (f.ShowDialog() == DialogResult.OK)
+                {
+                    pic_bandera.Image = Image.FromFile(f.FileName);
+                    pic_bandera.SizeMode = PictureBoxSizeMode.StretchImage;
+                    hayBandera = true;
+                }
             }
+            catch (Exception) { }
         }
     }
 }

@@ -58,19 +58,18 @@ namespace BLL
             {
                 if (accion.Equals("Insertar"))
                 {
-                    sql = "Insert into Pais values(@cod,@nombre,@img)";
+                    sql = "Insert into Pais values(@cod,@nombre,null)";
                 }
                 else
                 {
                     sql = "Update Pais SET" +
                         " nombre=@nombre," +
-                        " bandera=@img" +
+                        " bandera=null" +
                         " where codigoPais=@cod";
                 }
-                ParamStruct[] parametros = new ParamStruct[3];
+                ParamStruct[] parametros = new ParamStruct[2];
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@nombre", SqlDbType.VarChar, _nombre);
-                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 1, "@img", SqlDbType.VarBinary, _bandera);
-                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 2, "@cod", SqlDbType.VarChar, _codigo);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 1, "@cod", SqlDbType.VarChar, _codigo);
 
                 cls_DAL.conectar(conexion, ref mensaje_error, ref numero_error);
                 cls_DAL.ejecuta_sqlcommand(conexion, sql, false, parametros, ref mensaje_error, ref numero_error);
@@ -85,6 +84,22 @@ namespace BLL
                     cls_DAL.desconectar(conexion, ref mensaje_error, ref numero_error);
                     return true;
                 }
+            }
+        }
+        public void guardar_imagen()
+        {
+            conexion = cls_DAL.trae_conexion("Progra4", ref mensaje_error, ref numero_error);
+            if (conexion == null)
+            {
+                MessageBox.Show(mensaje_error, "Error al obtener cadena de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            else
+            {
+                sql = "Update Pais set bandera=@img Where codigoPais='"+_codigo+"'";
+                cls_DAL.conectar(conexion, ref mensaje_error, ref numero_error);
+                cls_DAL.guardar_imagen(conexion, sql,_bandera,ref mensaje_error,ref numero_error);
+                cls_DAL.desconectar(conexion, ref mensaje_error, ref numero_error);
             }
         }
 
@@ -302,6 +317,7 @@ namespace BLL
                     {
                         _nombre = ds.Tables[0].Rows[0]["nombre"].ToString();
                         _bandera = (byte[])(ds.Tables[0].Rows[0]["bandera"]);
+                       
                     }
                     else
                     {
