@@ -84,18 +84,19 @@ namespace BLL
             }
             else
             {
-                string sql1 = "Select codBebidaCal,nombre,precio,codRestaurante from BebidaCaliente ";
+                string sql1 = "Select Bc.codBebidaCal, Bc.nombre, Bc.precio, R.nombre from BebidaCaliente Bc ";
                 string condicion = "Where ";
+                string join = "INNER JOIN Restaurante R ON Bc.codRestaurante = R.codRestaurante ";
                 if (!string.IsNullOrEmpty(_codBebidaCal))
                 {
-                    sql1 += condicion + "codBebidaCaliente ='" + _codBebidaCal + "'";
+                    sql1 += join + condicion + "codBebidaCaliente ='" + _codBebidaCal + "'";
                     condicion = "and ";
                 }
                 else
                 {
                     if (!string.IsNullOrEmpty(_nombre))
                     {
-                        sql1 += condicion + "nombre ='" + _nombre + "'";
+                        sql1 += join + condicion + "nombre ='" + _nombre + "'";
                     }
                 }
                 sql = sql1 + " Order by codBebidaCal";
@@ -138,7 +139,7 @@ namespace BLL
             }
         }
 
-        public bool guardar_Calientes(string accion)
+        public bool guardar_Calientes(string accion,string Restaurante)
         {
             conexion = cls_DAL.trae_conexion("Progra4", ref mensaje_error, ref numero_error);
             if (conexion == null)
@@ -150,7 +151,10 @@ namespace BLL
             {
                 if (accion.Equals("Insertar"))
                 {
-                    sql = "Insert into BebidaCaliente values(@codBebidaCal, @nombre, @ingredientes, @precio, @codRestaurante,  @descripcion,  @imagen)";
+                    DataSet ds;
+                    ds = retorna_Cod_Restaurante(Restaurante);
+                    codRestaurante = Convert.ToString(ds.Tables[0].Rows[0]["codRestaurante"]);
+                    sql = "Insert into BebidaCaliente values(@codBebidaCal, @nombre, @ingredientes, @precio,'" + codRestaurante +"',  @descripcion,  @imagen)";
                 }
                 else
                 {
@@ -162,14 +166,14 @@ namespace BLL
                         " imagen=@imagen"+
                         " where codBebidaCal=@codBebidaCal";
                 }
-                ParamStruct[] parametros = new ParamStruct[7];
+                ParamStruct[] parametros = new ParamStruct[6];
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@codBebidaCal", SqlDbType.VarChar, _codBebidaCal);
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 1, "@nombre", SqlDbType.VarChar, _nombre);
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 2, "@ingredientes", SqlDbType.VarChar, _ingredientes);
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 3, "@precio", SqlDbType.Money, _precio);
-                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 4, "@codRestaurante", SqlDbType.VarChar, _codRestaurante);
-                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 5, "@descripcion", SqlDbType.VarChar, _descripcion);
-                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 6, "@imagen", SqlDbType.Image, _imagen);
+               // cls_DAL.agregar_datos_estructura_parametros(ref parametros, 4, "@codRestaurante", SqlDbType.VarChar, _codRestaurante);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 4, "@descripcion", SqlDbType.VarChar, _descripcion);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 5, "@imagen", SqlDbType.Image, _imagen);
                 if (numero_error != 0)
                 {
                     MessageBox.Show(mensaje_error, "Error al guardar el producto", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -184,7 +188,33 @@ namespace BLL
             }
         }
 
-        public bool eliminar_Calientes(string codBebidaCal)
+        public DataSet retorna_Cod_Restaurante(string nombre)
+        {
+            conexion = cls_DAL.trae_conexion("Progra4", ref mensaje_error, ref numero_error);
+            if (conexion == null)
+            {
+                MessageBox.Show(mensaje_error, "Error al obtener cadena de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+            else
+            {                
+                sql = "Select codRestaurante from Restaurante where nombre='"+ nombre +"'";
+
+                ds = cls_DAL.ejecuta_dataset(conexion, sql, false, ref mensaje_error, ref numero_error);
+
+                if (numero_error != 0)
+                {
+                    MessageBox.Show(mensaje_error, "Error al guardar el codigo del Restaurante", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return null;
+                }
+                else
+                {
+                    return ds;
+                }
+            }
+        }
+
+        public bool eliminar_Calientes(string codRestaurente)
         {
             conexion = cls_DAL.trae_conexion("Progra4", ref mensaje_error, ref numero_error);
             if (conexion == null)
@@ -194,9 +224,10 @@ namespace BLL
             }
             else
             {
-                sql = "Delete from BebidaCaliente where codBebidaCal = @codBebidaCal";
+                sql = "Delete from BebidaCaliente where codBebidaCal = '" + codRestaurante + "'";
 
                 ParamStruct[] parametros = new ParamStruct[1];
+                sql = "Delete from BebidaCaliente where codBebidaCal = '" + codRestaurante + "'";
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@codBebidaCal", SqlDbType.VarChar, codBebidaCal);
                 cls_DAL.conectar(conexion, ref mensaje_error, ref numero_error);
                 cls_DAL.ejecuta_sqlcommand(conexion, sql, false, parametros, ref mensaje_error, ref numero_error);
@@ -280,8 +311,6 @@ namespace BLL
                 }
                 else
                 {
-
-
                     return ds;
                 }
             }

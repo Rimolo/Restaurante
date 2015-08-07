@@ -52,20 +52,18 @@ namespace Restaurante
 
         private void b_borrar_Click(object sender, EventArgs e)
         {
-            txt_codigo.Text = "";
             txt_nombre.Text = "";
             txt_ingredientes.Text = "";
             txt_precio.Text = "";
-            txt_restaurantes.Text = "";
-            txt_descripcion.Text = "";          
-            
+            txt_descripcion.Text = "";
+            pic_foto.Image = null ;
         }
 
         private void b_aceptar_Click(object sender, EventArgs e)
         {
             if (!cls_validacion.validar(txt_nombre))
             {
-                MessageBox.Show("Por favor seleccione un tipo de consecutivo", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Por favor digite el nomnre del producto", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txt_nombre.Focus();
                 return;
             }
@@ -79,23 +77,17 @@ namespace Restaurante
 
             if (!cls_validacion.validar(txt_ingredientes))
             {
-                MessageBox.Show("Por favor digite el valor inicial del consecutivo", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Por favor digite los ingredientes del producto", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txt_ingredientes.Focus();
                 return;
             }
             if (!cls_validacion.validar(txt_precio))
             {
-                MessageBox.Show("Por favor digite el valor inicial del consecutivo", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Por favor digite el precio del producto", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txt_precio.Focus();
                 return;
             }
-            if (!cls_validacion.validar(txt_restaurantes))
-            {
-                MessageBox.Show("Por favor digite el valor inicial del consecutivo", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txt_restaurantes.Focus();
-                return;
-            }
-
+            
             obj_calientes.codBebidaCal = txt_codigo.Text;
             obj_calientes.nombre = txt_nombre.Text;
             obj_calientes.descripcion = txt_descripcion.Text;
@@ -103,7 +95,7 @@ namespace Restaurante
             obj_calientes.codRestaurante = txt_restaurantes.Text;
             obj_calientes.ingredientes = txt_ingredientes.Text;
 
-            if (obj_calientes.guardar_Calientes(_accion))
+            if (obj_calientes.guardar_Calientes(_accion, txt_restaurantes.Text))
             {
                 int valor = 0;
                 try
@@ -137,7 +129,22 @@ namespace Restaurante
 
         private void b_buscaFoto_Click(object sender, EventArgs e)
         {
-            
+            /* int size = -1;
+            DialogResult result = openFileDialog1.ShowDialog(); // Show the dialog.
+            if (result == DialogResult.OK) // Test result.
+            {
+                string file = openFileDialog1.FileName;
+                try
+                {
+                    string text = File.ReadAllText(file);
+                    size = text.Length;
+                }
+                catch (IOException)
+                {
+                }
+            }
+            Console.WriteLine(size); // <-- Shows file size in debugging mode.
+            Console.WriteLine(result); // <-- For debugging use.*/
         }
 
         private void carga_info()

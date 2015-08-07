@@ -870,7 +870,7 @@ SELECT codConsecutivo, tipo, descripcion, valor, prefijo FROM Consecutivos WHERE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Restaurante.Properties.Settings.Default.RestauranteConnectionString;
+            this._connection.ConnectionString = global::Restaurante.Properties.Settings.Default.Progra4;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
