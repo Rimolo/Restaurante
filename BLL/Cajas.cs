@@ -130,12 +130,12 @@ namespace BLL
             }
             else
             {
-                string sql1 = "Select c.codCaja,c.fecha,m.descripcion,m.saldoActual-m.saldoAnterior as monto,c.montoApertura,c.montoCierre,r.nombre from Caja c join Movimientos m on c.codCaja = m.codCaja join Restaurante r on c.codRestaurante = r.codRestaurante   Order by codCajaSelect c.codCaja,c.fecha,m.descripcion,m.saldoActual-m.saldoAnterior as monto,c.montoApertura,c.montoCierre,r.nombre from Caja c join Movimientos m on c.codCaja = m.codCaja join Restaurante r on c.codRestaurante = r.codRestaurante ";
+                string sql1 = "Select c.codCaja,c.fecha,m.descripcion,m.saldoActual-m.saldoAnterior as monto,c.montoApertura,c.montoCierre,r.nombre from Caja c join Movimientos m on c.codCaja = m.codCaja join Restaurante r on c.codRestaurante = r.codRestaurante ";
                 string condicion = "Where ";
 
                 if (!string.IsNullOrEmpty(_codigo))
                 {
-                    sql1 += condicion + "codMesa ='" + _codigo + "'";
+                    sql1 += condicion + "c.codMesa ='" + _codigo + "'";
                     condicion = " and ";
                 }
                 if (!string.IsNullOrEmpty(_codRest))
