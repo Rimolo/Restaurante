@@ -32,7 +32,10 @@ namespace Restaurante
             }
             else if (rb_paises.Checked)
             {
-
+                frm_ListaPaises paises = new frm_ListaPaises();
+                paises.Tag = this;
+                paises.Show(this);
+                this.Hide();
             }
             else if (rb_usuarios.Checked) {
                 frm_listaUsuarios usuarios = new frm_listaUsuarios();

@@ -31,16 +31,16 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.txt_nombrePais = new System.Windows.Forms.TextBox();
+            this.txt_codigoPais = new System.Windows.Forms.TextBox();
             this.pic_bandera = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.b_borrar = new System.Windows.Forms.Button();
             this.b_aceptar = new System.Windows.Forms.Button();
             this.b_cerrar = new System.Windows.Forms.Button();
             this.b_buscaFoto = new System.Windows.Forms.Button();
-            this.txt_codigoPais = new System.Windows.Forms.TextBox();
-            this.txt_nombrePais = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -80,32 +80,20 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Informacion de los paises";
             // 
-            // label1
+            // txt_nombrePais
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Codigo del pais";
+            this.txt_nombrePais.Location = new System.Drawing.Point(100, 55);
+            this.txt_nombrePais.Name = "txt_nombrePais";
+            this.txt_nombrePais.Size = new System.Drawing.Size(153, 20);
+            this.txt_nombrePais.TabIndex = 5;
             // 
-            // label2
+            // txt_codigoPais
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 55);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(84, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Nombre del Pais";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(7, 93);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(87, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Bandera del Pais";
+            this.txt_codigoPais.Enabled = false;
+            this.txt_codigoPais.Location = new System.Drawing.Point(100, 20);
+            this.txt_codigoPais.Name = "txt_codigoPais";
+            this.txt_codigoPais.Size = new System.Drawing.Size(153, 20);
+            this.txt_codigoPais.TabIndex = 4;
             // 
             // pic_bandera
             // 
@@ -117,6 +105,33 @@
             this.pic_bandera.TabIndex = 3;
             this.pic_bandera.TabStop = false;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(7, 93);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(87, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Bandera del Pais";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(7, 55);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(84, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Nombre del Pais";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(7, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(79, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Codigo del pais";
+            // 
             // b_borrar
             // 
             this.b_borrar.Image = global::Restaurante.Properties.Resources.clean1;
@@ -125,6 +140,7 @@
             this.b_borrar.Size = new System.Drawing.Size(39, 47);
             this.b_borrar.TabIndex = 70;
             this.b_borrar.UseVisualStyleBackColor = true;
+            this.b_borrar.Click += new System.EventHandler(this.b_borrar_Click);
             // 
             // b_aceptar
             // 
@@ -134,6 +150,7 @@
             this.b_aceptar.Size = new System.Drawing.Size(42, 47);
             this.b_aceptar.TabIndex = 77;
             this.b_aceptar.UseVisualStyleBackColor = true;
+            this.b_aceptar.Click += new System.EventHandler(this.b_aceptar_Click);
             // 
             // b_cerrar
             // 
@@ -143,6 +160,7 @@
             this.b_cerrar.Size = new System.Drawing.Size(42, 43);
             this.b_cerrar.TabIndex = 78;
             this.b_cerrar.UseVisualStyleBackColor = true;
+            this.b_cerrar.Click += new System.EventHandler(this.b_cerrar_Click);
             // 
             // b_buscaFoto
             // 
@@ -152,20 +170,7 @@
             this.b_buscaFoto.Size = new System.Drawing.Size(43, 44);
             this.b_buscaFoto.TabIndex = 79;
             this.b_buscaFoto.UseVisualStyleBackColor = true;
-            // 
-            // txt_codigoPais
-            // 
-            this.txt_codigoPais.Location = new System.Drawing.Point(100, 20);
-            this.txt_codigoPais.Name = "txt_codigoPais";
-            this.txt_codigoPais.Size = new System.Drawing.Size(153, 20);
-            this.txt_codigoPais.TabIndex = 4;
-            // 
-            // txt_nombrePais
-            // 
-            this.txt_nombrePais.Location = new System.Drawing.Point(100, 55);
-            this.txt_nombrePais.Name = "txt_nombrePais";
-            this.txt_nombrePais.Size = new System.Drawing.Size(153, 20);
-            this.txt_nombrePais.TabIndex = 5;
+            this.b_buscaFoto.Click += new System.EventHandler(this.b_buscaFoto_Click);
             // 
             // frm_paises
             // 
@@ -181,6 +186,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "frm_paises";
             this.Text = "Paises";
+            this.Load += new System.EventHandler(this.frm_paises_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);

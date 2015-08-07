@@ -4,6 +4,8 @@ using System.Text;
 using System.Data.SqlClient;
 using System.Data;
 using System.Configuration; //extrae cadena de conexion
+using System.Runtime.Serialization.Formatters.Binary;
+using System.IO;
 
 namespace DAL
 {
@@ -155,6 +157,7 @@ namespace DAL
                 }
                 foreach (ParamStruct var in parametros )
                 {
+
                     Agrega_parametro(ref sql_data_adapter, var.Nombre_Parametro, var.Valor_Parametro.ToString() , var.Tipo_Dato);    
                 }
                 sql_data_adapter.Fill(dataset);
@@ -243,7 +246,24 @@ namespace DAL
                 }
                 foreach (ParamStruct var in parametros)
                 {
-                    Agrega_parametro(ref sql_command, var.Nombre_Parametro, var.Valor_Parametro.ToString(), var.Tipo_Dato);
+                    if (var.Nombre_Parametro.Equals("@img"))
+                    {
+                        SqlParameter param = new SqlParameter();
+                        param.ParameterName = var.Nombre_Parametro;
+                        BinaryFormatter bf = new BinaryFormatter();
+                        using (MemoryStream ms = new MemoryStream())
+                        {
+                            bf.Serialize(ms, var.Valor_Parametro);
+                            param.Value = ms.ToArray();
+                        }
+                        param.SqlDbType = var.Tipo_Dato;
+                        sql_command.Parameters.Add(param);
+                    }
+                    else
+                    {
+                        Agrega_parametro(ref sql_command, var.Nombre_Parametro, var.Valor_Parametro.ToString(), var.Tipo_Dato);
+                    }
+                    
                 }
                 resultado = sql_command.ExecuteNonQuery();
                 mensaje_error = "";
@@ -270,7 +290,23 @@ namespace DAL
                 }
                 foreach (ParamStruct var in parametros)
                 {
-                    Agrega_parametro(ref sql_command, var.Nombre_Parametro, var.Valor_Parametro.ToString(), var.Tipo_Dato);
+                    if (var.Nombre_Parametro.Equals("@img"))
+                    {
+                        SqlParameter param = new SqlParameter();
+                        param.ParameterName = var.Nombre_Parametro;
+                        BinaryFormatter bf = new BinaryFormatter();
+                        using (MemoryStream ms = new MemoryStream())
+                        {
+                            bf.Serialize(ms, var.Valor_Parametro);
+                            param.Value=ms.ToArray();
+                        }
+                        param.SqlDbType = var.Tipo_Dato;
+                        sql_command.Parameters.Add(param);
+                    }
+                    else
+                    {
+                        Agrega_parametro(ref sql_command, var.Nombre_Parametro, var.Valor_Parametro.ToString(), var.Tipo_Dato);
+                    }
                 }
                 resultado = sql_command.ExecuteNonQuery();
                 mensaje_error = "";

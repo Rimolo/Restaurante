@@ -48,6 +48,7 @@
     <Compile Include="Calientes.cs" />
     <Compile Include="Imprimir.cs" />
     <Compile Include="Login.cs" />
+    <Compile Include="Paises.cs" />
     <Compile Include="Pedidos.cs" />
     <Compile Include="Productos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
