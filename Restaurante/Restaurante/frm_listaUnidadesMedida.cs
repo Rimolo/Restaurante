@@ -56,7 +56,7 @@ namespace Restaurante
                 objUnidades.codigo = txt_codigoUnidadMedida.Text;
 
             }
-            else if (txt_detalleUnidadMedida.Text != "")
+            if (txt_detalleUnidadMedida.Text != "")
             {
                 objUnidades.detalle = txt_detalleUnidadMedida.Text;
             }
