@@ -16,5 +16,40 @@ namespace Restaurante
         {
             InitializeComponent();
         }
+
+        private void b_refrescar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void b_cancelar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void b_borrar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void b_aceptar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void b_mas_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void b_menos_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

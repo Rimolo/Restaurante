@@ -16,5 +16,35 @@ namespace Restaurante
         {
             InitializeComponent();
         }
+
+        private void b_aceptar_Click(object sender, EventArgs e)
+        {
+            if (rb_marcas.Checked == true)
+            {
+                frm_listaMarcas marcas = new frm_listaMarcas();
+                marcas.Show();
+            }
+            else
+            {
+                if (rb_productos.Checked == true)
+                {
+                    frm_catalogoProductos catalogo = new frm_catalogoProductos();
+                    catalogo.Show();
+                }
+                else
+                {
+                    if (rb_proveedores.Checked == true)
+                    {
+                        frm_listaProveedores proveedores = new frm_listaProveedores();
+                        proveedores.Show();
+                    }                    
+                }
+            }
+        }
+
+        private void b_cancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

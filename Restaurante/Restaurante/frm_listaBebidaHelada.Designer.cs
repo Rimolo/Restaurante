@@ -34,10 +34,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dgv_bebidaHelada = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.b_aceptar = new System.Windows.Forms.Button();
@@ -46,6 +42,10 @@
             this.b_borrar = new System.Windows.Forms.Button();
             this.b_agregar = new System.Windows.Forms.Button();
             this.b_eliminar = new System.Windows.Forms.Button();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_bebidaHelada)).BeginInit();
             this.panel1.SuspendLayout();
@@ -100,6 +100,8 @@
             // 
             // dgv_bebidaHelada
             // 
+            this.dgv_bebidaHelada.AllowUserToAddRows = false;
+            this.dgv_bebidaHelada.AllowUserToDeleteRows = false;
             this.dgv_bebidaHelada.BackgroundColor = System.Drawing.Color.White;
             this.dgv_bebidaHelada.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_bebidaHelada.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -108,29 +110,13 @@
             this.Column3,
             this.Column4});
             this.dgv_bebidaHelada.Location = new System.Drawing.Point(187, 134);
+            this.dgv_bebidaHelada.MultiSelect = false;
             this.dgv_bebidaHelada.Name = "dgv_bebidaHelada";
-            this.dgv_bebidaHelada.Size = new System.Drawing.Size(467, 253);
+            this.dgv_bebidaHelada.ReadOnly = true;
+            this.dgv_bebidaHelada.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_bebidaHelada.Size = new System.Drawing.Size(446, 253);
             this.dgv_bebidaHelada.TabIndex = 13;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Codigo";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Nombre";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Precio";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Restaurante";
-            this.Column4.Name = "Column4";
+            this.dgv_bebidaHelada.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_bebidaHelada_CellContentClick);
             // 
             // panel1
             // 
@@ -158,6 +144,7 @@
             this.b_aceptar.Size = new System.Drawing.Size(52, 47);
             this.b_aceptar.TabIndex = 9;
             this.b_aceptar.UseVisualStyleBackColor = true;
+            this.b_aceptar.Click += new System.EventHandler(this.b_aceptar_Click);
             // 
             // b_cancelar
             // 
@@ -167,6 +154,7 @@
             this.b_cancelar.Size = new System.Drawing.Size(52, 43);
             this.b_cancelar.TabIndex = 7;
             this.b_cancelar.UseVisualStyleBackColor = true;
+            this.b_cancelar.Click += new System.EventHandler(this.b_cancelar_Click);
             // 
             // b_refrescar
             // 
@@ -176,6 +164,7 @@
             this.b_refrescar.Size = new System.Drawing.Size(48, 43);
             this.b_refrescar.TabIndex = 73;
             this.b_refrescar.UseVisualStyleBackColor = true;
+            this.b_refrescar.Click += new System.EventHandler(this.b_refrescar_Click);
             // 
             // b_borrar
             // 
@@ -185,6 +174,7 @@
             this.b_borrar.Size = new System.Drawing.Size(52, 42);
             this.b_borrar.TabIndex = 74;
             this.b_borrar.UseVisualStyleBackColor = true;
+            this.b_borrar.Click += new System.EventHandler(this.b_borrar_Click);
             // 
             // b_agregar
             // 
@@ -194,6 +184,7 @@
             this.b_agregar.Size = new System.Drawing.Size(53, 39);
             this.b_agregar.TabIndex = 75;
             this.b_agregar.UseVisualStyleBackColor = true;
+            this.b_agregar.Click += new System.EventHandler(this.b_agregar_Click);
             // 
             // b_eliminar
             // 
@@ -203,13 +194,42 @@
             this.b_eliminar.Size = new System.Drawing.Size(53, 42);
             this.b_eliminar.TabIndex = 76;
             this.b_eliminar.UseVisualStyleBackColor = true;
+            this.b_eliminar.Click += new System.EventHandler(this.b_eliminar_Click);
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "codBebidaHel";
+            this.Column1.HeaderText = "Codigo";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "nombre";
+            this.Column2.HeaderText = "Nombre";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "precio";
+            this.Column3.HeaderText = "Precio";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "nomrest";
+            this.Column4.HeaderText = "Restaurante";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
             // 
             // frm_listaBebidaHelada
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.ClientSize = new System.Drawing.Size(666, 396);
+            this.ClientSize = new System.Drawing.Size(645, 396);
             this.Controls.Add(this.b_eliminar);
             this.Controls.Add(this.b_agregar);
             this.Controls.Add(this.b_borrar);
@@ -221,6 +241,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "frm_listaBebidaHelada";
             this.Text = "Lista de Bebidas Heladas";
+            this.Load += new System.EventHandler(this.frm_listaBebidaHelada_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_bebidaHelada)).EndInit();
@@ -240,15 +261,15 @@
         private System.Windows.Forms.Button b_cancelar;
         private System.Windows.Forms.Button b_aceptar;
         private System.Windows.Forms.DataGridView dgv_bebidaHelada;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button b_refrescar;
         private System.Windows.Forms.Button b_borrar;
         private System.Windows.Forms.Button b_agregar;
         private System.Windows.Forms.Button b_eliminar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
     }
 }

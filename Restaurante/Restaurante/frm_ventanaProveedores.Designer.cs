@@ -100,6 +100,7 @@
             this.b_aceptar.Size = new System.Drawing.Size(63, 47);
             this.b_aceptar.TabIndex = 10;
             this.b_aceptar.UseVisualStyleBackColor = true;
+            this.b_aceptar.Click += new System.EventHandler(this.b_aceptar_Click);
             // 
             // b_cancelar
             // 
@@ -109,6 +110,7 @@
             this.b_cancelar.Size = new System.Drawing.Size(63, 47);
             this.b_cancelar.TabIndex = 11;
             this.b_cancelar.UseVisualStyleBackColor = true;
+            this.b_cancelar.Click += new System.EventHandler(this.b_cancelar_Click);
             // 
             // frm_ventanaProveedores
             // 

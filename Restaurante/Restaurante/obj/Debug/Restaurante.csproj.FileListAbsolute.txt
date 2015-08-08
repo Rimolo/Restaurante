@@ -345,7 +345,6 @@ C:\Users\primo\Source\Repos\Restaurante3\Restaurante\Restaurante\obj\Debug\Resta
 C:\Users\primo\Source\Repos\Restaurante3\Restaurante\Restaurante\obj\Debug\Restaurante.frm_listaEspecialidades.resources
 C:\Users\primo\Source\Repos\Restaurante3\Restaurante\Restaurante\obj\Debug\Restaurante.frm_listaLimpieza.resources
 C:\Users\primo\Source\Repos\Restaurante3\Restaurante\Restaurante\obj\Debug\Restaurante.frm_listaMarcas.resources
-C:\Users\primo\Source\Repos\Restaurante3\Restaurante\Restaurante\obj\Debug\Restaurante.frm_listaMesascs.resources
 C:\Users\primo\Source\Repos\Restaurante3\Restaurante\Restaurante\obj\Debug\Restaurante.frm_ListaPaises.resources
 C:\Users\primo\Source\Repos\Restaurante3\Restaurante\Restaurante\obj\Debug\Restaurante.frm_listaProveedores.resources
 C:\Users\primo\Source\Repos\Restaurante3\Restaurante\Restaurante\obj\Debug\Restaurante.frm_listaPuestos.resources
@@ -463,3 +462,4 @@ C:\Users\primo\Source\Repos\Restaurante2\Restaurante\Restaurante\obj\Debug\Resta
 C:\Users\primo\Source\Repos\Restaurante2\Restaurante\Restaurante\obj\Debug\Restaurante.csproj.GenerateResource.Cache
 C:\Users\primo\Source\Repos\Restaurante2\Restaurante\Restaurante\obj\Debug\Restaurante.frm_listaMesas.resources
 C:\Users\Vitaly\Source\Repos\Restaurante\Restaurante\Restaurante\obj\Debug\Restaurante.frm_listaMesas.resources
+C:\Users\primo\Source\Repos\Restaurante3\Restaurante\Restaurante\obj\Debug\Restaurante.frm_listaMesas.resources

@@ -189,11 +189,11 @@ namespace Restaurante
                 return;
             }
 
-            obj_consecutivos.codConsecutivo = Convert.ToString(txt_prefijo.Text + txt_valorConsecutivo.Text);
-            obj_consecutivos.tipo = Convert.ToString(cb_tipoConsecutivo.SelectedItem.ToString());
-            obj_consecutivos.descripcion = Convert.ToString(txt_descripcion.Text);
-            obj_consecutivos.valor = Convert.ToString(txt_valorConsecutivo.Text);
-            obj_consecutivos.prefijo = Convert.ToString(txt_prefijo.Text);
+            obj_consecutivos.codConsecutivo = txt_prefijo.Text + txt_valorConsecutivo.Text;
+            obj_consecutivos.tipo = cb_tipoConsecutivo.SelectedItem.ToString();
+            obj_consecutivos.descripcion = txt_descripcion.Text;
+            obj_consecutivos.valor = txt_valorConsecutivo.Text;
+            obj_consecutivos.prefijo = txt_prefijo.Text;
 
             if (obj_consecutivos.guardar_consecutivos(accion))
             {
@@ -221,9 +221,9 @@ namespace Restaurante
             if (obj_consecutivos.tipo != "Error")
             {
                 cb_tipoConsecutivo.Text = obj_consecutivos.tipo; 
-                txt_descripcion.Text = obj_consecutivos.descripcion.ToString(); 
+                txt_descripcion.Text = obj_consecutivos.descripcion; 
                 txt_valorConsecutivo.Text = obj_consecutivos.valor; 
-                txt_prefijo.Text = obj_consecutivos.prefijo.ToString(); 
+                txt_prefijo.Text = obj_consecutivos.prefijo; 
             }
         }
 

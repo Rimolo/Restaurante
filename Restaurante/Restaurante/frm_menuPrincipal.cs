@@ -85,7 +85,8 @@ namespace Restaurante
 
         private void b_proveedores_Click(object sender, EventArgs e)
         {
-
+            frm_ventanaProveedores proveedores = new frm_ventanaProveedores();
+            proveedores.Show();
         }
 
         private void b_administracion_Click(object sender, EventArgs e)
