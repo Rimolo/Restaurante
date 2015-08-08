@@ -8,51 +8,64 @@ using System.Windows.Forms;
 
 namespace BLL
 {
-    public class Calientes
+    public class Marcas
     {
         #region propiedades
+        private string _codMarca;
 
-        private string _codBebidaCal;
-
-        public string codBebidaCal
+        public string codMarca
         {
-            get { return _codBebidaCal; }
-            set { _codBebidaCal = value; }
+            get { return _codMarca; }
+            set { _codMarca = value; }
         }
-        private string _nombre;
+        private string _nombreMarca;
 
-        public string nombre
+        public string nombreMarca
         {
-            get { return _nombre; }
-            set { _nombre = value; }
+            get { return _nombreMarca; }
+            set { _nombreMarca = value; }
         }
-        private string _ingredientes;
+        private string _codPais;
 
-        public string ingredientes
+        public string codPais
         {
-            get { return _ingredientes; }
-            set { _ingredientes = value; }
-        }
-        private decimal _precio;
-
-        public decimal precio
-        {
-            get { return _precio; }
-            set { _precio = value; }
-        }
-        private string _codRestaurante;
-
-        public string codRestaurante
-        {
-            get { return _codRestaurante; }
-            set { _codRestaurante = value; }
-        }
+            get { return _codPais; }
+            set { _codPais = value; }
+        }       
         private string _descripcion;
 
         public string descripcion
         {
             get { return _descripcion; }
             set { _descripcion = value; }
+        }        
+        private string _cedJuridica;
+
+        public string cedJuridica
+        {
+            get { return _cedJuridica; }
+            set { _cedJuridica = value; }
+        }
+        private string _nombreEmp;
+
+        public string nombreEmp
+        {
+            get { return _nombreEmp; }
+            set { _nombreEmp = value; }
+        }        
+        private string _detalleEmpresa;
+
+        public string detalleEmpresa
+        {
+            get { return _detalleEmpresa; }
+            set { _detalleEmpresa = value; }
+        }
+        private string _telefono;
+
+        public string telefono
+        {
+            get { return _telefono; }
+            set { _telefono = value; }
         }
         private byte[] _imagen;
 
@@ -61,8 +74,14 @@ namespace BLL
             get { return _imagen; }
             set { _imagen = value; }
         }
+        private byte[] _logo;
 
-        #endregion
+        public byte[] logo
+        {
+            get { return _logo; }
+            set { _logo = value; }
+        }
+        #endregion        
 
         #region variables privadas
         SqlConnection conexion;
@@ -74,7 +93,7 @@ namespace BLL
 
         #region metodos
 
-        public DataSet carga_calientes_especificos()
+        public DataSet carga_Marcas_especificos()
         {
             conexion = cls_DAL.trae_conexion("Progra4", ref mensaje_error, ref numero_error);
             if (conexion == null)
@@ -84,27 +103,41 @@ namespace BLL
             }
             else
             {
-                string sql1 = "Select Bc.codBebidaCal, Bc.nombre, Bc.precio, R.nombre as nomrest from BebidaCaliente Bc ";
+                string sql1 = "Select M.codMarca, M.nombre, M.Descripcion, P.nombre as nomPais, M.nombEmp, M.TelefonoEmp from Marcas M";
                 string condicion = "Where ";
-                string join = "INNER JOIN Restaurante R ON Bc.codRestaurante = R.codRestaurante ";
-                if (!string.IsNullOrEmpty(_codBebidaCal))
+                string join = "INNER JOIN Pais P ON M.codPais = P.codigoPais";
+                if (!string.IsNullOrEmpty(_codMarca))
                 {
-                    sql1 += join + condicion + "codBebidaCaliente ='" + _codBebidaCal + "'";
+                    sql1 += join + condicion + "M.codMarca ='" + _codMarca + "'";
                     condicion = "and ";
                 }
                 else
                 {
-                    if (!string.IsNullOrEmpty(_nombre))
+                    if (!string.IsNullOrEmpty(_nombreMarca))
                     {
-                        sql1 += join + condicion + "nombre ='" + _nombre + "'";
+                        sql1 += join + condicion + "M.nombre ='" + _nombreMarca + "'";
+                    }
+                    else
+                    {
+                        if (!string.IsNullOrEmpty(_nombreEmp))
+                        {
+                            sql1 += join + condicion + "M.nombEmp ='" + _nombreEmp + "'";
+                        }
+                        if (!string.IsNullOrEmpty(_codPais))
+                        {
+                            sql1 += join + condicion + "P.nombre ='" + _codPais + "'";
+                            condicion = "and ";
+                        }
                     }
                 }
-                sql = sql1 + " Order by codBebidaCal";
+                
+               
+                sql = sql1 + " Order by codMarca";
 
                 ds = cls_DAL.ejecuta_dataset(conexion, sql, false, ref mensaje_error, ref numero_error);
                 if (numero_error != 0)
                 {
-                    MessageBox.Show(mensaje_error, "Error al cargar las Bebidas Calientes", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(mensaje_error, "Error al cargar las Marca", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return null;
                 }
                 else
@@ -114,7 +147,7 @@ namespace BLL
             }
         }
 
-        public DataSet carga_Calientes()
+        public DataSet carga_Marca()
         {
             conexion = cls_DAL.trae_conexion("Progra4", ref mensaje_error, ref numero_error);
             if (conexion == null)
@@ -124,12 +157,12 @@ namespace BLL
             }
             else
             {
-                sql = "Select Bc.codBebidaCal, Bc.nombre, Bc.precio, R.nombre as nomrest from BebidaCaliente Bc INNER JOIN Restaurante R ON Bc.codRestaurante = R.codRestaurante Order by Bc.codBebidaCal";
+                sql = "Select M.codMarca, M.nombre, M.Descripcion, P.nombre as nomPais, M.nombEmp, M.TelefonoEmp from Marcas M INNER JOIN Pais P ON M.codPais = P.codigoPais Order by M.codMarca";
 
                 ds = cls_DAL.ejecuta_dataset(conexion, sql, false, ref mensaje_error, ref numero_error);
                 if (numero_error != 0)
                 {
-                    MessageBox.Show(mensaje_error, "Error al cargar las Bebidas Calientes", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(mensaje_error, "Error al cargar las Marcas", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return null;
                 }
                 else
@@ -139,7 +172,7 @@ namespace BLL
             }
         }
 
-        public bool guardar_Calientes(string accion,string Restaurante)
+        public bool guardar_Marcas(string accion, string Restaurante)
         {
             conexion = cls_DAL.trae_conexion("Progra4", ref mensaje_error, ref numero_error);
             string codRest = "";
@@ -153,31 +186,36 @@ namespace BLL
                 if (accion.Equals("Insertar"))
                 {
                     DataSet ds;
-                    ds = retorna_Cod_Restaurante(Restaurante);
+                    ds = retorna_Cod_Pais(Restaurante);
                     codRest = Convert.ToString(ds.Tables[0].Rows[0]["codRestaurante"]);
-                    sql = "Insert into BebidaCaliente values(@codBebidaCal, @nombre, @ingredientes, @precio, @codRestaurante,  @descripcion, null)";
+                    sql = "Insert into Marcas values(@codMarca, @nombre, @codPais, @descripcion, @nombEmp, @detalleEmp, @telefonoEmp, @cedJuridicaEmp, null, null)";
                 }
                 else
                 {
-                    sql = "Update BebidaCaliente SET" +
+                    sql = "Update Marcas SET" +
                         " nombre=@nombre," +
                         " descripcion=@descripcion," +
-                        " precio=@precio," +
-                        " ingredientes=@ingredientes," +
-                        " where codBebidaCal=@codBebidaCal";
+                        " codPais=@codPais," +
+                        " nombEmp=@nombEmp," +
+                        " detalleEmp=@detalleEmp," +
+                        " telefonoEmp=@telefonoEmp," +
+                        " cedJuridicaEmp=@cedJuridicaEmp" +
+                        " where codMarca=@codMarca";
                 }
-                ParamStruct[] parametros = new ParamStruct[6];
-                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@codBebidaCal", SqlDbType.VarChar, _codBebidaCal);
-                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 1, "@nombre", SqlDbType.VarChar, _nombre);
-                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 2, "@ingredientes", SqlDbType.VarChar, _ingredientes);
-                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 3, "@precio", SqlDbType.Money, _precio);
-                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 4, "@codRestaurante", SqlDbType.VarChar, codRest);
-                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 5, "@descripcion", SqlDbType.VarChar, _descripcion);
+                ParamStruct[] parametros = new ParamStruct[8];
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@codMarca", SqlDbType.VarChar, _codMarca);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 1, "@nombre", SqlDbType.VarChar, _nombreMarca);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 2, "@codPais", SqlDbType.VarChar, _codPais);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 3, "@descripcion", SqlDbType.VarChar, _descripcion);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 4, "@nombEmp", SqlDbType.VarChar, _nombreEmp);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 5, "@detalleEmp", SqlDbType.VarChar, _detalleEmpresa);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 6, "@telefonoEmp", SqlDbType.VarChar, _telefono);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 7, "@cedJuridicaEmp", SqlDbType.VarChar, _cedJuridica);
                 cls_DAL.conectar(conexion, ref mensaje_error, ref numero_error);
                 cls_DAL.ejecuta_sqlcommand(conexion, sql, false, parametros, ref mensaje_error, ref numero_error);
                 if (numero_error != 0)
                 {
-                    MessageBox.Show(mensaje_error, "Error al guardar el producto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(mensaje_error, "Error al guardar la Marca", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     cls_DAL.desconectar(conexion, ref mensaje_error, ref numero_error);
                     return false;
                 }
@@ -189,7 +227,7 @@ namespace BLL
             }
         }
 
-        public DataSet retorna_Cod_Restaurante(string nombre)
+        public DataSet retorna_Cod_Pais(string nacionalidad)
         {
             conexion = cls_DAL.trae_conexion("Progra4", ref mensaje_error, ref numero_error);
             if (conexion == null)
@@ -199,13 +237,13 @@ namespace BLL
             }
             else
             {                
-                sql = "Select codRestaurante from Restaurante where nombre='"+ nombre +"'";
+                sql = "Select codPais from Pais where nombre='"+ nacionalidad + "'";
 
                 ds = cls_DAL.ejecuta_dataset(conexion, sql, false, ref mensaje_error, ref numero_error);
 
                 if (numero_error != 0)
                 {
-                    MessageBox.Show(mensaje_error, "Error al guardar el codigo del Restaurante", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(mensaje_error, "Error al guardar el codigo del Pais", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return null;
                 }
                 else
@@ -215,7 +253,7 @@ namespace BLL
             }
         }
 
-        public bool eliminar_Calientes(string codRestaurente)
+        public bool eliminar_Marca(string codMarca)
         {
             conexion = cls_DAL.trae_conexion("Progra4", ref mensaje_error, ref numero_error);
             if (conexion == null)
@@ -225,16 +263,15 @@ namespace BLL
             }
             else
             {
-                sql = "Delete from BebidaCaliente where codBebidaCal = @codBebidaCal";
+                sql = "Delete from Marcas where codMarca = @codMarca";
 
                 ParamStruct[] parametros = new ParamStruct[1];
-                sql = "Delete from BebidaCaliente where codBebidaCal = '" + codRestaurante + "'";
-                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@codBebidaCal", SqlDbType.VarChar, codBebidaCal);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@codMarca", SqlDbType.VarChar, codMarca);
                 cls_DAL.conectar(conexion, ref mensaje_error, ref numero_error);
                 cls_DAL.ejecuta_sqlcommand(conexion, sql, false, parametros, ref mensaje_error, ref numero_error);
                 if (numero_error != 0)
                 {
-                    MessageBox.Show(mensaje_error, "Error al eliminar la Bebida Caliente", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(mensaje_error, "Error al eliminar la Marca", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     cls_DAL.desconectar(conexion, ref mensaje_error, ref numero_error);
                     return false;
                 }
@@ -246,41 +283,44 @@ namespace BLL
             }
         }
 
-        public void carga_info_Calientes(string codCal)
+        public void carga_info_Marca(string codMar)
         {
             conexion = cls_DAL.trae_conexion("Progra4", ref mensaje_error, ref numero_error);
             if (conexion == null)
             {
                 MessageBox.Show(mensaje_error, "Error al obtener cadena de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                _nombre = "Error";
+                _nombreMarca = "Error";
             }
             else
             {
-                sql = "Select Bc.codBebidaCal, Bc.nombre, Bc.ingredientes, Bc.precio, R.nombre as nomrest,  Bc.descripcion,  Bc.imagen" +
-                      " from BebidaCaliente Bc INNER JOIN Restaurante R ON Bc.codRestaurante = R.codRestaurante where codBebidaCal = @codCal";
+                sql = "Select M.nombre, P.nombre as nomPais, M.descripcion, M.nombEmp, M.detalleEmp, M.telefonoEmp, M.cedJuridicaEmp, M.logoEmpresa, M.imagenMarca" +
+                      " from Marcas M INNER JOIN Pais P ON M.codPais = P.codidoPais where codMarca=@codMarca";
                 ParamStruct[] parametros = new ParamStruct[1];
-                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@codCal", SqlDbType.VarChar, codCal);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@codMarca", SqlDbType.VarChar, codMar);
                 ds = cls_DAL.ejecuta_dataset(conexion, sql, false, parametros, ref mensaje_error, ref numero_error);
                 if (ds == null)
                 {
-                    MessageBox.Show(mensaje_error, "Error al obtener las Bebidas Calientes", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    _nombre = "Error";
+                    MessageBox.Show(mensaje_error, "Error al obtener las Marcas", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    _nombreMarca = "Error";
                 }
                 else
                 {
                     if (ds.Tables[0].Rows.Count > 0)
                     {                        
-                        _nombre = ds.Tables[0].Rows[0]["nombre"].ToString();
-                        _ingredientes = ds.Tables[0].Rows[0]["ingredientes"].ToString();
-                        _precio = Convert.ToDecimal(ds.Tables[0].Rows[0]["precio"]);
+                        _nombreMarca = ds.Tables[0].Rows[0]["nombre"].ToString();
+                        _codPais = ds.Tables[0].Rows[0]["nomPais"].ToString();
                         _descripcion = ds.Tables[0].Rows[0]["descripcion"].ToString();
-                        _codRestaurante = ds.Tables[0].Rows[0]["nomrest"].ToString();
-                        // _imagen = (byte[])(ds.Tables[0].Rows[0]["imagen"]);
+                        _nombreEmp = ds.Tables[0].Rows[0]["nombEmp"].ToString();
+                        _detalleEmpresa = ds.Tables[0].Rows[0]["detalleEmp"].ToString();
+                        _telefono = ds.Tables[0].Rows[0]["telefonoEmp"].ToString();
+                        _cedJuridica = ds.Tables[0].Rows[0]["cedJuridicaEmp"].ToString();                        
+                        // _imagen = (byte[])(ds.Tables[0].Rows[0]["logoEmpresa"]);
+                        // _imagen = (byte[])(ds.Tables[0].Rows[0]["imagenMarca"]);
 
                     }
                     else
                     {
-                        _nombre = "Error";
+                        _nombreMarca = "Error";
                     }
                 }
 
@@ -300,13 +340,13 @@ namespace BLL
             }
             else
             {
-                sql = "Select valor From Consecutivos WHERE tipo='Bebidas Calientes'";
+                sql = "Select valor From Consecutivos WHERE tipo='Marcas'";
 
                 ds = cls_DAL.ejecuta_dataset(conexion, sql, false, ref mensaje_error, ref numero_error);
 
                 if (numero_error != 0)
                 {
-                    MessageBox.Show(mensaje_error, "Error cargar los consecutivos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(mensaje_error, "Error cargar el consecutivos", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return null;
                 }
                 else
@@ -327,13 +367,13 @@ namespace BLL
             }
             else
             {
-                sql = "Select prefijo From Consecutivos WHERE tipo='Bebidas Calientes'";
+                sql = "Select prefijo From Consecutivos WHERE tipo='Marcas'";
 
                 ds = cls_DAL.ejecuta_dataset(conexion, sql, false, ref mensaje_error, ref numero_error);
 
                 if (numero_error != 0)
                 {
-                    MessageBox.Show(mensaje_error, "Error cargar los consecutivos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(mensaje_error, "Error cargar el consecutivos", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return null;
                 }
                 else
@@ -356,7 +396,7 @@ namespace BLL
             else
             {
 
-                sql = "Update Consecutivos SET valor=@valor WHERE tipo='Bebidas Calientes'";
+                sql = "Update Consecutivos SET valor=@valor WHERE tipo='Marcas'";
 
                 ParamStruct[] parametros = new ParamStruct[1];
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@valor", SqlDbType.Int, id);
@@ -378,7 +418,7 @@ namespace BLL
             }
         }
 
-        public DataSet retorna_nombre_Restaurante(string nick)
+        /*public DataSet retorna_nombre_Pais(string nick)
         {
             conexion = cls_DAL.trae_conexion("Progra4", ref mensaje_error, ref numero_error);
             if (conexion == null)
@@ -404,7 +444,7 @@ namespace BLL
                     return ds;
                 }
             }
-        }
+        }*/
 
         public void guardar_imagen()
         {
@@ -416,7 +456,7 @@ namespace BLL
             }
             else
             {
-                sql = "Update BebidaCaliente set imagen=@img Where codBebidaCal='" + _codBebidaCal + "'";
+                sql = "Update Marcas set imagenMarca=@img, logoEmpresa=@img2 Where codMarca='" + _codMarca + "'";
                 cls_DAL.conectar(conexion, ref mensaje_error, ref numero_error);
                 cls_DAL.guardar_imagen(conexion, sql, _imagen, ref mensaje_error, ref numero_error);
                 cls_DAL.desconectar(conexion, ref mensaje_error, ref numero_error);

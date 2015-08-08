@@ -110,5 +110,10 @@ namespace Restaurante
                 return;
             }
         }
+
+        private void frm_listaBebidaHelada_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

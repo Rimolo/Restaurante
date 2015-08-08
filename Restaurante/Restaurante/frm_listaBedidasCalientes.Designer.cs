@@ -218,7 +218,7 @@
             // 
             // Column4
             // 
-            this.Column4.DataPropertyName = "nombre";
+            this.Column4.DataPropertyName = "nomrest";
             this.Column4.HeaderText = "Restaurante";
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;

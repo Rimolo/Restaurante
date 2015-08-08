@@ -114,7 +114,7 @@
             this.dgv_bebidaHelada.Name = "dgv_bebidaHelada";
             this.dgv_bebidaHelada.ReadOnly = true;
             this.dgv_bebidaHelada.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_bebidaHelada.Size = new System.Drawing.Size(467, 253);
+            this.dgv_bebidaHelada.Size = new System.Drawing.Size(446, 253);
             this.dgv_bebidaHelada.TabIndex = 13;
             this.dgv_bebidaHelada.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_bebidaHelada_CellContentClick);
             // 
@@ -219,7 +219,7 @@
             // 
             // Column4
             // 
-            this.Column4.DataPropertyName = "nombre";
+            this.Column4.DataPropertyName = "nomrest";
             this.Column4.HeaderText = "Restaurante";
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
@@ -229,7 +229,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.ClientSize = new System.Drawing.Size(666, 396);
+            this.ClientSize = new System.Drawing.Size(645, 396);
             this.Controls.Add(this.b_eliminar);
             this.Controls.Add(this.b_agregar);
             this.Controls.Add(this.b_borrar);
@@ -241,6 +241,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "frm_listaBebidaHelada";
             this.Text = "Lista de Bebidas Heladas";
+            this.Load += new System.EventHandler(this.frm_listaBebidaHelada_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_bebidaHelada)).EndInit();

@@ -8,16 +8,16 @@ using System.Windows.Forms;
 
 namespace BLL
 {
-    public class Calientes
-    {
+    public class Gaseosas
+    {/*
         #region propiedades
 
-        private string _codBebidaCal;
+        private string _codBebidaGas;
 
-        public string codBebidaCal
+        public string codBebidaGas
         {
-            get { return _codBebidaCal; }
-            set { _codBebidaCal = value; }
+            get { return _codBebidaGas; }
+            set { _codBebidaGas = value; }
         }
         private string _nombre;
 
@@ -26,12 +26,19 @@ namespace BLL
             get { return _nombre; }
             set { _nombre = value; }
         }
-        private string _ingredientes;
+        private string _codMarca;
 
-        public string ingredientes
+        public string codMarca
         {
-            get { return _ingredientes; }
-            set { _ingredientes = value; }
+            get { return _codMarca; }
+            set { _codMarca = value; }
+        }
+        private string _codPais;
+
+        public string codPais
+        {
+            get { return _codPais; }
+            set { _codPais = value; }
         }
         private decimal _precio;
 
@@ -74,7 +81,7 @@ namespace BLL
 
         #region metodos
 
-        public DataSet carga_calientes_especificos()
+        public DataSet carga_Gaseosas_especificos()
         {
             conexion = cls_DAL.trae_conexion("Progra4", ref mensaje_error, ref numero_error);
             if (conexion == null)
@@ -84,27 +91,26 @@ namespace BLL
             }
             else
             {
-                string sql1 = "Select Bc.codBebidaCal, Bc.nombre, Bc.precio, R.nombre as nomrest from BebidaCaliente Bc ";
+                string sql1 = "Select codBebidaGas, nombre, precio from BebidaGaseosa ";
                 string condicion = "Where ";
-                string join = "INNER JOIN Restaurante R ON Bc.codRestaurante = R.codRestaurante ";
-                if (!string.IsNullOrEmpty(_codBebidaCal))
+                if (!string.IsNullOrEmpty(_codBebidaGas))
                 {
-                    sql1 += join + condicion + "codBebidaCaliente ='" + _codBebidaCal + "'";
+                    sql1 += condicion + "codBebidaGas ='" + _codBebidaGas + "'";
                     condicion = "and ";
                 }
                 else
                 {
                     if (!string.IsNullOrEmpty(_nombre))
                     {
-                        sql1 += join + condicion + "nombre ='" + _nombre + "'";
+                        sql1 += condicion + "nombre ='" + _nombre + "'";
                     }
                 }
-                sql = sql1 + " Order by codBebidaCal";
+                sql = sql1 + " Order by codBebidaGas";
 
                 ds = cls_DAL.ejecuta_dataset(conexion, sql, false, ref mensaje_error, ref numero_error);
                 if (numero_error != 0)
                 {
-                    MessageBox.Show(mensaje_error, "Error al cargar las Bebidas Calientes", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(mensaje_error, "Error al cargar las Bebidas Gaseosas", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return null;
                 }
                 else
@@ -114,7 +120,7 @@ namespace BLL
             }
         }
 
-        public DataSet carga_Calientes()
+        public DataSet carga_Gaseosas()
         {
             conexion = cls_DAL.trae_conexion("Progra4", ref mensaje_error, ref numero_error);
             if (conexion == null)
@@ -124,12 +130,12 @@ namespace BLL
             }
             else
             {
-                sql = "Select Bc.codBebidaCal, Bc.nombre, Bc.precio, R.nombre as nomrest from BebidaCaliente Bc INNER JOIN Restaurante R ON Bc.codRestaurante = R.codRestaurante Order by Bc.codBebidaCal";
+                sql = "Select codBebidaGas, nombre, precio from BebidaGaseosa Order by codBebidaGas";
 
                 ds = cls_DAL.ejecuta_dataset(conexion, sql, false, ref mensaje_error, ref numero_error);
                 if (numero_error != 0)
                 {
-                    MessageBox.Show(mensaje_error, "Error al cargar las Bebidas Calientes", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(mensaje_error, "Error al cargar las Bebidas Gaseosas", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return null;
                 }
                 else
@@ -139,7 +145,7 @@ namespace BLL
             }
         }
 
-        public bool guardar_Calientes(string accion,string Restaurante)
+        public bool guardar_Gaseosas(string accion, string Restaurante)
         {
             conexion = cls_DAL.trae_conexion("Progra4", ref mensaje_error, ref numero_error);
             string codRest = "";
@@ -155,19 +161,19 @@ namespace BLL
                     DataSet ds;
                     ds = retorna_Cod_Restaurante(Restaurante);
                     codRest = Convert.ToString(ds.Tables[0].Rows[0]["codRestaurante"]);
-                    sql = "Insert into BebidaCaliente values(@codBebidaCal, @nombre, @ingredientes, @precio, @codRestaurante,  @descripcion, null)";
+                    sql = "Insert into BebidaGaseosa values(@codBebidaGas, @nombre, @codMarca, @codPais, @precio, @codRestaurante, @descripcion, null)";
                 }
                 else
                 {
-                    sql = "Update BebidaCaliente SET" +
+                    sql = "Update BebidaHelada SET" +
                         " nombre=@nombre," +
-                        " descripcion=@descripcion," +
+                        " descripcion=@descripcion" +
                         " precio=@precio," +
-                        " ingredientes=@ingredientes," +
-                        " where codBebidaCal=@codBebidaCal";
+                        " ingredientes=@ingredientes" +
+                        " where codBebidaHel=@codBebidaHel";
                 }
                 ParamStruct[] parametros = new ParamStruct[6];
-                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@codBebidaCal", SqlDbType.VarChar, _codBebidaCal);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@codBebidaHel", SqlDbType.VarChar, _codBebidaGas);
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 1, "@nombre", SqlDbType.VarChar, _nombre);
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 2, "@ingredientes", SqlDbType.VarChar, _ingredientes);
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 3, "@precio", SqlDbType.Money, _precio);
@@ -215,7 +221,7 @@ namespace BLL
             }
         }
 
-        public bool eliminar_Calientes(string codRestaurente)
+        public bool eliminar_Heladas(string codHelada)
         {
             conexion = cls_DAL.trae_conexion("Progra4", ref mensaje_error, ref numero_error);
             if (conexion == null)
@@ -225,11 +231,10 @@ namespace BLL
             }
             else
             {
-                sql = "Delete from BebidaCaliente where codBebidaCal = @codBebidaCal";
+                sql = "Delete from BebidaHelada where codBebidaCal = @codBebidaHel";
 
                 ParamStruct[] parametros = new ParamStruct[1];
-                sql = "Delete from BebidaCaliente where codBebidaCal = '" + codRestaurante + "'";
-                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@codBebidaCal", SqlDbType.VarChar, codBebidaCal);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@codBebidaHel", SqlDbType.VarChar, codHelada);
                 cls_DAL.conectar(conexion, ref mensaje_error, ref numero_error);
                 cls_DAL.ejecuta_sqlcommand(conexion, sql, false, parametros, ref mensaje_error, ref numero_error);
                 if (numero_error != 0)
@@ -246,7 +251,7 @@ namespace BLL
             }
         }
 
-        public void carga_info_Calientes(string codCal)
+        public void carga_info_Heladas(string codHel)
         {
             conexion = cls_DAL.trae_conexion("Progra4", ref mensaje_error, ref numero_error);
             if (conexion == null)
@@ -256,10 +261,10 @@ namespace BLL
             }
             else
             {
-                sql = "Select Bc.codBebidaCal, Bc.nombre, Bc.ingredientes, Bc.precio, R.nombre as nomrest,  Bc.descripcion,  Bc.imagen" +
-                      " from BebidaCaliente Bc INNER JOIN Restaurante R ON Bc.codRestaurante = R.codRestaurante where codBebidaCal = @codCal";
+                sql = "Select Bc.codBebidaHel, Bc.nombre, Bc.ingredientes, Bc.precio, R.nombre as nomrest,  Bc.descripcion,  Bc.imagen" +
+                      " from BebidaHelada Bc INNER JOIN Restaurante R ON Bc.codRestaurante = R.codRestaurante where codBebidaHel=@codHel";
                 ParamStruct[] parametros = new ParamStruct[1];
-                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@codCal", SqlDbType.VarChar, codCal);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@codHel", SqlDbType.VarChar, codHel);
                 ds = cls_DAL.ejecuta_dataset(conexion, sql, false, parametros, ref mensaje_error, ref numero_error);
                 if (ds == null)
                 {
@@ -274,7 +279,7 @@ namespace BLL
                         _ingredientes = ds.Tables[0].Rows[0]["ingredientes"].ToString();
                         _precio = Convert.ToDecimal(ds.Tables[0].Rows[0]["precio"]);
                         _descripcion = ds.Tables[0].Rows[0]["descripcion"].ToString();
-                        _codRestaurante = ds.Tables[0].Rows[0]["nomrest"].ToString();
+                        _codRestaurante= ds.Tables[0].Rows[0]["nomrest"].ToString();
                         // _imagen = (byte[])(ds.Tables[0].Rows[0]["imagen"]);
 
                     }
@@ -300,7 +305,7 @@ namespace BLL
             }
             else
             {
-                sql = "Select valor From Consecutivos WHERE tipo='Bebidas Calientes'";
+                sql = "Select valor From Consecutivos WHERE tipo='Bebidas Heladas'";
 
                 ds = cls_DAL.ejecuta_dataset(conexion, sql, false, ref mensaje_error, ref numero_error);
 
@@ -327,7 +332,7 @@ namespace BLL
             }
             else
             {
-                sql = "Select prefijo From Consecutivos WHERE tipo='Bebidas Calientes'";
+                sql = "Select prefijo From Consecutivos WHERE tipo='Bebidas Heladas'";
 
                 ds = cls_DAL.ejecuta_dataset(conexion, sql, false, ref mensaje_error, ref numero_error);
 
@@ -356,7 +361,7 @@ namespace BLL
             else
             {
 
-                sql = "Update Consecutivos SET valor=@valor WHERE tipo='Bebidas Calientes'";
+                sql = "Update Consecutivos SET valor=@valor WHERE tipo='Bebidas Heladas'";
 
                 ParamStruct[] parametros = new ParamStruct[1];
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@valor", SqlDbType.Int, id);
@@ -416,13 +421,13 @@ namespace BLL
             }
             else
             {
-                sql = "Update BebidaCaliente set imagen=@img Where codBebidaCal='" + _codBebidaCal + "'";
+                sql = "Update BebidaHelada set imagen=@img Where codBebidaHel='" + _codBebidaHel + "'";
                 cls_DAL.conectar(conexion, ref mensaje_error, ref numero_error);
                 cls_DAL.guardar_imagen(conexion, sql, _imagen, ref mensaje_error, ref numero_error);
                 cls_DAL.desconectar(conexion, ref mensaje_error, ref numero_error);
             }
         }
 
-        #endregion
+        #endregion*/
     }
 }

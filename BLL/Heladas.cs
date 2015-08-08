@@ -84,7 +84,7 @@ namespace BLL
             }
             else
             {
-                string sql1 = "Select Bc.codBebidaHel, Bc.nombre, Bc.precio, R.nombre from BebidaHelada Bc ";
+                string sql1 = "Select Bc.codBebidaHel, Bc.nombre, Bc.precio, R.nombre as nomrest from BebidaHelada Bc ";
                 string condicion = "Where ";
                 string join = "INNER JOIN Restaurante R ON Bc.codRestaurante = R.codRestaurante ";
                 if (!string.IsNullOrEmpty(_codBebidaHel))
@@ -99,12 +99,12 @@ namespace BLL
                         sql1 += join + condicion + "nombre ='" + _nombre + "'";
                     }
                 }
-                sql = sql1 + " Order by codBebidaCal";
+                sql = sql1 + " Order by codBebidaHel";
 
                 ds = cls_DAL.ejecuta_dataset(conexion, sql, false, ref mensaje_error, ref numero_error);
                 if (numero_error != 0)
                 {
-                    MessageBox.Show(mensaje_error, "Error al cargar las Bebidas Calientes", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(mensaje_error, "Error al cargar las Bebidas Heladas", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return null;
                 }
                 else
@@ -124,7 +124,7 @@ namespace BLL
             }
             else
             {
-                sql = "Select Bc.codBebidaHel,Bc.nombre,Bc.precio,R.nombre from BebidaHelada Bc INNER JOIN Restaurante R ON Bc.codRestaurante = R.codRestaurante Order by Bc.codBebidaHel";
+                sql = "Select Bc.codBebidaHel, Bc.nombre, Bc.precio, R.nombre as nomrest from BebidaHelada Bc INNER JOIN Restaurante R ON Bc.codRestaurante = R.codRestaurante Order by Bc.codBebidaHel";
 
                 ds = cls_DAL.ejecuta_dataset(conexion, sql, false, ref mensaje_error, ref numero_error);
                 if (numero_error != 0)
@@ -161,9 +161,9 @@ namespace BLL
                 {
                     sql = "Update BebidaHelada SET" +
                         " nombre=@nombre," +
-                        " descripcion=@descripcion" +
+                        " descripcion=@descripcion," +
                         " precio=@precio," +
-                        " ingredientes=@ingredientes" +
+                        " ingredientes=@ingredientes," +
                         " where codBebidaHel=@codBebidaHel";
                 }
                 ParamStruct[] parametros = new ParamStruct[6];
@@ -262,7 +262,7 @@ namespace BLL
                 ds = cls_DAL.ejecuta_dataset(conexion, sql, false, parametros, ref mensaje_error, ref numero_error);
                 if (ds == null)
                 {
-                    MessageBox.Show(mensaje_error, "Error al obtener las Bebidas Calientes", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(mensaje_error, "Error al obtener las Bebidas Heladas", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     _nombre = "Error";
                 }
                 else
