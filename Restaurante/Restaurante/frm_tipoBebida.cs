@@ -38,7 +38,7 @@ namespace Restaurante
                 if (rb_heladas.Checked == true)
                 {
                     frm_listaBebidaHelada heladas = new frm_listaBebidaHelada();
-                    //   heladas.nick = _nick;
+                    heladas.nick = _nick;
                     heladas.Show();
                 }
                 else

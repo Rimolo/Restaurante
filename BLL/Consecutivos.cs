@@ -140,7 +140,7 @@ namespace BLL
                 }
                 else
                 {
-                    sql = "Update BebidaCaliente SET" +
+                    sql = "Update Consecutivo SET" +
                        " valor=@valor," +
                        " descripcion=@descripcion" +
                        " where codConsecutivo=@codConsecutivo";
@@ -209,9 +209,9 @@ namespace BLL
             else
             {
                 sql = "Select tipo,descripcion,valor,prefijo" +
-                      " from Consecutivos where codConsecutivo='" + codConsecutivo + "'";
+                      " from Consecutivos where codConsecutivo = @codConsecutivo";
                 ParamStruct[] parametros = new ParamStruct[1];
-                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@cod", SqlDbType.VarChar, codConsecutivo);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@codConsecutivo", SqlDbType.VarChar, codConsecutivo);
                 ds = cls_DAL.ejecuta_dataset(conexion, sql, false, parametros, ref mensaje_error, ref numero_error);
                 if (ds == null)
                 {

@@ -137,6 +137,7 @@ namespace Restaurante
 
         private void b_buscaFoto_Click(object sender, EventArgs e)
         {
+
         }
 
         private void carga_info()
@@ -144,7 +145,7 @@ namespace Restaurante
             obj_calientes.carga_info_Calientes(_codigo);
             if (obj_calientes.nombre != "Error")
             {
-                 txt_codigo.Text= obj_calientes.codBebidaCal;
+                 txt_codigo.Text= _codigo;
                  txt_nombre.Text= obj_calientes.nombre;
                  txt_descripcion.Text= obj_calientes.descripcion;
                  txt_precio.Text= obj_calientes.precio.ToString();
