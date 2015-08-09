@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace BLL
 {
-    public class Paises
+    public class Empleados
     {
-        #region propiedades
+         #region propiedades
         private string _codigo;
 
         public string codigo
@@ -27,12 +27,81 @@ namespace BLL
             get { return _nombre; }
             set { _nombre = value; }
         }
-        private byte[] _bandera;
+        private byte[] _foto;
 
-        public byte[] bandera
+        public byte[] foto
         {
-            get { return _bandera; }
-            set { _bandera = value; }
+            get { return _foto; }
+            set { _foto = value; }
+        }
+
+        private string _cedula;
+
+        public string cedula
+        {
+            get { return _cedula; }
+            set { _cedula = value; }
+        }
+
+        private string _apellido1;
+
+        public string apellido1
+        {
+            get { return _apellido1; }
+            set { _apellido1 = value; }
+        }
+
+        private string _apellido2;
+
+        public string apellido2
+        {
+            get { return _apellido2; }
+            set { _apellido2 = value; }
+        }
+
+        private int _telefono1;
+
+        public int telefono1
+        {
+            get { return _telefono1; }
+            set { _telefono1 = value; }
+        }
+
+        private int _telefono2;
+
+        public int telefono2
+        {
+            get { return _telefono2; }
+            set { _telefono2 = value; }
+        }
+
+        private string _codPuesto;
+
+        public string codPuesto
+        {
+            get { return _codPuesto; }
+            set { _codPuesto = value; }
+        }
+        private string _codNacionalidad;
+
+        public string codNacionalidad
+        {
+            get { return _codNacionalidad; }
+            set { _codNacionalidad = value; }
+        }
+        private string _codRest;
+
+        public string codRest
+        {
+            get { return _codRest; }
+            set { _codRest = value; }
+        }
+        private string _codUsuario;
+
+        public string codUsuario
+        {
+            get { return _codUsuario; }
+            set { _codUsuario = value; }
         }
 
         #endregion
@@ -46,7 +115,7 @@ namespace BLL
         #endregion
 
         #region Metodos
-        public bool guardar_pais(string accion)
+        public bool guardar_empleado(string accion)
         {
             conexion = cls_DAL.trae_conexion("Progra4", ref mensaje_error, ref numero_error);
             if (conexion == null)
@@ -58,24 +127,42 @@ namespace BLL
             {
                 if (accion.Equals("Insertar"))
                 {
-                    sql = "Insert into Pais values(@cod,@nombre,null)";
+                    sql = "Insert into Empleados values(@cod,@ced,@nombre,@apellido1,@apellido2,@telefono1,@telefono2,null,@codPuesto,@codNac,@codRest,null)";
                 }
                 else
                 {
-                    sql = "Update Pais SET" +
+                    sql = "Update Empleados SET" +
                         " nombre=@nombre," +
-                        " bandera=null" +
-                        " where codigoPais=@cod";
+                        " cedula=@ced," +
+                        " apellido1=@apellido1," +
+                        " apellido2=@apellido2," +
+                        " telefono1=@telefono1," +
+                        " telefono2=@telefono2," +
+                        " codNacionalidad=@codNac," +
+                        " CodRestaurante=@codRest," +
+                        " codPuesto=@codPuesto,"+
+                        " foto=null" +
+                        " where codEmpleado=@cod";
                 }
-                ParamStruct[] parametros = new ParamStruct[2];
+                ParamStruct[] parametros = new ParamStruct[10];
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@nombre", SqlDbType.VarChar, _nombre);
-                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 1, "@cod", SqlDbType.VarChar, _codigo);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 1, "@ced", SqlDbType.VarChar, _cedula);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 2, "@apellido1", SqlDbType.VarChar, _apellido1);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 3, "@apellido2", SqlDbType.VarChar, _apellido2);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 4, "@telefono1", SqlDbType.Int, _telefono1);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 5, "@telefono2", SqlDbType.Int, _telefono2);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 6, "@codNac", SqlDbType.VarChar, _codNacionalidad);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 7, "@codRest", SqlDbType.VarChar, _codRest);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 8, "@codPuesto", SqlDbType.VarChar, _codPuesto);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 9, "@cod", SqlDbType.VarChar, _codigo);
+
+
 
                 cls_DAL.conectar(conexion, ref mensaje_error, ref numero_error);
                 cls_DAL.ejecuta_sqlcommand(conexion, sql, false, parametros, ref mensaje_error, ref numero_error);
                 if (numero_error != 0)
                 {
-                    MessageBox.Show(mensaje_error, "Error al guardar el Pais", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(mensaje_error, "Error al guardar el Empleado", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     cls_DAL.desconectar(conexion, ref mensaje_error, ref numero_error);
                     return false;
                 }
@@ -96,9 +183,9 @@ namespace BLL
             }
             else
             {
-                sql = "Update Pais set bandera=@img Where codigoPais='"+_codigo+"'";
+                sql = "Update Empleado set foto=@img Where codEmpleado='"+_codigo+"'";
                 cls_DAL.conectar(conexion, ref mensaje_error, ref numero_error);
-                cls_DAL.guardar_imagen(conexion, sql,_bandera,ref mensaje_error,ref numero_error);
+                cls_DAL.guardar_imagen(conexion, sql,_foto,ref mensaje_error,ref numero_error);
                 cls_DAL.desconectar(conexion, ref mensaje_error, ref numero_error);
             }
         }
@@ -114,7 +201,7 @@ namespace BLL
             }
             else
             {
-                sql = "Select valor From Consecutivos WHERE tipo='Paises'";
+                sql = "Select valor From Consecutivos WHERE tipo='Empleados'";
 
                 ds = cls_DAL.ejecuta_dataset(conexion, sql, false, ref mensaje_error, ref numero_error);
 
@@ -144,7 +231,7 @@ namespace BLL
             }
             else
             {
-                sql = "Select prefijo From Consecutivos WHERE tipo='Paises'";
+                sql = "Select prefijo From Consecutivos WHERE tipo='Empleados'";
 
                 ds = cls_DAL.ejecuta_dataset(conexion, sql, false, ref mensaje_error, ref numero_error);
 
@@ -173,7 +260,7 @@ namespace BLL
             else
             {
 
-                sql = "Update Consecutivos SET valor=@valor WHERE tipo='Paises'";
+                sql = "Update Consecutivos SET valor=@valor WHERE tipo='Empleados'";
 
                 ParamStruct[] parametros = new ParamStruct[1];
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@valor", SqlDbType.Int, id);
@@ -195,7 +282,7 @@ namespace BLL
             }
         }
 
-        public DataSet carga_pais()
+        public DataSet carga_empleados()
         {
             conexion = cls_DAL.trae_conexion("Progra4", ref mensaje_error, ref numero_error);
             if (conexion == null)
@@ -205,7 +292,7 @@ namespace BLL
             }
             else
             {
-                sql = "Select codigoPais,nombre from Pais Order by codigoPais";
+                sql = "Select codEmpleado,cedula,nombre,apellido1,apellido2 from Empleados Order by codEmpleado";
 
                 ds = cls_DAL.ejecuta_dataset(conexion, sql, false, ref mensaje_error, ref numero_error);
                 if (numero_error != 0)
@@ -221,7 +308,7 @@ namespace BLL
         }
 
         //Faltara revisar despues
-        public DataSet carga_pais_especifico()
+        public DataSet carga_empleado_especifico()
         {
             conexion = cls_DAL.trae_conexion("Progra4", ref mensaje_error, ref numero_error);
             if (conexion == null)
@@ -231,12 +318,12 @@ namespace BLL
             }
             else
             {
-                string sql1 = "Select codigoPais,nombre from Pais ";
+                string sql1 = "Select codEmpleado,cedula,nombre,apellido1,apellido2 from Empleados ";
                 string condicion = "Where ";
 
                 if (!string.IsNullOrEmpty(_codigo))
                 {
-                    sql1 += condicion + "codigoPais ='" + _codigo + "'";
+                    sql1 += condicion + "codEmpleado ='" + _codigo + "'";
                     condicion = " and ";
                 }
                 if (!string.IsNullOrEmpty(_nombre))
@@ -245,12 +332,12 @@ namespace BLL
 
                 }
 
-                sql = sql1 + " Order by codigoPais";
+                sql = sql1 + " Order by codEmpleado";
 
                 ds = cls_DAL.ejecuta_dataset(conexion, sql, false, ref mensaje_error, ref numero_error);
                 if (numero_error != 0)
                 {
-                    MessageBox.Show(mensaje_error, "Error al cargar los paises", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(mensaje_error, "Error al cargar los empleados", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return null;
                 }
                 else
@@ -260,7 +347,7 @@ namespace BLL
             }
         }
 
-        public bool eliminar_pais(string cod_pais)
+        public bool eliminar_empleado(string codEmp)
         {
             conexion = cls_DAL.trae_conexion("Progra4", ref mensaje_error, ref numero_error);
             if (conexion == null)
@@ -270,10 +357,10 @@ namespace BLL
             }
             else
             {
-                sql = "Delete from Pais where codigoPais = @cod";
+                sql = "Delete from Empleados where codEmpleado = @cod";
 
                 ParamStruct[] parametros = new ParamStruct[1];
-                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@cod", SqlDbType.VarChar, cod_pais);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@cod", SqlDbType.VarChar, codEmp);
                 cls_DAL.conectar(conexion, ref mensaje_error, ref numero_error);
                 cls_DAL.ejecuta_sqlcommand(conexion, sql, false, parametros, ref mensaje_error, ref numero_error);
                 if (numero_error != 0)
@@ -289,9 +376,9 @@ namespace BLL
                 }
             }
         }
+     
 
-
-        public void carga_info_pais(string cod_pais)
+        public void carga_info_empleado(string codE)
         {
             conexion = cls_DAL.trae_conexion("Progra4", ref mensaje_error, ref numero_error);
             if (conexion == null)
@@ -301,10 +388,10 @@ namespace BLL
             }
             else
             {
-                sql = "Select nombre,bandera" +
-                      " from Pais where codigoPais=@cod";
+                sql = "Select e.nombre,e.apellido1,e.apellido2,e.cedula,e.telefono1,e.telefono2,p.codPuesto,pp.codigoPais,r.codRestaurante,e.foto" +
+                      " from Empleados e join Puestos p on e.codPuesto = p.codPuesto join Pais pp on e.codNacionalidad = pp.codigoPais join Restaurante r on e.CodRestaurante = r.codRestaurante where e.codEmpleado=@cod";
                 ParamStruct[] parametros = new ParamStruct[1];
-                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@cod", SqlDbType.VarChar, cod_pais);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@cod", SqlDbType.VarChar, codE);
                 ds = cls_DAL.ejecuta_dataset(conexion, sql, false, parametros, ref mensaje_error, ref numero_error);
                 if (ds == null)
                 {
@@ -316,14 +403,23 @@ namespace BLL
                     if (ds.Tables[0].Rows.Count > 0)
                     {
                         _nombre = ds.Tables[0].Rows[0]["nombre"].ToString();
-                        if (!string.IsNullOrEmpty(ds.Tables[0].Rows[0]["bandera"].ToString()))
+                        _cedula = ds.Tables[0].Rows[0]["cedula"].ToString();
+                        _apellido1 = ds.Tables[0].Rows[0]["apellido1"].ToString();
+                        _apellido2 = ds.Tables[0].Rows[0]["apellido2"].ToString();
+                        _telefono1 = Convert.ToInt32(ds.Tables[0].Rows[0]["telefono1"].ToString());
+                        _telefono2 = Convert.ToInt32(ds.Tables[0].Rows[0]["telefono2"].ToString());
+                        _codNacionalidad = ds.Tables[0].Rows[0]["codigoPais"].ToString();
+                        _codPuesto = ds.Tables[0].Rows[0]["codPuesto"].ToString();
+                        _codRest = ds.Tables[0].Rows[0]["codRestaurante"].ToString();
+                        if (!string.IsNullOrEmpty(ds.Tables[0].Rows[0]["foto"].ToString()))
                         {
-                            _bandera = (byte[])(ds.Tables[0].Rows[0]["bandera"]);
+                            _foto = (byte[])(ds.Tables[0].Rows[0]["foto"]);
                         }
-                        else {
-                            _bandera = null;
+                        else
+                        {
+                            _foto = null;
                         }
-                        
+                       
                        
                     }
                     else
@@ -332,6 +428,85 @@ namespace BLL
                     }
                 }
 
+            }
+        }
+
+        public DataSet cargar_lista_restaurantes()
+        {
+            conexion = cls_DAL.trae_conexion("Progra4", ref mensaje_error, ref numero_error);
+            if (conexion == null)
+            {
+                MessageBox.Show(mensaje_error, "Error al obtener cadena de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+            else
+            {
+                sql = "Select codRestaurante,nombre from Restaurante";
+
+
+                ds = cls_DAL.ejecuta_dataset(conexion, sql, false, ref mensaje_error, ref numero_error);
+                if (numero_error != 0)
+                {
+                    MessageBox.Show(mensaje_error, "Error al cargar los restaurantes", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return null;
+                }
+                else
+                {
+                    return ds;
+                }
+            }
+        }
+
+        public DataSet cargar_lista_puestos()
+        {
+            conexion = cls_DAL.trae_conexion("Progra4", ref mensaje_error, ref numero_error);
+            if (conexion == null)
+            {
+                MessageBox.Show(mensaje_error, "Error al obtener cadena de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+            else
+            {
+                sql = "Select codPuesto,nombre from Puestos";
+                
+
+
+                ds = cls_DAL.ejecuta_dataset(conexion, sql, false, ref mensaje_error, ref numero_error);
+                if (numero_error != 0)
+                {
+                    MessageBox.Show(mensaje_error, "Error al cargar los puestos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return null;
+                }
+                else
+                {
+                    return ds;
+                }
+            }
+        }
+
+        public DataSet cargar_lista_paises()
+        {
+            conexion = cls_DAL.trae_conexion("Progra4", ref mensaje_error, ref numero_error);
+            if (conexion == null)
+            {
+                MessageBox.Show(mensaje_error, "Error al obtener cadena de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+            else
+            {
+                sql = "Select codigoPais,nombre from Pais";
+
+
+                ds = cls_DAL.ejecuta_dataset(conexion, sql, false, ref mensaje_error, ref numero_error);
+                if (numero_error != 0)
+                {
+                    MessageBox.Show(mensaje_error, "Error al cargar los paises", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return null;
+                }
+                else
+                {
+                    return ds;
+                }
             }
         }
         #endregion

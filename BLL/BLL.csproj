@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="Cajas.cs" />
     <Compile Include="Calientes.cs" />
+    <Compile Include="Empleados.cs" />
     <Compile Include="Gaseosas.cs" />
     <Compile Include="Marcas.cs" />
     <Compile Include="Heladas.cs" />
@@ -60,7 +61,7 @@
     <Compile Include="Puestos.cs" />
     <Compile Include="Restaurante.cs" />
     <Compile Include="Roles.cs" />
-    <Compile Include="Unidadescs.cs" />
+    <Compile Include="UnidadesMedida.cs" />
     <Compile Include="Usuarios.cs" />
     <Compile Include="Utilidades.cs" />
   </ItemGroup>

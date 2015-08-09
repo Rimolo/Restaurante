@@ -78,8 +78,8 @@ namespace BLL
                 {
                     sql = "Update Puestos SET" +
                         " nombre=@nombre," +
-                        " internoRestaurante=@interno" +
-                        " externoRestaurante=@externo" +
+                        " internoRestaurante=@interno," +
+                        " externoRestaurante=@externo," +
                         " codRol=@rol" +
                         " where codPuesto=@cod";
                 }

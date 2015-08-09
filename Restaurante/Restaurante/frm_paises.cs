@@ -131,11 +131,14 @@ namespace Restaurante
             {
                 txt_codigoPais.Text = _codigo;
                 txt_nombrePais.Text = objPais.nombre;
-                MemoryStream ms = new MemoryStream(objPais.bandera);
-                pic_bandera.Image = Image.FromStream(ms);
-                pic_bandera.SizeMode = PictureBoxSizeMode.StretchImage;
-                ms.Close();
-                
+                if (!string.IsNullOrEmpty((objPais.bandera.ToString())))
+                {
+                    MemoryStream ms = new MemoryStream(objPais.bandera);
+                    pic_bandera.Image = Image.FromStream(ms);
+                    pic_bandera.SizeMode = PictureBoxSizeMode.StretchImage;
+                    ms.Close();
+                }
+
             }
         }
 
