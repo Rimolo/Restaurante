@@ -151,8 +151,8 @@ namespace Restaurante
             objEmpleados.cedula = msk_ced.Text;
             objEmpleados.codNacionalidad=cb_nac.SelectedValue.ToString();
 
-            objEmpleados.codPuesto=cb_puesto.SelectedValue.ToString());
-            objEmpleados.codRest= cb_restaurante.SelectedValue.ToString());
+            objEmpleados.codPuesto=cb_puesto.SelectedValue.ToString();
+            objEmpleados.codRest= cb_restaurante.SelectedValue.ToString();
             int tel = 0;
             string text = msk_tel1.Text.Replace("-", "");
             if (!Int32.TryParse(text, out tel))
