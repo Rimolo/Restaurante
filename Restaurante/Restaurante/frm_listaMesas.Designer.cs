@@ -146,21 +146,23 @@
             // 
             // b_mas
             // 
+            this.b_mas.Image = global::Restaurante.Properties.Resources.green_add_icon1;
             this.b_mas.Location = new System.Drawing.Point(787, 28);
             this.b_mas.Name = "b_mas";
-            this.b_mas.Size = new System.Drawing.Size(46, 23);
+            this.b_mas.Size = new System.Drawing.Size(46, 40);
             this.b_mas.TabIndex = 31;
-            this.b_mas.Text = "button5";
             this.b_mas.UseVisualStyleBackColor = true;
+            this.b_mas.Click += new System.EventHandler(this.b_mas_Click);
             // 
             // b_menos
             // 
-            this.b_menos.Location = new System.Drawing.Point(787, 57);
+            this.b_menos.Image = global::Restaurante.Properties.Resources.refurl1;
+            this.b_menos.Location = new System.Drawing.Point(787, 70);
             this.b_menos.Name = "b_menos";
-            this.b_menos.Size = new System.Drawing.Size(46, 21);
+            this.b_menos.Size = new System.Drawing.Size(46, 34);
             this.b_menos.TabIndex = 32;
-            this.b_menos.Text = "button6";
             this.b_menos.UseVisualStyleBackColor = true;
+            this.b_menos.Click += new System.EventHandler(this.b_menos_Click);
             // 
             // b_refrescar
             // 
@@ -170,6 +172,7 @@
             this.b_refrescar.Size = new System.Drawing.Size(52, 44);
             this.b_refrescar.TabIndex = 24;
             this.b_refrescar.UseVisualStyleBackColor = true;
+            this.b_refrescar.Click += new System.EventHandler(this.b_refrescar_Click);
             // 
             // b_borrar
             // 
@@ -179,6 +182,7 @@
             this.b_borrar.Size = new System.Drawing.Size(52, 47);
             this.b_borrar.TabIndex = 33;
             this.b_borrar.UseVisualStyleBackColor = true;
+            this.b_borrar.Click += new System.EventHandler(this.b_borrar_Click);
             // 
             // b_cancelar
             // 
@@ -188,6 +192,7 @@
             this.b_cancelar.Size = new System.Drawing.Size(52, 43);
             this.b_cancelar.TabIndex = 34;
             this.b_cancelar.UseVisualStyleBackColor = true;
+            this.b_cancelar.Click += new System.EventHandler(this.b_cancelar_Click);
             // 
             // b_aceptar
             // 
@@ -197,9 +202,12 @@
             this.b_aceptar.Size = new System.Drawing.Size(52, 47);
             this.b_aceptar.TabIndex = 30;
             this.b_aceptar.UseVisualStyleBackColor = true;
+            this.b_aceptar.Click += new System.EventHandler(this.b_aceptar_Click);
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -210,33 +218,46 @@
             this.Column5});
             this.dataGridView1.Location = new System.Drawing.Point(250, 113);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(557, 232);
             this.dataGridView1.TabIndex = 35;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Column1
             // 
+            this.Column1.DataPropertyName = "codigoMesa";
             this.Column1.HeaderText = "Codigo";
             this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             // 
             // Column2
             // 
+            this.Column2.DataPropertyName = "nombre";
             this.Column2.HeaderText = "Nombre";
             this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             // 
             // Column3
             // 
+            this.Column3.DataPropertyName = "numero";
             this.Column3.HeaderText = "Numero";
             this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
             // 
             // Column4
             // 
+            this.Column4.DataPropertyName = "cantidadSillas";
             this.Column4.HeaderText = "Cantidad de sillas";
             this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
             // 
             // Column5
             // 
+            this.Column5.DataPropertyName = "nomrest";
             this.Column5.HeaderText = "Restaurante";
             this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
             // 
             // frm_listaMesas
             // 
@@ -255,6 +276,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frm_listaMesas";
             this.Text = "Lista de Mesas";
+            this.Load += new System.EventHandler(this.frm_listaMesas_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

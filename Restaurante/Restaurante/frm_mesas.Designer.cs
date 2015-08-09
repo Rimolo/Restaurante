@@ -33,6 +33,7 @@
             this.b_aceptar = new System.Windows.Forms.Button();
             this.b_cancelar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cb_restaurante = new System.Windows.Forms.ComboBox();
             this.txt_numero = new System.Windows.Forms.TextBox();
             this.txt_sillas = new System.Windows.Forms.TextBox();
             this.txt_nombre = new System.Windows.Forms.TextBox();
@@ -42,7 +43,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.cb_restaurante = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,6 +63,7 @@
             this.b_borrar.Size = new System.Drawing.Size(52, 47);
             this.b_borrar.TabIndex = 12;
             this.b_borrar.UseVisualStyleBackColor = true;
+            this.b_borrar.Click += new System.EventHandler(this.b_borrar_Click);
             // 
             // b_aceptar
             // 
@@ -72,6 +73,7 @@
             this.b_aceptar.Size = new System.Drawing.Size(52, 47);
             this.b_aceptar.TabIndex = 13;
             this.b_aceptar.UseVisualStyleBackColor = true;
+            this.b_aceptar.Click += new System.EventHandler(this.b_aceptar_Click);
             // 
             // b_cancelar
             // 
@@ -81,6 +83,7 @@
             this.b_cancelar.Size = new System.Drawing.Size(52, 47);
             this.b_cancelar.TabIndex = 14;
             this.b_cancelar.UseVisualStyleBackColor = true;
+            this.b_cancelar.Click += new System.EventHandler(this.b_cancelar_Click);
             // 
             // groupBox1
             // 
@@ -100,6 +103,14 @@
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Informacion de la mesa";
+            // 
+            // cb_restaurante
+            // 
+            this.cb_restaurante.FormattingEnabled = true;
+            this.cb_restaurante.Location = new System.Drawing.Point(134, 156);
+            this.cb_restaurante.Name = "cb_restaurante";
+            this.cb_restaurante.Size = new System.Drawing.Size(121, 21);
+            this.cb_restaurante.TabIndex = 10;
             // 
             // txt_numero
             // 
@@ -124,8 +135,10 @@
             // 
             // txt_codigo
             // 
+            this.txt_codigo.Enabled = false;
             this.txt_codigo.Location = new System.Drawing.Point(72, 16);
             this.txt_codigo.Name = "txt_codigo";
+            this.txt_codigo.ReadOnly = true;
             this.txt_codigo.Size = new System.Drawing.Size(160, 20);
             this.txt_codigo.TabIndex = 6;
             // 
@@ -174,14 +187,6 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Codigo";
             // 
-            // cb_restaurante
-            // 
-            this.cb_restaurante.FormattingEnabled = true;
-            this.cb_restaurante.Location = new System.Drawing.Point(134, 156);
-            this.cb_restaurante.Name = "cb_restaurante";
-            this.cb_restaurante.Size = new System.Drawing.Size(121, 21);
-            this.cb_restaurante.TabIndex = 10;
-            // 
             // frm_mesas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -195,6 +200,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frm_mesas";
             this.Text = "Mesas";
+            this.Load += new System.EventHandler(this.frm_mesas_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

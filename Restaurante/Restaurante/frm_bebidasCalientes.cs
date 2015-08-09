@@ -64,7 +64,7 @@ namespace Restaurante
             txt_ingredientes.Text = "";
             txt_precio.Text = "";
             txt_descripcion.Text = "";
-            pic_foto.Image = null ;
+            pb_foto.Image = null ;
         }
 
         private void b_aceptar_Click(object sender, EventArgs e)
@@ -157,7 +157,6 @@ namespace Restaurante
 
         private void mostar_consecutivo()
         {
-
             try
             {
                 DataSet ds1;

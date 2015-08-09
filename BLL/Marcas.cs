@@ -60,9 +60,9 @@ namespace BLL
             get { return _detalleEmpresa; }
             set { _detalleEmpresa = value; }
         }
-        private string _telefono;
+        private int _telefono;
 
-        public string telefono
+        public int telefono
         {
             get { return _telefono; }
             set { _telefono = value; }
@@ -103,9 +103,9 @@ namespace BLL
             }
             else
             {
-                string sql1 = "Select M.codMarca, M.nombre, M.Descripcion, P.nombre as nomPais, M.nombEmp, M.TelefonoEmp from Marcas M";
-                string condicion = "Where ";
-                string join = "INNER JOIN Pais P ON M.codPais = P.codigoPais";
+                string sql1 = "Select M.codMarca, M.nombre, M.descripcion, P.nombre as nomPais, M.nombEmp, M.telefonoEmp from Marcas M";
+                string condicion = " Where ";
+                string join = " INNER JOIN Pais P ON M.codPais = P.codigoPais";
                 if (!string.IsNullOrEmpty(_codMarca))
                 {
                     sql1 += join + condicion + "M.codMarca ='" + _codMarca + "'";
@@ -116,12 +116,14 @@ namespace BLL
                     if (!string.IsNullOrEmpty(_nombreMarca))
                     {
                         sql1 += join + condicion + "M.nombre ='" + _nombreMarca + "'";
+                        condicion = "and ";
                     }
                     else
                     {
                         if (!string.IsNullOrEmpty(_nombreEmp))
                         {
                             sql1 += join + condicion + "M.nombEmp ='" + _nombreEmp + "'";
+                            condicion = "and ";
                         }
                         if (!string.IsNullOrEmpty(_codPais))
                         {
@@ -129,15 +131,14 @@ namespace BLL
                             condicion = "and ";
                         }
                     }
-                }
-                
+                }                
                
-                sql = sql1 + " Order by codMarca";
+                sql = sql1 + " Order by M.codMarca";
 
                 ds = cls_DAL.ejecuta_dataset(conexion, sql, false, ref mensaje_error, ref numero_error);
                 if (numero_error != 0)
                 {
-                    MessageBox.Show(mensaje_error, "Error al cargar las Marca", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(mensaje_error+"   "+sql, "Error al cargar las Marca", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return null;
                 }
                 else
@@ -157,7 +158,7 @@ namespace BLL
             }
             else
             {
-                sql = "Select M.codMarca, M.nombre, M.Descripcion, P.nombre as nomPais, M.nombEmp, M.TelefonoEmp from Marcas M INNER JOIN Pais P ON M.codPais = P.codigoPais Order by M.codMarca";
+                sql = "Select M.codMarca, M.nombre, M.descripcion, P.nombre as nomPais, M.nombEmp, M.telefonoEmp from Marcas M INNER JOIN Pais P ON M.codPais = P.codigoPais Order by M.codMarca";
 
                 ds = cls_DAL.ejecuta_dataset(conexion, sql, false, ref mensaje_error, ref numero_error);
                 if (numero_error != 0)
@@ -172,10 +173,10 @@ namespace BLL
             }
         }
 
-        public bool guardar_Marcas(string accion, string Restaurante)
+        public bool guardar_Marcas(string accion)
         {
             conexion = cls_DAL.trae_conexion("Progra4", ref mensaje_error, ref numero_error);
-            string codRest = "";
+            
             if (conexion == null)
             {
                 MessageBox.Show(mensaje_error, "Error al obtener cadena de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -184,10 +185,7 @@ namespace BLL
             else
             {
                 if (accion.Equals("Insertar"))
-                {
-                    DataSet ds;
-                    ds = retorna_Cod_Pais(Restaurante);
-                    codRest = Convert.ToString(ds.Tables[0].Rows[0]["codRestaurante"]);
+                {                    
                     sql = "Insert into Marcas values(@codMarca, @nombre, @codPais, @descripcion, @nombEmp, @detalleEmp, @telefonoEmp, @cedJuridicaEmp, null, null)";
                 }
                 else
@@ -209,7 +207,7 @@ namespace BLL
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 3, "@descripcion", SqlDbType.VarChar, _descripcion);
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 4, "@nombEmp", SqlDbType.VarChar, _nombreEmp);
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 5, "@detalleEmp", SqlDbType.VarChar, _detalleEmpresa);
-                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 6, "@telefonoEmp", SqlDbType.VarChar, _telefono);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 6, "@telefonoEmp", SqlDbType.Int, _telefono);
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 7, "@cedJuridicaEmp", SqlDbType.VarChar, _cedJuridica);
                 cls_DAL.conectar(conexion, ref mensaje_error, ref numero_error);
                 cls_DAL.ejecuta_sqlcommand(conexion, sql, false, parametros, ref mensaje_error, ref numero_error);
@@ -226,33 +224,7 @@ namespace BLL
                 }
             }
         }
-
-        public DataSet retorna_Cod_Pais(string nacionalidad)
-        {
-            conexion = cls_DAL.trae_conexion("Progra4", ref mensaje_error, ref numero_error);
-            if (conexion == null)
-            {
-                MessageBox.Show(mensaje_error, "Error al obtener cadena de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return null;
-            }
-            else
-            {                
-                sql = "Select codPais from Pais where nombre='"+ nacionalidad + "'";
-
-                ds = cls_DAL.ejecuta_dataset(conexion, sql, false, ref mensaje_error, ref numero_error);
-
-                if (numero_error != 0)
-                {
-                    MessageBox.Show(mensaje_error, "Error al guardar el codigo del Pais", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return null;
-                }
-                else
-                {
-                    return ds;
-                }
-            }
-        }
-
+       
         public bool eliminar_Marca(string codMarca)
         {
             conexion = cls_DAL.trae_conexion("Progra4", ref mensaje_error, ref numero_error);
@@ -294,7 +266,7 @@ namespace BLL
             else
             {
                 sql = "Select M.nombre, P.nombre as nomPais, M.descripcion, M.nombEmp, M.detalleEmp, M.telefonoEmp, M.cedJuridicaEmp, M.logoEmpresa, M.imagenMarca" +
-                      " from Marcas M INNER JOIN Pais P ON M.codPais = P.codidoPais where codMarca=@codMarca";
+                      " from Marcas M INNER JOIN Pais P ON M.codPais = P.codigoPais where codMarca=@codMarca";
                 ParamStruct[] parametros = new ParamStruct[1];
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@codMarca", SqlDbType.VarChar, codMar);
                 ds = cls_DAL.ejecuta_dataset(conexion, sql, false, parametros, ref mensaje_error, ref numero_error);
@@ -312,7 +284,7 @@ namespace BLL
                         _descripcion = ds.Tables[0].Rows[0]["descripcion"].ToString();
                         _nombreEmp = ds.Tables[0].Rows[0]["nombEmp"].ToString();
                         _detalleEmpresa = ds.Tables[0].Rows[0]["detalleEmp"].ToString();
-                        _telefono = ds.Tables[0].Rows[0]["telefonoEmp"].ToString();
+                        _telefono = Convert.ToInt32(ds.Tables[0].Rows[0]["telefonoEmp"]);
                         _cedJuridica = ds.Tables[0].Rows[0]["cedJuridicaEmp"].ToString();                        
                         // _imagen = (byte[])(ds.Tables[0].Rows[0]["logoEmpresa"]);
                         // _imagen = (byte[])(ds.Tables[0].Rows[0]["imagenMarca"]);
@@ -326,9 +298,7 @@ namespace BLL
 
             }
         }
-
         
-
         public DataSet retorna_consecutivo_valor()
         {
 
@@ -418,7 +388,7 @@ namespace BLL
             }
         }
 
-        /*public DataSet retorna_nombre_Pais(string nick)
+        public DataSet cargar_lista_nacionalidad()
         {
             conexion = cls_DAL.trae_conexion("Progra4", ref mensaje_error, ref numero_error);
             if (conexion == null)
@@ -427,16 +397,13 @@ namespace BLL
                 return null;
             }
             else
-            {
-
-                sql = "Select R.nombre" +
-                      " from Restaurante R INNER JOIN Usuario U ON R.codRestaurante = U.codRest where U.nickname='" + nick + "'";
-
+            {               
+                sql = "Select codigoPais,nombre from Pais Order by nombre";
+               
                 ds = cls_DAL.ejecuta_dataset(conexion, sql, false, ref mensaje_error, ref numero_error);
-
                 if (numero_error != 0)
                 {
-                    MessageBox.Show(mensaje_error, "Error al guardar el codigo del Restaurante", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(mensaje_error, "Error al cargar los paises", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return null;
                 }
                 else
@@ -444,7 +411,7 @@ namespace BLL
                     return ds;
                 }
             }
-        }*/
+        }
 
         public void guardar_imagen()
         {
