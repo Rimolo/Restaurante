@@ -183,7 +183,6 @@ namespace Restaurante
 
         private void mostar_consecutivo()
         {
-
             try
             {
                 DataSet ds1;

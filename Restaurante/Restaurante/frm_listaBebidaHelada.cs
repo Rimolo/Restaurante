@@ -33,11 +33,6 @@ namespace Restaurante
 
         }
 
-        private void frm_listaBedidasHelada_Load(object sender, EventArgs e)
-        {
-            this.carga_lista_Helada();
-        }
-
         private void b_refrescar_Click(object sender, EventArgs e)
         {
             this.carga_lista_Helada();
@@ -135,7 +130,7 @@ namespace Restaurante
 
         private void frm_listaBebidaHelada_Load(object sender, EventArgs e)
         {
-
+            this.carga_lista_Helada();
         }
     }
 }

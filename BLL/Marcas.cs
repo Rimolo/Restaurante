@@ -103,9 +103,9 @@ namespace BLL
             }
             else
             {
-                string sql1 = "Select M.codMarca, M.nombre, M.descripcion, P.nombre as nomPais, M.nombEmp, M.TelefonoEmp from Marcas M";
-                string condicion = "Where ";
-                string join = "INNER JOIN Pais P ON M.codPais = P.codigoPais";
+                string sql1 = "Select M.codMarca, M.nombre, M.descripcion, P.nombre as nomPais, M.nombEmp, M.telefonoEmp from Marcas M";
+                string condicion = " Where ";
+                string join = " INNER JOIN Pais P ON M.codPais = P.codigoPais";
                 if (!string.IsNullOrEmpty(_codMarca))
                 {
                     sql1 += join + condicion + "M.codMarca ='" + _codMarca + "'";
@@ -133,12 +133,12 @@ namespace BLL
                     }
                 }                
                
-                sql = sql1 + " Order by codMarca";
+                sql = sql1 + " Order by M.codMarca";
 
                 ds = cls_DAL.ejecuta_dataset(conexion, sql, false, ref mensaje_error, ref numero_error);
                 if (numero_error != 0)
                 {
-                    MessageBox.Show(mensaje_error, "Error al cargar las Marca", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(mensaje_error+"   "+sql, "Error al cargar las Marca", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return null;
                 }
                 else
@@ -158,7 +158,7 @@ namespace BLL
             }
             else
             {
-                sql = "Select M.codMarca, M.nombre, M.Descripcion, P.nombre as nomPais, M.nombEmp, M.TelefonoEmp from Marcas M INNER JOIN Pais P ON M.codPais = P.codigoPais Order by M.codMarca";
+                sql = "Select M.codMarca, M.nombre, M.descripcion, P.nombre as nomPais, M.nombEmp, M.telefonoEmp from Marcas M INNER JOIN Pais P ON M.codPais = P.codigoPais Order by M.codMarca";
 
                 ds = cls_DAL.ejecuta_dataset(conexion, sql, false, ref mensaje_error, ref numero_error);
                 if (numero_error != 0)
@@ -176,7 +176,7 @@ namespace BLL
         public bool guardar_Marcas(string accion)
         {
             conexion = cls_DAL.trae_conexion("Progra4", ref mensaje_error, ref numero_error);
-            //string codPais = "";
+            
             if (conexion == null)
             {
                 MessageBox.Show(mensaje_error, "Error al obtener cadena de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);

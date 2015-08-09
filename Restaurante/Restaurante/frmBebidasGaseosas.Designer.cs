@@ -43,7 +43,6 @@
             this.txt_nombre = new System.Windows.Forms.TextBox();
             this.txt_codigo = new System.Windows.Forms.TextBox();
             this.txt_descripcion = new System.Windows.Forms.TextBox();
-            this.txt_fotoBebida = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -52,11 +51,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.pb_foto = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_foto)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.pb_foto);
             this.groupBox1.Controls.Add(this.txt_cantidad);
             this.groupBox1.Controls.Add(this.txt_restaurante);
             this.groupBox1.Controls.Add(this.label10);
@@ -71,7 +73,6 @@
             this.groupBox1.Controls.Add(this.txt_nombre);
             this.groupBox1.Controls.Add(this.txt_codigo);
             this.groupBox1.Controls.Add(this.txt_descripcion);
-            this.groupBox1.Controls.Add(this.txt_fotoBebida);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
@@ -95,8 +96,10 @@
             // 
             // txt_restaurante
             // 
+            this.txt_restaurante.Enabled = false;
             this.txt_restaurante.Location = new System.Drawing.Point(330, 24);
             this.txt_restaurante.Name = "txt_restaurante";
+            this.txt_restaurante.ReadOnly = true;
             this.txt_restaurante.Size = new System.Drawing.Size(131, 20);
             this.txt_restaurante.TabIndex = 22;
             // 
@@ -142,6 +145,7 @@
             this.b_foto.Size = new System.Drawing.Size(75, 64);
             this.b_foto.TabIndex = 17;
             this.b_foto.UseVisualStyleBackColor = true;
+            this.b_foto.Click += new System.EventHandler(this.b_foto_Click);
             // 
             // b_cancelar
             // 
@@ -151,6 +155,7 @@
             this.b_cancelar.Size = new System.Drawing.Size(52, 47);
             this.b_cancelar.TabIndex = 16;
             this.b_cancelar.UseVisualStyleBackColor = true;
+            this.b_cancelar.Click += new System.EventHandler(this.b_cancelar_Click);
             // 
             // b_aceptar
             // 
@@ -160,6 +165,7 @@
             this.b_aceptar.Size = new System.Drawing.Size(52, 47);
             this.b_aceptar.TabIndex = 15;
             this.b_aceptar.UseVisualStyleBackColor = true;
+            this.b_aceptar.Click += new System.EventHandler(this.b_aceptar_Click);
             // 
             // b_borrar
             // 
@@ -169,6 +175,7 @@
             this.b_borrar.Size = new System.Drawing.Size(52, 47);
             this.b_borrar.TabIndex = 14;
             this.b_borrar.UseVisualStyleBackColor = true;
+            this.b_borrar.Click += new System.EventHandler(this.b_borrar_Click);
             // 
             // txt_precio
             // 
@@ -186,8 +193,10 @@
             // 
             // txt_codigo
             // 
+            this.txt_codigo.Enabled = false;
             this.txt_codigo.Location = new System.Drawing.Point(77, 24);
             this.txt_codigo.Name = "txt_codigo";
+            this.txt_codigo.ReadOnly = true;
             this.txt_codigo.Size = new System.Drawing.Size(100, 20);
             this.txt_codigo.TabIndex = 9;
             // 
@@ -198,15 +207,6 @@
             this.txt_descripcion.Name = "txt_descripcion";
             this.txt_descripcion.Size = new System.Drawing.Size(152, 62);
             this.txt_descripcion.TabIndex = 8;
-            // 
-            // txt_fotoBebida
-            // 
-            this.txt_fotoBebida.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.txt_fotoBebida.Location = new System.Drawing.Point(330, 176);
-            this.txt_fotoBebida.Multiline = true;
-            this.txt_fotoBebida.Name = "txt_fotoBebida";
-            this.txt_fotoBebida.Size = new System.Drawing.Size(152, 107);
-            this.txt_fotoBebida.TabIndex = 7;
             // 
             // label8
             // 
@@ -280,6 +280,14 @@
             this.label1.Size = new System.Drawing.Size(146, 340);
             this.label1.TabIndex = 1;
             // 
+            // pb_foto
+            // 
+            this.pb_foto.Location = new System.Drawing.Point(330, 179);
+            this.pb_foto.Name = "pb_foto";
+            this.pb_foto.Size = new System.Drawing.Size(152, 130);
+            this.pb_foto.TabIndex = 24;
+            this.pb_foto.TabStop = false;
+            // 
             // frmBebidasGaseosas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -290,8 +298,10 @@
             this.Controls.Add(this.label1);
             this.Name = "frmBebidasGaseosas";
             this.Text = "Bebidas Gaseosas";
+            this.Load += new System.EventHandler(this.frmBebidasGaseosas_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_foto)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -308,7 +318,6 @@
         private System.Windows.Forms.TextBox txt_nombre;
         private System.Windows.Forms.TextBox txt_codigo;
         private System.Windows.Forms.TextBox txt_descripcion;
-        private System.Windows.Forms.TextBox txt_fotoBebida;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
@@ -322,5 +331,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox cb_nacionalidad;
         private System.Windows.Forms.ComboBox cb_marca;
+        private System.Windows.Forms.PictureBox pb_foto;
     }
 }

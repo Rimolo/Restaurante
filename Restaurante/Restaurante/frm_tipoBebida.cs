@@ -46,7 +46,7 @@ namespace Restaurante
                     if (rb_gaseosas.Checked == true)
                     {
                         frm_listaBebidasGaseosas gaseosas = new frm_listaBebidasGaseosas();
-                        //  gaseosas.nick = _nick;
+                        gaseosas.nick = _nick;
                         gaseosas.Show();
                     }
                     else

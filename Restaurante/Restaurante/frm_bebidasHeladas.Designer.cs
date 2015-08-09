@@ -40,7 +40,6 @@
             this.txt_nombre = new System.Windows.Forms.TextBox();
             this.txt_codigo = new System.Windows.Forms.TextBox();
             this.txt_descripcion = new System.Windows.Forms.TextBox();
-            this.txt_fotoBebidaCaliente = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -48,7 +47,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.pb_foto = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_foto)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -62,6 +63,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.pb_foto);
             this.groupBox1.Controls.Add(this.b_foto);
             this.groupBox1.Controls.Add(this.b_cancelar);
             this.groupBox1.Controls.Add(this.b_aceptar);
@@ -72,7 +74,6 @@
             this.groupBox1.Controls.Add(this.txt_nombre);
             this.groupBox1.Controls.Add(this.txt_codigo);
             this.groupBox1.Controls.Add(this.txt_descripcion);
-            this.groupBox1.Controls.Add(this.txt_fotoBebidaCaliente);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
@@ -175,15 +176,6 @@
             this.txt_descripcion.Size = new System.Drawing.Size(152, 62);
             this.txt_descripcion.TabIndex = 8;
             // 
-            // txt_fotoBebidaCaliente
-            // 
-            this.txt_fotoBebidaCaliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.txt_fotoBebidaCaliente.Location = new System.Drawing.Point(278, 99);
-            this.txt_fotoBebidaCaliente.Multiline = true;
-            this.txt_fotoBebidaCaliente.Name = "txt_fotoBebidaCaliente";
-            this.txt_fotoBebidaCaliente.Size = new System.Drawing.Size(152, 107);
-            this.txt_fotoBebidaCaliente.TabIndex = 7;
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -247,6 +239,14 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Codigo";
             // 
+            // pb_foto
+            // 
+            this.pb_foto.Location = new System.Drawing.Point(278, 102);
+            this.pb_foto.Name = "pb_foto";
+            this.pb_foto.Size = new System.Drawing.Size(141, 131);
+            this.pb_foto.TabIndex = 18;
+            this.pb_foto.TabStop = false;
+            // 
             // frm_bebidasHeladas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -260,6 +260,7 @@
             this.Load += new System.EventHandler(this.frm_bebidasHeladas_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_foto)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -278,7 +279,6 @@
         private System.Windows.Forms.TextBox txt_nombre;
         private System.Windows.Forms.TextBox txt_codigo;
         private System.Windows.Forms.TextBox txt_descripcion;
-        private System.Windows.Forms.TextBox txt_fotoBebidaCaliente;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
@@ -286,5 +286,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox pb_foto;
     }
 }

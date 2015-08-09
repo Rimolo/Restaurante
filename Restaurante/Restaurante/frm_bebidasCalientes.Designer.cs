@@ -31,7 +31,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.b_borrar = new System.Windows.Forms.Button();
             this.b_buscaFoto = new System.Windows.Forms.Button();
-            this.pic_foto = new System.Windows.Forms.PictureBox();
+            this.pb_foto = new System.Windows.Forms.PictureBox();
             this.b_cancelar = new System.Windows.Forms.Button();
             this.b_aceptar = new System.Windows.Forms.Button();
             this.txt_restaurantes = new System.Windows.Forms.TextBox();
@@ -50,7 +50,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_foto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_foto)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -59,7 +59,7 @@
             // 
             this.groupBox1.Controls.Add(this.b_borrar);
             this.groupBox1.Controls.Add(this.b_buscaFoto);
-            this.groupBox1.Controls.Add(this.pic_foto);
+            this.groupBox1.Controls.Add(this.pb_foto);
             this.groupBox1.Controls.Add(this.b_cancelar);
             this.groupBox1.Controls.Add(this.b_aceptar);
             this.groupBox1.Controls.Add(this.txt_restaurantes);
@@ -103,14 +103,14 @@
             this.b_buscaFoto.UseVisualStyleBackColor = true;
             this.b_buscaFoto.Click += new System.EventHandler(this.b_buscaFoto_Click);
             // 
-            // pic_foto
+            // pb_foto
             // 
-            this.pic_foto.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pic_foto.Location = new System.Drawing.Point(278, 124);
-            this.pic_foto.Name = "pic_foto";
-            this.pic_foto.Size = new System.Drawing.Size(138, 110);
-            this.pic_foto.TabIndex = 18;
-            this.pic_foto.TabStop = false;
+            this.pb_foto.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pb_foto.Location = new System.Drawing.Point(278, 124);
+            this.pb_foto.Name = "pb_foto";
+            this.pb_foto.Size = new System.Drawing.Size(138, 110);
+            this.pb_foto.TabIndex = 18;
+            this.pb_foto.TabStop = false;
             // 
             // b_cancelar
             // 
@@ -274,7 +274,7 @@
             this.Load += new System.EventHandler(this.frm_bebidasCalientes_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_foto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_foto)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -299,7 +299,7 @@
         private System.Windows.Forms.TextBox txt_descripcion;
         private System.Windows.Forms.Button b_aceptar;
         private System.Windows.Forms.Button b_cancelar;
-        private System.Windows.Forms.PictureBox pic_foto;
+        private System.Windows.Forms.PictureBox pb_foto;
         private System.Windows.Forms.Button b_buscaFoto;
         private System.Windows.Forms.Button b_borrar;
         private System.Windows.Forms.Panel panel1;
