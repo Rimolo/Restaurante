@@ -37,7 +37,10 @@ namespace Restaurante
                 if (rb_Empleados.Checked == true)
                 {
                     frm_listaEmpleados empleados = new frm_listaEmpleados();
-                    empleados.Show();
+                    empleados.Tag = this;
+                    empleados.Show(this);
+                    this.Hide();
+                    
                 }
                 else
                 {

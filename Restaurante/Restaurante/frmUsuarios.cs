@@ -45,6 +45,8 @@ namespace Restaurante
             txt_codigo.Text = "";
             txt_apellido2.Text = "";
             txt_apellido1.Text = "";
+            msk_telefonocelular.Text = "";
+            msk_telfFijo.Text = "";
             if (chk_administradorCuentas.Checked)
             {
                 chk_administradorCuentas.Checked = false;

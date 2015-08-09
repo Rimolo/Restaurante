@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgv_empleados = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,49 +46,59 @@
             this.b_cancelar = new System.Windows.Forms.Button();
             this.b_refrescar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_empleados)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgv_empleados
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgv_empleados.AllowUserToAddRows = false;
+            this.dgv_empleados.AllowUserToDeleteRows = false;
+            this.dgv_empleados.BackgroundColor = System.Drawing.Color.White;
+            this.dgv_empleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_empleados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
             this.Column3,
             this.Column4,
             this.Column5});
-            this.dataGridView1.Location = new System.Drawing.Point(206, 116);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(557, 232);
-            this.dataGridView1.TabIndex = 36;
+            this.dgv_empleados.Location = new System.Drawing.Point(206, 116);
+            this.dgv_empleados.Name = "dgv_empleados";
+            this.dgv_empleados.ReadOnly = true;
+            this.dgv_empleados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_empleados.Size = new System.Drawing.Size(557, 232);
+            this.dgv_empleados.TabIndex = 36;
+            this.dgv_empleados.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // Column1
             // 
             this.Column1.HeaderText = "Codigo";
             this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             // 
             // Column2
             // 
             this.Column2.HeaderText = "Cedula";
             this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             // 
             // Column3
             // 
             this.Column3.HeaderText = "Nombre";
             this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
             // 
             // Column4
             // 
             this.Column4.HeaderText = "Primer Apellido";
             this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
             // 
             // Column5
             // 
             this.Column5.HeaderText = "Segundo Apellido";
             this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
             // 
             // groupBox1
             // 
@@ -143,6 +153,7 @@
             this.b_mas.TabIndex = 41;
             this.b_mas.Text = "button5";
             this.b_mas.UseVisualStyleBackColor = true;
+            this.b_mas.Click += new System.EventHandler(this.b_mas_Click);
             // 
             // b_menos
             // 
@@ -152,6 +163,7 @@
             this.b_menos.TabIndex = 42;
             this.b_menos.Text = "button6";
             this.b_menos.UseVisualStyleBackColor = true;
+            this.b_menos.Click += new System.EventHandler(this.b_menos_Click);
             // 
             // b_aceptar
             // 
@@ -161,6 +173,7 @@
             this.b_aceptar.Size = new System.Drawing.Size(52, 47);
             this.b_aceptar.TabIndex = 40;
             this.b_aceptar.UseVisualStyleBackColor = true;
+            this.b_aceptar.Click += new System.EventHandler(this.b_aceptar_Click);
             // 
             // b_borrar
             // 
@@ -170,6 +183,7 @@
             this.b_borrar.Size = new System.Drawing.Size(52, 47);
             this.b_borrar.TabIndex = 39;
             this.b_borrar.UseVisualStyleBackColor = true;
+            this.b_borrar.Click += new System.EventHandler(this.b_borrar_Click);
             // 
             // b_cancelar
             // 
@@ -179,6 +193,7 @@
             this.b_cancelar.Size = new System.Drawing.Size(52, 43);
             this.b_cancelar.TabIndex = 38;
             this.b_cancelar.UseVisualStyleBackColor = true;
+            this.b_cancelar.Click += new System.EventHandler(this.b_cancelar_Click);
             // 
             // b_refrescar
             // 
@@ -188,6 +203,7 @@
             this.b_refrescar.Size = new System.Drawing.Size(52, 44);
             this.b_refrescar.TabIndex = 5;
             this.b_refrescar.UseVisualStyleBackColor = true;
+            this.b_refrescar.Click += new System.EventHandler(this.b_refrescar_Click);
             // 
             // label1
             // 
@@ -211,11 +227,12 @@
             this.Controls.Add(this.b_cancelar);
             this.Controls.Add(this.b_refrescar);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgv_empleados);
             this.Controls.Add(this.label1);
             this.Name = "frm_listaEmpleados";
             this.Text = "Lista de Empleados";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.frm_listaEmpleados_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_empleados)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -225,7 +242,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgv_empleados;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;

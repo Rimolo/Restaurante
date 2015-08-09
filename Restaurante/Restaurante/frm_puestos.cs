@@ -132,7 +132,8 @@ namespace Restaurante
                 objPuestos.externo = false;
                 if(cb_rol.Items.Count > 0)
                 {
-                    cb_rol.Items.Clear();
+                    cb_rol.DataSource = null;
+                    //cb_rol.Items.Clear();
                 }
                 cargar_roles();
                 cb_rol.Enabled = true;
@@ -148,7 +149,8 @@ namespace Restaurante
                 objPuestos.externo = true;
                 if (cb_rol.Items.Count > 0)
                 {
-                    cb_rol.Items.Clear();
+                    cb_rol.DataSource = null;
+                    //cb_rol.Items.Clear();
                 }
                 cargar_roles();
                 cb_rol.Enabled = true;
@@ -159,6 +161,7 @@ namespace Restaurante
         {
             txt_codigo.Text = "";
             txt_nombre.Text = "";
+            
             if (rb_externo.Checked)
             {
                 rb_externo.Checked = false;

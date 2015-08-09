@@ -231,7 +231,7 @@ namespace BLL
             }
             else
             {
-                string sql1 = "Select codigoPais,nombre from Pais Order by codigoPais ";
+                string sql1 = "Select codigoPais,nombre from Pais ";
                 string condicion = "Where ";
 
                 if (!string.IsNullOrEmpty(_codigo))
@@ -250,7 +250,7 @@ namespace BLL
                 ds = cls_DAL.ejecuta_dataset(conexion, sql, false, ref mensaje_error, ref numero_error);
                 if (numero_error != 0)
                 {
-                    MessageBox.Show(mensaje_error, "Error al cargar los restaurantes", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(mensaje_error, "Error al cargar los paises", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return null;
                 }
                 else

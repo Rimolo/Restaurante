@@ -30,9 +30,20 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txt_puesto = new System.Windows.Forms.TextBox();
+            this.msk_ced = new System.Windows.Forms.MaskedTextBox();
+            this.msk_tel1 = new System.Windows.Forms.MaskedTextBox();
+            this.msk_tel2 = new System.Windows.Forms.MaskedTextBox();
+            this.cb_puesto = new System.Windows.Forms.ComboBox();
+            this.cb_nac = new System.Windows.Forms.ComboBox();
+            this.cb_restaurante = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txt_apellido2 = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.txt_apellido1 = new System.Windows.Forms.TextBox();
-            this.txt_telefono1 = new System.Windows.Forms.TextBox();
             this.txt_nombre = new System.Windows.Forms.TextBox();
             this.txt_codigo = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -40,23 +51,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txt_cedula = new System.Windows.Forms.TextBox();
-            this.txt_apellido2 = new System.Windows.Forms.TextBox();
-            this.txt_telefono2 = new System.Windows.Forms.TextBox();
-            this.txt_nacionalidad = new System.Windows.Forms.TextBox();
-            this.txt_foto = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.cb_restaurante = new System.Windows.Forms.ComboBox();
             this.b_borrar = new System.Windows.Forms.Button();
             this.b_aceptar = new System.Windows.Forms.Button();
             this.b_cancelar = new System.Windows.Forms.Button();
             this.b_foto = new System.Windows.Forms.Button();
+            this.pic_foto = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_foto)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -70,21 +71,21 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.pic_foto);
+            this.groupBox1.Controls.Add(this.msk_ced);
+            this.groupBox1.Controls.Add(this.msk_tel1);
+            this.groupBox1.Controls.Add(this.msk_tel2);
+            this.groupBox1.Controls.Add(this.cb_puesto);
+            this.groupBox1.Controls.Add(this.cb_nac);
             this.groupBox1.Controls.Add(this.cb_restaurante);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.txt_foto);
-            this.groupBox1.Controls.Add(this.txt_nacionalidad);
-            this.groupBox1.Controls.Add(this.txt_telefono2);
             this.groupBox1.Controls.Add(this.txt_apellido2);
-            this.groupBox1.Controls.Add(this.txt_cedula);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.txt_puesto);
             this.groupBox1.Controls.Add(this.txt_apellido1);
-            this.groupBox1.Controls.Add(this.txt_telefono1);
             this.groupBox1.Controls.Add(this.txt_nombre);
             this.groupBox1.Controls.Add(this.txt_codigo);
             this.groupBox1.Controls.Add(this.label6);
@@ -99,12 +100,117 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Informacion del Personal";
             // 
-            // txt_puesto
+            // msk_ced
             // 
-            this.txt_puesto.Location = new System.Drawing.Point(107, 222);
-            this.txt_puesto.Name = "txt_puesto";
-            this.txt_puesto.Size = new System.Drawing.Size(160, 20);
-            this.txt_puesto.TabIndex = 10;
+            this.msk_ced.Location = new System.Drawing.Point(107, 41);
+            this.msk_ced.Mask = "0-0000-0000";
+            this.msk_ced.Name = "msk_ced";
+            this.msk_ced.Size = new System.Drawing.Size(160, 20);
+            this.msk_ced.TabIndex = 27;
+            // 
+            // msk_tel1
+            // 
+            this.msk_tel1.Location = new System.Drawing.Point(107, 163);
+            this.msk_tel1.Mask = "0000-00000";
+            this.msk_tel1.Name = "msk_tel1";
+            this.msk_tel1.Size = new System.Drawing.Size(160, 20);
+            this.msk_tel1.TabIndex = 26;
+            // 
+            // msk_tel2
+            // 
+            this.msk_tel2.Location = new System.Drawing.Point(107, 196);
+            this.msk_tel2.Mask = "0000-0000";
+            this.msk_tel2.Name = "msk_tel2";
+            this.msk_tel2.Size = new System.Drawing.Size(160, 20);
+            this.msk_tel2.TabIndex = 25;
+            // 
+            // cb_puesto
+            // 
+            this.cb_puesto.FormattingEnabled = true;
+            this.cb_puesto.Location = new System.Drawing.Point(107, 226);
+            this.cb_puesto.Name = "cb_puesto";
+            this.cb_puesto.Size = new System.Drawing.Size(160, 21);
+            this.cb_puesto.TabIndex = 24;
+            this.cb_puesto.SelectedIndexChanged += new System.EventHandler(this.cb_puesto_SelectedIndexChanged);
+            // 
+            // cb_nac
+            // 
+            this.cb_nac.FormattingEnabled = true;
+            this.cb_nac.Location = new System.Drawing.Point(107, 259);
+            this.cb_nac.Name = "cb_nac";
+            this.cb_nac.Size = new System.Drawing.Size(160, 21);
+            this.cb_nac.TabIndex = 23;
+            this.cb_nac.SelectedIndexChanged += new System.EventHandler(this.cb_nac_SelectedIndexChanged);
+            // 
+            // cb_restaurante
+            // 
+            this.cb_restaurante.FormattingEnabled = true;
+            this.cb_restaurante.Location = new System.Drawing.Point(291, 214);
+            this.cb_restaurante.Name = "cb_restaurante";
+            this.cb_restaurante.Size = new System.Drawing.Size(121, 21);
+            this.cb_restaurante.TabIndex = 22;
+            this.cb_restaurante.SelectedIndexChanged += new System.EventHandler(this.cb_restaurante_SelectedIndexChanged);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(284, 196);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(65, 13);
+            this.label12.TabIndex = 21;
+            this.label12.Text = "Restaurante";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(297, 34);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(95, 13);
+            this.label11.TabIndex = 20;
+            this.label11.Text = "Foto del Empleado";
+            // 
+            // txt_apellido2
+            // 
+            this.txt_apellido2.Location = new System.Drawing.Point(107, 127);
+            this.txt_apellido2.Name = "txt_apellido2";
+            this.txt_apellido2.Size = new System.Drawing.Size(160, 20);
+            this.txt_apellido2.TabIndex = 16;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(6, 267);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(69, 13);
+            this.label10.TabIndex = 14;
+            this.label10.Text = "Nacionalidad\r\n";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(10, 229);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(43, 13);
+            this.label9.TabIndex = 13;
+            this.label9.Text = "Puesto ";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(13, 48);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(40, 13);
+            this.label8.TabIndex = 12;
+            this.label8.Text = "Cedula\r\n";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(13, 196);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(58, 13);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "Telefono 2";
             // 
             // txt_apellido1
             // 
@@ -112,13 +218,6 @@
             this.txt_apellido1.Name = "txt_apellido1";
             this.txt_apellido1.Size = new System.Drawing.Size(160, 20);
             this.txt_apellido1.TabIndex = 9;
-            // 
-            // txt_telefono1
-            // 
-            this.txt_telefono1.Location = new System.Drawing.Point(107, 163);
-            this.txt_telefono1.Name = "txt_telefono1";
-            this.txt_telefono1.Size = new System.Drawing.Size(160, 20);
-            this.txt_telefono1.TabIndex = 8;
             // 
             // txt_nombre
             // 
@@ -129,6 +228,7 @@
             // 
             // txt_codigo
             // 
+            this.txt_codigo.Enabled = false;
             this.txt_codigo.Location = new System.Drawing.Point(107, 12);
             this.txt_codigo.Name = "txt_codigo";
             this.txt_codigo.Size = new System.Drawing.Size(160, 20);
@@ -179,105 +279,6 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Codigo";
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(13, 196);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(58, 13);
-            this.label7.TabIndex = 11;
-            this.label7.Text = "Telefono 2";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(13, 48);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(40, 13);
-            this.label8.TabIndex = 12;
-            this.label8.Text = "Cedula\r\n";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(10, 229);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(43, 13);
-            this.label9.TabIndex = 13;
-            this.label9.Text = "Puesto ";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(6, 267);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(69, 13);
-            this.label10.TabIndex = 14;
-            this.label10.Text = "Nacionalidad\r\n";
-            // 
-            // txt_cedula
-            // 
-            this.txt_cedula.Location = new System.Drawing.Point(107, 45);
-            this.txt_cedula.Name = "txt_cedula";
-            this.txt_cedula.Size = new System.Drawing.Size(160, 20);
-            this.txt_cedula.TabIndex = 15;
-            // 
-            // txt_apellido2
-            // 
-            this.txt_apellido2.Location = new System.Drawing.Point(107, 127);
-            this.txt_apellido2.Name = "txt_apellido2";
-            this.txt_apellido2.Size = new System.Drawing.Size(160, 20);
-            this.txt_apellido2.TabIndex = 16;
-            // 
-            // txt_telefono2
-            // 
-            this.txt_telefono2.Location = new System.Drawing.Point(107, 189);
-            this.txt_telefono2.Name = "txt_telefono2";
-            this.txt_telefono2.Size = new System.Drawing.Size(160, 20);
-            this.txt_telefono2.TabIndex = 17;
-            // 
-            // txt_nacionalidad
-            // 
-            this.txt_nacionalidad.Location = new System.Drawing.Point(107, 260);
-            this.txt_nacionalidad.Name = "txt_nacionalidad";
-            this.txt_nacionalidad.Size = new System.Drawing.Size(160, 20);
-            this.txt_nacionalidad.TabIndex = 18;
-            // 
-            // txt_foto
-            // 
-            this.txt_foto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.txt_foto.Location = new System.Drawing.Point(287, 50);
-            this.txt_foto.Multiline = true;
-            this.txt_foto.Name = "txt_foto";
-            this.txt_foto.Size = new System.Drawing.Size(125, 123);
-            this.txt_foto.TabIndex = 19;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(297, 34);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(95, 13);
-            this.label11.TabIndex = 20;
-            this.label11.Text = "Foto del Empleado";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(284, 196);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(65, 13);
-            this.label12.TabIndex = 21;
-            this.label12.Text = "Restaurante";
-            // 
-            // cb_restaurante
-            // 
-            this.cb_restaurante.FormattingEnabled = true;
-            this.cb_restaurante.Location = new System.Drawing.Point(291, 214);
-            this.cb_restaurante.Name = "cb_restaurante";
-            this.cb_restaurante.Size = new System.Drawing.Size(121, 21);
-            this.cb_restaurante.TabIndex = 22;
-            // 
             // b_borrar
             // 
             this.b_borrar.Image = global::Restaurante.Properties.Resources.Eliminar12;
@@ -286,6 +287,7 @@
             this.b_borrar.Size = new System.Drawing.Size(52, 47);
             this.b_borrar.TabIndex = 23;
             this.b_borrar.UseVisualStyleBackColor = true;
+            this.b_borrar.Click += new System.EventHandler(this.b_borrar_Click);
             // 
             // b_aceptar
             // 
@@ -295,6 +297,7 @@
             this.b_aceptar.Size = new System.Drawing.Size(52, 47);
             this.b_aceptar.TabIndex = 24;
             this.b_aceptar.UseVisualStyleBackColor = true;
+            this.b_aceptar.Click += new System.EventHandler(this.b_aceptar_Click);
             // 
             // b_cancelar
             // 
@@ -304,6 +307,7 @@
             this.b_cancelar.Size = new System.Drawing.Size(52, 47);
             this.b_cancelar.TabIndex = 25;
             this.b_cancelar.UseVisualStyleBackColor = true;
+            this.b_cancelar.Click += new System.EventHandler(this.b_cancelar_Click);
             // 
             // b_foto
             // 
@@ -313,6 +317,15 @@
             this.b_foto.Size = new System.Drawing.Size(75, 64);
             this.b_foto.TabIndex = 26;
             this.b_foto.UseVisualStyleBackColor = true;
+            this.b_foto.Click += new System.EventHandler(this.b_foto_Click);
+            // 
+            // pic_foto
+            // 
+            this.pic_foto.Location = new System.Drawing.Point(287, 50);
+            this.pic_foto.Name = "pic_foto";
+            this.pic_foto.Size = new System.Drawing.Size(125, 129);
+            this.pic_foto.TabIndex = 28;
+            this.pic_foto.TabStop = false;
             // 
             // frm_empleados
             // 
@@ -328,8 +341,10 @@
             this.Controls.Add(this.label1);
             this.Name = "frm_empleados";
             this.Text = "Empleados";
+            this.Load += new System.EventHandler(this.frm_empleados_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_foto)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -338,17 +353,12 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txt_nacionalidad;
-        private System.Windows.Forms.TextBox txt_telefono2;
         private System.Windows.Forms.TextBox txt_apellido2;
-        private System.Windows.Forms.TextBox txt_cedula;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txt_puesto;
         private System.Windows.Forms.TextBox txt_apellido1;
-        private System.Windows.Forms.TextBox txt_telefono1;
         private System.Windows.Forms.TextBox txt_nombre;
         private System.Windows.Forms.TextBox txt_codigo;
         private System.Windows.Forms.Label label6;
@@ -359,10 +369,15 @@
         private System.Windows.Forms.ComboBox cb_restaurante;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txt_foto;
         private System.Windows.Forms.Button b_borrar;
         private System.Windows.Forms.Button b_aceptar;
         private System.Windows.Forms.Button b_cancelar;
         private System.Windows.Forms.Button b_foto;
+        private System.Windows.Forms.MaskedTextBox msk_ced;
+        private System.Windows.Forms.MaskedTextBox msk_tel1;
+        private System.Windows.Forms.MaskedTextBox msk_tel2;
+        private System.Windows.Forms.ComboBox cb_puesto;
+        private System.Windows.Forms.ComboBox cb_nac;
+        private System.Windows.Forms.PictureBox pic_foto;
     }
 }
