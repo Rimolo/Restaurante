@@ -39,12 +39,62 @@ namespace Restaurante
         private void frm_empleados_Load(object sender, EventArgs e)
         {
             this.mostar_consecutivo();
+            cargar_paises();
+            cargar_paises();
+            cargar_rest();
             if (_accion == "Editar")
             {
                 carga_info();
             }
         }
-
+        private void cargar_puestos()
+        {
+            try
+            {
+                DataSet ds;
+                ds = objEmpleados.cargar_lista_puestos();
+                cb_puesto.DataSource = ds.Tables[0];
+                cb_puesto.DisplayMember = ds.Tables[0].Columns["nombre"].ColumnName.ToString();
+                cb_puesto.ValueMember = ds.Tables[0].Columns["codPuesto"].ColumnName.ToString();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Hubo un problema con la conexión a la base de datos", "Validación de Datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+        }
+        private void cargar_rest()
+        {
+            try
+            {
+                DataSet ds;
+                ds = objEmpleados.cargar_lista_restaurantes();
+                cb_restaurante.DataSource = ds.Tables[0];
+                cb_restaurante.DisplayMember = ds.Tables[0].Columns["nombre"].ColumnName.ToString();
+                cb_restaurante.ValueMember = ds.Tables[0].Columns["codRestaurante"].ColumnName.ToString();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Hubo un problema con la conexión a la base de datos", "Validación de Datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+        }
+        private void cargar_paises()
+        {
+            try
+            {
+                DataSet ds;
+                ds = objEmpleados.cargar_lista_paises();
+                cb_nac.DataSource = ds.Tables[0];
+                cb_nac.DisplayMember = ds.Tables[0].Columns["nombre"].ColumnName.ToString();
+                cb_nac.ValueMember = ds.Tables[0].Columns["codigoPais"].ColumnName.ToString();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Hubo un problema con la conexión a la base de datos", "Validación de Datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+        }
         private void b_borrar_Click(object sender, EventArgs e)
         {
             txt_nombre.Text = "";
@@ -99,9 +149,10 @@ namespace Restaurante
             objEmpleados.codigo = txt_codigo.Text.Replace(" ", "");
             objEmpleados.nombre = txt_nombre.Text;
             objEmpleados.cedula = msk_ced.Text;
-            objEmpleados.cargar_cod_Pais(cb_nac.SelectedValue.ToString());
-            objEmpleados.cargar_cod_Puesto(cb_puesto.SelectedValue.ToString());
-            objEmpleados.cargar_cod_Rest(cb_restaurante.SelectedValue.ToString());
+            objEmpleados.codNacionalidad=cb_nac.SelectedValue.ToString();
+
+            objEmpleados.codPuesto=cb_puesto.SelectedValue.ToString());
+            objEmpleados.codRest= cb_restaurante.SelectedValue.ToString());
             int tel = 0;
             string text = msk_tel1.Text.Replace("-", "");
             if (!Int32.TryParse(text, out tel))

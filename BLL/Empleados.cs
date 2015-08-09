@@ -376,117 +376,7 @@ namespace BLL
                 }
             }
         }
-
-
-        public void cargar_cod_Rest(string nombreR) {
-            conexion = cls_DAL.trae_conexion("Progra4", ref mensaje_error, ref numero_error);
-            if (conexion == null)
-            {
-                MessageBox.Show(mensaje_error, "Error al obtener cadena de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                _nombre = "Error";
-            }
-            else
-            {
-                sql = "Select codRestaurante" +
-                      " from Restaurante where nombre=@nombre";
-                ParamStruct[] parametros = new ParamStruct[1];
-                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@nombre", SqlDbType.VarChar, nombreR);
-                ds = cls_DAL.ejecuta_dataset(conexion, sql, false, parametros, ref mensaje_error, ref numero_error);
-                if (ds == null)
-                {
-                    MessageBox.Show(mensaje_error, "Error al obtener el pais", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    _nombre = "Error";
-                }
-                else
-                {
-                    if (ds.Tables[0].Rows.Count > 0)
-                    {
-                        _codRest = ds.Tables[0].Rows[0]["nombre"].ToString();
-                        
-
-                    }
-                    else
-                    {
-                        _nombre = "Error";
-                    }
-                }
-
-            }
-        }
-
-        public void cargar_cod_Pais(string nombreP)
-        {
-            conexion = cls_DAL.trae_conexion("Progra4", ref mensaje_error, ref numero_error);
-            if (conexion == null)
-            {
-                MessageBox.Show(mensaje_error, "Error al obtener cadena de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                _nombre = "Error";
-            }
-            else
-            {
-                sql = "Select codigoPais" +
-                      " from Pais where nombre=@nombre";
-                ParamStruct[] parametros = new ParamStruct[1];
-                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@nombre", SqlDbType.VarChar, nombreP);
-                ds = cls_DAL.ejecuta_dataset(conexion, sql, false, parametros, ref mensaje_error, ref numero_error);
-                if (ds == null)
-                {
-                    MessageBox.Show(mensaje_error, "Error al obtener el pais", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    _nombre = "Error";
-                }
-                else
-                {
-                    if (ds.Tables[0].Rows.Count > 0)
-                    {
-                        _codNacionalidad = ds.Tables[0].Rows[0]["nombre"].ToString();
-                       
-
-                    }
-                    else
-                    {
-                        _nombre = "Error";
-                    }
-                }
-
-            }
-        }
-
-        public void cargar_cod_Puesto(string nombreP)
-        {
-            conexion = cls_DAL.trae_conexion("Progra4", ref mensaje_error, ref numero_error);
-            if (conexion == null)
-            {
-                MessageBox.Show(mensaje_error, "Error al obtener cadena de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                _nombre = "Error";
-            }
-            else
-            {
-                sql = "Select codPuesto" +
-                      " from Puestos where nombre=@nombre";
-                ParamStruct[] parametros = new ParamStruct[1];
-                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@nombre", SqlDbType.VarChar, nombreP);
-                ds = cls_DAL.ejecuta_dataset(conexion, sql, false, parametros, ref mensaje_error, ref numero_error);
-                if (ds == null)
-                {
-                    MessageBox.Show(mensaje_error, "Error al obtener el pais", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    _nombre = "Error";
-                }
-                else
-                {
-                    if (ds.Tables[0].Rows.Count > 0)
-                    {
-                        _codPuesto = ds.Tables[0].Rows[0]["nombre"].ToString();
-                        
-
-                    }
-                    else
-                    {
-                        _nombre = "Error";
-                    }
-                }
-
-            }
-        }
+     
 
         public void carga_info_empleado(string cod_pais)
         {
@@ -530,6 +420,85 @@ namespace BLL
                     }
                 }
 
+            }
+        }
+
+        public DataSet cargar_lista_restaurantes()
+        {
+            conexion = cls_DAL.trae_conexion("Progra4", ref mensaje_error, ref numero_error);
+            if (conexion == null)
+            {
+                MessageBox.Show(mensaje_error, "Error al obtener cadena de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+            else
+            {
+                sql = "Select codRestaurante,nombre from Restaurante";
+
+
+                ds = cls_DAL.ejecuta_dataset(conexion, sql, false, ref mensaje_error, ref numero_error);
+                if (numero_error != 0)
+                {
+                    MessageBox.Show(mensaje_error, "Error al cargar los restaurantes", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return null;
+                }
+                else
+                {
+                    return ds;
+                }
+            }
+        }
+
+        public DataSet cargar_lista_puestos()
+        {
+            conexion = cls_DAL.trae_conexion("Progra4", ref mensaje_error, ref numero_error);
+            if (conexion == null)
+            {
+                MessageBox.Show(mensaje_error, "Error al obtener cadena de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+            else
+            {
+                sql = "Select codPuesto,nombre from Puestos";
+                
+
+
+                ds = cls_DAL.ejecuta_dataset(conexion, sql, false, ref mensaje_error, ref numero_error);
+                if (numero_error != 0)
+                {
+                    MessageBox.Show(mensaje_error, "Error al cargar los puestos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return null;
+                }
+                else
+                {
+                    return ds;
+                }
+            }
+        }
+
+        public DataSet cargar_lista_paises()
+        {
+            conexion = cls_DAL.trae_conexion("Progra4", ref mensaje_error, ref numero_error);
+            if (conexion == null)
+            {
+                MessageBox.Show(mensaje_error, "Error al obtener cadena de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+            else
+            {
+                sql = "Select codigoPais,nombre from Pais";
+
+
+                ds = cls_DAL.ejecuta_dataset(conexion, sql, false, ref mensaje_error, ref numero_error);
+                if (numero_error != 0)
+                {
+                    MessageBox.Show(mensaje_error, "Error al cargar los paises", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return null;
+                }
+                else
+                {
+                    return ds;
+                }
             }
         }
         #endregion
