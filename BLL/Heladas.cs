@@ -163,7 +163,7 @@ namespace BLL
                         " nombre=@nombre," +
                         " descripcion=@descripcion," +
                         " precio=@precio," +
-                        " ingredientes=@ingredientes," +
+                        " ingredientes=@ingredientes" +
                         " where codBebidaHel=@codBebidaHel";
                 }
                 ParamStruct[] parametros = new ParamStruct[6];

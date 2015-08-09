@@ -49,6 +49,7 @@
     <Compile Include="Calientes.cs" />
     <Compile Include="Empleados.cs" />
     <Compile Include="Gaseosas.cs" />
+    <Compile Include="Mesas.cs" />
     <Compile Include="Marcas.cs" />
     <Compile Include="Heladas.cs" />
     <Compile Include="Imprimir.cs" />
