@@ -29,20 +29,14 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txt_nacionalidad = new System.Windows.Forms.TextBox();
             this.txt_empresa = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txt_nombreEmpleado = new System.Windows.Forms.TextBox();
-            this.txt_codigoEmpleado = new System.Windows.Forms.TextBox();
+            this.txt_nombreMarca = new System.Windows.Forms.TextBox();
+            this.txt_codigoMarca = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.b_refrescar = new System.Windows.Forms.Button();
@@ -51,6 +45,12 @@
             this.b_aceptar = new System.Windows.Forms.Button();
             this.b_mas = new System.Windows.Forms.Button();
             this.b_menos = new System.Windows.Forms.Button();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -77,42 +77,6 @@
             this.dataGridView1.TabIndex = 40;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Codigo";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Nombre";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Descripcion";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Nacionalidad";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Empresa";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Telefono";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            // 
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
@@ -128,8 +92,8 @@
             this.groupBox1.Controls.Add(this.txt_empresa);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.txt_nombreEmpleado);
-            this.groupBox1.Controls.Add(this.txt_codigoEmpleado);
+            this.groupBox1.Controls.Add(this.txt_nombreMarca);
+            this.groupBox1.Controls.Add(this.txt_codigoMarca);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(319, 27);
@@ -171,19 +135,19 @@
             this.label4.TabIndex = 4;
             this.label4.Text = "Empresa";
             // 
-            // txt_nombreEmpleado
+            // txt_nombreMarca
             // 
-            this.txt_nombreEmpleado.Location = new System.Drawing.Point(123, 62);
-            this.txt_nombreEmpleado.Name = "txt_nombreEmpleado";
-            this.txt_nombreEmpleado.Size = new System.Drawing.Size(132, 20);
-            this.txt_nombreEmpleado.TabIndex = 3;
+            this.txt_nombreMarca.Location = new System.Drawing.Point(123, 62);
+            this.txt_nombreMarca.Name = "txt_nombreMarca";
+            this.txt_nombreMarca.Size = new System.Drawing.Size(132, 20);
+            this.txt_nombreMarca.TabIndex = 3;
             // 
-            // txt_codigoEmpleado
+            // txt_codigoMarca
             // 
-            this.txt_codigoEmpleado.Location = new System.Drawing.Point(123, 26);
-            this.txt_codigoEmpleado.Name = "txt_codigoEmpleado";
-            this.txt_codigoEmpleado.Size = new System.Drawing.Size(132, 20);
-            this.txt_codigoEmpleado.TabIndex = 2;
+            this.txt_codigoMarca.Location = new System.Drawing.Point(123, 26);
+            this.txt_codigoMarca.Name = "txt_codigoMarca";
+            this.txt_codigoMarca.Size = new System.Drawing.Size(132, 20);
+            this.txt_codigoMarca.TabIndex = 2;
             // 
             // label3
             // 
@@ -263,6 +227,48 @@
             this.b_menos.UseVisualStyleBackColor = true;
             this.b_menos.Click += new System.EventHandler(this.b_menos_Click);
             // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "codMarca";
+            this.Column1.HeaderText = "Codigo";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "nombre";
+            this.Column2.HeaderText = "Nombre";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "descripcion";
+            this.Column3.HeaderText = "Descripcion";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "nomPais";
+            this.Column4.HeaderText = "Nacionalidad";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "nombEmp";
+            this.Column5.HeaderText = "Empresa";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "telefonoEmp";
+            this.Column6.HeaderText = "Telefono";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            // 
             // frm_listaMarcas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -280,6 +286,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "frm_listaMarcas";
             this.Text = "Lista de Marcas";
+            this.Load += new System.EventHandler(this.frm_listaMarcas_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -291,15 +298,9 @@
 
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txt_nombreEmpleado;
-        private System.Windows.Forms.TextBox txt_codigoEmpleado;
+        private System.Windows.Forms.TextBox txt_nombreMarca;
+        private System.Windows.Forms.TextBox txt_codigoMarca;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button b_refrescar;
@@ -312,5 +313,11 @@
         private System.Windows.Forms.TextBox txt_empresa;
         private System.Windows.Forms.Button b_mas;
         private System.Windows.Forms.Button b_menos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
     }
 }

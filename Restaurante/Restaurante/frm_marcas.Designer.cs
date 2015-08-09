@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.b_foto = new System.Windows.Forms.Button();
             this.cb_nacionalidad = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.txt_foto = new System.Windows.Forms.TextBox();
             this.txt_descripcion = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -40,32 +40,34 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.txt_telefonoEmpresa = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.txt_fotoEmpresa = new System.Windows.Forms.TextBox();
             this.txt_detalleEmpresa = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txt_nombreEmpresa = new System.Windows.Forms.TextBox();
-            this.txt_cedulaJuridica = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.b_cancelar = new System.Windows.Forms.Button();
             this.b_aceptar = new System.Windows.Forms.Button();
             this.b_borrar = new System.Windows.Forms.Button();
-            this.b_foto = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.mtb_CedJuridica = new System.Windows.Forms.MaskedTextBox();
+            this.mtb_Telefono = new System.Windows.Forms.MaskedTextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.b_foto);
             this.groupBox1.Controls.Add(this.cb_nacionalidad);
             this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.txt_foto);
             this.groupBox1.Controls.Add(this.txt_descripcion);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.label9);
@@ -81,6 +83,16 @@
             this.groupBox1.Text = "Informacion de la Marca";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // b_foto
+            // 
+            this.b_foto.Image = global::Restaurante.Properties.Resources.Camara;
+            this.b_foto.Location = new System.Drawing.Point(169, 315);
+            this.b_foto.Name = "b_foto";
+            this.b_foto.Size = new System.Drawing.Size(75, 64);
+            this.b_foto.TabIndex = 27;
+            this.b_foto.UseVisualStyleBackColor = true;
+            this.b_foto.Click += new System.EventHandler(this.b_foto_Click);
+            // 
             // cb_nacionalidad
             // 
             this.cb_nacionalidad.FormattingEnabled = true;
@@ -88,24 +100,16 @@
             this.cb_nacionalidad.Name = "cb_nacionalidad";
             this.cb_nacionalidad.Size = new System.Drawing.Size(121, 21);
             this.cb_nacionalidad.TabIndex = 23;
+            this.cb_nacionalidad.SelectedIndexChanged += new System.EventHandler(this.cb_nacionalidad_SelectedIndexChanged);
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(38, 225);
+            this.label11.Location = new System.Drawing.Point(21, 225);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(86, 13);
             this.label11.TabIndex = 20;
             this.label11.Text = "Foto de la marca";
-            // 
-            // txt_foto
-            // 
-            this.txt_foto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.txt_foto.Location = new System.Drawing.Point(17, 256);
-            this.txt_foto.Multiline = true;
-            this.txt_foto.Name = "txt_foto";
-            this.txt_foto.Size = new System.Drawing.Size(125, 123);
-            this.txt_foto.TabIndex = 19;
             // 
             // txt_descripcion
             // 
@@ -142,8 +146,10 @@
             // 
             // txt_codigo
             // 
+            this.txt_codigo.Enabled = false;
             this.txt_codigo.Location = new System.Drawing.Point(107, 19);
             this.txt_codigo.Name = "txt_codigo";
+            this.txt_codigo.ReadOnly = true;
             this.txt_codigo.Size = new System.Drawing.Size(160, 20);
             this.txt_codigo.TabIndex = 6;
             // 
@@ -167,15 +173,15 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.txt_telefonoEmpresa);
+            this.groupBox2.Controls.Add(this.pictureBox2);
+            this.groupBox2.Controls.Add(this.mtb_Telefono);
+            this.groupBox2.Controls.Add(this.mtb_CedJuridica);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.txt_fotoEmpresa);
             this.groupBox2.Controls.Add(this.txt_detalleEmpresa);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.txt_nombreEmpresa);
-            this.groupBox2.Controls.Add(this.txt_cedulaJuridica);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Location = new System.Drawing.Point(467, 12);
@@ -184,13 +190,6 @@
             this.groupBox2.TabIndex = 28;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Informacion del contacto";
-            // 
-            // txt_telefonoEmpresa
-            // 
-            this.txt_telefonoEmpresa.Location = new System.Drawing.Point(127, 196);
-            this.txt_telefonoEmpresa.Name = "txt_telefonoEmpresa";
-            this.txt_telefonoEmpresa.Size = new System.Drawing.Size(146, 20);
-            this.txt_telefonoEmpresa.TabIndex = 29;
             // 
             // label5
             // 
@@ -201,23 +200,24 @@
             this.label5.TabIndex = 28;
             this.label5.Text = "Telefono";
             // 
+            // button1
+            // 
+            this.button1.Image = global::Restaurante.Properties.Resources.Camara;
+            this.button1.Location = new System.Drawing.Point(167, 315);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 64);
+            this.button1.TabIndex = 27;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(32, 256);
+            this.label3.Location = new System.Drawing.Point(14, 241);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(97, 13);
             this.label3.TabIndex = 20;
             this.label3.Text = "Foto de la empresa";
-            // 
-            // txt_fotoEmpresa
-            // 
-            this.txt_fotoEmpresa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.txt_fotoEmpresa.Location = new System.Drawing.Point(17, 281);
-            this.txt_fotoEmpresa.Multiline = true;
-            this.txt_fotoEmpresa.Name = "txt_fotoEmpresa";
-            this.txt_fotoEmpresa.Size = new System.Drawing.Size(125, 123);
-            this.txt_fotoEmpresa.TabIndex = 19;
             // 
             // txt_detalleEmpresa
             // 
@@ -243,13 +243,6 @@
             this.txt_nombreEmpresa.Size = new System.Drawing.Size(146, 20);
             this.txt_nombreEmpresa.TabIndex = 7;
             // 
-            // txt_cedulaJuridica
-            // 
-            this.txt_cedulaJuridica.Location = new System.Drawing.Point(121, 19);
-            this.txt_cedulaJuridica.Name = "txt_cedulaJuridica";
-            this.txt_cedulaJuridica.Size = new System.Drawing.Size(146, 20);
-            this.txt_cedulaJuridica.TabIndex = 6;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -268,15 +261,6 @@
             this.label8.TabIndex = 0;
             this.label8.Text = "Cedula Juridica";
             // 
-            // button1
-            // 
-            this.button1.Image = global::Restaurante.Properties.Resources.Camara;
-            this.button1.Location = new System.Drawing.Point(167, 315);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 64);
-            this.button1.TabIndex = 27;
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // b_cancelar
             // 
             this.b_cancelar.Image = global::Restaurante.Properties.Resources.Cancelar4;
@@ -285,6 +269,7 @@
             this.b_cancelar.Size = new System.Drawing.Size(52, 47);
             this.b_cancelar.TabIndex = 26;
             this.b_cancelar.UseVisualStyleBackColor = true;
+            this.b_cancelar.Click += new System.EventHandler(this.b_cancelar_Click);
             // 
             // b_aceptar
             // 
@@ -294,6 +279,7 @@
             this.b_aceptar.Size = new System.Drawing.Size(52, 47);
             this.b_aceptar.TabIndex = 25;
             this.b_aceptar.UseVisualStyleBackColor = true;
+            this.b_aceptar.Click += new System.EventHandler(this.b_aceptar_Click);
             // 
             // b_borrar
             // 
@@ -303,15 +289,7 @@
             this.b_borrar.Size = new System.Drawing.Size(52, 47);
             this.b_borrar.TabIndex = 24;
             this.b_borrar.UseVisualStyleBackColor = true;
-            // 
-            // b_foto
-            // 
-            this.b_foto.Image = global::Restaurante.Properties.Resources.Camara;
-            this.b_foto.Location = new System.Drawing.Point(169, 315);
-            this.b_foto.Name = "b_foto";
-            this.b_foto.Size = new System.Drawing.Size(75, 64);
-            this.b_foto.TabIndex = 27;
-            this.b_foto.UseVisualStyleBackColor = true;
+            this.b_borrar.Click += new System.EventHandler(this.b_borrar_Click);
             // 
             // label1
             // 
@@ -321,6 +299,38 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(172, 501);
             this.label1.TabIndex = 0;
+            // 
+            // mtb_CedJuridica
+            // 
+            this.mtb_CedJuridica.Location = new System.Drawing.Point(121, 26);
+            this.mtb_CedJuridica.Mask = "00-0000-000000";
+            this.mtb_CedJuridica.Name = "mtb_CedJuridica";
+            this.mtb_CedJuridica.Size = new System.Drawing.Size(148, 20);
+            this.mtb_CedJuridica.TabIndex = 30;
+            // 
+            // mtb_Telefono
+            // 
+            this.mtb_Telefono.Location = new System.Drawing.Point(121, 196);
+            this.mtb_Telefono.Mask = "0000-0000";
+            this.mtb_Telefono.Name = "mtb_Telefono";
+            this.mtb_Telefono.Size = new System.Drawing.Size(140, 20);
+            this.mtb_Telefono.TabIndex = 31;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(24, 256);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(120, 123);
+            this.pictureBox1.TabIndex = 28;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Location = new System.Drawing.Point(9, 271);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(129, 123);
+            this.pictureBox2.TabIndex = 32;
+            this.pictureBox2.TabStop = false;
             // 
             // frm_marcas
             // 
@@ -336,10 +346,13 @@
             this.Controls.Add(this.label1);
             this.Name = "frm_marcas";
             this.Text = "Marcas";
+            this.Load += new System.EventHandler(this.frm_marcas_Load_1);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -349,7 +362,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txt_foto;
         private System.Windows.Forms.TextBox txt_descripcion;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
@@ -365,14 +377,15 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txt_fotoEmpresa;
         private System.Windows.Forms.TextBox txt_detalleEmpresa;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txt_nombreEmpresa;
-        private System.Windows.Forms.TextBox txt_cedulaJuridica;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txt_telefonoEmpresa;
+        private System.Windows.Forms.MaskedTextBox mtb_Telefono;
+        private System.Windows.Forms.MaskedTextBox mtb_CedJuridica;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

@@ -56,7 +56,29 @@ namespace Restaurante
 
         private void b_aceptar_Click(object sender, EventArgs e)
         {
+            obj_heladas.codBebidaHel = null;
+            obj_heladas.nombre = null;
 
+            if (txt_codigoBebidaH.Text != "")
+            {
+                obj_heladas.codBebidaHel = txt_codigoBebidaH.Text;
+            }
+            else if (txt_nombreBebidaH.Text != "")
+            {
+                obj_heladas.nombre = txt_nombreBebidaH.Text;
+            }           
+
+            try
+            {
+                dgv_bebidaHelada.AutoGenerateColumns = false;
+                dgv_bebidaHelada.DataSource = obj_heladas.carga_Heladas_especificos().Tables[0];
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Hubo un problema con la conexión a la base de datos", "Validación de Datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
         }
 
         private void b_agregar_Click(object sender, EventArgs e)
