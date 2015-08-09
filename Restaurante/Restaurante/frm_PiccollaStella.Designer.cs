@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.b_salirMenu = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.label11 = new System.Windows.Forms.Label();
@@ -80,10 +78,6 @@
             this.b_mesa23 = new System.Windows.Forms.Button();
             this.b_mesa22 = new System.Windows.Forms.Button();
             this.b_barra = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.b_mesas = new System.Windows.Forms.Button();
-            this.b_clientes = new System.Windows.Forms.Button();
-            this.b_reservaciones = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.rb_barraCerrada2 = new System.Windows.Forms.RadioButton();
@@ -92,33 +86,23 @@
             this.label20 = new System.Windows.Forms.Label();
             this.rb_barraCerrada = new System.Windows.Forms.RadioButton();
             this.rb_barraAbierta = new System.Windows.Forms.RadioButton();
-            this.panel1.SuspendLayout();
+            this.b_reservaciones = new System.Windows.Forms.Button();
+            this.b_clientes = new System.Windows.Forms.Button();
+            this.b_mesas = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.b_salirMenu = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label_estado = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.statusStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.panel1.Controls.Add(this.b_salirMenu);
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.b_mesas);
-            this.panel1.Controls.Add(this.b_clientes);
-            this.panel1.Controls.Add(this.b_reservaciones);
-            this.panel1.Location = new System.Drawing.Point(3, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(113, 470);
-            this.panel1.TabIndex = 1;
-            // 
-            // b_salirMenu
-            // 
-            this.b_salirMenu.Location = new System.Drawing.Point(12, 248);
-            this.b_salirMenu.Name = "b_salirMenu";
-            this.b_salirMenu.Size = new System.Drawing.Size(82, 32);
-            this.b_salirMenu.TabIndex = 4;
-            this.b_salirMenu.Text = "Salir del Menu\r\n";
-            this.b_salirMenu.UseVisualStyleBackColor = true;
             // 
             // statusStrip1
             // 
@@ -568,42 +552,6 @@
             this.b_barra.TabIndex = 63;
             this.b_barra.UseVisualStyleBackColor = true;
             // 
-            // button4
-            // 
-            this.button4.Image = global::Restaurante.Properties.Resources.restaurant_icon_vector_illustration_315602;
-            this.button4.Location = new System.Drawing.Point(12, 187);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 55);
-            this.button4.TabIndex = 3;
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // b_mesas
-            // 
-            this.b_mesas.Image = global::Restaurante.Properties.Resources.icono_mesas_restaurante3;
-            this.b_mesas.Location = new System.Drawing.Point(12, 9);
-            this.b_mesas.Name = "b_mesas";
-            this.b_mesas.Size = new System.Drawing.Size(75, 55);
-            this.b_mesas.TabIndex = 2;
-            this.b_mesas.UseVisualStyleBackColor = true;
-            // 
-            // b_clientes
-            // 
-            this.b_clientes.Image = global::Restaurante.Properties.Resources.traje_de_corbata_el_hombre_de_usuario_icono_4877;
-            this.b_clientes.Location = new System.Drawing.Point(12, 128);
-            this.b_clientes.Name = "b_clientes";
-            this.b_clientes.Size = new System.Drawing.Size(75, 49);
-            this.b_clientes.TabIndex = 1;
-            this.b_clientes.UseVisualStyleBackColor = true;
-            // 
-            // b_reservaciones
-            // 
-            this.b_reservaciones.Image = global::Restaurante.Properties.Resources.Reserved;
-            this.b_reservaciones.Location = new System.Drawing.Point(12, 70);
-            this.b_reservaciones.Name = "b_reservaciones";
-            this.b_reservaciones.Size = new System.Drawing.Size(75, 48);
-            this.b_reservaciones.TabIndex = 0;
-            this.b_reservaciones.UseVisualStyleBackColor = true;
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label1);
@@ -649,6 +597,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label_estado);
             this.groupBox2.Controls.Add(this.label20);
             this.groupBox2.Controls.Add(this.rb_barraCerrada);
             this.groupBox2.Controls.Add(this.rb_barraAbierta);
@@ -689,6 +638,112 @@
             this.rb_barraAbierta.TabStop = true;
             this.rb_barraAbierta.Text = "Barra abierta\r\n";
             this.rb_barraAbierta.UseVisualStyleBackColor = true;
+            // 
+            // b_reservaciones
+            // 
+            this.b_reservaciones.Image = global::Restaurante.Properties.Resources.Reserved;
+            this.b_reservaciones.Location = new System.Drawing.Point(12, 70);
+            this.b_reservaciones.Name = "b_reservaciones";
+            this.b_reservaciones.Size = new System.Drawing.Size(75, 48);
+            this.b_reservaciones.TabIndex = 0;
+            this.b_reservaciones.UseVisualStyleBackColor = true;
+            // 
+            // b_clientes
+            // 
+            this.b_clientes.Image = global::Restaurante.Properties.Resources.traje_de_corbata_el_hombre_de_usuario_icono_4877;
+            this.b_clientes.Location = new System.Drawing.Point(12, 128);
+            this.b_clientes.Name = "b_clientes";
+            this.b_clientes.Size = new System.Drawing.Size(75, 49);
+            this.b_clientes.TabIndex = 1;
+            this.b_clientes.UseVisualStyleBackColor = true;
+            // 
+            // b_mesas
+            // 
+            this.b_mesas.Image = global::Restaurante.Properties.Resources.icono_mesas_restaurante3;
+            this.b_mesas.Location = new System.Drawing.Point(12, 9);
+            this.b_mesas.Name = "b_mesas";
+            this.b_mesas.Size = new System.Drawing.Size(75, 55);
+            this.b_mesas.TabIndex = 2;
+            this.b_mesas.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Image = global::Restaurante.Properties.Resources.restaurant_icon_vector_illustration_315602;
+            this.button4.Location = new System.Drawing.Point(12, 187);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 55);
+            this.button4.TabIndex = 3;
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // b_salirMenu
+            // 
+            this.b_salirMenu.Location = new System.Drawing.Point(12, 248);
+            this.b_salirMenu.Name = "b_salirMenu";
+            this.b_salirMenu.Size = new System.Drawing.Size(82, 32);
+            this.b_salirMenu.TabIndex = 4;
+            this.b_salirMenu.Text = "Salir del Menu\r\n";
+            this.b_salirMenu.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.panel1.Controls.Add(this.flowLayoutPanel1);
+            this.panel1.Controls.Add(this.b_salirMenu);
+            this.panel1.Controls.Add(this.button4);
+            this.panel1.Controls.Add(this.b_mesas);
+            this.panel1.Controls.Add(this.b_clientes);
+            this.panel1.Controls.Add(this.b_reservaciones);
+            this.panel1.Location = new System.Drawing.Point(3, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(113, 470);
+            this.panel1.TabIndex = 1;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.button1);
+            this.flowLayoutPanel1.Controls.Add(this.label25);
+            this.flowLayoutPanel1.Controls.Add(this.button2);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(4, 286);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(99, 127);
+            this.flowLayoutPanel1.TabIndex = 113;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(3, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 113;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(3, 29);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(41, 13);
+            this.label25.TabIndex = 113;
+            this.label25.Text = "label25";
+            // 
+            // label_estado
+            // 
+            this.label_estado.AutoSize = true;
+            this.label_estado.Location = new System.Drawing.Point(103, 49);
+            this.label_estado.Name = "label_estado";
+            this.label_estado.Size = new System.Drawing.Size(41, 13);
+            this.label_estado.TabIndex = 3;
+            this.label_estado.Text = "label26";
+            this.label_estado.Visible = false;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(3, 45);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 113;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // frm_PiccollaStella
             // 
@@ -751,26 +806,21 @@
             this.Name = "frm_PiccollaStella";
             this.Text = "Restaurante PiccollaStella";
             this.Load += new System.EventHandler(this.frm_PiccollaStella_Load);
-            this.panel1.ResumeLayout(false);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button b_salirMenu;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button b_mesas;
-        private System.Windows.Forms.Button b_clientes;
-        private System.Windows.Forms.Button b_reservaciones;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.Button b_barra;
@@ -829,5 +879,16 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.RadioButton rb_barraCerrada;
         private System.Windows.Forms.RadioButton rb_barraAbierta;
+        private System.Windows.Forms.Label label_estado;
+        private System.Windows.Forms.Button b_reservaciones;
+        private System.Windows.Forms.Button b_clientes;
+        private System.Windows.Forms.Button b_mesas;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button b_salirMenu;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Button button2;
     }
 }
