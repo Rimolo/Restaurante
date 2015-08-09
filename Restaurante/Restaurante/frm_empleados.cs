@@ -40,7 +40,7 @@ namespace Restaurante
         {
             this.mostar_consecutivo();
             cargar_paises();
-            cargar_paises();
+            cargar_puestos();
             cargar_rest();
             if (_accion == "Editar")
             {
@@ -150,7 +150,8 @@ namespace Restaurante
             objEmpleados.nombre = txt_nombre.Text;
             objEmpleados.cedula = msk_ced.Text;
             objEmpleados.codNacionalidad=cb_nac.SelectedValue.ToString();
-
+            objEmpleados.apellido1 = txt_apellido1.Text;
+            objEmpleados.apellido2 = txt_apellido2.Text;
             objEmpleados.codPuesto=cb_puesto.SelectedValue.ToString();
             objEmpleados.codRest= cb_restaurante.SelectedValue.ToString();
             int tel = 0;
@@ -281,12 +282,18 @@ namespace Restaurante
                 msk_ced.Text = objEmpleados.cedula;
                 msk_tel1.Text = objEmpleados.telefono1.ToString();
                 msk_tel2.Text = objEmpleados.telefono1.ToString();
-                MemoryStream ms = new MemoryStream(objEmpleados.foto);
-                pic_foto.Image = Image.FromStream(ms);
-                pic_foto.SizeMode = PictureBoxSizeMode.StretchImage;
-                ms.Close();
-
+                if (!string.IsNullOrEmpty((objEmpleados.foto.ToString())))
+                {
+                    MemoryStream ms = new MemoryStream(objEmpleados.foto);
+                    pic_foto.Image = Image.FromStream(ms);
+                    pic_foto.SizeMode = PictureBoxSizeMode.StretchImage;
+                    ms.Close();
+                }
+                cb_nac.SelectedValue = objEmpleados.codNacionalidad;
+                cb_puesto.SelectedValue = objEmpleados.codPuesto;
+                cb_restaurante.SelectedValue = objEmpleados.codRest;
             }
+
         }
     }
 }

@@ -316,7 +316,14 @@ namespace BLL
                     if (ds.Tables[0].Rows.Count > 0)
                     {
                         _nombre = ds.Tables[0].Rows[0]["nombre"].ToString();
-                        _bandera = (byte[])(ds.Tables[0].Rows[0]["bandera"]);
+                        if (!string.IsNullOrEmpty(ds.Tables[0].Rows[0]["bandera"].ToString()))
+                        {
+                            _bandera = (byte[])(ds.Tables[0].Rows[0]["bandera"]);
+                        }
+                        else {
+                            _bandera = null;
+                        }
+                        
                        
                     }
                     else

@@ -127,7 +127,7 @@ namespace BLL
             {
                 if (accion.Equals("Insertar"))
                 {
-                    sql = "Insert into Empleados values(@cod,@ced,@nombre,@apellido1,@apellido2,@telefono1,@telefono2,null,@codNac,@codRest,@codPuesto,null)";
+                    sql = "Insert into Empleados values(@cod,@ced,@nombre,@apellido1,@apellido2,@telefono1,@telefono2,null,@codPuesto,@codNac,@codRest,null)";
                 }
                 else
                 {
@@ -378,7 +378,7 @@ namespace BLL
         }
      
 
-        public void carga_info_empleado(string cod_pais)
+        public void carga_info_empleado(string codE)
         {
             conexion = cls_DAL.trae_conexion("Progra4", ref mensaje_error, ref numero_error);
             if (conexion == null)
@@ -388,10 +388,10 @@ namespace BLL
             }
             else
             {
-                sql = "Select e.nombre,e.apellido1,e.apellido2,e.cedula,e.telefono1,e.telefono2,p.nombre as codP,pp.nombre as codPa,r.nombre as codRest" +
+                sql = "Select e.nombre,e.apellido1,e.apellido2,e.cedula,e.telefono1,e.telefono2,p.codPuesto,pp.codigoPais,r.codRestaurante,e.foto" +
                       " from Empleados e join Puestos p on e.codPuesto = p.codPuesto join Pais pp on e.codNacionalidad = pp.codigoPais join Restaurante r on e.CodRestaurante = r.codRestaurante where e.codEmpleado=@cod";
                 ParamStruct[] parametros = new ParamStruct[1];
-                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@cod", SqlDbType.VarChar, cod_pais);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@cod", SqlDbType.VarChar, codE);
                 ds = cls_DAL.ejecuta_dataset(conexion, sql, false, parametros, ref mensaje_error, ref numero_error);
                 if (ds == null)
                 {
@@ -408,10 +408,18 @@ namespace BLL
                         _apellido2 = ds.Tables[0].Rows[0]["apellido2"].ToString();
                         _telefono1 = Convert.ToInt32(ds.Tables[0].Rows[0]["telefono1"].ToString());
                         _telefono2 = Convert.ToInt32(ds.Tables[0].Rows[0]["telefono2"].ToString());
-                        _codNacionalidad = ds.Tables[0].Rows[0]["codPa"].ToString();
-                        _codPuesto = ds.Tables[0].Rows[0]["codP"].ToString();
-                        _codRest = ds.Tables[0].Rows[0]["codRest"].ToString();
-                        _foto = (byte[])(ds.Tables[0].Rows[0]["foto"]);
+                        _codNacionalidad = ds.Tables[0].Rows[0]["codigoPais"].ToString();
+                        _codPuesto = ds.Tables[0].Rows[0]["codPuesto"].ToString();
+                        _codRest = ds.Tables[0].Rows[0]["codRestaurante"].ToString();
+                        if (!string.IsNullOrEmpty(ds.Tables[0].Rows[0]["foto"].ToString()))
+                        {
+                            _foto = (byte[])(ds.Tables[0].Rows[0]["foto"]);
+                        }
+                        else
+                        {
+                            _foto = null;
+                        }
+                       
                        
                     }
                     else
