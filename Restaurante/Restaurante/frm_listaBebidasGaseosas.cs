@@ -40,11 +40,6 @@ namespace Restaurante
             }
         }
 
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void frm_listaBebidasGaseosas_Load(object sender, EventArgs e)
         {
             this.carga_lista_Gaseosas();
@@ -115,7 +110,6 @@ namespace Restaurante
             {
                 dgv_bebidaGaseosa.AutoGenerateColumns = false;
                 dgv_bebidaGaseosa.DataSource = obj_gaseosas.carga_Gaseosas().Tables[0];
-
             }
             catch (Exception)
             {
@@ -130,7 +124,6 @@ namespace Restaurante
             {
                 dgv_bebidaGaseosa.AutoGenerateColumns = false;
                 dgv_bebidaGaseosa.DataSource = obj_gaseosas.carga_Gaseosas().Tables[0];
-
             }
             catch (Exception)
             {

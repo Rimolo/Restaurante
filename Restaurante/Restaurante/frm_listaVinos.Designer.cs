@@ -30,18 +30,18 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txt_precio = new System.Windows.Forms.TextBox();
+            this.txt_año = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txt_restaurante = new System.Windows.Forms.TextBox();
             this.txt_nacionalidad = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txt_nombreBebidaL = new System.Windows.Forms.TextBox();
-            this.txt_codigoBebidaL = new System.Windows.Forms.TextBox();
+            this.txt_nombreBebidaV = new System.Windows.Forms.TextBox();
+            this.txt_codigoBebidaV = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txt_año = new System.Windows.Forms.TextBox();
-            this.txt_precio = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.b_refrescar = new System.Windows.Forms.Button();
             this.b_borrar = new System.Windows.Forms.Button();
             this.b_cancelar = new System.Windows.Forms.Button();
@@ -54,6 +54,7 @@
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -77,8 +78,8 @@
             this.groupBox1.Controls.Add(this.txt_restaurante);
             this.groupBox1.Controls.Add(this.txt_nacionalidad);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.txt_nombreBebidaL);
-            this.groupBox1.Controls.Add(this.txt_codigoBebidaL);
+            this.groupBox1.Controls.Add(this.txt_nombreBebidaV);
+            this.groupBox1.Controls.Add(this.txt_codigoBebidaV);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(278, 10);
@@ -87,6 +88,38 @@
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Solo Busqueda";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(241, 89);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(37, 13);
+            this.label7.TabIndex = 27;
+            this.label7.Text = "Precio";
+            // 
+            // txt_precio
+            // 
+            this.txt_precio.Location = new System.Drawing.Point(284, 86);
+            this.txt_precio.Name = "txt_precio";
+            this.txt_precio.Size = new System.Drawing.Size(115, 20);
+            this.txt_precio.TabIndex = 26;
+            // 
+            // txt_año
+            // 
+            this.txt_año.Location = new System.Drawing.Point(87, 86);
+            this.txt_año.Name = "txt_año";
+            this.txt_año.Size = new System.Drawing.Size(121, 20);
+            this.txt_año.TabIndex = 25;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(44, 89);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(26, 13);
+            this.label6.TabIndex = 24;
+            this.label6.Text = "Año\r\n";
             // 
             // label5
             // 
@@ -120,19 +153,19 @@
             this.label4.TabIndex = 4;
             this.label4.Text = "Nacionalidad";
             // 
-            // txt_nombreBebidaL
+            // txt_nombreBebidaV
             // 
-            this.txt_nombreBebidaL.Location = new System.Drawing.Point(87, 56);
-            this.txt_nombreBebidaL.Name = "txt_nombreBebidaL";
-            this.txt_nombreBebidaL.Size = new System.Drawing.Size(121, 20);
-            this.txt_nombreBebidaL.TabIndex = 3;
+            this.txt_nombreBebidaV.Location = new System.Drawing.Point(87, 56);
+            this.txt_nombreBebidaV.Name = "txt_nombreBebidaV";
+            this.txt_nombreBebidaV.Size = new System.Drawing.Size(121, 20);
+            this.txt_nombreBebidaV.TabIndex = 3;
             // 
-            // txt_codigoBebidaL
+            // txt_codigoBebidaV
             // 
-            this.txt_codigoBebidaL.Location = new System.Drawing.Point(87, 26);
-            this.txt_codigoBebidaL.Name = "txt_codigoBebidaL";
-            this.txt_codigoBebidaL.Size = new System.Drawing.Size(121, 20);
-            this.txt_codigoBebidaL.TabIndex = 2;
+            this.txt_codigoBebidaV.Location = new System.Drawing.Point(87, 26);
+            this.txt_codigoBebidaV.Name = "txt_codigoBebidaV";
+            this.txt_codigoBebidaV.Size = new System.Drawing.Size(121, 20);
+            this.txt_codigoBebidaV.TabIndex = 2;
             // 
             // label3
             // 
@@ -152,38 +185,6 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Codigo del Vino";
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(55, 82);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(26, 13);
-            this.label6.TabIndex = 24;
-            this.label6.Text = "Año\r\n";
-            // 
-            // txt_año
-            // 
-            this.txt_año.Location = new System.Drawing.Point(87, 86);
-            this.txt_año.Name = "txt_año";
-            this.txt_año.Size = new System.Drawing.Size(121, 20);
-            this.txt_año.TabIndex = 25;
-            // 
-            // txt_precio
-            // 
-            this.txt_precio.Location = new System.Drawing.Point(284, 86);
-            this.txt_precio.Name = "txt_precio";
-            this.txt_precio.Size = new System.Drawing.Size(115, 20);
-            this.txt_precio.TabIndex = 26;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(241, 89);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(37, 13);
-            this.label7.TabIndex = 27;
-            this.label7.Text = "Precio";
-            // 
             // b_refrescar
             // 
             this.b_refrescar.Image = global::Restaurante.Properties.Resources.Actualizar;
@@ -192,6 +193,7 @@
             this.b_refrescar.Size = new System.Drawing.Size(52, 44);
             this.b_refrescar.TabIndex = 17;
             this.b_refrescar.UseVisualStyleBackColor = true;
+            this.b_refrescar.Click += new System.EventHandler(this.b_refrescar_Click);
             // 
             // b_borrar
             // 
@@ -201,6 +203,7 @@
             this.b_borrar.Size = new System.Drawing.Size(52, 47);
             this.b_borrar.TabIndex = 18;
             this.b_borrar.UseVisualStyleBackColor = true;
+            this.b_borrar.Click += new System.EventHandler(this.b_borrar_Click);
             // 
             // b_cancelar
             // 
@@ -210,6 +213,7 @@
             this.b_cancelar.Size = new System.Drawing.Size(52, 43);
             this.b_cancelar.TabIndex = 28;
             this.b_cancelar.UseVisualStyleBackColor = true;
+            this.b_cancelar.Click += new System.EventHandler(this.b_cancelar_Click);
             // 
             // b_aceptar
             // 
@@ -219,27 +223,32 @@
             this.b_aceptar.Size = new System.Drawing.Size(52, 47);
             this.b_aceptar.TabIndex = 29;
             this.b_aceptar.UseVisualStyleBackColor = true;
+            this.b_aceptar.Click += new System.EventHandler(this.b_aceptar_Click);
             // 
             // b_mas
             // 
+            this.b_mas.Image = global::Restaurante.Properties.Resources.green_add_icon1;
             this.b_mas.Location = new System.Drawing.Point(689, 29);
             this.b_mas.Name = "b_mas";
-            this.b_mas.Size = new System.Drawing.Size(46, 23);
+            this.b_mas.Size = new System.Drawing.Size(46, 35);
             this.b_mas.TabIndex = 30;
-            this.b_mas.Text = "button5";
             this.b_mas.UseVisualStyleBackColor = true;
+            this.b_mas.Click += new System.EventHandler(this.b_mas_Click);
             // 
             // b_menos
             // 
-            this.b_menos.Location = new System.Drawing.Point(689, 65);
+            this.b_menos.Image = global::Restaurante.Properties.Resources.refurl;
+            this.b_menos.Location = new System.Drawing.Point(689, 72);
             this.b_menos.Name = "b_menos";
-            this.b_menos.Size = new System.Drawing.Size(46, 21);
+            this.b_menos.Size = new System.Drawing.Size(46, 40);
             this.b_menos.TabIndex = 31;
-            this.b_menos.Text = "button6";
             this.b_menos.UseVisualStyleBackColor = true;
+            this.b_menos.Click += new System.EventHandler(this.b_menos_Click);
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -247,36 +256,56 @@
             this.Column2,
             this.Column3,
             this.Column4,
-            this.Column5});
+            this.Column5,
+            this.Column6});
             this.dataGridView1.Location = new System.Drawing.Point(162, 132);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(573, 232);
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(571, 232);
             this.dataGridView1.TabIndex = 32;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Column1
             // 
+            this.Column1.DataPropertyName = "codVino";
             this.Column1.HeaderText = "Codigo";
             this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             // 
             // Column2
             // 
+            this.Column2.DataPropertyName = "nombre";
             this.Column2.HeaderText = "Nombre";
             this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             // 
             // Column3
             // 
-            this.Column3.HeaderText = "Precio";
+            this.Column3.DataPropertyName = "precioUnitario";
+            this.Column3.HeaderText = "Precio Unitario";
             this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
             // 
             // Column4
             // 
-            this.Column4.HeaderText = "Nacionalidad";
+            this.Column4.DataPropertyName = "precioBotella";
+            this.Column4.HeaderText = "Precio Botella";
             this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
             // 
             // Column5
             // 
-            this.Column5.HeaderText = "Año";
+            this.Column5.DataPropertyName = "nomPais";
+            this.Column5.HeaderText = "Nacionalidad";
             this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "añoCosecha";
+            this.Column6.HeaderText = "Año";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
             // 
             // frm_listaVinos
             // 
@@ -295,6 +324,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frm_listaVinos";
             this.Text = "Lista de Vinos";
+            this.Load += new System.EventHandler(this.frm_listaVinos_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -314,8 +344,8 @@
         private System.Windows.Forms.TextBox txt_restaurante;
         private System.Windows.Forms.TextBox txt_nacionalidad;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txt_nombreBebidaL;
-        private System.Windows.Forms.TextBox txt_codigoBebidaL;
+        private System.Windows.Forms.TextBox txt_nombreBebidaV;
+        private System.Windows.Forms.TextBox txt_codigoBebidaV;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button b_refrescar;
@@ -330,5 +360,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
     }
 }

@@ -63,6 +63,7 @@ namespace Restaurante
 
         private void b_aceptar_Click(object sender, EventArgs e)
         {
+            bool error = false;
             if (!cls_validacion.validar(txt_nombre))
             {
                 MessageBox.Show("Por favor digite el nomnre del producto", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -97,7 +98,7 @@ namespace Restaurante
             obj_heladas.codRestaurante = txt_restaurantes.Text;
             obj_heladas.ingredientes = txt_ingredientes.Text;
 
-            if (obj_heladas.guardar_Heladas(_accion, txt_restaurantes.Text))
+            if (error=obj_heladas.guardar_Heladas(_accion, txt_restaurantes.Text) && _accion != "Editar")
             {
                 int valor = 0;
                 try
@@ -122,6 +123,13 @@ namespace Restaurante
                     MessageBox.Show("Error al actualizar el consecutivo");
                 }
 
+            }else {
+                if (!error)
+                {
+                    MessageBox.Show("Producto insertado con éxito", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    this.Close();
+                }
             }
         }
 

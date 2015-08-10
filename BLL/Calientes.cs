@@ -263,7 +263,7 @@ namespace BLL
                 ds = cls_DAL.ejecuta_dataset(conexion, sql, false, parametros, ref mensaje_error, ref numero_error);
                 if (ds == null)
                 {
-                    MessageBox.Show(mensaje_error, "Error al obtener las Bebidas Calientes", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(mensaje_error, "Error al obtener la informacion del producto", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     _nombre = "Error";
                 }
                 else

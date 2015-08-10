@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txt_precioBot = new System.Windows.Forms.TextBox();
+            this.chk_precioBotella = new System.Windows.Forms.CheckBox();
+            this.chk_precioUnitario = new System.Windows.Forms.CheckBox();
             this.txt_cantidad = new System.Windows.Forms.TextBox();
             this.txt_restaurante = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -42,7 +45,6 @@
             this.txt_nombre = new System.Windows.Forms.TextBox();
             this.txt_codigo = new System.Windows.Forms.TextBox();
             this.txt_descripcion = new System.Windows.Forms.TextBox();
-            this.txt_fotoBebida = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -51,14 +53,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.chk_precioUnitario = new System.Windows.Forms.CheckBox();
-            this.chk_precioBotella = new System.Windows.Forms.CheckBox();
-            this.txt_precioBot = new System.Windows.Forms.TextBox();
+            this.pb_foto = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_foto)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.pb_foto);
             this.groupBox1.Controls.Add(this.txt_precioBot);
             this.groupBox1.Controls.Add(this.chk_precioBotella);
             this.groupBox1.Controls.Add(this.chk_precioUnitario);
@@ -75,7 +77,6 @@
             this.groupBox1.Controls.Add(this.txt_nombre);
             this.groupBox1.Controls.Add(this.txt_codigo);
             this.groupBox1.Controls.Add(this.txt_descripcion);
-            this.groupBox1.Controls.Add(this.txt_fotoBebida);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
@@ -90,6 +91,36 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Informacion de la bebida";
             // 
+            // txt_precioBot
+            // 
+            this.txt_precioBot.Enabled = false;
+            this.txt_precioBot.Location = new System.Drawing.Point(104, 209);
+            this.txt_precioBot.Name = "txt_precioBot";
+            this.txt_precioBot.Size = new System.Drawing.Size(100, 20);
+            this.txt_precioBot.TabIndex = 26;
+            // 
+            // chk_precioBotella
+            // 
+            this.chk_precioBotella.AutoSize = true;
+            this.chk_precioBotella.Location = new System.Drawing.Point(3, 212);
+            this.chk_precioBotella.Name = "chk_precioBotella";
+            this.chk_precioBotella.Size = new System.Drawing.Size(91, 17);
+            this.chk_precioBotella.TabIndex = 25;
+            this.chk_precioBotella.Text = "Precio Botella";
+            this.chk_precioBotella.UseVisualStyleBackColor = true;
+            this.chk_precioBotella.CheckedChanged += new System.EventHandler(this.chk_precioBotella_CheckedChanged);
+            // 
+            // chk_precioUnitario
+            // 
+            this.chk_precioUnitario.AutoSize = true;
+            this.chk_precioUnitario.Location = new System.Drawing.Point(3, 176);
+            this.chk_precioUnitario.Name = "chk_precioUnitario";
+            this.chk_precioUnitario.Size = new System.Drawing.Size(95, 17);
+            this.chk_precioUnitario.TabIndex = 24;
+            this.chk_precioUnitario.Text = "Precio Unitario";
+            this.chk_precioUnitario.UseVisualStyleBackColor = true;
+            this.chk_precioUnitario.CheckedChanged += new System.EventHandler(this.chk_precioUnitario_CheckedChanged);
+            // 
             // txt_cantidad
             // 
             this.txt_cantidad.Location = new System.Drawing.Point(330, 53);
@@ -99,8 +130,10 @@
             // 
             // txt_restaurante
             // 
+            this.txt_restaurante.Enabled = false;
             this.txt_restaurante.Location = new System.Drawing.Point(330, 24);
             this.txt_restaurante.Name = "txt_restaurante";
+            this.txt_restaurante.ReadOnly = true;
             this.txt_restaurante.Size = new System.Drawing.Size(131, 20);
             this.txt_restaurante.TabIndex = 22;
             // 
@@ -137,6 +170,7 @@
             this.b_foto.Size = new System.Drawing.Size(75, 64);
             this.b_foto.TabIndex = 17;
             this.b_foto.UseVisualStyleBackColor = true;
+            this.b_foto.Click += new System.EventHandler(this.b_foto_Click);
             // 
             // b_cancelar
             // 
@@ -146,6 +180,7 @@
             this.b_cancelar.Size = new System.Drawing.Size(52, 47);
             this.b_cancelar.TabIndex = 16;
             this.b_cancelar.UseVisualStyleBackColor = true;
+            this.b_cancelar.Click += new System.EventHandler(this.b_cancelar_Click);
             // 
             // b_aceptar
             // 
@@ -155,6 +190,7 @@
             this.b_aceptar.Size = new System.Drawing.Size(52, 47);
             this.b_aceptar.TabIndex = 15;
             this.b_aceptar.UseVisualStyleBackColor = true;
+            this.b_aceptar.Click += new System.EventHandler(this.b_aceptar_Click);
             // 
             // b_borrar
             // 
@@ -164,9 +200,11 @@
             this.b_borrar.Size = new System.Drawing.Size(52, 47);
             this.b_borrar.TabIndex = 14;
             this.b_borrar.UseVisualStyleBackColor = true;
+            this.b_borrar.Click += new System.EventHandler(this.b_borrar_Click);
             // 
             // txt_precioUni
             // 
+            this.txt_precioUni.Enabled = false;
             this.txt_precioUni.Location = new System.Drawing.Point(104, 176);
             this.txt_precioUni.Name = "txt_precioUni";
             this.txt_precioUni.Size = new System.Drawing.Size(100, 20);
@@ -181,8 +219,10 @@
             // 
             // txt_codigo
             // 
+            this.txt_codigo.Enabled = false;
             this.txt_codigo.Location = new System.Drawing.Point(77, 24);
             this.txt_codigo.Name = "txt_codigo";
+            this.txt_codigo.ReadOnly = true;
             this.txt_codigo.Size = new System.Drawing.Size(100, 20);
             this.txt_codigo.TabIndex = 9;
             // 
@@ -193,15 +233,6 @@
             this.txt_descripcion.Name = "txt_descripcion";
             this.txt_descripcion.Size = new System.Drawing.Size(152, 62);
             this.txt_descripcion.TabIndex = 8;
-            // 
-            // txt_fotoBebida
-            // 
-            this.txt_fotoBebida.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.txt_fotoBebida.Location = new System.Drawing.Point(330, 176);
-            this.txt_fotoBebida.Multiline = true;
-            this.txt_fotoBebida.Name = "txt_fotoBebida";
-            this.txt_fotoBebida.Size = new System.Drawing.Size(152, 107);
-            this.txt_fotoBebida.TabIndex = 7;
             // 
             // label8
             // 
@@ -275,32 +306,13 @@
             this.label1.Size = new System.Drawing.Size(217, 341);
             this.label1.TabIndex = 4;
             // 
-            // chk_precioUnitario
+            // pb_foto
             // 
-            this.chk_precioUnitario.AutoSize = true;
-            this.chk_precioUnitario.Location = new System.Drawing.Point(3, 176);
-            this.chk_precioUnitario.Name = "chk_precioUnitario";
-            this.chk_precioUnitario.Size = new System.Drawing.Size(95, 17);
-            this.chk_precioUnitario.TabIndex = 24;
-            this.chk_precioUnitario.Text = "Precio Unitario";
-            this.chk_precioUnitario.UseVisualStyleBackColor = true;
-            // 
-            // chk_precioBotella
-            // 
-            this.chk_precioBotella.AutoSize = true;
-            this.chk_precioBotella.Location = new System.Drawing.Point(3, 212);
-            this.chk_precioBotella.Name = "chk_precioBotella";
-            this.chk_precioBotella.Size = new System.Drawing.Size(91, 17);
-            this.chk_precioBotella.TabIndex = 25;
-            this.chk_precioBotella.Text = "Precio Botella";
-            this.chk_precioBotella.UseVisualStyleBackColor = true;
-            // 
-            // txt_precioBot
-            // 
-            this.txt_precioBot.Location = new System.Drawing.Point(104, 209);
-            this.txt_precioBot.Name = "txt_precioBot";
-            this.txt_precioBot.Size = new System.Drawing.Size(100, 20);
-            this.txt_precioBot.TabIndex = 26;
+            this.pb_foto.Location = new System.Drawing.Point(330, 169);
+            this.pb_foto.Name = "pb_foto";
+            this.pb_foto.Size = new System.Drawing.Size(163, 126);
+            this.pb_foto.TabIndex = 27;
+            this.pb_foto.TabStop = false;
             // 
             // frmLicores
             // 
@@ -312,8 +324,10 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "frmLicores";
             this.Text = "Licores";
+            this.Load += new System.EventHandler(this.frmLicores_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_foto)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -334,7 +348,6 @@
         private System.Windows.Forms.TextBox txt_nombre;
         private System.Windows.Forms.TextBox txt_codigo;
         private System.Windows.Forms.TextBox txt_descripcion;
-        private System.Windows.Forms.TextBox txt_fotoBebida;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
@@ -346,5 +359,6 @@
         private System.Windows.Forms.CheckBox chk_precioBotella;
         private System.Windows.Forms.CheckBox chk_precioUnitario;
         private System.Windows.Forms.TextBox txt_precioBot;
+        private System.Windows.Forms.PictureBox pb_foto;
     }
 }
