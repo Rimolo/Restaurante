@@ -114,7 +114,9 @@
             "Empleados",
             "Mesas",
             "Bitacora",
-            "Facturas"});
+            "Facturas",
+            "Cajas",
+            "Ingresos"});
             this.cb_tipoConsecutivo.Location = new System.Drawing.Point(132, 22);
             this.cb_tipoConsecutivo.Name = "cb_tipoConsecutivo";
             this.cb_tipoConsecutivo.Size = new System.Drawing.Size(184, 21);

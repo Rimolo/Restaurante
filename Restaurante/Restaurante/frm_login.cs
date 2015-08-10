@@ -74,9 +74,9 @@ namespace Restaurante
                     string nombreR = objLogin.nombre_rest();
                     if (nombreR.Equals("Piccola Stella"))
                     {
-                        frm_PiccollaStella ps = new frm_PiccollaStella();
-                        ps.Tag = this;
-                        ps.Show(this);
+                        frm_aperturaCaja ps = new frm_aperturaCaja();
+                        ps.nick = txt_usuario.Text;
+                        ps.Show();
                         this.Hide();
 
                     }

@@ -35,17 +35,17 @@ namespace BLL
             set { _fecha = value; }
         }
 
-        private bool _apertura;
+        private int _apertura;
 
-        public bool apertura
+        public int apertura
         {
             get { return _apertura; }
             set { _apertura = value; }
         }
 
-        private bool _cierre;
+        private int _cierre;
 
-        public bool cierre
+        public int cierre
         {
             get { return _cierre; }
             set { _cierre = value; }
@@ -62,6 +62,52 @@ namespace BLL
         #endregion
 
         #region Metodos
+
+        public bool guardar_caja(string accion)
+        {
+            conexion = cls_DAL.trae_conexion("Progra4", ref mensaje_error, ref numero_error);
+            if (conexion == null)
+            {
+                MessageBox.Show(mensaje_error, "Error al obtener cadena de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else
+            {
+                if (accion.Equals("Insertar"))
+                {
+                    sql = "Insert into Caja values(@cod,@codR,@fecha,@apertura,0)";
+                }
+                else
+                {
+                    sql = "Update Caja SET" +
+                        " montoCierre=@cierre" +
+                        " where codCaja=@cod";
+                }
+                ParamStruct[] parametros = new ParamStruct[5];
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@codR", SqlDbType.VarChar, _codRest);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 1, "@fecha", SqlDbType.VarChar, _fecha);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 2, "@apertura", SqlDbType.VarChar, _apertura);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 3, "@cierre", SqlDbType.VarChar, _cierre);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 4, "@cod", SqlDbType.VarChar, _codigo);
+
+
+
+                cls_DAL.conectar(conexion, ref mensaje_error, ref numero_error);
+                cls_DAL.ejecuta_sqlcommand(conexion, sql, false, parametros, ref mensaje_error, ref numero_error);
+                if (numero_error != 0)
+                {
+                    MessageBox.Show(mensaje_error, "Error al guardar la caja", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    cls_DAL.desconectar(conexion, ref mensaje_error, ref numero_error);
+                    return false;
+                }
+                else
+                {
+                    cls_DAL.desconectar(conexion, ref mensaje_error, ref numero_error);
+                    return true;
+                }
+            }
+        }
+
         public DataSet carga_cajas()
         {
             conexion = cls_DAL.trae_conexion("Progra4", ref mensaje_error, ref numero_error);
@@ -110,7 +156,7 @@ namespace BLL
                 {
                     if (ds.Tables[0].Rows.Count > 0)
                     {
-                        codigoR = ds.Tables[0].Rows[0]["nombre"].ToString();
+                        codigoR = ds.Tables[0].Rows[0]["codRestaurante"].ToString();
 
 
                     }
@@ -143,12 +189,12 @@ namespace BLL
                     sql1 += condicion + "r.codRestaurante ='" + _codRest + "'";
                     condicion = " and ";
                 }
-                if (_apertura)
+                if (_apertura==1)
                 {
                     sql1 += condicion + "m.descripcion='Apertura de caja'";
                     condicion = " and ";
                 }
-                if (_cierre)
+                if (_cierre==1)
                 {
                     sql1 += condicion + "m.descripcion='Cierre de caja'";
                 }
@@ -163,6 +209,98 @@ namespace BLL
                 else
                 {
                     return ds;
+                }
+            }
+        }
+
+        public DataSet retorna_consecutivo_valor()
+        {
+
+            conexion = cls_DAL.trae_conexion("Progra4", ref mensaje_error, ref numero_error);
+            if (conexion == null)
+            {
+                MessageBox.Show(mensaje_error, "Error al obtener la cadena de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+            else
+            {
+                sql = "Select valor From Consecutivos WHERE tipo='Cajas'";
+
+                ds = cls_DAL.ejecuta_dataset(conexion, sql, false, ref mensaje_error, ref numero_error);
+
+                if (numero_error != 0)
+                {
+                    MessageBox.Show(mensaje_error, "Error cargar los consecutivos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return null;
+                }
+                else
+                {
+
+
+                    return ds;
+                }
+            }
+        }
+
+
+        public DataSet retorna_consecutivo_prefijo()
+        {
+
+            conexion = cls_DAL.trae_conexion("Progra4", ref mensaje_error, ref numero_error);
+            if (conexion == null)
+            {
+                MessageBox.Show(mensaje_error, "Error al obtener la cadena de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+            else
+            {
+                sql = "Select prefijo From Consecutivos WHERE tipo='Cajas'";
+
+                ds = cls_DAL.ejecuta_dataset(conexion, sql, false, ref mensaje_error, ref numero_error);
+
+                if (numero_error != 0)
+                {
+                    MessageBox.Show(mensaje_error, "Error cargar los consecutivos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return null;
+                }
+                else
+                {
+
+
+                    return ds;
+                }
+            }
+        }
+
+        public bool actualizar_consecutivo(int id)
+        {
+            conexion = cls_DAL.trae_conexion("Progra4", ref mensaje_error, ref numero_error);
+            if (conexion == null)
+            {
+                MessageBox.Show(mensaje_error, "Error al obtener la cadena de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else
+            {
+
+                sql = "Update Consecutivos SET valor=@valor WHERE tipo='Cajas'";
+
+                ParamStruct[] parametros = new ParamStruct[1];
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@valor", SqlDbType.Int, id);
+
+                cls_DAL.conectar(conexion, ref mensaje_error, ref numero_error);
+                cls_DAL.ejecuta_sqlcommand(conexion, sql, false, parametros, ref mensaje_error, ref numero_error);
+
+                if (numero_error != 0)
+                {
+                    MessageBox.Show(mensaje_error, "Error al guardar el valor", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    cls_DAL.desconectar(conexion, ref mensaje_error, ref numero_error);
+                    return false;
+                }
+                else
+                {
+                    cls_DAL.desconectar(conexion, ref mensaje_error, ref numero_error);
+                    return true;
                 }
             }
         }

@@ -49,8 +49,8 @@ namespace Restaurante
         {
             objCajas.codigo = null;
             objCajas.fecha = dt_registro.Value.ToString("dd/MM/yyyy");
-            objCajas.apertura = false;
-            objCajas.cierre = false;
+            objCajas.apertura = 0;
+            objCajas.cierre = 0;
             objCajas.codRest = null;
             if (txt_codigoRegistro.Text != "")
             {
@@ -63,12 +63,12 @@ namespace Restaurante
             }
             if (rb_aperturaCaja.Checked)
             {
-                objCajas.apertura = true;
-                objCajas.cierre = false;
+                objCajas.apertura = 1;
+                objCajas.cierre = 0;
             }
             else {
-                objCajas.apertura = false;
-                objCajas.cierre = true;
+                objCajas.apertura = 0;
+                objCajas.cierre = 1;
             }
             try
             {

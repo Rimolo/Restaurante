@@ -159,6 +159,14 @@ namespace Restaurante
 
                     txt_prefijo.Text = "FAC-";
                     break;
+                case "Cajas":
+
+                    txt_prefijo.Text = "CAJ-";
+                    break;
+                case "Ingresos":
+
+                    txt_prefijo.Text = "ING-";
+                    break;
                 default:
 
                     txt_prefijo.Text = "";
