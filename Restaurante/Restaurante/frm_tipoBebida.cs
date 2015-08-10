@@ -62,7 +62,7 @@ namespace Restaurante
                             if (rb_vinos.Checked == true)
                             {
                                 frm_listaVinos vinos = new frm_listaVinos();
-                                //vinos.nick = _nick;
+                                vinos.nick = _nick;
                                 vinos.Show();
                             }
                         }

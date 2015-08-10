@@ -54,41 +54,41 @@ namespace Restaurante
 
         private void b_aceptar_Click(object sender, EventArgs e)
         {
-
+            bool error = false;
             if (!cls_validacion.validar(txt_nombre))
             {
-                MessageBox.Show("Por favor digite el nomnre de la marca", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Por favor digite el nomnre de la gaseosa", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txt_nombre.Focus();
                 return;
             }
 
             if (!cls_validacion.validar(txt_descripcion))
             {
-                MessageBox.Show("Por favor escriba una descripcion de la marca", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Por favor escriba una descripcion de la gaseosa", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txt_descripcion.Focus();
                 return;
             }
             if (!cls_validacion.validar(txt_cantidad))
             {
-                MessageBox.Show("Por favor digite el nombre de la Empresa que registro la Marca", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Por favor digite la cantidad de gaseosas en almacenamiento", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txt_cantidad.Focus();
                 return;
             }
             if (!cls_validacion.validar(txt_precio))
             {
-                MessageBox.Show("Por favor digite los detalle de la Empresa que registro la Marca", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Por favor digite el precio de la gaseosa", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txt_precio.Focus();
                 return;
             }
             if (!cls_validacion.validar(cb_nacionalidad))
             {
-                MessageBox.Show("Por favor seleccione la nacionalidad de la Marca", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Por favor seleccione la nacionalidad de la gaseosa", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 cb_nacionalidad.Focus();
                 return;
             }
             if (!cls_validacion.validar(cb_marca))
             {
-                MessageBox.Show("Por favor seleccione la nacionalidad de la Marca", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Por favor seleccione la marca de la gaseosa", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 cb_marca.Focus();
                 return;
             }
@@ -102,7 +102,7 @@ namespace Restaurante
             obj_gaseosa.codPais = cb_nacionalidad.SelectedValue.ToString();
             obj_gaseosa.codMarca = cb_marca.SelectedValue.ToString();
 
-            if (obj_gaseosa.guardar_Gaseosas(_accion, txt_restaurante.Text))
+            if (error=obj_gaseosa.guardar_Gaseosas(_accion, txt_restaurante.Text) && _accion != "Editar")
             {
                 int valor = 0;
                 try
@@ -127,6 +127,13 @@ namespace Restaurante
                     MessageBox.Show("Error al actualizar el consecutivo");
                 }
 
+            }else {
+                if (!error)
+                {
+                    MessageBox.Show("Producto insertado con éxito", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    this.Close();
+                }
             }
         }
 
@@ -220,7 +227,7 @@ namespace Restaurante
             }
             catch (Exception)
             {
-                MessageBox.Show("Hubo un problema cargando la nacionalidad", "Validación de Datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Hubo un problema cargando las nacionalidades", "Validación de Datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
         }

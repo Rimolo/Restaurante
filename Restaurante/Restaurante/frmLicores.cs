@@ -70,6 +70,7 @@ namespace Restaurante
 
         private void b_aceptar_Click(object sender, EventArgs e)
         {
+            bool error = false;
             obj_licores.precioU = 0;
             obj_licores.precioB = 0;
             if (!cls_validacion.validar(txt_nombre))
@@ -143,7 +144,7 @@ namespace Restaurante
                 MessageBox.Show("No ha introducido ningun precio al producto", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
-            if (obj_licores.guardar_Licores(_accion, txt_restaurante.Text))
+            if (error=obj_licores.guardar_Licores(_accion, txt_restaurante.Text) && _accion != "Editar")
             {
                 int valor = 0;
                 try
@@ -168,6 +169,14 @@ namespace Restaurante
                     MessageBox.Show("Error al actualizar el consecutivo");
                 }
 
+            }
+            else {
+                if (!error)
+                {
+                    MessageBox.Show("Producto insertado con éxito", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    this.Close();
+                }
             }
         }
 
