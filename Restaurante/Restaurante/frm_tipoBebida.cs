@@ -54,7 +54,7 @@ namespace Restaurante
                         if (rb_licores.Checked == true)
                         {
                             frmListaLicores licores = new frmListaLicores();
-                            //   licores.nick = _nick;
+                            licores.nick = _nick;
                             licores.Show();
                         }
                         else

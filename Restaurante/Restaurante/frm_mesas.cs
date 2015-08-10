@@ -103,7 +103,7 @@ namespace Restaurante
                     if (obj_mesas.actualizar_consecutivo(valor))
                     {
 
-                        MessageBox.Show("Producto insertado con éxito", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Mesa insertada con éxito", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         this.Close();
                     }

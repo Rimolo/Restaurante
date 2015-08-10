@@ -135,7 +135,7 @@ namespace Restaurante
                     if (obj_marcas.actualizar_consecutivo(valor))
                     {
 
-                        MessageBox.Show("Producto insertado con éxito", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Marca insertada con éxito", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         this.Close();
                     }

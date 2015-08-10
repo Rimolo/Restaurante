@@ -70,7 +70,7 @@ namespace BLL
             }
             else
             {
-                string sql1 = "Select codConsecutivo,tipo,descripcion,valor from Consecutivos ";
+                string sql1 = "Select codConsecutivo,tipo,descripcion,valor, 1 as true from Consecutivos ";
                 string condicion = "Where ";
                 if (!string.IsNullOrEmpty(_codConsecutivo))
                 {
@@ -109,7 +109,7 @@ namespace BLL
             }
             else
             {
-                sql = "Select codConsecutivo,tipo,descripcion,valor from Consecutivos Order by codConsecutivo";
+                sql = "Select codConsecutivo,tipo,descripcion,valor, 1 as true from Consecutivos Order by codConsecutivo";
 
                 ds = cls_DAL.ejecuta_dataset(conexion, sql, false, ref mensaje_error, ref numero_error);
                 if (numero_error != 0)
