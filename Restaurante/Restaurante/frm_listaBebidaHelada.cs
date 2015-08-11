@@ -101,7 +101,7 @@ namespace Restaurante
             }
         }
 
-        private void dgv_bebidaHelada_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgv_bebidaHelada_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex > -1)
             {

@@ -43,11 +43,6 @@ namespace Restaurante
             InitializeComponent();
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void frm_bebidasCalientes_Load(object sender, EventArgs e)
         {
             this.mostar_consecutivo();
@@ -79,7 +74,7 @@ namespace Restaurante
 
             if (!cls_validacion.validar(txt_descripcion))
             {
-                MessageBox.Show("Por favor escriba una descripcion para el consecutivo", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Por favor escriba una descripcion del producto", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txt_descripcion.Focus();
                 return;
             }
@@ -128,7 +123,7 @@ namespace Restaurante
                     MessageBox.Show("Error al actualizar el consecutivo");
                 }
 
-            }
+            }else
             {
                 if (!error)
                 {
@@ -159,8 +154,7 @@ namespace Restaurante
                  txt_descripcion.Text= obj_calientes.descripcion;
                  txt_precio.Text= obj_calientes.precio.ToString();
                  txt_restaurantes.Text= obj_calientes.codRestaurante;
-                 txt_ingredientes.Text= obj_calientes.ingredientes;
-                
+                 txt_ingredientes.Text= obj_calientes.ingredientes;                
             }
         }
 

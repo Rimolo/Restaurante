@@ -114,12 +114,11 @@ namespace BLL
             {
                 string sql1 = "Select V.codVino, V.nombre, V.precioUnitario, V.precioBotella, P.nombre as nomPais, V.añoCosecha from Vinos V ";
                 string condicion = "Where ";
-                string join2 = "INNER JOIN Restaurante R ON V.codRestaurante = R.codRestaurante ";
+                string join2 = "INNER JOIN Restaurante R ON V.codRestaurante = R.codRestaurante INNER JOIN Pais P ON V.codPais = P.codigoPais ";
                 string join = "INNER JOIN Pais P ON V.codPais = P.codigoPais ";
                 if (!string.IsNullOrEmpty(_codVino))
                 {
-                    sql1 += join + condicion + "V.codVino ='" + _codVino + "'";
-                    condicion = "and ";
+                    sql1 += join + condicion + "V.codVino ='" + _codVino + "'";                   
                 }
                 else
                 {
@@ -127,12 +126,8 @@ namespace BLL
                     {
                         sql1 += join + condicion + "V.nombre ='" + _nombre + "'";
                         condicion = "and ";
-                    }                   
-                    if (!string.IsNullOrEmpty(_codPais))
-                    {
-                        sql1 += join + condicion + "P.nombre ='" + _codPais + "'";
-                        condicion = "and ";
                     }
+                   
                     if (_cosecha!=0)
                     {
                         sql1 += join + condicion + "V.añoCosecha ='" + _cosecha + "'";
@@ -150,11 +145,22 @@ namespace BLL
                     }
                     if (!string.IsNullOrEmpty(_codRestaurante))
                     {
-                        sql1 += join + join2 + condicion + "R.nombre ='" + _codRestaurante + "'";
+                        sql1 += join2 + condicion + "R.nombre ='" + _codRestaurante + "'";
                         condicion = "and ";
                     }
                 }
+                if (!string.IsNullOrEmpty(_codPais))
+                {
+                    sql1 += join + condicion + "P.nombre ='" + _codPais + "'";
+                    condicion = "and ";
+                }
+                else {
+                    sql1 += join;
+                }
+
                 sql = sql1 + " Order by V.codVino";
+                
+                    
 
                 ds = cls_DAL.ejecuta_dataset(conexion, sql, false, ref mensaje_error, ref numero_error);
                 if (numero_error != 0)
@@ -164,6 +170,8 @@ namespace BLL
                 }
                 else
                 {
+                    MessageBox.Show(sql, "Error al cargar los Vinos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                   
                     return ds;
                 }
             }

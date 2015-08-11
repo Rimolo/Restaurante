@@ -45,12 +45,15 @@ namespace Restaurante
             txt_descripcionConsecutivo.Text = "";
         }
 
-        private void dgv_consecutivos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgv_consecutivos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            frm_consecutivos consecutivos = new frm_consecutivos();
-            consecutivos.accion = "Editar";
-            consecutivos.codigo = dgv_consecutivos.Rows[e.RowIndex].Cells[0].Value.ToString().Replace(" ", "");
-            consecutivos.ShowDialog();
+            if (e.RowIndex > -1)
+            {
+                frm_consecutivos consecutivos = new frm_consecutivos();
+                consecutivos.accion = "Editar";
+                consecutivos.codigo = dgv_consecutivos.Rows[e.RowIndex].Cells[0].Value.ToString().Replace(" ", "");
+                consecutivos.ShowDialog();
+            }
         }
 
         private void b_refrescar_Click(object sender, EventArgs e)

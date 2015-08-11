@@ -30,6 +30,7 @@ namespace Restaurante
             if (rb_buffet.Checked == true)
             {
                 frm_Listabuffet buffet = new frm_Listabuffet();
+                //buffet.nick = _nick;
                 buffet.Show();
             }
             else
@@ -45,6 +46,7 @@ namespace Restaurante
                     if (rb_especialidades.Checked == true)
                     {
                         frm_listaEspecialidades especiales = new frm_listaEspecialidades();
+                        especiales.nick = _nick;
                         especiales.Show();
                     }
                 }
@@ -54,6 +56,11 @@ namespace Restaurante
         private void b_cancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void frm_Especialidades_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

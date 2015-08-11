@@ -37,6 +37,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dgv_consecutivos = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Prefijo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.b_eliminar = new System.Windows.Forms.Button();
             this.b_agregar = new System.Windows.Forms.Button();
             this.b_aceptar = new System.Windows.Forms.Button();
@@ -46,11 +51,6 @@
             this.restauranteDataSet = new Restaurante.RestauranteDataSet();
             this.consecutivosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.consecutivosTableAdapter = new Restaurante.RestauranteDataSetTableAdapters.ConsecutivosTableAdapter();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Prefijo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -141,7 +141,42 @@
             this.dgv_consecutivos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_consecutivos.Size = new System.Drawing.Size(543, 232);
             this.dgv_consecutivos.TabIndex = 77;
-            this.dgv_consecutivos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_consecutivos_CellContentClick);
+            this.dgv_consecutivos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_consecutivos_CellDoubleClick);
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "codConsecutivo";
+            this.Column1.HeaderText = "Codigo";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "tipo";
+            this.Column2.HeaderText = "Tipo";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "descripcion";
+            this.Column3.HeaderText = "Descripcion";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "valor";
+            this.Column4.HeaderText = "Valor del Consecutivo";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Prefijo
+            // 
+            this.Prefijo.DataPropertyName = "true";
+            this.Prefijo.HeaderText = "Contiene prefijo";
+            this.Prefijo.Name = "Prefijo";
+            this.Prefijo.ReadOnly = true;
             // 
             // b_eliminar
             // 
@@ -217,41 +252,6 @@
             // consecutivosTableAdapter
             // 
             this.consecutivosTableAdapter.ClearBeforeFill = true;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "codConsecutivo";
-            this.Column1.HeaderText = "Codigo";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "tipo";
-            this.Column2.HeaderText = "Tipo";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "descripcion";
-            this.Column3.HeaderText = "Descripcion";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "valor";
-            this.Column4.HeaderText = "Valor del Consecutivo";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Prefijo
-            // 
-            this.Prefijo.DataPropertyName = "true";
-            this.Prefijo.HeaderText = "Contiene prefijo";
-            this.Prefijo.Name = "Prefijo";
-            this.Prefijo.ReadOnly = true;
             // 
             // frm_listaConsecutivos
             // 

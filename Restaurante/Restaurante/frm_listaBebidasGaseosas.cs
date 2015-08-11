@@ -28,7 +28,7 @@ namespace Restaurante
             InitializeComponent();
         }
 
-        private void dgv_bebidaGaseosa_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgv_bebidaGaseosa_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex > -1)
             {

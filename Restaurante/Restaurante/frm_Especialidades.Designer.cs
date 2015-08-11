@@ -125,6 +125,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frm_Especialidades";
             this.Text = "Especialidades";
+            this.Load += new System.EventHandler(this.frm_Especialidades_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

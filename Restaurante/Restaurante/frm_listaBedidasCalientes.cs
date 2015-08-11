@@ -101,13 +101,16 @@ namespace Restaurante
             }
         }
 
-        private void dgv_bebidas_calientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgv_bebidas_calientes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            frm_bebidasCalientes calientes = new frm_bebidasCalientes();
-            calientes.accion = "Editar";
-            calientes.nick = _nick;
-            calientes.codigo = dgv_bebidas_calientes.Rows[e.RowIndex].Cells[0].Value.ToString().Replace(" ", "");
-            calientes.ShowDialog();
+            if (e.RowIndex > -1)
+            {
+                frm_bebidasCalientes calientes = new frm_bebidasCalientes();
+                calientes.accion = "Editar";
+                calientes.nick = _nick;
+                calientes.codigo = dgv_bebidas_calientes.Rows[e.RowIndex].Cells[0].Value.ToString().Replace(" ", "");
+                calientes.ShowDialog();
+            }
         }
 
         private void carga_lista_calientes()
