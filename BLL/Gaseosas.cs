@@ -185,7 +185,8 @@ namespace BLL
                         " codPais=@codPais," +
                         " precio=@precio,"+
                         " cantidad=@cantidad," +
-                        " descripcion=@descripcion" +
+                        " descripcion=@descripcion," +
+                        " imagen=null" +
                         " where codBebidaGas=@codBebidaGas";
                 }
                 ParamStruct[] parametros = new ParamStruct[8];
@@ -300,7 +301,14 @@ namespace BLL
                         _codRestaurante= ds.Tables[0].Rows[0]["nomrest"].ToString();
                         _cantidad = Convert.ToInt32(ds.Tables[0].Rows[0]["cantidad"]);
                         _descripcion = ds.Tables[0].Rows[0]["descripcion"].ToString();
-                        // _imagen = (byte[])(ds.Tables[0].Rows[0]["imagen"]);
+                        if (!string.IsNullOrEmpty(ds.Tables[0].Rows[0]["imagen"].ToString()))
+                        {
+                            _imagen = (byte[])(ds.Tables[0].Rows[0]["imagen"]);
+                        }
+                        else
+                        {
+                            _imagen = null;
+                        }
 
                     }
                     else

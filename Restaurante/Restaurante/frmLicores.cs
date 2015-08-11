@@ -7,12 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 using BLL;
 
 namespace Restaurante
 {
     public partial class frmLicores : Form
     {
+        bool hayImagen = false;
         Licores obj_licores = new Licores();
 
         private string _nick;
@@ -66,6 +68,8 @@ namespace Restaurante
             cb_marca.Text = "";
             chk_precioUnitario.Checked = false;
             chk_precioBotella.Checked = false;
+            pb_foto.Image = null;
+            hayImagen = false;
         }
 
         private void b_aceptar_Click(object sender, EventArgs e)
@@ -128,7 +132,15 @@ namespace Restaurante
             obj_licores.cantidad = Convert.ToInt32(txt_cantidad.Text);
             obj_licores.codPais = cb_nacionalidad.SelectedValue.ToString();
             obj_licores.codMarca = cb_marca.SelectedValue.ToString();
-            
+            if (hayImagen)
+            {
+                MemoryStream ms = new MemoryStream();
+                pb_foto.Image.Save(ms, pb_foto.Image.RawFormat);
+                byte[] a = ms.GetBuffer();
+                ms.Close();
+                obj_licores.imagen = a;
+            }
+
             if (chk_precioUnitario.Checked == true)
             {
                 obj_licores.precioU = Convert.ToDecimal(txt_precioUni.Text);
@@ -146,6 +158,10 @@ namespace Restaurante
 
             if (error=obj_licores.guardar_Licores(_accion, txt_restaurante.Text) && _accion != "Editar")
             {
+                if (hayImagen)
+                {
+                    obj_licores.guardar_imagen();
+                }
                 int valor = 0;
                 try
                 {
@@ -187,7 +203,17 @@ namespace Restaurante
 
         private void b_foto_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                OpenFileDialog f = new OpenFileDialog();
+                if (f.ShowDialog() == DialogResult.OK)
+                {
+                    pb_foto.Image = Image.FromFile(f.FileName);
+                    pb_foto.SizeMode = PictureBoxSizeMode.StretchImage;
+                    hayImagen = true;
+                }
+            }
+            catch (Exception) { }
         }
 
         private void chk_precioUnitario_CheckedChanged(object sender, EventArgs e)
@@ -268,6 +294,13 @@ namespace Restaurante
                 txt_restaurante.Text = obj_licores.codRestaurante;
                 txt_cantidad.Text = obj_licores.cantidad.ToString();
                 txt_descripcion.Text = obj_licores.descripcion;
+                if (!string.IsNullOrEmpty((obj_licores.imagen.ToString())))
+                {
+                    MemoryStream ms = new MemoryStream(obj_licores.imagen);
+                    pb_foto.Image = Image.FromStream(ms);
+                    pb_foto.SizeMode = PictureBoxSizeMode.StretchImage;
+                    ms.Close();
+                }
             }
         }
 

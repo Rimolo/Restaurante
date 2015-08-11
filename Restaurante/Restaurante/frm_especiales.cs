@@ -7,12 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 using BLL;
 
 namespace Restaurante
 {
     public partial class frm_especiales : Form
     {
+        bool hayImagen = false;
         Especiales obj_especiales = new Especiales();
 
         private string _accion;
@@ -50,6 +52,7 @@ namespace Restaurante
             txt_precio.Text = "";
             txt_detalle.Text = "";
             pb_foto.Image = null;
+            hayImagen = false;
         }
 
         private void b_aceptar_Click(object sender, EventArgs e)
@@ -87,9 +90,22 @@ namespace Restaurante
             obj_especiales.detalle = txt_detalle.Text;
             obj_especiales.precio = Convert.ToDecimal(txt_precio.Text);
             obj_especiales.ingredientes = txt_ingredientes.Text;
+            if (hayImagen)
+            {
+                MemoryStream ms = new MemoryStream();
+                pb_foto.Image.Save(ms, pb_foto.Image.RawFormat);
+                byte[] a = ms.GetBuffer();
+                ms.Close();
+                obj_especiales.imagen = a;
+            }
 
             if (error = obj_especiales.guardar_Especiales(_accion, _nick) && _accion != "Editar")
             {
+                if (hayImagen)
+                {
+                    obj_especiales.guardar_imagen();
+                }
+
                 int valor = 0;
                 try
                 {
@@ -131,8 +147,19 @@ namespace Restaurante
 
         private void b_foto_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                OpenFileDialog f = new OpenFileDialog();
+                if (f.ShowDialog() == DialogResult.OK)
+                {
+                    pb_foto.Image = Image.FromFile(f.FileName);
+                    pb_foto.SizeMode = PictureBoxSizeMode.StretchImage;
+                    hayImagen = true;
+                }
+            }
+            catch (Exception) { }
         }
+    
 
         private void frm_especiales_Load(object sender, EventArgs e)
         {
@@ -153,6 +180,13 @@ namespace Restaurante
                 txt_detalle.Text = obj_especiales.detalle;
                 txt_precio.Text = obj_especiales.precio.ToString();
                 txt_ingredientes.Text = obj_especiales.ingredientes;
+                if (!string.IsNullOrEmpty((obj_especiales.imagen.ToString())))
+                {
+                    MemoryStream ms = new MemoryStream(obj_especiales.imagen);
+                    pb_foto.Image = Image.FromStream(ms);
+                    pb_foto.SizeMode = PictureBoxSizeMode.StretchImage;
+                    ms.Close();
+                }
             }
         }
 
