@@ -140,7 +140,7 @@ namespace BLL
                 }
                 else
                 {
-                    sql = "Update Consecutivo SET" +
+                    sql = "Update Consecutivos SET" +
                        " valor=@valor," +
                        " descripcion=@descripcion" +
                        " where codConsecutivo=@codConsecutivo";

@@ -104,17 +104,7 @@ namespace Restaurante
             }
         }
 
-        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex > -1)
-            {
-                frm_mesas mesas = new frm_mesas();
-                mesas.accion = "Editar";
-                mesas.codigo = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString().Replace(" ", "");
-                mesas.ShowDialog();
-            }
-        }
-
+       
         private void carga_lista_Mesas()
         {
             try
@@ -127,6 +117,17 @@ namespace Restaurante
             {
                 MessageBox.Show("Hubo un problema con la conexión a la base de datos", "Validación de Datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
+            }
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex > -1)
+            {
+                frm_mesas mesas = new frm_mesas();
+                mesas.accion = "Editar";
+                mesas.codigo = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString().Replace(" ", "");
+                mesas.ShowDialog();
             }
         }
     }

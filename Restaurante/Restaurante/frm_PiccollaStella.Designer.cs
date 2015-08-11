@@ -132,11 +132,12 @@
             this.label42 = new System.Windows.Forms.Label();
             this.label43 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.pic_producto = new System.Windows.Forms.PictureBox();
             this.dgv_prod = new System.Windows.Forms.DataGridView();
             this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pic_producto = new System.Windows.Forms.PictureBox();
             this.tmr_hora = new System.Windows.Forms.Timer(this.components);
+            this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -146,8 +147,8 @@
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_producto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_prod)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_producto)).BeginInit();
             this.SuspendLayout();
             // 
             // statusStrip1
@@ -155,7 +156,8 @@
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1,
             this.toolStripStatusLabel2,
-            this.toolStripStatusLabel3});
+            this.toolStripStatusLabel3,
+            this.toolStripStatusLabel4});
             this.statusStrip1.Location = new System.Drawing.Point(0, 585);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(934, 22);
@@ -200,7 +202,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(143, 41);
+            this.label2.Location = new System.Drawing.Point(143, 51);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(39, 13);
             this.label2.TabIndex = 72;
@@ -403,6 +405,7 @@
             this.b_mesa21.Size = new System.Drawing.Size(56, 42);
             this.b_mesa21.TabIndex = 106;
             this.b_mesa21.UseVisualStyleBackColor = true;
+            this.b_mesa21.Click += new System.EventHandler(this.b_mesa21_Click);
             // 
             // b_mesa20
             // 
@@ -412,6 +415,7 @@
             this.b_mesa20.Size = new System.Drawing.Size(56, 42);
             this.b_mesa20.TabIndex = 105;
             this.b_mesa20.UseVisualStyleBackColor = true;
+            this.b_mesa20.Click += new System.EventHandler(this.b_mesa20_Click);
             // 
             // b_mesa19
             // 
@@ -421,6 +425,7 @@
             this.b_mesa19.Size = new System.Drawing.Size(56, 42);
             this.b_mesa19.TabIndex = 104;
             this.b_mesa19.UseVisualStyleBackColor = true;
+            this.b_mesa19.Click += new System.EventHandler(this.b_mesa19_Click);
             // 
             // b_mesa18
             // 
@@ -430,6 +435,7 @@
             this.b_mesa18.Size = new System.Drawing.Size(56, 42);
             this.b_mesa18.TabIndex = 103;
             this.b_mesa18.UseVisualStyleBackColor = true;
+            this.b_mesa18.Click += new System.EventHandler(this.b_mesa18_Click);
             // 
             // b_mesa17
             // 
@@ -439,6 +445,7 @@
             this.b_mesa17.Size = new System.Drawing.Size(56, 42);
             this.b_mesa17.TabIndex = 99;
             this.b_mesa17.UseVisualStyleBackColor = true;
+            this.b_mesa17.Click += new System.EventHandler(this.b_mesa17_Click);
             // 
             // b_mesa16
             // 
@@ -448,6 +455,7 @@
             this.b_mesa16.Size = new System.Drawing.Size(56, 42);
             this.b_mesa16.TabIndex = 98;
             this.b_mesa16.UseVisualStyleBackColor = true;
+            this.b_mesa16.Click += new System.EventHandler(this.b_mesa16_Click);
             // 
             // b_mesa15
             // 
@@ -457,6 +465,7 @@
             this.b_mesa15.Size = new System.Drawing.Size(56, 42);
             this.b_mesa15.TabIndex = 97;
             this.b_mesa15.UseVisualStyleBackColor = true;
+            this.b_mesa15.Click += new System.EventHandler(this.b_mesa15_Click);
             // 
             // b_mesa14
             // 
@@ -466,6 +475,7 @@
             this.b_mesa14.Size = new System.Drawing.Size(56, 42);
             this.b_mesa14.TabIndex = 92;
             this.b_mesa14.UseVisualStyleBackColor = true;
+            this.b_mesa14.Click += new System.EventHandler(this.b_mesa14_Click);
             // 
             // b_mesa13
             // 
@@ -475,6 +485,7 @@
             this.b_mesa13.Size = new System.Drawing.Size(56, 42);
             this.b_mesa13.TabIndex = 91;
             this.b_mesa13.UseVisualStyleBackColor = true;
+            this.b_mesa13.Click += new System.EventHandler(this.b_mesa13_Click);
             // 
             // b_mesa12
             // 
@@ -484,6 +495,7 @@
             this.b_mesa12.Size = new System.Drawing.Size(56, 42);
             this.b_mesa12.TabIndex = 90;
             this.b_mesa12.UseVisualStyleBackColor = true;
+            this.b_mesa12.Click += new System.EventHandler(this.b_mesa12_Click);
             // 
             // b_mesa11
             // 
@@ -493,6 +505,7 @@
             this.b_mesa11.Size = new System.Drawing.Size(56, 42);
             this.b_mesa11.TabIndex = 89;
             this.b_mesa11.UseVisualStyleBackColor = true;
+            this.b_mesa11.Click += new System.EventHandler(this.b_mesa11_Click);
             // 
             // b_mesa10
             // 
@@ -502,6 +515,7 @@
             this.b_mesa10.Size = new System.Drawing.Size(75, 48);
             this.b_mesa10.TabIndex = 87;
             this.b_mesa10.UseVisualStyleBackColor = true;
+            this.b_mesa10.Click += new System.EventHandler(this.b_mesa10_Click);
             // 
             // b_mesa9
             // 
@@ -511,6 +525,7 @@
             this.b_mesa9.Size = new System.Drawing.Size(56, 41);
             this.b_mesa9.TabIndex = 83;
             this.b_mesa9.UseVisualStyleBackColor = true;
+            this.b_mesa9.Click += new System.EventHandler(this.b_mesa9_Click);
             // 
             // b_mesa8
             // 
@@ -520,6 +535,7 @@
             this.b_mesa8.Size = new System.Drawing.Size(56, 46);
             this.b_mesa8.TabIndex = 82;
             this.b_mesa8.UseVisualStyleBackColor = true;
+            this.b_mesa8.Click += new System.EventHandler(this.b_mesa8_Click);
             // 
             // b_mesa7
             // 
@@ -539,6 +555,7 @@
             this.b_mesa6.Size = new System.Drawing.Size(56, 42);
             this.b_mesa6.TabIndex = 79;
             this.b_mesa6.UseVisualStyleBackColor = true;
+            this.b_mesa6.Click += new System.EventHandler(this.b_mesa6_Click);
             // 
             // b_mesa5
             // 
@@ -548,6 +565,7 @@
             this.b_mesa5.Size = new System.Drawing.Size(75, 55);
             this.b_mesa5.TabIndex = 77;
             this.b_mesa5.UseVisualStyleBackColor = true;
+            this.b_mesa5.Click += new System.EventHandler(this.b_mesa5_Click);
             // 
             // b_mesa4
             // 
@@ -557,6 +575,7 @@
             this.b_mesa4.Size = new System.Drawing.Size(75, 55);
             this.b_mesa4.TabIndex = 75;
             this.b_mesa4.UseVisualStyleBackColor = true;
+            this.b_mesa4.Click += new System.EventHandler(this.b_mesa4_Click);
             // 
             // b_mesa3
             // 
@@ -566,6 +585,7 @@
             this.b_mesa3.Size = new System.Drawing.Size(75, 55);
             this.b_mesa3.TabIndex = 71;
             this.b_mesa3.UseVisualStyleBackColor = true;
+            this.b_mesa3.Click += new System.EventHandler(this.b_mesa3_Click);
             // 
             // b_mesa2
             // 
@@ -575,6 +595,7 @@
             this.b_mesa2.Size = new System.Drawing.Size(75, 51);
             this.b_mesa2.TabIndex = 70;
             this.b_mesa2.UseVisualStyleBackColor = true;
+            this.b_mesa2.Click += new System.EventHandler(this.b_mesa2_Click);
             // 
             // b_mesa1
             // 
@@ -594,6 +615,7 @@
             this.b_mesa23.Size = new System.Drawing.Size(75, 55);
             this.b_mesa23.TabIndex = 66;
             this.b_mesa23.UseVisualStyleBackColor = true;
+            this.b_mesa23.Click += new System.EventHandler(this.b_mesa23_Click);
             // 
             // b_mesa22
             // 
@@ -603,11 +625,12 @@
             this.b_mesa22.Size = new System.Drawing.Size(75, 55);
             this.b_mesa22.TabIndex = 65;
             this.b_mesa22.UseVisualStyleBackColor = true;
+            this.b_mesa22.Click += new System.EventHandler(this.b_mesa22_Click);
             // 
             // b_barra
             // 
             this.b_barra.Image = global::Restaurante.Properties.Resources.barra_llena1;
-            this.b_barra.Location = new System.Drawing.Point(739, 74);
+            this.b_barra.Location = new System.Drawing.Point(731, 32);
             this.b_barra.Name = "b_barra";
             this.b_barra.Size = new System.Drawing.Size(192, 187);
             this.b_barra.TabIndex = 63;
@@ -1137,14 +1160,6 @@
             this.panel4.TabIndex = 118;
             this.panel4.Visible = false;
             // 
-            // pic_producto
-            // 
-            this.pic_producto.Location = new System.Drawing.Point(3, 49);
-            this.pic_producto.Name = "pic_producto";
-            this.pic_producto.Size = new System.Drawing.Size(100, 59);
-            this.pic_producto.TabIndex = 0;
-            this.pic_producto.TabStop = false;
-            // 
             // dgv_prod
             // 
             this.dgv_prod.AllowUserToAddRows = false;
@@ -1174,6 +1189,25 @@
             this.Precio.HeaderText = "Precio";
             this.Precio.Name = "Precio";
             this.Precio.ReadOnly = true;
+            // 
+            // pic_producto
+            // 
+            this.pic_producto.Location = new System.Drawing.Point(3, 49);
+            this.pic_producto.Name = "pic_producto";
+            this.pic_producto.Size = new System.Drawing.Size(100, 59);
+            this.pic_producto.TabIndex = 0;
+            this.pic_producto.TabStop = false;
+            // 
+            // tmr_hora
+            // 
+            this.tmr_hora.Enabled = true;
+            this.tmr_hora.Interval = 1000;
+            // 
+            // toolStripStatusLabel4
+            // 
+            this.toolStripStatusLabel4.Name = "toolStripStatusLabel4";
+            this.toolStripStatusLabel4.Size = new System.Drawing.Size(118, 17);
+            this.toolStripStatusLabel4.Text = "toolStripStatusLabel4";
             // 
             // frm_PiccollaStella
             // 
@@ -1254,8 +1288,8 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pic_producto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_prod)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_producto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1370,5 +1404,6 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
         private System.Windows.Forms.Label label44;
         private System.Windows.Forms.Timer tmr_hora;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel4;
     }
 }

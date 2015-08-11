@@ -15,7 +15,7 @@ namespace Restaurante
 
         Cajas objCajas = new Cajas();
         private string _nick;
-
+        private string codCaja;
         public string nick
         {
             get { return _nick; }
@@ -28,7 +28,30 @@ namespace Restaurante
 
         private void frm_aperturaCaja_Load(object sender, EventArgs e)
         {
+            mostrarConsecutivo();
+        }
+
+        private void mostrarConsecutivo()
+        {
+
+            try
+            {
+                DataSet ds1;
+                ds1 = objCajas.retorna_consecutivo_valor();
+                string valor = ds1.Tables[0].Rows[0]["valor"].ToString();
+
+                DataSet ds2;
+                ds2 = objCajas.retorna_consecutivo_prefijo();
+                string pre = ds2.Tables[0].Rows[0]["prefijo"].ToString();
+                codCaja = pre + valor;
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error al cargar el consecutivo");
+            }
             
+
         }
 
         private void b_borrar_Click(object sender, EventArgs e)
@@ -44,6 +67,7 @@ namespace Restaurante
                 msk_montoApertura.Focus();
                 return;
             }
+            objCajas.codigo = codCaja;
             objCajas.apertura = Convert.ToInt32(msk_montoApertura.Text);
             objCajas.codRest = objCajas.obtener_cod_rest("Piccola Stella");
             objCajas.fecha = DateTime.Now.ToString("dd/MM/yyyy");
@@ -62,6 +86,7 @@ namespace Restaurante
                     {
                         frm_PiccollaStella picolla = new frm_PiccollaStella();
                         picolla.nick = this._nick;
+                        picolla.codRest = objCajas.codRest;
                         picolla.Show();
                          this.Close();
                     }
