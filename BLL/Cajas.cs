@@ -75,7 +75,7 @@ namespace BLL
             {
                 if (accion.Equals("Insertar"))
                 {
-                    sql = "Insert into Caja values(@cod,@codR,@fecha,@apertura,0)";
+                    sql = "Insert into Caja values(@cod,@codR,@fecha,@apertura,0,'Apertura de Caja')";
                 }
                 else
                 {

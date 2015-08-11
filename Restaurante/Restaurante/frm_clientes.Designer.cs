@@ -28,15 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txt_NombreMesa = new System.Windows.Forms.TextBox();
             this.txt_duracionMesa = new System.Windows.Forms.TextBox();
             this.txt_horaSalida = new System.Windows.Forms.TextBox();
             this.txt_horaEntrada = new System.Windows.Forms.TextBox();
             this.txt_montoPago = new System.Windows.Forms.TextBox();
             this.txt_restaurante = new System.Windows.Forms.TextBox();
-            this.cb_mesa = new System.Windows.Forms.ComboBox();
             this.txt_nombreCliente = new System.Windows.Forms.TextBox();
             this.txt_codigoCliente = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -68,8 +69,8 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.dt_reserva = new System.Windows.Forms.DateTimePicker();
             this.msk_fecha_llegada = new System.Windows.Forms.MaskedTextBox();
-            this.cb_fechaReservacion = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.chk_reservacion = new System.Windows.Forms.CheckBox();
@@ -81,29 +82,32 @@
             this.b_aceptar = new System.Windows.Forms.Button();
             this.b_cerrar = new System.Windows.Forms.Button();
             this.b_borrar = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.lst_pedido1 = new System.Windows.Forms.ListBox();
-            this.lst_pedido2 = new System.Windows.Forms.ListBox();
-            this.lst_pedido3 = new System.Windows.Forms.ListBox();
-            this.lst_pedido4 = new System.Windows.Forms.ListBox();
-            this.txt_total1 = new System.Windows.Forms.TextBox();
-            this.txt_total2 = new System.Windows.Forms.TextBox();
-            this.txt_total3 = new System.Windows.Forms.TextBox();
-            this.txt_total4 = new System.Windows.Forms.TextBox();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.txt_total4 = new System.Windows.Forms.TextBox();
+            this.txt_total3 = new System.Windows.Forms.TextBox();
+            this.txt_total2 = new System.Windows.Forms.TextBox();
+            this.txt_total1 = new System.Windows.Forms.TextBox();
+            this.lst_pedido4 = new System.Windows.Forms.ListBox();
+            this.lst_pedido3 = new System.Windows.Forms.ListBox();
+            this.lst_pedido2 = new System.Windows.Forms.ListBox();
+            this.lst_pedido1 = new System.Windows.Forms.ListBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -127,12 +131,12 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txt_NombreMesa);
             this.groupBox1.Controls.Add(this.txt_duracionMesa);
             this.groupBox1.Controls.Add(this.txt_horaSalida);
             this.groupBox1.Controls.Add(this.txt_horaEntrada);
             this.groupBox1.Controls.Add(this.txt_montoPago);
             this.groupBox1.Controls.Add(this.txt_restaurante);
-            this.groupBox1.Controls.Add(this.cb_mesa);
             this.groupBox1.Controls.Add(this.txt_nombreCliente);
             this.groupBox1.Controls.Add(this.txt_codigoCliente);
             this.groupBox1.Controls.Add(this.label8);
@@ -150,8 +154,17 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos del Cliente";
             // 
+            // txt_NombreMesa
+            // 
+            this.txt_NombreMesa.Enabled = false;
+            this.txt_NombreMesa.Location = new System.Drawing.Point(112, 79);
+            this.txt_NombreMesa.Name = "txt_NombreMesa";
+            this.txt_NombreMesa.Size = new System.Drawing.Size(121, 20);
+            this.txt_NombreMesa.TabIndex = 16;
+            // 
             // txt_duracionMesa
             // 
+            this.txt_duracionMesa.Enabled = false;
             this.txt_duracionMesa.Location = new System.Drawing.Point(348, 120);
             this.txt_duracionMesa.Name = "txt_duracionMesa";
             this.txt_duracionMesa.Size = new System.Drawing.Size(100, 20);
@@ -159,6 +172,7 @@
             // 
             // txt_horaSalida
             // 
+            this.txt_horaSalida.Enabled = false;
             this.txt_horaSalida.Location = new System.Drawing.Point(348, 87);
             this.txt_horaSalida.Name = "txt_horaSalida";
             this.txt_horaSalida.Size = new System.Drawing.Size(100, 20);
@@ -166,6 +180,7 @@
             // 
             // txt_horaEntrada
             // 
+            this.txt_horaEntrada.Enabled = false;
             this.txt_horaEntrada.Location = new System.Drawing.Point(348, 52);
             this.txt_horaEntrada.Name = "txt_horaEntrada";
             this.txt_horaEntrada.Size = new System.Drawing.Size(100, 20);
@@ -173,6 +188,7 @@
             // 
             // txt_montoPago
             // 
+            this.txt_montoPago.Enabled = false;
             this.txt_montoPago.Location = new System.Drawing.Point(110, 115);
             this.txt_montoPago.Name = "txt_montoPago";
             this.txt_montoPago.Size = new System.Drawing.Size(100, 20);
@@ -180,18 +196,11 @@
             // 
             // txt_restaurante
             // 
+            this.txt_restaurante.Enabled = false;
             this.txt_restaurante.Location = new System.Drawing.Point(341, 20);
             this.txt_restaurante.Name = "txt_restaurante";
-            this.txt_restaurante.Size = new System.Drawing.Size(122, 20);
+            this.txt_restaurante.Size = new System.Drawing.Size(107, 20);
             this.txt_restaurante.TabIndex = 11;
-            // 
-            // cb_mesa
-            // 
-            this.cb_mesa.FormattingEnabled = true;
-            this.cb_mesa.Location = new System.Drawing.Point(110, 79);
-            this.cb_mesa.Name = "cb_mesa";
-            this.cb_mesa.Size = new System.Drawing.Size(123, 21);
-            this.cb_mesa.TabIndex = 10;
             // 
             // txt_nombreCliente
             // 
@@ -317,6 +326,7 @@
             this.chk_buffet5.TabIndex = 18;
             this.chk_buffet5.Text = "Buffet";
             this.chk_buffet5.UseVisualStyleBackColor = true;
+            this.chk_buffet5.CheckedChanged += new System.EventHandler(this.chk_buffet5_CheckedChanged);
             // 
             // chk_buffet4
             // 
@@ -327,6 +337,7 @@
             this.chk_buffet4.TabIndex = 17;
             this.chk_buffet4.Text = "Buffet\r\n";
             this.chk_buffet4.UseVisualStyleBackColor = true;
+            this.chk_buffet4.CheckedChanged += new System.EventHandler(this.chk_buffet4_CheckedChanged);
             // 
             // chk_buffet2
             // 
@@ -337,6 +348,7 @@
             this.chk_buffet2.TabIndex = 16;
             this.chk_buffet2.Text = "Buffet\r\n";
             this.chk_buffet2.UseVisualStyleBackColor = true;
+            this.chk_buffet2.CheckedChanged += new System.EventHandler(this.chk_buffet2_CheckedChanged);
             // 
             // chk_buffet1
             // 
@@ -347,9 +359,11 @@
             this.chk_buffet1.TabIndex = 15;
             this.chk_buffet1.Text = "Buffet";
             this.chk_buffet1.UseVisualStyleBackColor = true;
+            this.chk_buffet1.CheckedChanged += new System.EventHandler(this.chk_buffet1_CheckedChanged);
             // 
             // txt_precio4
             // 
+            this.txt_precio4.Enabled = false;
             this.txt_precio4.Location = new System.Drawing.Point(244, 130);
             this.txt_precio4.Name = "txt_precio4";
             this.txt_precio4.Size = new System.Drawing.Size(100, 20);
@@ -357,6 +371,7 @@
             // 
             // txt_precio3
             // 
+            this.txt_precio3.Enabled = false;
             this.txt_precio3.Location = new System.Drawing.Point(244, 101);
             this.txt_precio3.Name = "txt_precio3";
             this.txt_precio3.Size = new System.Drawing.Size(100, 20);
@@ -364,6 +379,7 @@
             // 
             // txt_precio2
             // 
+            this.txt_precio2.Enabled = false;
             this.txt_precio2.Location = new System.Drawing.Point(244, 74);
             this.txt_precio2.Name = "txt_precio2";
             this.txt_precio2.Size = new System.Drawing.Size(100, 20);
@@ -371,6 +387,7 @@
             // 
             // txt_precio1
             // 
+            this.txt_precio1.Enabled = false;
             this.txt_precio1.Location = new System.Drawing.Point(244, 47);
             this.txt_precio1.Name = "txt_precio1";
             this.txt_precio1.Size = new System.Drawing.Size(100, 20);
@@ -392,6 +409,7 @@
             this.cb_silla1.Name = "cb_silla1";
             this.cb_silla1.Size = new System.Drawing.Size(121, 21);
             this.cb_silla1.TabIndex = 9;
+            this.cb_silla1.SelectedIndexChanged += new System.EventHandler(this.cb_silla1_SelectedIndexChanged);
             // 
             // cb_silla4
             // 
@@ -400,6 +418,7 @@
             this.cb_silla4.Name = "cb_silla4";
             this.cb_silla4.Size = new System.Drawing.Size(121, 21);
             this.cb_silla4.TabIndex = 8;
+            this.cb_silla4.SelectedIndexChanged += new System.EventHandler(this.cb_silla4_SelectedIndexChanged);
             // 
             // cb_silla3
             // 
@@ -408,6 +427,7 @@
             this.cb_silla3.Name = "cb_silla3";
             this.cb_silla3.Size = new System.Drawing.Size(121, 21);
             this.cb_silla3.TabIndex = 7;
+            this.cb_silla3.SelectedIndexChanged += new System.EventHandler(this.cb_silla3_SelectedIndexChanged);
             // 
             // cb_silla2
             // 
@@ -416,9 +436,11 @@
             this.cb_silla2.Name = "cb_silla2";
             this.cb_silla2.Size = new System.Drawing.Size(121, 21);
             this.cb_silla2.TabIndex = 6;
+            this.cb_silla2.SelectedIndexChanged += new System.EventHandler(this.cb_silla2_SelectedIndexChanged);
             // 
             // txt_numeroMesa
             // 
+            this.txt_numeroMesa.Enabled = false;
             this.txt_numeroMesa.Location = new System.Drawing.Point(107, 20);
             this.txt_numeroMesa.Name = "txt_numeroMesa";
             this.txt_numeroMesa.Size = new System.Drawing.Size(100, 20);
@@ -465,14 +487,14 @@
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(7, 20);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(93, 13);
+            this.label13.Size = new System.Drawing.Size(88, 13);
             this.label13.TabIndex = 0;
-            this.label13.Text = "Numero de Mesas";
+            this.label13.Text = "Numero de Mesa";
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.dt_reserva);
             this.groupBox3.Controls.Add(this.msk_fecha_llegada);
-            this.groupBox3.Controls.Add(this.cb_fechaReservacion);
             this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this.chk_reservacion);
@@ -483,6 +505,16 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Fechas del cliente";
             // 
+            // dt_reserva
+            // 
+            this.dt_reserva.CustomFormat = "dd/MM/yyyy";
+            this.dt_reserva.Enabled = false;
+            this.dt_reserva.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dt_reserva.Location = new System.Drawing.Point(116, 94);
+            this.dt_reserva.Name = "dt_reserva";
+            this.dt_reserva.Size = new System.Drawing.Size(100, 20);
+            this.dt_reserva.TabIndex = 5;
+            // 
             // msk_fecha_llegada
             // 
             this.msk_fecha_llegada.Location = new System.Drawing.Point(116, 61);
@@ -491,14 +523,6 @@
             this.msk_fecha_llegada.Size = new System.Drawing.Size(100, 20);
             this.msk_fecha_llegada.TabIndex = 4;
             this.msk_fecha_llegada.ValidatingType = typeof(System.DateTime);
-            // 
-            // cb_fechaReservacion
-            // 
-            this.cb_fechaReservacion.FormattingEnabled = true;
-            this.cb_fechaReservacion.Location = new System.Drawing.Point(118, 87);
-            this.cb_fechaReservacion.Name = "cb_fechaReservacion";
-            this.cb_fechaReservacion.Size = new System.Drawing.Size(98, 21);
-            this.cb_fechaReservacion.TabIndex = 3;
             // 
             // label10
             // 
@@ -527,6 +551,7 @@
             this.chk_reservacion.TabIndex = 0;
             this.chk_reservacion.Text = "Reservacion";
             this.chk_reservacion.UseVisualStyleBackColor = true;
+            this.chk_reservacion.CheckedChanged += new System.EventHandler(this.chk_reservacion_CheckedChanged);
             // 
             // groupBox4
             // 
@@ -543,12 +568,14 @@
             // 
             // b_imprimir
             // 
+            this.b_imprimir.Enabled = false;
             this.b_imprimir.Image = global::Restaurante.Properties.Resources.print;
             this.b_imprimir.Location = new System.Drawing.Point(116, 45);
             this.b_imprimir.Name = "b_imprimir";
             this.b_imprimir.Size = new System.Drawing.Size(75, 59);
             this.b_imprimir.TabIndex = 3;
             this.b_imprimir.UseVisualStyleBackColor = true;
+            this.b_imprimir.Click += new System.EventHandler(this.b_imprimir_Click);
             // 
             // label12
             // 
@@ -561,6 +588,7 @@
             // 
             // txt_estadoCuenta
             // 
+            this.txt_estadoCuenta.Enabled = false;
             this.txt_estadoCuenta.Location = new System.Drawing.Point(116, 19);
             this.txt_estadoCuenta.Name = "txt_estadoCuenta";
             this.txt_estadoCuenta.Size = new System.Drawing.Size(100, 20);
@@ -583,6 +611,7 @@
             this.b_aceptar.Size = new System.Drawing.Size(54, 40);
             this.b_aceptar.TabIndex = 69;
             this.b_aceptar.UseVisualStyleBackColor = true;
+            this.b_aceptar.Click += new System.EventHandler(this.b_aceptar_Click);
             // 
             // b_cerrar
             // 
@@ -592,6 +621,7 @@
             this.b_cerrar.Size = new System.Drawing.Size(54, 40);
             this.b_cerrar.TabIndex = 70;
             this.b_cerrar.UseVisualStyleBackColor = true;
+            this.b_cerrar.Click += new System.EventHandler(this.b_cerrar_Click);
             // 
             // b_borrar
             // 
@@ -601,6 +631,16 @@
             this.b_borrar.Size = new System.Drawing.Size(49, 40);
             this.b_borrar.TabIndex = 83;
             this.b_borrar.UseVisualStyleBackColor = true;
+            this.b_borrar.Click += new System.EventHandler(this.b_borrar_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.groupBox5);
+            this.panel2.Location = new System.Drawing.Point(175, 345);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(697, 195);
+            this.panel2.TabIndex = 84;
+            this.panel2.Visible = false;
             // 
             // groupBox5
             // 
@@ -620,139 +660,12 @@
             this.groupBox5.Controls.Add(this.label21);
             this.groupBox5.Controls.Add(this.label20);
             this.groupBox5.Controls.Add(this.label19);
-            this.groupBox5.Location = new System.Drawing.Point(175, 356);
+            this.groupBox5.Location = new System.Drawing.Point(9, 3);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(697, 190);
-            this.groupBox5.TabIndex = 84;
+            this.groupBox5.Size = new System.Drawing.Size(688, 189);
+            this.groupBox5.TabIndex = 85;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Consulta Buffet";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(34, 22);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(66, 13);
-            this.label19.TabIndex = 19;
-            this.label19.Text = "Pedido silla1";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(179, 22);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(66, 13);
-            this.label20.TabIndex = 19;
-            this.label20.Text = "Pedido silla2";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(367, 22);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(66, 13);
-            this.label21.TabIndex = 19;
-            this.label21.Text = "Pedido silla3";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(530, 22);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(66, 13);
-            this.label22.TabIndex = 19;
-            this.label22.Text = "Pedido silla4";
-            // 
-            // lst_pedido1
-            // 
-            this.lst_pedido1.FormattingEnabled = true;
-            this.lst_pedido1.Location = new System.Drawing.Point(10, 38);
-            this.lst_pedido1.Name = "lst_pedido1";
-            this.lst_pedido1.Size = new System.Drawing.Size(120, 95);
-            this.lst_pedido1.TabIndex = 20;
-            // 
-            // lst_pedido2
-            // 
-            this.lst_pedido2.FormattingEnabled = true;
-            this.lst_pedido2.Location = new System.Drawing.Point(158, 38);
-            this.lst_pedido2.Name = "lst_pedido2";
-            this.lst_pedido2.Size = new System.Drawing.Size(120, 95);
-            this.lst_pedido2.TabIndex = 21;
-            // 
-            // lst_pedido3
-            // 
-            this.lst_pedido3.FormattingEnabled = true;
-            this.lst_pedido3.Location = new System.Drawing.Point(328, 38);
-            this.lst_pedido3.Name = "lst_pedido3";
-            this.lst_pedido3.Size = new System.Drawing.Size(120, 95);
-            this.lst_pedido3.TabIndex = 22;
-            // 
-            // lst_pedido4
-            // 
-            this.lst_pedido4.FormattingEnabled = true;
-            this.lst_pedido4.Location = new System.Drawing.Point(507, 38);
-            this.lst_pedido4.Name = "lst_pedido4";
-            this.lst_pedido4.Size = new System.Drawing.Size(120, 95);
-            this.lst_pedido4.TabIndex = 23;
-            // 
-            // txt_total1
-            // 
-            this.txt_total1.Location = new System.Drawing.Point(10, 157);
-            this.txt_total1.Name = "txt_total1";
-            this.txt_total1.ReadOnly = true;
-            this.txt_total1.Size = new System.Drawing.Size(100, 20);
-            this.txt_total1.TabIndex = 24;
-            // 
-            // txt_total2
-            // 
-            this.txt_total2.Location = new System.Drawing.Point(158, 157);
-            this.txt_total2.Name = "txt_total2";
-            this.txt_total2.ReadOnly = true;
-            this.txt_total2.Size = new System.Drawing.Size(100, 20);
-            this.txt_total2.TabIndex = 25;
-            // 
-            // txt_total3
-            // 
-            this.txt_total3.Location = new System.Drawing.Point(328, 157);
-            this.txt_total3.Name = "txt_total3";
-            this.txt_total3.ReadOnly = true;
-            this.txt_total3.Size = new System.Drawing.Size(100, 20);
-            this.txt_total3.TabIndex = 26;
-            // 
-            // txt_total4
-            // 
-            this.txt_total4.Location = new System.Drawing.Point(507, 156);
-            this.txt_total4.Name = "txt_total4";
-            this.txt_total4.ReadOnly = true;
-            this.txt_total4.Size = new System.Drawing.Size(100, 20);
-            this.txt_total4.TabIndex = 27;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(26, 138);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(31, 13);
-            this.label23.TabIndex = 28;
-            this.label23.Text = "Total";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(179, 138);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(31, 13);
-            this.label24.TabIndex = 29;
-            this.label24.Text = "Total";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(348, 141);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(31, 13);
-            this.label25.TabIndex = 30;
-            this.label25.Text = "Total";
             // 
             // label26
             // 
@@ -763,13 +676,158 @@
             this.label26.TabIndex = 31;
             this.label26.Text = "Total";
             // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(348, 141);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(31, 13);
+            this.label25.TabIndex = 30;
+            this.label25.Text = "Total";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(179, 138);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(31, 13);
+            this.label24.TabIndex = 29;
+            this.label24.Text = "Total";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(26, 138);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(31, 13);
+            this.label23.TabIndex = 28;
+            this.label23.Text = "Total";
+            // 
+            // txt_total4
+            // 
+            this.txt_total4.Enabled = false;
+            this.txt_total4.Location = new System.Drawing.Point(507, 156);
+            this.txt_total4.Name = "txt_total4";
+            this.txt_total4.ReadOnly = true;
+            this.txt_total4.Size = new System.Drawing.Size(100, 20);
+            this.txt_total4.TabIndex = 27;
+            // 
+            // txt_total3
+            // 
+            this.txt_total3.Enabled = false;
+            this.txt_total3.Location = new System.Drawing.Point(328, 157);
+            this.txt_total3.Name = "txt_total3";
+            this.txt_total3.ReadOnly = true;
+            this.txt_total3.Size = new System.Drawing.Size(100, 20);
+            this.txt_total3.TabIndex = 26;
+            // 
+            // txt_total2
+            // 
+            this.txt_total2.Enabled = false;
+            this.txt_total2.Location = new System.Drawing.Point(158, 157);
+            this.txt_total2.Name = "txt_total2";
+            this.txt_total2.ReadOnly = true;
+            this.txt_total2.Size = new System.Drawing.Size(100, 20);
+            this.txt_total2.TabIndex = 25;
+            // 
+            // txt_total1
+            // 
+            this.txt_total1.Enabled = false;
+            this.txt_total1.Location = new System.Drawing.Point(10, 157);
+            this.txt_total1.Name = "txt_total1";
+            this.txt_total1.ReadOnly = true;
+            this.txt_total1.Size = new System.Drawing.Size(100, 20);
+            this.txt_total1.TabIndex = 24;
+            // 
+            // lst_pedido4
+            // 
+            this.lst_pedido4.FormattingEnabled = true;
+            this.lst_pedido4.Location = new System.Drawing.Point(507, 38);
+            this.lst_pedido4.Name = "lst_pedido4";
+            this.lst_pedido4.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
+            this.lst_pedido4.Size = new System.Drawing.Size(120, 95);
+            this.lst_pedido4.TabIndex = 23;
+            this.lst_pedido4.SelectedIndexChanged += new System.EventHandler(this.lst_pedido4_SelectedIndexChanged);
+            // 
+            // lst_pedido3
+            // 
+            this.lst_pedido3.FormattingEnabled = true;
+            this.lst_pedido3.Location = new System.Drawing.Point(328, 38);
+            this.lst_pedido3.Name = "lst_pedido3";
+            this.lst_pedido3.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
+            this.lst_pedido3.Size = new System.Drawing.Size(120, 95);
+            this.lst_pedido3.TabIndex = 22;
+            this.lst_pedido3.SelectedIndexChanged += new System.EventHandler(this.lst_pedido3_SelectedIndexChanged);
+            // 
+            // lst_pedido2
+            // 
+            this.lst_pedido2.FormattingEnabled = true;
+            this.lst_pedido2.Location = new System.Drawing.Point(158, 38);
+            this.lst_pedido2.Name = "lst_pedido2";
+            this.lst_pedido2.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
+            this.lst_pedido2.Size = new System.Drawing.Size(120, 95);
+            this.lst_pedido2.TabIndex = 21;
+            this.lst_pedido2.SelectedIndexChanged += new System.EventHandler(this.lst_pedido2_SelectedIndexChanged);
+            // 
+            // lst_pedido1
+            // 
+            this.lst_pedido1.FormattingEnabled = true;
+            this.lst_pedido1.Location = new System.Drawing.Point(10, 38);
+            this.lst_pedido1.Name = "lst_pedido1";
+            this.lst_pedido1.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
+            this.lst_pedido1.Size = new System.Drawing.Size(120, 95);
+            this.lst_pedido1.TabIndex = 20;
+            this.lst_pedido1.SelectedIndexChanged += new System.EventHandler(this.lst_pedido1_SelectedIndexChanged);
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(530, 22);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(66, 13);
+            this.label22.TabIndex = 19;
+            this.label22.Text = "Pedido silla4";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(367, 22);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(66, 13);
+            this.label21.TabIndex = 19;
+            this.label21.Text = "Pedido silla3";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(179, 22);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(66, 13);
+            this.label20.TabIndex = 19;
+            this.label20.Text = "Pedido silla2";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(34, 22);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(66, 13);
+            this.label19.TabIndex = 19;
+            this.label19.Text = "Pedido silla1";
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // frm_clientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(880, 552);
-            this.Controls.Add(this.groupBox5);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.b_borrar);
             this.Controls.Add(this.b_cerrar);
             this.Controls.Add(this.b_aceptar);
@@ -780,6 +838,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "frm_clientes";
             this.Text = "Clientes";
+            this.Load += new System.EventHandler(this.frm_clientes_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -790,6 +849,7 @@
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
@@ -809,7 +869,6 @@
         private System.Windows.Forms.TextBox txt_horaEntrada;
         private System.Windows.Forms.TextBox txt_montoPago;
         private System.Windows.Forms.TextBox txt_restaurante;
-        private System.Windows.Forms.ComboBox cb_mesa;
         private System.Windows.Forms.TextBox txt_nombreCliente;
         private System.Windows.Forms.TextBox txt_codigoCliente;
         private System.Windows.Forms.Label label8;
@@ -821,7 +880,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.MaskedTextBox msk_fecha_llegada;
-        private System.Windows.Forms.ComboBox cb_fechaReservacion;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.CheckBox chk_reservacion;
@@ -851,6 +909,9 @@
         private System.Windows.Forms.Button b_aceptar;
         private System.Windows.Forms.Button b_cerrar;
         private System.Windows.Forms.Button b_borrar;
+        private System.Windows.Forms.DateTimePicker dt_reserva;
+        private System.Windows.Forms.TextBox txt_NombreMesa;
+        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label25;
@@ -868,5 +929,6 @@
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Timer timer1;
     }
 }

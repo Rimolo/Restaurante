@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="Cajas.cs" />
     <Compile Include="Calientes.cs" />
+    <Compile Include="Clientes.cs" />
     <Compile Include="Empleados.cs" />
     <Compile Include="Vinos.cs" />
     <Compile Include="Licores.cs" />
