@@ -30,7 +30,7 @@ namespace Restaurante
             if (rb_buffet.Checked == true)
             {
                 frm_Listabuffet buffet = new frm_Listabuffet();
-                //buffet.nick = _nick;
+                buffet.nick = _nick;
                 buffet.Show();
             }
             else

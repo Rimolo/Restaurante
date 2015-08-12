@@ -8,16 +8,16 @@ using System.Windows.Forms;
 
 namespace BLL
 {
-    public class Especiales
+    public class Buffet
     {
         #region propiedades
 
-        private string _codEspeciales;
+        private string _codBuffet;
 
-        public string codEspeciales
+        public string codBuffet
         {
-            get { return _codEspeciales; }
-            set { _codEspeciales = value; }
+            get { return _codBuffet; }
+            set { _codBuffet = value; }
         }
         private string _nombre;
 
@@ -26,12 +26,12 @@ namespace BLL
             get { return _nombre; }
             set { _nombre = value; }
         }
-        private string _ingredientes;
+        private string _tipo;
 
-        public string ingredientes
+        public string tipo
         {
-            get { return _ingredientes; }
-            set { _ingredientes = value; }
+            get { return _tipo; }
+            set { _tipo = value; }
         }
         private decimal _precio;
 
@@ -40,20 +40,20 @@ namespace BLL
             get { return _precio; }
             set { _precio = value; }
         }
+        private string _codMedida;
+
+        public string codMedida
+        {
+            get { return _codMedida; }
+            set { _codMedida = value; }
+        }
         private string _codRestaurante;
 
         public string codRestaurante
         {
             get { return _codRestaurante; }
             set { _codRestaurante = value; }
-        }
-        private string _detalle;
-
-        public string detalle
-        {
-            get { return _detalle; }
-            set { _detalle = value; }
-        }
+        }        
         private byte[] _imagen;
 
         public byte[] imagen
@@ -74,7 +74,7 @@ namespace BLL
 
         #region metodos
 
-        public DataSet carga_especiales_especificos()
+        public DataSet carga_Buffet_especificos()
         {
             conexion = cls_DAL.trae_conexion("Progra4", ref mensaje_error, ref numero_error);
             if (conexion == null)
@@ -84,26 +84,28 @@ namespace BLL
             }
             else
             {
-                string sql1 = "Select codEspeciales, nombre, ingredientes, detalle, precio from Especiales ";
+                string sql1 = "Select B.codBuffet, B.nombre, B.precio, B.tipo, UM.unidadMedida as nomMedida from Buffet B ";
                 string condicion = "Where ";
-                if (!string.IsNullOrEmpty(_codEspeciales))
+                string join = "INNER JOIN UnidadesMedida UM ON B.CodMedida = UM.codMedida ";
+                if (!string.IsNullOrEmpty(_codBuffet))
                 {
-                    sql1 += condicion + "codEspeciales ='" + _codEspeciales + "'";
+                    sql1 += join + condicion + "B.codBuffet ='" + _codBuffet + "'";
                     condicion = "and ";
                 }
                 else
                 {
                     if (!string.IsNullOrEmpty(_nombre))
                     {
-                        sql1 += condicion + "nombre ='" + _nombre + "'";
-                    }
+                        sql1 += join +  condicion + "B.nombre ='" + _nombre + "'";
+                        condicion = "and ";
+                    }                    
                 }
-                sql = sql1 + " Order by codEspeciales";
+                sql = sql1 + " Order by B.codBuffet";
 
                 ds = cls_DAL.ejecuta_dataset(conexion, sql, false, ref mensaje_error, ref numero_error);
                 if (numero_error != 0)
                 {
-                    MessageBox.Show(mensaje_error, "Error al cargar la informacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(mensaje_error, "Error al cargar la comida buffet", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return null;
                 }
                 else
@@ -113,7 +115,7 @@ namespace BLL
             }
         }
 
-        public DataSet carga_Especiales()
+        public DataSet carga_Buffet()
         {
             conexion = cls_DAL.trae_conexion("Progra4", ref mensaje_error, ref numero_error);
             if (conexion == null)
@@ -123,12 +125,12 @@ namespace BLL
             }
             else
             {
-                sql = "Select codEspeciales, nombre, precio, detalle, ingredientes from Especiales Order by codEspeciales";
+                sql = "Select B.codBuffet, B.nombre, B.precio, B.tipo, UM.unidadMedida as nomMedida from Buffet B INNER JOIN UnidadesMedida UM ON B.CodMedida = UM.codMedida Order by B.codBuffet";
 
                 ds = cls_DAL.ejecuta_dataset(conexion, sql, false, ref mensaje_error, ref numero_error);
                 if (numero_error != 0)
                 {
-                    MessageBox.Show(mensaje_error, "Error al cargar la informacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(mensaje_error, "Error al cargar las comida buffet", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return null;
                 }
                 else
@@ -138,7 +140,7 @@ namespace BLL
             }
         }
 
-        public bool guardar_Especiales(string accion, string nick)
+        public bool guardar_Buffet(string accion, string codigo)
         {
             conexion = cls_DAL.trae_conexion("Progra4", ref mensaje_error, ref numero_error);
             string codRest = "";
@@ -152,32 +154,32 @@ namespace BLL
                 if (accion.Equals("Insertar"))
                 {
                     DataSet ds;
-                    ds = retorna_codigo_Restaurante(nick); ;
+                    ds = retorna_codigo_Restaurante(codigo);
                     codRest = Convert.ToString(ds.Tables[0].Rows[0]["codRest"]);
-                    sql = "Insert into Especiales values(@codEspeciales, @nombre, @ingredientes, @precio, @detalle, @CodRestaurante, null)";
+                    sql = "Insert into Buffet values(@codBuffet, @nombre, @precio, @tipo, @CodMedida, @codRest, null)";
                 }
                 else
                 {
-                    sql = "Update Especiales SET" +
+                    sql = "Update Buffet SET" +
                         " nombre=@nombre," +
-                        " detalle=@detalle," +
                         " precio=@precio," +
-                        " ingredientes=@ingredientes," +
+                        " tipo=@tipo," +
+                        " CodMedida=@CodMedida," +                       
                         " imagen=null" +
-                        " where codEspeciales=@codEspeciales";
+                        " where codBuffet=@codBuffet";
                 }
                 ParamStruct[] parametros = new ParamStruct[6];
-                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@codEspeciales", SqlDbType.VarChar, _codEspeciales);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@codBuffet", SqlDbType.VarChar, _codBuffet);
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 1, "@nombre", SqlDbType.VarChar, _nombre);
-                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 2, "@ingredientes", SqlDbType.VarChar, _ingredientes);
-                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 3, "@precio", SqlDbType.Money, _precio);
-                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 4, "@detalle", SqlDbType.VarChar, _detalle);
-                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 5, "@CodRestaurante", SqlDbType.VarChar, codRest);                
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 2, "@precio", SqlDbType.Money, _precio);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 3, "@tipo", SqlDbType.VarChar, _tipo);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 4, "@CodMedida", SqlDbType.VarChar, _codMedida);                
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 5, "@codRest", SqlDbType.VarChar, codRest);
                 cls_DAL.conectar(conexion, ref mensaje_error, ref numero_error);
                 cls_DAL.ejecuta_sqlcommand(conexion, sql, false, parametros, ref mensaje_error, ref numero_error);
                 if (numero_error != 0)
                 {
-                    MessageBox.Show(mensaje_error, "Error al guardar el especial", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(mensaje_error, "Error al guardar el buffet", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     cls_DAL.desconectar(conexion, ref mensaje_error, ref numero_error);
                     return false;
                 }
@@ -189,7 +191,7 @@ namespace BLL
             }
         }
 
-        public bool eliminar_Especiales(string codRestaurente)
+        public bool eliminar_Buffet(string codBuf)
         {
             conexion = cls_DAL.trae_conexion("Progra4", ref mensaje_error, ref numero_error);
             if (conexion == null)
@@ -199,15 +201,15 @@ namespace BLL
             }
             else
             {
-                sql = "Delete from Especiales where codEspeciales = @codEspeciales";
+                sql = "Delete from Buffet where codBuffet = @codBuffet";
 
-                ParamStruct[] parametros = new ParamStruct[1];               
-                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@codEspeciales", SqlDbType.VarChar, codEspeciales);
+                ParamStruct[] parametros = new ParamStruct[1];
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@codBuffet", SqlDbType.VarChar, codBuf);
                 cls_DAL.conectar(conexion, ref mensaje_error, ref numero_error);
                 cls_DAL.ejecuta_sqlcommand(conexion, sql, false, parametros, ref mensaje_error, ref numero_error);
                 if (numero_error != 0)
                 {
-                    MessageBox.Show(mensaje_error, "Error al eliminar el especial", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(mensaje_error, "Error al eliminar el buffet", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     cls_DAL.desconectar(conexion, ref mensaje_error, ref numero_error);
                     return false;
                 }
@@ -219,7 +221,7 @@ namespace BLL
             }
         }
 
-        public void carga_info_Especiales(string codEsp)
+        public void carga_info_Buffet(string codBuf)
         {
             conexion = cls_DAL.trae_conexion("Progra4", ref mensaje_error, ref numero_error);
             if (conexion == null)
@@ -229,14 +231,14 @@ namespace BLL
             }
             else
             {
-                sql = "Select codEspeciales, nombre, ingredientes, detalle, precio, imagen" +
-                      " from Especiales where codEspeciales = @codEsp";
+                sql = "Select B.nombre, B.precio, B.tipo, UM.unidadMedida as nomMedida, B.imagen" +
+                      " from Buffet B INNER JOIN UnidadesMedida UM ON B.CodMedida = UM.codMedida where codBuffet=@codBuf";
                 ParamStruct[] parametros = new ParamStruct[1];
-                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@codEsp", SqlDbType.VarChar, codEsp);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@codBuf", SqlDbType.VarChar, codBuf);
                 ds = cls_DAL.ejecuta_dataset(conexion, sql, false, parametros, ref mensaje_error, ref numero_error);
                 if (ds == null)
                 {
-                    MessageBox.Show(mensaje_error, "Error al obtener la informacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(mensaje_error, "Error al obtener la informacion del buffet", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     _nombre = "Error";
                 }
                 else
@@ -244,9 +246,9 @@ namespace BLL
                     if (ds.Tables[0].Rows.Count > 0)
                     {                        
                         _nombre = ds.Tables[0].Rows[0]["nombre"].ToString();
-                        _ingredientes = ds.Tables[0].Rows[0]["ingredientes"].ToString();
-                        _precio = Convert.ToDecimal(ds.Tables[0].Rows[0]["precio"]);
-                        _detalle = ds.Tables[0].Rows[0]["detalle"].ToString();
+                        _tipo = ds.Tables[0].Rows[0]["tipo"].ToString();
+                        _codMedida = ds.Tables[0].Rows[0]["CodMedida"].ToString();
+                        _precio = Convert.ToDecimal(ds.Tables[0].Rows[0]["precio"]);                                         
                         if (!string.IsNullOrEmpty(ds.Tables[0].Rows[0]["imagen"].ToString()))
                         {
                             _imagen = (byte[])(ds.Tables[0].Rows[0]["imagen"]);
@@ -268,6 +270,7 @@ namespace BLL
 
         public DataSet retorna_consecutivo_valor()
         {
+
             conexion = cls_DAL.trae_conexion("Progra4", ref mensaje_error, ref numero_error);
             if (conexion == null)
             {
@@ -276,7 +279,7 @@ namespace BLL
             }
             else
             {
-                sql = "Select valor From Consecutivos WHERE tipo='Especiales'";
+                sql = "Select valor From Consecutivos WHERE tipo='Buffet'";
 
                 ds = cls_DAL.ejecuta_dataset(conexion, sql, false, ref mensaje_error, ref numero_error);
 
@@ -303,7 +306,7 @@ namespace BLL
             }
             else
             {
-                sql = "Select prefijo From Consecutivos WHERE tipo='Especiales'";
+                sql = "Select prefijo From Consecutivos WHERE tipo='Buffet'";
 
                 ds = cls_DAL.ejecuta_dataset(conexion, sql, false, ref mensaje_error, ref numero_error);
 
@@ -330,7 +333,7 @@ namespace BLL
             else
             {
 
-                sql = "Update Consecutivos SET valor=@valor WHERE tipo='Especiales'";
+                sql = "Update Consecutivos SET valor=@valor WHERE tipo='Buffet'";
 
                 ParamStruct[] parametros = new ParamStruct[1];
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@valor", SqlDbType.Int, id);
@@ -362,6 +365,7 @@ namespace BLL
             }
             else
             {
+
                 sql = "Select codRest" +
                       " from Usuario where nickname='" + nick + "'";
 
@@ -379,16 +383,42 @@ namespace BLL
             }
         }
 
+        public DataSet cargar_lista_unidadMedida()
+        {
+            conexion = cls_DAL.trae_conexion("Progra4", ref mensaje_error, ref numero_error);
+            if (conexion == null)
+            {
+                MessageBox.Show(mensaje_error, "Error al obtener cadena de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+            else
+            {
+                sql = "Select codMedida,unidadMedida from UnidadesMedida Order by unidadMedida";
+
+                ds = cls_DAL.ejecuta_dataset(conexion, sql, false, ref mensaje_error, ref numero_error);
+                if (numero_error != 0)
+                {
+                    MessageBox.Show(mensaje_error, "Error al cargar las unidades de medida", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return null;
+                }
+                else
+                {
+                    return ds;
+                }
+            }
+        }
+
         public void guardar_imagen()
         {
             conexion = cls_DAL.trae_conexion("Progra4", ref mensaje_error, ref numero_error);
             if (conexion == null)
             {
                 MessageBox.Show(mensaje_error, "Error al obtener cadena de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
             else
             {
-                sql = "Update Especiales set imagen=@img Where codEspeciales='" + _codEspeciales + "'";
+                sql = "Update Buffeta set imagen=@img Where codBuffet='" + _codBuffet + "'";
                 cls_DAL.conectar(conexion, ref mensaje_error, ref numero_error);
                 cls_DAL.guardar_imagen(conexion, sql, _imagen, ref mensaje_error, ref numero_error);
                 cls_DAL.desconectar(conexion, ref mensaje_error, ref numero_error);

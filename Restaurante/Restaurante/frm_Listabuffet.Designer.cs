@@ -36,17 +36,17 @@
             this.b_cancelar = new System.Windows.Forms.Button();
             this.b_aceptar = new System.Windows.Forms.Button();
             this.dgv_buffet = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.b_refrescar = new System.Windows.Forms.Button();
             this.b_borrar = new System.Windows.Forms.Button();
             this.b_agregar = new System.Windows.Forms.Button();
             this.b_eliminar = new System.Windows.Forms.Button();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_buffet)).BeginInit();
             this.panel1.SuspendLayout();
@@ -106,6 +106,7 @@
             this.b_cancelar.Size = new System.Drawing.Size(52, 43);
             this.b_cancelar.TabIndex = 5;
             this.b_cancelar.UseVisualStyleBackColor = true;
+            this.b_cancelar.Click += new System.EventHandler(this.b_cancelar_Click);
             // 
             // b_aceptar
             // 
@@ -115,9 +116,12 @@
             this.b_aceptar.Size = new System.Drawing.Size(52, 47);
             this.b_aceptar.TabIndex = 3;
             this.b_aceptar.UseVisualStyleBackColor = true;
+            this.b_aceptar.Click += new System.EventHandler(this.b_aceptar_Click);
             // 
             // dgv_buffet
             // 
+            this.dgv_buffet.AllowUserToAddRows = false;
+            this.dgv_buffet.AllowUserToDeleteRows = false;
             this.dgv_buffet.BackgroundColor = System.Drawing.Color.White;
             this.dgv_buffet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_buffet.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -127,34 +131,13 @@
             this.Column4,
             this.Column5});
             this.dgv_buffet.Location = new System.Drawing.Point(171, 123);
+            this.dgv_buffet.MultiSelect = false;
             this.dgv_buffet.Name = "dgv_buffet";
+            this.dgv_buffet.ReadOnly = true;
+            this.dgv_buffet.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_buffet.Size = new System.Drawing.Size(511, 253);
             this.dgv_buffet.TabIndex = 8;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Codigo";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Nombre";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Precio";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Tipo";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Unidad de medida";
-            this.Column5.Name = "Column5";
+            this.dgv_buffet.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_buffet_CellDoubleClick);
             // 
             // panel1
             // 
@@ -182,6 +165,7 @@
             this.b_refrescar.Size = new System.Drawing.Size(51, 43);
             this.b_refrescar.TabIndex = 91;
             this.b_refrescar.UseVisualStyleBackColor = true;
+            this.b_refrescar.Click += new System.EventHandler(this.b_refrescar_Click);
             // 
             // b_borrar
             // 
@@ -191,6 +175,7 @@
             this.b_borrar.Size = new System.Drawing.Size(51, 47);
             this.b_borrar.TabIndex = 92;
             this.b_borrar.UseVisualStyleBackColor = true;
+            this.b_borrar.Click += new System.EventHandler(this.b_borrar_Click);
             // 
             // b_agregar
             // 
@@ -200,6 +185,7 @@
             this.b_agregar.Size = new System.Drawing.Size(51, 42);
             this.b_agregar.TabIndex = 93;
             this.b_agregar.UseVisualStyleBackColor = true;
+            this.b_agregar.Click += new System.EventHandler(this.b_agregar_Click);
             // 
             // b_eliminar
             // 
@@ -209,6 +195,42 @@
             this.b_eliminar.Size = new System.Drawing.Size(53, 39);
             this.b_eliminar.TabIndex = 94;
             this.b_eliminar.UseVisualStyleBackColor = true;
+            this.b_eliminar.Click += new System.EventHandler(this.b_eliminar_Click);
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "codBuffet";
+            this.Column1.HeaderText = "Codigo";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "nombre";
+            this.Column2.HeaderText = "Nombre";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "precio";
+            this.Column3.HeaderText = "Precio";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "tipo";
+            this.Column4.HeaderText = "Tipo";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "nomMedida";
+            this.Column5.HeaderText = "Unidad de medida";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
             // 
             // frm_Listabuffet
             // 
@@ -227,6 +249,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "frm_Listabuffet";
             this.Text = "Lista de comida estilo buffet";
+            this.Load += new System.EventHandler(this.frm_Listabuffet_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_buffet)).EndInit();
@@ -246,16 +269,16 @@
         private System.Windows.Forms.Button b_aceptar;
         private System.Windows.Forms.Button b_cancelar;
         private System.Windows.Forms.DataGridView dgv_buffet;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button b_refrescar;
         private System.Windows.Forms.Button b_borrar;
         private System.Windows.Forms.Button b_agregar;
         private System.Windows.Forms.Button b_eliminar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
     }
 }
