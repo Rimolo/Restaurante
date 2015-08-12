@@ -30,6 +30,12 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Columna3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txt_restaurante = new System.Windows.Forms.TextBox();
@@ -45,12 +51,6 @@
             this.b_aceptar = new System.Windows.Forms.Button();
             this.b_mas = new System.Windows.Forms.Button();
             this.b_menos = new System.Windows.Forms.Button();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Columna3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -84,7 +84,49 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(573, 253);
             this.dataGridView1.TabIndex = 14;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "codLicor";
+            this.Column1.HeaderText = "Codigo";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "nombre";
+            this.Column2.HeaderText = "Nombre";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Cantidad3
+            // 
+            this.Cantidad3.DataPropertyName = "cantidad";
+            this.Cantidad3.HeaderText = "Cantidad";
+            this.Cantidad3.Name = "Cantidad3";
+            this.Cantidad3.ReadOnly = true;
+            // 
+            // Columna3
+            // 
+            this.Columna3.DataPropertyName = "precioUnitario";
+            this.Columna3.HeaderText = "Precio Unitario";
+            this.Columna3.Name = "Columna3";
+            this.Columna3.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "precioBotella";
+            this.Column5.HeaderText = "Precio Botella";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "nomPais";
+            this.Column6.HeaderText = "Nacionalidad";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
             // 
             // groupBox1
             // 
@@ -226,48 +268,6 @@
             this.b_menos.TabIndex = 21;
             this.b_menos.UseVisualStyleBackColor = true;
             this.b_menos.Click += new System.EventHandler(this.b_menos_Click);
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "codLicor";
-            this.Column1.HeaderText = "Codigo";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "nombre";
-            this.Column2.HeaderText = "Nombre";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Cantidad3
-            // 
-            this.Cantidad3.DataPropertyName = "cantidad";
-            this.Cantidad3.HeaderText = "Cantidad";
-            this.Cantidad3.Name = "Cantidad3";
-            this.Cantidad3.ReadOnly = true;
-            // 
-            // Columna3
-            // 
-            this.Columna3.DataPropertyName = "precioUnitario";
-            this.Columna3.HeaderText = "Precio Unitario";
-            this.Columna3.Name = "Columna3";
-            this.Columna3.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "precioBotella";
-            this.Column5.HeaderText = "Precio Botella";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "nomPais";
-            this.Column6.HeaderText = "Nacionalidad";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
             // 
             // frmListaLicores
             // 

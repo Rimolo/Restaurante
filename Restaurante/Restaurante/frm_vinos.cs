@@ -7,12 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 using BLL;
 
 namespace Restaurante
 {
     public partial class frm_vinos : Form
     {
+        bool hayImagen = false;
         Vinos obj_vinos = new Vinos();
 
         private string _nick;
@@ -53,6 +55,8 @@ namespace Restaurante
             txt_cantidad.Text = "";
             cb_nacionalidad.Text = "";
             cb_marca.Text = "";
+            pb_foto.Image = null;
+            hayImagen = false;
         }
 
         private void frm_vinos_Load(object sender, EventArgs e)
@@ -130,9 +134,21 @@ namespace Restaurante
             obj_vinos.cosecha = Convert.ToInt32(txt_año.Text);
             obj_vinos.codPais = cb_nacionalidad.SelectedValue.ToString();
             obj_vinos.codMarca = cb_marca.SelectedValue.ToString();
+            if (hayImagen)
+            {
+                MemoryStream ms = new MemoryStream();
+                pb_foto.Image.Save(ms, pb_foto.Image.RawFormat);
+                byte[] a = ms.GetBuffer();
+                ms.Close();
+                obj_vinos.imagen = a;
+            }
 
             if (error = obj_vinos.guardar_Vinos(_accion, txt_restaurante.Text) && _accion != "Editar")
             {
+                if (hayImagen)
+                {
+                    obj_vinos.guardar_imagen();
+                }
                 int valor = 0;
                 try
                 {
@@ -174,7 +190,17 @@ namespace Restaurante
 
         private void b_foto_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                OpenFileDialog f = new OpenFileDialog();
+                if (f.ShowDialog() == DialogResult.OK)
+                {
+                    pb_foto.Image = Image.FromFile(f.FileName);
+                    pb_foto.SizeMode = PictureBoxSizeMode.StretchImage;
+                    hayImagen = true;
+                }
+            }
+            catch (Exception) { }
         }
 
         private void mostar_Restaurante()
@@ -232,6 +258,13 @@ namespace Restaurante
                 txt_cantidad.Text = obj_vinos.cantidad.ToString();
                 txt_año.Text = obj_vinos.cosecha.ToString();
                 txt_descripcion.Text = obj_vinos.descripcion;
+                if (!string.IsNullOrEmpty((obj_vinos.imagen.ToString())))
+                {
+                    MemoryStream ms = new MemoryStream(obj_vinos.imagen);
+                    pb_foto.Image = Image.FromStream(ms);
+                    pb_foto.SizeMode = PictureBoxSizeMode.StretchImage;
+                    ms.Close();
+                }
             }
         }
 

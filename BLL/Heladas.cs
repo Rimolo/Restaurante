@@ -163,7 +163,8 @@ namespace BLL
                         " nombre=@nombre," +
                         " descripcion=@descripcion," +
                         " precio=@precio," +
-                        " ingredientes=@ingredientes" +
+                        " ingredientes=@ingredientes," +
+                        " imagen=null" +
                         " where codBebidaHel=@codBebidaHel";
                 }
                 ParamStruct[] parametros = new ParamStruct[6];
@@ -274,7 +275,14 @@ namespace BLL
                         _precio = Convert.ToDecimal(ds.Tables[0].Rows[0]["precio"]);
                         _descripcion = ds.Tables[0].Rows[0]["descripcion"].ToString();
                         _codRestaurante= ds.Tables[0].Rows[0]["nomrest"].ToString();
-                        // _imagen = (byte[])(ds.Tables[0].Rows[0]["imagen"]);
+                        if (!string.IsNullOrEmpty(ds.Tables[0].Rows[0]["imagen"].ToString()))
+                        {
+                            _imagen = (byte[])(ds.Tables[0].Rows[0]["imagen"]);
+                        }
+                        else
+                        {
+                            _imagen = null;
+                        }
 
                     }
                     else

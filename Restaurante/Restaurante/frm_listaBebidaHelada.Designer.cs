@@ -34,6 +34,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dgv_bebidaHelada = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.b_aceptar = new System.Windows.Forms.Button();
@@ -42,10 +46,6 @@
             this.b_borrar = new System.Windows.Forms.Button();
             this.b_agregar = new System.Windows.Forms.Button();
             this.b_eliminar = new System.Windows.Forms.Button();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_bebidaHelada)).BeginInit();
             this.panel1.SuspendLayout();
@@ -116,7 +116,35 @@
             this.dgv_bebidaHelada.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_bebidaHelada.Size = new System.Drawing.Size(446, 253);
             this.dgv_bebidaHelada.TabIndex = 13;
-            this.dgv_bebidaHelada.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_bebidaHelada_CellContentClick);
+            this.dgv_bebidaHelada.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_bebidaHelada_CellDoubleClick);
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "codBebidaHel";
+            this.Column1.HeaderText = "Codigo";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "nombre";
+            this.Column2.HeaderText = "Nombre";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "precio";
+            this.Column3.HeaderText = "Precio";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "nomrest";
+            this.Column4.HeaderText = "Restaurante";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
             // 
             // panel1
             // 
@@ -195,34 +223,6 @@
             this.b_eliminar.TabIndex = 76;
             this.b_eliminar.UseVisualStyleBackColor = true;
             this.b_eliminar.Click += new System.EventHandler(this.b_eliminar_Click);
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "codBebidaHel";
-            this.Column1.HeaderText = "Codigo";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "nombre";
-            this.Column2.HeaderText = "Nombre";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "precio";
-            this.Column3.HeaderText = "Precio";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "nomrest";
-            this.Column4.HeaderText = "Restaurante";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
             // 
             // frm_listaBebidaHelada
             // 

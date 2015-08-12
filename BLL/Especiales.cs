@@ -8,16 +8,16 @@ using System.Windows.Forms;
 
 namespace BLL
 {
-    public class Gaseosas
+    public class Especiales
     {
         #region propiedades
 
-        private string _codBebidaGas;
+        private string _codEspeciales;
 
-        public string codBebidaGas
+        public string codEspeciales
         {
-            get { return _codBebidaGas; }
-            set { _codBebidaGas = value; }
+            get { return _codEspeciales; }
+            set { _codEspeciales = value; }
         }
         private string _nombre;
 
@@ -26,19 +26,12 @@ namespace BLL
             get { return _nombre; }
             set { _nombre = value; }
         }
-        private string _codMarca;
+        private string _ingredientes;
 
-        public string codMarca
+        public string ingredientes
         {
-            get { return _codMarca; }
-            set { _codMarca = value; }
-        }
-        private string _codPais;
-
-        public string codPais
-        {
-            get { return _codPais; }
-            set { _codPais = value; }
+            get { return _ingredientes; }
+            set { _ingredientes = value; }
         }
         private decimal _precio;
 
@@ -54,19 +47,12 @@ namespace BLL
             get { return _codRestaurante; }
             set { _codRestaurante = value; }
         }
-        private int _cantidad;
+        private string _detalle;
 
-        public int cantidad
+        public string detalle
         {
-            get { return _cantidad; }
-            set { _cantidad = value; }
-        }
-        private string _descripcion;
-
-        public string descripcion
-        {
-            get { return _descripcion; }
-            set { _descripcion = value; }
+            get { return _detalle; }
+            set { _detalle = value; }
         }
         private byte[] _imagen;
 
@@ -88,7 +74,7 @@ namespace BLL
 
         #region metodos
 
-        public DataSet carga_Gaseosas_especificos()
+        public DataSet carga_especiales_especificos()
         {
             conexion = cls_DAL.trae_conexion("Progra4", ref mensaje_error, ref numero_error);
             if (conexion == null)
@@ -98,33 +84,26 @@ namespace BLL
             }
             else
             {
-                string sql1 = "Select Bg.codBebidaGas, Bg.nombre, Bg.precio, R.nombre as nomrest from BebidaGaseosa Bg ";
+                string sql1 = "Select codEspeciales, nombre, ingredientes, detalle, precio from Especiales ";
                 string condicion = "Where ";
-                string join = "INNER JOIN Restaurante R ON Bg.codRestaurante = R.codRestaurante ";
-                if (!string.IsNullOrEmpty(_codBebidaGas))
+                if (!string.IsNullOrEmpty(_codEspeciales))
                 {
-                    sql1 += join + condicion + "Bg.codBebidaGas ='" + _codBebidaGas + "'";
+                    sql1 += condicion + "codEspeciales ='" + _codEspeciales + "'";
                     condicion = "and ";
                 }
                 else
                 {
                     if (!string.IsNullOrEmpty(_nombre))
                     {
-                        sql1 += join +  condicion + "Bg.nombre ='" + _nombre + "'";
-                        condicion = "and ";
-                    }
-                    if (!string.IsNullOrEmpty(_codRestaurante))
-                    {
-                        sql1 += join + condicion + "R.nombre ='" + _codRestaurante + "'";
-                        condicion = "and ";
+                        sql1 += condicion + "nombre ='" + _nombre + "'";
                     }
                 }
-                sql = sql1 + " Order by Bg.codBebidaGas";
+                sql = sql1 + " Order by codEspeciales";
 
                 ds = cls_DAL.ejecuta_dataset(conexion, sql, false, ref mensaje_error, ref numero_error);
                 if (numero_error != 0)
                 {
-                    MessageBox.Show(mensaje_error, "Error al cargar las Bebidas Gaseosas", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(mensaje_error, "Error al cargar la informacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return null;
                 }
                 else
@@ -134,7 +113,7 @@ namespace BLL
             }
         }
 
-        public DataSet carga_Gaseosas()
+        public DataSet carga_Especiales()
         {
             conexion = cls_DAL.trae_conexion("Progra4", ref mensaje_error, ref numero_error);
             if (conexion == null)
@@ -144,12 +123,12 @@ namespace BLL
             }
             else
             {
-                sql = "Select Bg.codBebidaGas, Bg.nombre, Bg.precio, R.nombre as nomrest from BebidaGaseosa Bg INNER JOIN Restaurante R ON Bg.codRestaurante = R.codRestaurante Order by codBebidaGas";
+                sql = "Select codEspeciales, nombre, precio, detalle, ingredientes from Especiales Order by codEspeciales";
 
                 ds = cls_DAL.ejecuta_dataset(conexion, sql, false, ref mensaje_error, ref numero_error);
                 if (numero_error != 0)
                 {
-                    MessageBox.Show(mensaje_error, "Error al cargar las Bebidas Gaseosas", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(mensaje_error, "Error al cargar la informacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return null;
                 }
                 else
@@ -159,7 +138,7 @@ namespace BLL
             }
         }
 
-        public bool guardar_Gaseosas(string accion, string Restaurante)
+        public bool guardar_Especiales(string accion, string nick)
         {
             conexion = cls_DAL.trae_conexion("Progra4", ref mensaje_error, ref numero_error);
             string codRest = "";
@@ -173,36 +152,32 @@ namespace BLL
                 if (accion.Equals("Insertar"))
                 {
                     DataSet ds;
-                    ds = retorna_Cod_Restaurante(Restaurante);
-                    codRest = Convert.ToString(ds.Tables[0].Rows[0]["codRestaurante"]);
-                    sql = "Insert into BebidaGaseosa values(@codBebidaGas, @nombre, @codMarca, @codPais, @precio, @codRestaurante, @cantidad, @descripcion, null)";
+                    ds = retorna_codigo_Restaurante(nick); ;
+                    codRest = Convert.ToString(ds.Tables[0].Rows[0]["codRest"]);
+                    sql = "Insert into Especiales values(@codEspeciales, @nombre, @ingredientes, @precio, @detalle, @CodRestaurante, null)";
                 }
                 else
                 {
-                    sql = "Update BebidaGaseosa SET" +
+                    sql = "Update Especiales SET" +
                         " nombre=@nombre," +
-                        " codMarca=@codMarca," +
-                        " codPais=@codPais," +
-                        " precio=@precio,"+
-                        " cantidad=@cantidad," +
-                        " descripcion=@descripcion," +
+                        " detalle=@detalle," +
+                        " precio=@precio," +
+                        " ingredientes=@ingredientes," +
                         " imagen=null" +
-                        " where codBebidaGas=@codBebidaGas";
+                        " where codEspeciales=@codEspeciales";
                 }
-                ParamStruct[] parametros = new ParamStruct[8];
-                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@codBebidaGas", SqlDbType.VarChar, _codBebidaGas);
+                ParamStruct[] parametros = new ParamStruct[6];
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@codEspeciales", SqlDbType.VarChar, _codEspeciales);
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 1, "@nombre", SqlDbType.VarChar, _nombre);
-                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 2, "@codMarca", SqlDbType.VarChar, _codMarca);
-                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 3, "@codPais", SqlDbType.VarChar, _codPais);
-                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 4, "@precio", SqlDbType.Money, _precio);
-                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 5, "@codRestaurante", SqlDbType.VarChar, codRest);
-                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 6, "@cantidad", SqlDbType.Int, _cantidad);
-                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 7, "@descripcion", SqlDbType.VarChar, _descripcion);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 2, "@ingredientes", SqlDbType.VarChar, _ingredientes);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 3, "@precio", SqlDbType.Money, _precio);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 4, "@detalle", SqlDbType.VarChar, _detalle);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 5, "@CodRestaurante", SqlDbType.VarChar, codRest);                
                 cls_DAL.conectar(conexion, ref mensaje_error, ref numero_error);
                 cls_DAL.ejecuta_sqlcommand(conexion, sql, false, parametros, ref mensaje_error, ref numero_error);
                 if (numero_error != 0)
                 {
-                    MessageBox.Show(mensaje_error, "Error al guardar el producto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(mensaje_error, "Error al guardar el especial", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     cls_DAL.desconectar(conexion, ref mensaje_error, ref numero_error);
                     return false;
                 }
@@ -214,33 +189,7 @@ namespace BLL
             }
         }
 
-        public DataSet retorna_Cod_Restaurante(string nombre)
-        {
-            conexion = cls_DAL.trae_conexion("Progra4", ref mensaje_error, ref numero_error);
-            if (conexion == null)
-            {
-                MessageBox.Show(mensaje_error, "Error al obtener cadena de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return null;
-            }
-            else
-            {                
-                sql = "Select codRestaurante from Restaurante where nombre='"+ nombre +"'";
-
-                ds = cls_DAL.ejecuta_dataset(conexion, sql, false, ref mensaje_error, ref numero_error);
-
-                if (numero_error != 0)
-                {
-                    MessageBox.Show(mensaje_error, "Error al guardar el codigo del Restaurante", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return null;
-                }
-                else
-                {
-                    return ds;
-                }
-            }
-        }
-
-        public bool eliminar_Gaseosas(string codGas)
+        public bool eliminar_Especiales(string codRestaurente)
         {
             conexion = cls_DAL.trae_conexion("Progra4", ref mensaje_error, ref numero_error);
             if (conexion == null)
@@ -250,15 +199,15 @@ namespace BLL
             }
             else
             {
-                sql = "Delete from BebidaGaseosa where codBebidaGas = @codBebidaGas";
+                sql = "Delete from Especiales where codEspeciales = @codEspeciales";
 
-                ParamStruct[] parametros = new ParamStruct[1];
-                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@codBebidaGas", SqlDbType.VarChar, codGas);
+                ParamStruct[] parametros = new ParamStruct[1];               
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@codEspeciales", SqlDbType.VarChar, codEspeciales);
                 cls_DAL.conectar(conexion, ref mensaje_error, ref numero_error);
                 cls_DAL.ejecuta_sqlcommand(conexion, sql, false, parametros, ref mensaje_error, ref numero_error);
                 if (numero_error != 0)
                 {
-                    MessageBox.Show(mensaje_error, "Error al eliminar la Bebida Gaseosa", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(mensaje_error, "Error al eliminar el especial", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     cls_DAL.desconectar(conexion, ref mensaje_error, ref numero_error);
                     return false;
                 }
@@ -270,7 +219,7 @@ namespace BLL
             }
         }
 
-        public void carga_info_Gaseosas(string codGas)
+        public void carga_info_Especiales(string codEsp)
         {
             conexion = cls_DAL.trae_conexion("Progra4", ref mensaje_error, ref numero_error);
             if (conexion == null)
@@ -280,14 +229,14 @@ namespace BLL
             }
             else
             {
-                sql = "Select Bg.nombre, M.nombre as nomMarca, P.nombre as nomPais, R.nombre as nomrest, Bg.precio, Bg.cantidad, Bg.descripcion, Bg.imagen" +
-                      " from BebidaGaseosa Bg INNER JOIN Restaurante R ON Bg.codRestaurante = R.codRestaurante INNER JOIN Pais P ON Bg.codPais = P.codigoPais INNER JOIN Marcas M ON Bg.codMarca = M.codMarca where codBebidaGas=@codGas";
+                sql = "Select codEspeciales, nombre, ingredientes, detalle, precio, imagen" +
+                      " from Especiales where codEspeciales = @codEsp";
                 ParamStruct[] parametros = new ParamStruct[1];
-                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@codGas", SqlDbType.VarChar, codGas);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@codEsp", SqlDbType.VarChar, codEsp);
                 ds = cls_DAL.ejecuta_dataset(conexion, sql, false, parametros, ref mensaje_error, ref numero_error);
                 if (ds == null)
                 {
-                    MessageBox.Show(mensaje_error, "Error al obtener la informacion del producto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(mensaje_error, "Error al obtener la informacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     _nombre = "Error";
                 }
                 else
@@ -295,12 +244,9 @@ namespace BLL
                     if (ds.Tables[0].Rows.Count > 0)
                     {                        
                         _nombre = ds.Tables[0].Rows[0]["nombre"].ToString();
-                        _codMarca = ds.Tables[0].Rows[0]["nomMarca"].ToString();
-                        _codPais = ds.Tables[0].Rows[0]["nomPais"].ToString();
-                        _precio = Convert.ToDecimal(ds.Tables[0].Rows[0]["precio"]);                       
-                        _codRestaurante= ds.Tables[0].Rows[0]["nomrest"].ToString();
-                        _cantidad = Convert.ToInt32(ds.Tables[0].Rows[0]["cantidad"]);
-                        _descripcion = ds.Tables[0].Rows[0]["descripcion"].ToString();
+                        _ingredientes = ds.Tables[0].Rows[0]["ingredientes"].ToString();
+                        _precio = Convert.ToDecimal(ds.Tables[0].Rows[0]["precio"]);
+                        _detalle = ds.Tables[0].Rows[0]["detalle"].ToString();
                         if (!string.IsNullOrEmpty(ds.Tables[0].Rows[0]["imagen"].ToString()))
                         {
                             _imagen = (byte[])(ds.Tables[0].Rows[0]["imagen"]);
@@ -318,13 +264,10 @@ namespace BLL
                 }
 
             }
-        }
-
-        
+        }        
 
         public DataSet retorna_consecutivo_valor()
         {
-
             conexion = cls_DAL.trae_conexion("Progra4", ref mensaje_error, ref numero_error);
             if (conexion == null)
             {
@@ -333,7 +276,7 @@ namespace BLL
             }
             else
             {
-                sql = "Select valor From Consecutivos WHERE tipo='Bebidas Gaseosas'";
+                sql = "Select valor From Consecutivos WHERE tipo='Especiales'";
 
                 ds = cls_DAL.ejecuta_dataset(conexion, sql, false, ref mensaje_error, ref numero_error);
 
@@ -360,7 +303,7 @@ namespace BLL
             }
             else
             {
-                sql = "Select prefijo From Consecutivos WHERE tipo='Bebidas Gaseosas'";
+                sql = "Select prefijo From Consecutivos WHERE tipo='Especiales'";
 
                 ds = cls_DAL.ejecuta_dataset(conexion, sql, false, ref mensaje_error, ref numero_error);
 
@@ -371,8 +314,6 @@ namespace BLL
                 }
                 else
                 {
-
-
                     return ds;
                 }
             }
@@ -389,7 +330,7 @@ namespace BLL
             else
             {
 
-                sql = "Update Consecutivos SET valor=@valor WHERE tipo='Bebidas Gaseosas'";
+                sql = "Update Consecutivos SET valor=@valor WHERE tipo='Especiales'";
 
                 ParamStruct[] parametros = new ParamStruct[1];
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@valor", SqlDbType.Int, id);
@@ -411,7 +352,7 @@ namespace BLL
             }
         }
 
-        public DataSet retorna_nombre_Restaurante(string nick)
+        public DataSet retorna_codigo_Restaurante(string nick)
         {
             conexion = cls_DAL.trae_conexion("Progra4", ref mensaje_error, ref numero_error);
             if (conexion == null)
@@ -421,9 +362,8 @@ namespace BLL
             }
             else
             {
-
-                sql = "Select R.nombre" +
-                      " from Restaurante R INNER JOIN Usuario U ON R.codRestaurante = U.codRest where U.nickname='" + nick + "'";
+                sql = "Select codRest" +
+                      " from Usuario where nickname='" + nick + "'";
 
                 ds = cls_DAL.ejecuta_dataset(conexion, sql, false, ref mensaje_error, ref numero_error);
 
@@ -439,67 +379,16 @@ namespace BLL
             }
         }
 
-        public DataSet cargar_lista_nacionalidad()
-        {
-            conexion = cls_DAL.trae_conexion("Progra4", ref mensaje_error, ref numero_error);
-            if (conexion == null)
-            {
-                MessageBox.Show(mensaje_error, "Error al obtener cadena de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return null;
-            }
-            else
-            {
-                sql = "Select codigoPais,nombre from Pais Order by nombre";
-
-                ds = cls_DAL.ejecuta_dataset(conexion, sql, false, ref mensaje_error, ref numero_error);
-                if (numero_error != 0)
-                {
-                    MessageBox.Show(mensaje_error, "Error al cargar los paises", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return null;
-                }
-                else
-                {
-                    return ds;
-                }
-            }
-        }
-
-        public DataSet cargar_lista_Marcas()
-        {
-            conexion = cls_DAL.trae_conexion("Progra4", ref mensaje_error, ref numero_error);
-            if (conexion == null)
-            {
-                MessageBox.Show(mensaje_error, "Error al obtener cadena de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return null;
-            }
-            else
-            {
-                sql = "Select codMarca,nombre from Marcas Order by nombre";
-
-                ds = cls_DAL.ejecuta_dataset(conexion, sql, false, ref mensaje_error, ref numero_error);
-                if (numero_error != 0)
-                {
-                    MessageBox.Show(mensaje_error, "Error al cargar las Marcas", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return null;
-                }
-                else
-                {
-                    return ds;
-                }
-            }
-        }
-
         public void guardar_imagen()
         {
             conexion = cls_DAL.trae_conexion("Progra4", ref mensaje_error, ref numero_error);
             if (conexion == null)
             {
                 MessageBox.Show(mensaje_error, "Error al obtener cadena de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
             }
             else
             {
-                sql = "Update BebidaGaseosa set imagen=@img Where codBebidaGas='" + _codBebidaGas + "'";
+                sql = "Update Especiales set imagen=@img Where codEspeciales='" + _codEspeciales + "'";
                 cls_DAL.conectar(conexion, ref mensaje_error, ref numero_error);
                 cls_DAL.guardar_imagen(conexion, sql, _imagen, ref mensaje_error, ref numero_error);
                 cls_DAL.desconectar(conexion, ref mensaje_error, ref numero_error);

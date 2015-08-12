@@ -100,7 +100,7 @@
             "Marina",
             "Vegetal",
             "Frutas",
-            "Mediterranea"});
+            "Comida Mediterráne"});
             this.cbo_tipoBuffet.Location = new System.Drawing.Point(72, 108);
             this.cbo_tipoBuffet.Name = "cbo_tipoBuffet";
             this.cbo_tipoBuffet.Size = new System.Drawing.Size(146, 21);
@@ -122,8 +122,10 @@
             // 
             // txt_codigoBuffet
             // 
+            this.txt_codigoBuffet.Enabled = false;
             this.txt_codigoBuffet.Location = new System.Drawing.Point(72, 16);
             this.txt_codigoBuffet.Name = "txt_codigoBuffet";
+            this.txt_codigoBuffet.ReadOnly = true;
             this.txt_codigoBuffet.Size = new System.Drawing.Size(146, 20);
             this.txt_codigoBuffet.TabIndex = 6;
             // 
@@ -189,6 +191,7 @@
             this.b_buscaFoto.Size = new System.Drawing.Size(49, 44);
             this.b_buscaFoto.TabIndex = 80;
             this.b_buscaFoto.UseVisualStyleBackColor = true;
+            this.b_buscaFoto.Click += new System.EventHandler(this.b_buscaFoto_Click);
             // 
             // b_borrar
             // 
@@ -198,6 +201,7 @@
             this.b_borrar.Size = new System.Drawing.Size(56, 47);
             this.b_borrar.TabIndex = 70;
             this.b_borrar.UseVisualStyleBackColor = true;
+            this.b_borrar.Click += new System.EventHandler(this.b_borrar_Click);
             // 
             // pic_foto
             // 
@@ -216,6 +220,7 @@
             this.b_cancelar.Size = new System.Drawing.Size(52, 47);
             this.b_cancelar.TabIndex = 6;
             this.b_cancelar.UseVisualStyleBackColor = true;
+            this.b_cancelar.Click += new System.EventHandler(this.b_cancelar_Click);
             // 
             // b_aceptar
             // 
@@ -225,6 +230,7 @@
             this.b_aceptar.Size = new System.Drawing.Size(52, 47);
             this.b_aceptar.TabIndex = 4;
             this.b_aceptar.UseVisualStyleBackColor = true;
+            this.b_aceptar.Click += new System.EventHandler(this.b_aceptar_Click);
             // 
             // panel1
             // 
@@ -260,6 +266,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "frm_comidaBuffet";
             this.Text = "Comida Buffet";
+            this.Load += new System.EventHandler(this.frm_comidaBuffet_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_foto)).EndInit();

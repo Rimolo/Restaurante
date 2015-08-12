@@ -30,12 +30,13 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.txt_foto = new System.Windows.Forms.TextBox();
             this.b_foto = new System.Windows.Forms.Button();
             this.b_borrar = new System.Windows.Forms.Button();
             this.b_aceptar = new System.Windows.Forms.Button();
             this.b_cancelar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txt_detalle = new System.Windows.Forms.TextBox();
+            this.txt_ingredientes = new System.Windows.Forms.TextBox();
             this.txt_precio = new System.Windows.Forms.TextBox();
             this.txt_nombre = new System.Windows.Forms.TextBox();
             this.txt_codigo = new System.Windows.Forms.TextBox();
@@ -44,9 +45,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txt_ingredientes = new System.Windows.Forms.TextBox();
-            this.txt_detalle = new System.Windows.Forms.TextBox();
+            this.pb_foto = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_foto)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -63,27 +64,19 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(494, 39);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(78, 13);
+            this.label7.Size = new System.Drawing.Size(88, 13);
             this.label7.TabIndex = 3;
-            this.label7.Text = "Foto del Platillo";
-            // 
-            // txt_foto
-            // 
-            this.txt_foto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.txt_foto.Location = new System.Drawing.Point(484, 55);
-            this.txt_foto.Multiline = true;
-            this.txt_foto.Name = "txt_foto";
-            this.txt_foto.Size = new System.Drawing.Size(100, 123);
-            this.txt_foto.TabIndex = 9;
+            this.label7.Text = "Foto del Especial";
             // 
             // b_foto
             // 
             this.b_foto.Image = global::Restaurante.Properties.Resources.Camara;
-            this.b_foto.Location = new System.Drawing.Point(497, 212);
+            this.b_foto.Location = new System.Drawing.Point(497, 214);
             this.b_foto.Name = "b_foto";
             this.b_foto.Size = new System.Drawing.Size(75, 64);
             this.b_foto.TabIndex = 10;
             this.b_foto.UseVisualStyleBackColor = true;
+            this.b_foto.Click += new System.EventHandler(this.b_foto_Click);
             // 
             // b_borrar
             // 
@@ -93,6 +86,7 @@
             this.b_borrar.Size = new System.Drawing.Size(52, 47);
             this.b_borrar.TabIndex = 11;
             this.b_borrar.UseVisualStyleBackColor = true;
+            this.b_borrar.Click += new System.EventHandler(this.b_borrar_Click);
             // 
             // b_aceptar
             // 
@@ -102,6 +96,7 @@
             this.b_aceptar.Size = new System.Drawing.Size(52, 47);
             this.b_aceptar.TabIndex = 12;
             this.b_aceptar.UseVisualStyleBackColor = true;
+            this.b_aceptar.Click += new System.EventHandler(this.b_aceptar_Click);
             // 
             // b_cancelar
             // 
@@ -111,6 +106,7 @@
             this.b_cancelar.Size = new System.Drawing.Size(52, 47);
             this.b_cancelar.TabIndex = 13;
             this.b_cancelar.UseVisualStyleBackColor = true;
+            this.b_cancelar.Click += new System.EventHandler(this.b_cancelar_Click);
             // 
             // groupBox1
             // 
@@ -131,6 +127,22 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Informacion de la Especialidad";
             // 
+            // txt_detalle
+            // 
+            this.txt_detalle.Location = new System.Drawing.Point(66, 214);
+            this.txt_detalle.Multiline = true;
+            this.txt_detalle.Name = "txt_detalle";
+            this.txt_detalle.Size = new System.Drawing.Size(166, 66);
+            this.txt_detalle.TabIndex = 10;
+            // 
+            // txt_ingredientes
+            // 
+            this.txt_ingredientes.Location = new System.Drawing.Point(72, 81);
+            this.txt_ingredientes.Multiline = true;
+            this.txt_ingredientes.Name = "txt_ingredientes";
+            this.txt_ingredientes.Size = new System.Drawing.Size(160, 59);
+            this.txt_ingredientes.TabIndex = 9;
+            // 
             // txt_precio
             // 
             this.txt_precio.Location = new System.Drawing.Point(66, 163);
@@ -147,8 +159,10 @@
             // 
             // txt_codigo
             // 
+            this.txt_codigo.Enabled = false;
             this.txt_codigo.Location = new System.Drawing.Point(72, 16);
             this.txt_codigo.Name = "txt_codigo";
+            this.txt_codigo.ReadOnly = true;
             this.txt_codigo.Size = new System.Drawing.Size(160, 20);
             this.txt_codigo.TabIndex = 6;
             // 
@@ -197,21 +211,13 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Codigo";
             // 
-            // txt_ingredientes
+            // pb_foto
             // 
-            this.txt_ingredientes.Location = new System.Drawing.Point(72, 81);
-            this.txt_ingredientes.Multiline = true;
-            this.txt_ingredientes.Name = "txt_ingredientes";
-            this.txt_ingredientes.Size = new System.Drawing.Size(160, 59);
-            this.txt_ingredientes.TabIndex = 9;
-            // 
-            // txt_detalle
-            // 
-            this.txt_detalle.Location = new System.Drawing.Point(66, 214);
-            this.txt_detalle.Multiline = true;
-            this.txt_detalle.Name = "txt_detalle";
-            this.txt_detalle.Size = new System.Drawing.Size(166, 66);
-            this.txt_detalle.TabIndex = 10;
+            this.pb_foto.Location = new System.Drawing.Point(470, 61);
+            this.pb_foto.Name = "pb_foto";
+            this.pb_foto.Size = new System.Drawing.Size(123, 127);
+            this.pb_foto.TabIndex = 15;
+            this.pb_foto.TabStop = false;
             // 
             // frm_especiales
             // 
@@ -219,18 +225,20 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(605, 363);
+            this.Controls.Add(this.pb_foto);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.b_cancelar);
             this.Controls.Add(this.b_aceptar);
             this.Controls.Add(this.b_borrar);
             this.Controls.Add(this.b_foto);
-            this.Controls.Add(this.txt_foto);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label1);
             this.Name = "frm_especiales";
             this.Text = "Especiales";
+            this.Load += new System.EventHandler(this.frm_especiales_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_foto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -240,7 +248,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txt_foto;
         private System.Windows.Forms.Button b_foto;
         private System.Windows.Forms.Button b_borrar;
         private System.Windows.Forms.Button b_aceptar;
@@ -256,5 +263,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox pb_foto;
     }
 }

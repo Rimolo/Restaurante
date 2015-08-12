@@ -236,9 +236,7 @@ namespace Restaurante
 
         private void cb_detalle_SelectedIndexChanged(object sender, EventArgs e)
         {
-            txt_simbologia.Text = txt_simbolo.Text + txt_unidad.Text[0];
-            
-            
+            txt_simbologia.Text = txt_simbolo.Text + txt_unidad.Text[0];          
         }
     }
 }

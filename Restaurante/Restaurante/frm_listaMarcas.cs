@@ -19,11 +19,6 @@ namespace Restaurante
         {
             InitializeComponent();
         }
-
-        private void frm_listaMarcas_Load(object sender, EventArgs e)
-        {
-            this.carga_lista_marcas();
-        }
         private void b_refrescar_Click(object sender, EventArgs e)
         {
             this.carga_lista_marcas();
@@ -103,9 +98,15 @@ namespace Restaurante
             }
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+            if (e.RowIndex > -1)
+            {
+                frm_marcas marcas = new frm_marcas();
+                marcas.accion = "Editar";
+                marcas.codigo = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString().Replace(" ", "");
+                marcas.ShowDialog();
+            }
         }
 
         private void carga_lista_marcas()
@@ -125,18 +126,7 @@ namespace Restaurante
 
         private void frm_listaMarcas_Load_1(object sender, EventArgs e)
         {
-
-        }
-
-        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex > -1)
-            {
-                frm_marcas marcas = new frm_marcas();
-                marcas.accion = "Editar";
-                marcas.codigo = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString().Replace(" ", "");
-                marcas.ShowDialog();
-            }
-        }
+            this.carga_lista_marcas();
+        }        
     }
 }

@@ -89,17 +89,17 @@ namespace BLL
                 string join = "INNER JOIN Restaurante R ON Bc.codRestaurante = R.codRestaurante ";
                 if (!string.IsNullOrEmpty(_codBebidaCal))
                 {
-                    sql1 += join + condicion + "codBebidaCaliente ='" + _codBebidaCal + "'";
+                    sql1 += join + condicion + "Bc.codBebidaCaliente ='" + _codBebidaCal + "'";
                     condicion = "and ";
                 }
                 else
                 {
                     if (!string.IsNullOrEmpty(_nombre))
                     {
-                        sql1 += join + condicion + "nombre ='" + _nombre + "'";
+                        sql1 += join + condicion + "Bc.nombre ='" + _nombre + "'";
                     }
                 }
-                sql = sql1 + " Order by codBebidaCal";
+                sql = sql1 + " Order by Bc.codBebidaCal";
 
                 ds = cls_DAL.ejecuta_dataset(conexion, sql, false, ref mensaje_error, ref numero_error);
                 if (numero_error != 0)
@@ -163,7 +163,8 @@ namespace BLL
                         " nombre=@nombre," +
                         " descripcion=@descripcion," +
                         " precio=@precio," +
-                        " ingredientes=@ingredientes" +
+                        " ingredientes=@ingredientes," +
+                        " imagen=null" +
                         " where codBebidaCal=@codBebidaCal";
                 }
                 ParamStruct[] parametros = new ParamStruct[6];
@@ -227,8 +228,7 @@ namespace BLL
             {
                 sql = "Delete from BebidaCaliente where codBebidaCal = @codBebidaCal";
 
-                ParamStruct[] parametros = new ParamStruct[1];
-                sql = "Delete from BebidaCaliente where codBebidaCal = '" + codRestaurante + "'";
+                ParamStruct[] parametros = new ParamStruct[1];               
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@codBebidaCal", SqlDbType.VarChar, codBebidaCal);
                 cls_DAL.conectar(conexion, ref mensaje_error, ref numero_error);
                 cls_DAL.ejecuta_sqlcommand(conexion, sql, false, parametros, ref mensaje_error, ref numero_error);
@@ -275,7 +275,14 @@ namespace BLL
                         _precio = Convert.ToDecimal(ds.Tables[0].Rows[0]["precio"]);
                         _descripcion = ds.Tables[0].Rows[0]["descripcion"].ToString();
                         _codRestaurante = ds.Tables[0].Rows[0]["nomrest"].ToString();
-                        // _imagen = (byte[])(ds.Tables[0].Rows[0]["imagen"]);
+                        if (!string.IsNullOrEmpty(ds.Tables[0].Rows[0]["imagen"].ToString()))
+                        {
+                            _imagen = (byte[])(ds.Tables[0].Rows[0]["imagen"]);
+                        }
+                        else
+                        {
+                            _imagen = null;
+                        }
 
                     }
                     else

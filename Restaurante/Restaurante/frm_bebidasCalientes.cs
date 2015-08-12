@@ -7,12 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 using BLL;
 
 namespace Restaurante
 {
     public partial class frm_bebidasCalientes : Form
     {
+        bool hayImagen = false;
         Calientes obj_calientes = new Calientes();
 
         private string _accion;
@@ -43,11 +45,6 @@ namespace Restaurante
             InitializeComponent();
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void frm_bebidasCalientes_Load(object sender, EventArgs e)
         {
             this.mostar_consecutivo();
@@ -64,7 +61,8 @@ namespace Restaurante
             txt_ingredientes.Text = "";
             txt_precio.Text = "";
             txt_descripcion.Text = "";
-            pb_foto.Image = null ;
+            pb_foto.Image = null;
+            hayImagen = false;
         }
 
         private void b_aceptar_Click(object sender, EventArgs e)
@@ -79,7 +77,7 @@ namespace Restaurante
 
             if (!cls_validacion.validar(txt_descripcion))
             {
-                MessageBox.Show("Por favor escriba una descripcion para el consecutivo", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Por favor escriba una descripcion del producto", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txt_descripcion.Focus();
                 return;
             }
@@ -103,9 +101,21 @@ namespace Restaurante
             obj_calientes.precio = Convert.ToDecimal(txt_precio.Text);
             obj_calientes.codRestaurante = txt_restaurantes.Text;
             obj_calientes.ingredientes = txt_ingredientes.Text;
+            if (hayImagen)
+            {
+                MemoryStream ms = new MemoryStream();
+                pb_foto.Image.Save(ms, pb_foto.Image.RawFormat);
+                byte[] a = ms.GetBuffer();
+                ms.Close();
+                obj_calientes.imagen = a;
+            }
 
             if (error=obj_calientes.guardar_Calientes(_accion, txt_restaurantes.Text) && _accion != "Editar")
             {
+                if (hayImagen)
+                {
+                    obj_calientes.guardar_imagen();
+                }
                 int valor = 0;
                 try
                 {
@@ -128,7 +138,7 @@ namespace Restaurante
                     MessageBox.Show("Error al actualizar el consecutivo");
                 }
 
-            }
+            }else
             {
                 if (!error)
                 {
@@ -146,7 +156,17 @@ namespace Restaurante
 
         private void b_buscaFoto_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                OpenFileDialog f = new OpenFileDialog();
+                if (f.ShowDialog() == DialogResult.OK)
+                {
+                    pb_foto.Image = Image.FromFile(f.FileName);
+                    pb_foto.SizeMode = PictureBoxSizeMode.StretchImage;
+                    hayImagen = true;
+                }
+            }
+            catch (Exception) { }
         }
 
         private void carga_info()
@@ -160,7 +180,13 @@ namespace Restaurante
                  txt_precio.Text= obj_calientes.precio.ToString();
                  txt_restaurantes.Text= obj_calientes.codRestaurante;
                  txt_ingredientes.Text= obj_calientes.ingredientes;
-                
+                if (!string.IsNullOrEmpty((obj_calientes.imagen.ToString())))
+                {
+                    MemoryStream ms = new MemoryStream(obj_calientes.imagen);
+                    pb_foto.Image = Image.FromStream(ms);
+                    pb_foto.SizeMode = PictureBoxSizeMode.StretchImage;
+                    ms.Close();
+                }
             }
         }
 

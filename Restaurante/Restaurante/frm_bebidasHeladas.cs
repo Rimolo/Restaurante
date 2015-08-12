@@ -7,12 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 using BLL;
 
 namespace Restaurante
 {
     public partial class frm_bebidasHeladas : Form
     {
+        bool hayImagen = false;
         Heladas obj_heladas = new Heladas();
 
         private string _nick;
@@ -59,6 +61,8 @@ namespace Restaurante
             txt_descripcion.Text = "";
             txt_precio.Text = "";
             txt_ingredientes.Text = "";
+            pb_foto.Image = null;
+            hayImagen = false;
         }
 
         private void b_aceptar_Click(object sender, EventArgs e)
@@ -97,9 +101,21 @@ namespace Restaurante
             obj_heladas.precio = Convert.ToDecimal(txt_precio.Text);
             obj_heladas.codRestaurante = txt_restaurantes.Text;
             obj_heladas.ingredientes = txt_ingredientes.Text;
+            if (hayImagen)
+            {
+                MemoryStream ms = new MemoryStream();
+                pb_foto.Image.Save(ms, pb_foto.Image.RawFormat);
+                byte[] a = ms.GetBuffer();
+                ms.Close();
+                obj_heladas.imagen = a;
+            }
 
             if (error=obj_heladas.guardar_Heladas(_accion, txt_restaurantes.Text) && _accion != "Editar")
             {
+                if (hayImagen)
+                {
+                    obj_heladas.guardar_imagen();
+                }
                 int valor = 0;
                 try
                 {
@@ -140,7 +156,17 @@ namespace Restaurante
 
         private void b_foto_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                OpenFileDialog f = new OpenFileDialog();
+                if (f.ShowDialog() == DialogResult.OK)
+                {
+                    pb_foto.Image = Image.FromFile(f.FileName);
+                    pb_foto.SizeMode = PictureBoxSizeMode.StretchImage;
+                    hayImagen = true;
+                }
+            }
+            catch (Exception) { }
         }
 
         private void carga_info()
@@ -155,6 +181,13 @@ namespace Restaurante
                 txt_precio.Text = obj_heladas.precio.ToString();
                 txt_restaurantes.Text = obj_heladas.codRestaurante;
                 txt_ingredientes.Text = obj_heladas.ingredientes;
+                if (!string.IsNullOrEmpty((obj_heladas.imagen.ToString())))
+                {
+                    MemoryStream ms = new MemoryStream(obj_heladas.imagen);
+                    pb_foto.Image = Image.FromStream(ms);
+                    pb_foto.SizeMode = PictureBoxSizeMode.StretchImage;
+                    ms.Close();
+                }
             }
         }
 
