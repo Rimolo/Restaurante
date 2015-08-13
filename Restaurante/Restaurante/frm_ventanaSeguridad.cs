@@ -12,11 +12,19 @@ namespace Restaurante
 {
     public partial class frm_ventanaSeguridad : Form
     {
+
+        private int _privilegio;
+
+        public int privilegio
+        {
+            get { return _privilegio; }
+            set { _privilegio = value; }
+        }
         public frm_ventanaSeguridad()
         {
             InitializeComponent();
         }
-
+         
         private void b_aceptar_Click(object sender, EventArgs e)
         {
             if (rb_cajas.Checked)
@@ -69,7 +77,15 @@ namespace Restaurante
 
         private void frm_ventanaSeguridad_Load(object sender, EventArgs e)
         {
+            if (_privilegio == 1) {
+                rb_usuarios.Enabled = false;
+                rb_unidadesMedida.Enabled = false;
+                rb_rolesEventos.Enabled = false;
+                rb_paises.Enabled = false;
+                rb_consecutivos.Enabled = false;
+               
 
+            }
         }
     }
 }

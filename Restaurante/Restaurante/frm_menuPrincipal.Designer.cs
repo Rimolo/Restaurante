@@ -57,9 +57,9 @@
             this.b_restaurantes = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.tmr_hora = new System.Windows.Forms.Timer(this.components);
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tmr_hora = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -188,6 +188,7 @@
             // 
             // b_seguridad
             // 
+            this.b_seguridad.Enabled = false;
             this.b_seguridad.Image = global::Restaurante.Properties.Resources.icono_seguridad;
             this.b_seguridad.Location = new System.Drawing.Point(51, 32);
             this.b_seguridad.Name = "b_seguridad";
@@ -198,6 +199,7 @@
             // 
             // b_reportes
             // 
+            this.b_reportes.Enabled = false;
             this.b_reportes.Image = global::Restaurante.Properties.Resources.blacklist_folder_icon;
             this.b_reportes.Location = new System.Drawing.Point(469, 198);
             this.b_reportes.Name = "b_reportes";
@@ -208,6 +210,7 @@
             // 
             // b_proveedores
             // 
+            this.b_proveedores.Enabled = false;
             this.b_proveedores.Image = global::Restaurante.Properties.Resources.icono_proveedores1;
             this.b_proveedores.Location = new System.Drawing.Point(51, 198);
             this.b_proveedores.Name = "b_proveedores";
@@ -272,6 +275,7 @@
             // 
             // b_clientes
             // 
+            this.b_clientes.Enabled = false;
             this.b_clientes.Image = global::Restaurante.Properties.Resources.users;
             this.b_clientes.Location = new System.Drawing.Point(469, 32);
             this.b_clientes.Name = "b_clientes";
@@ -282,6 +286,7 @@
             // 
             // b_administracion
             // 
+            this.b_administracion.Enabled = false;
             this.b_administracion.Image = global::Restaurante.Properties.Resources.Cambio_de_Contraseña;
             this.b_administracion.Location = new System.Drawing.Point(261, 198);
             this.b_administracion.Name = "b_administracion";
@@ -292,6 +297,7 @@
             // 
             // b_restaurantes
             // 
+            this.b_restaurantes.Enabled = false;
             this.b_restaurantes.Image = global::Restaurante.Properties.Resources.Cubiertos;
             this.b_restaurantes.Location = new System.Drawing.Point(261, 32);
             this.b_restaurantes.Name = "b_restaurantes";
@@ -318,10 +324,6 @@
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(47, 17);
             this.toolStripStatusLabel1.Text = "Usuario";
             // 
-            // tmr_hora
-            // 
-            this.tmr_hora.Tick += new System.EventHandler(this.tmr_hora_Tick);
-            // 
             // toolStripStatusLabel2
             // 
             this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
@@ -331,6 +333,10 @@
             // 
             this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
             this.toolStripStatusLabel3.Size = new System.Drawing.Size(0, 17);
+            // 
+            // tmr_hora
+            // 
+            this.tmr_hora.Tick += new System.EventHandler(this.tmr_hora_Tick);
             // 
             // frm_menuPrincipal
             // 

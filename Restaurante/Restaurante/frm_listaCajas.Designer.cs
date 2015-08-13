@@ -48,8 +48,8 @@
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -228,12 +228,14 @@
             // 
             // Column1
             // 
+            this.Column1.DataPropertyName = "codCaja";
             this.Column1.HeaderText = "Codigo";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
             // 
             // Column2
             // 
+            this.Column2.DataPropertyName = "fecha";
             this.Column2.HeaderText = "Fecha de Registro";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
@@ -241,30 +243,39 @@
             // 
             // Column3
             // 
+            this.Column3.DataPropertyName = "descripcion";
             this.Column3.HeaderText = "Descripcion";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
             // 
             // Column4
             // 
+            this.Column4.DataPropertyName = "monto";
             this.Column4.HeaderText = "Entrada de Dinero ";
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
             // 
             // Column5
             // 
+            this.Column5.DataPropertyName = "ap";
             this.Column5.HeaderText = "Apertua Caja";
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
+            this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // Column6
             // 
+            this.Column6.DataPropertyName = "cr";
             this.Column6.HeaderText = "Cierre Caja";
             this.Column6.Name = "Column6";
             this.Column6.ReadOnly = true;
+            this.Column6.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // Column7
             // 
+            this.Column7.DataPropertyName = "nombre";
             this.Column7.HeaderText = "Restaurante";
             this.Column7.Name = "Column7";
             this.Column7.ReadOnly = true;
@@ -316,8 +327,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
     }
 }
