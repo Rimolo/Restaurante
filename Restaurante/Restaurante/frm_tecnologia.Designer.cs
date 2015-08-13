@@ -175,6 +175,7 @@
             this.button1.Size = new System.Drawing.Size(50, 47);
             this.button1.TabIndex = 58;
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // b_aceptar
             // 
@@ -184,6 +185,7 @@
             this.b_aceptar.Size = new System.Drawing.Size(49, 47);
             this.b_aceptar.TabIndex = 57;
             this.b_aceptar.UseVisualStyleBackColor = true;
+            this.b_aceptar.Click += new System.EventHandler(this.b_aceptar_Click);
             // 
             // b_borrar
             // 
@@ -193,6 +195,7 @@
             this.b_borrar.Size = new System.Drawing.Size(53, 47);
             this.b_borrar.TabIndex = 56;
             this.b_borrar.UseVisualStyleBackColor = true;
+            this.b_borrar.Click += new System.EventHandler(this.b_borrar_Click);
             // 
             // label1
             // 
@@ -216,6 +219,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frm_tecnologia";
             this.Text = "Tecnologia";
+            this.Load += new System.EventHandler(this.frm_tecnologia_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

@@ -131,6 +131,14 @@ namespace BLL
             get { return _codRest; }
             set { _codRest = value; }
         }
+
+        private string _listaPedidos;
+
+        public string listaPedidos
+        {
+            get { return _listaPedidos; }
+            set { _listaPedidos = value; }
+        }
         #endregion
 
         #region variables privadas
@@ -154,11 +162,11 @@ namespace BLL
             {
                 if (accion.Equals("Insertar"))
                 {
-                    sql = "Insert into Empleados values(@cod, @nombreP, @ced, @fecha, @correo, @direccionP, @telefono, @celular, @fax, @apellido1, @apellido2, @nombreC, @direccioC, @oficina, null)";
+                    sql = "Insert into Proveedores values(@cod, @nombreP, @ced, @fecha, @correo, @direccionP, @telefono, @celular, @fax, @apellido1, @apellido2, @nombreC, @direccionC, @oficina, null)";
                 }
                 else
                 {
-                    sql = "Update Proveedor SET" +
+                    sql = "Update Proveedores SET" +
                         " nombreProveedor=@nombreP," +
                         " cedula=@ced," +
                         " fechaIngreso=@fecha," +
@@ -188,7 +196,7 @@ namespace BLL
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 9, "@apellido1", SqlDbType.VarChar, _apellido1);
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 10, "@apellido2", SqlDbType.VarChar, _apellido2);
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 11, "@nombreC", SqlDbType.VarChar, _nombreC);
-                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 12, "@direccionP", SqlDbType.VarChar, _direccionP);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 12, "@direccionC", SqlDbType.VarChar, _direccionC);
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 13, "@oficina", SqlDbType.VarChar, _oficina);
                 cls_DAL.conectar(conexion, ref mensaje_error, ref numero_error);
                 cls_DAL.ejecuta_sqlcommand(conexion, sql, false, parametros, ref mensaje_error, ref numero_error);
@@ -479,9 +487,8 @@ namespace BLL
                 return null;
             }
             else
-            {
-                //sql = "select nombre as productosR from Comestibles";
-                sql = "select concat(C.Nombre,' ') as productosR from Comestibles C";
+            {                
+                sql = "SELECT STUFF((select ',' + nombre from Comestibles for xml path ('')), 1, 1,'') as productosR";
 
                 // "select concat(concat(concat(concat(concat(U.Nombre,' '), T.nombre), L.nombre), E.nombre), C.nombre) as productos from Restaurante R INNER JOIN Comestibles C on C.codRestaurante= R.codRestaurante INNER JOIN Limpieza L on  L.codRestaurante= R.codRestaurante INNER JOIN Utencilios U on U.codRestaurante= R.codRestaurante INNER JOIN Tecnologia T  on T.codRestaurante= R.codRestaurante INNER JOIN on DesechablesEmpaques E on E.codRestaurante= R.codRestaurante";
                 ds = cls_DAL.ejecuta_dataset(conexion, sql, false, ref mensaje_error, ref numero_error);

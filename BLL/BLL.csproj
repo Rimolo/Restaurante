@@ -55,6 +55,8 @@
     <Compile Include="Comestibles.cs" />
     <Compile Include="InfoRestaurantes.cs" />
     <Compile Include="Limpieza.cs" />
+    <Compile Include="Proveedores.cs" />
+    <Compile Include="Tecnologia.cs" />
     <Compile Include="Vinos.cs" />
     <Compile Include="Licores.cs" />
     <Compile Include="Gaseosas.cs" />

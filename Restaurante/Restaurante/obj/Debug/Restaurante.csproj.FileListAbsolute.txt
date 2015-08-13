@@ -466,3 +466,6 @@ C:\Users\primo\Source\Repos\Restaurante3\Restaurante\Restaurante\obj\Debug\Resta
 C:\Users\b14011\Source\Repos\Restaurante\Restaurante\Restaurante\bin\Debug\Restaurante.exe.config
 C:\Users\b14011\Source\Repos\Restaurante\Restaurante\Restaurante\obj\Debug\Restaurante.exe
 C:\Users\b14011\Source\Repos\Restaurante\Restaurante\Restaurante\obj\Debug\Restaurante.pdb
+C:\Users\primo\Source\Repos\Restaurante4\Restaurante\Restaurante\bin\Debug\Restaurante.exe.config
+C:\Users\primo\Source\Repos\Restaurante4\Restaurante\Restaurante\obj\Debug\Restaurante.exe
+C:\Users\primo\Source\Repos\Restaurante4\Restaurante\Restaurante\obj\Debug\Restaurante.pdb
