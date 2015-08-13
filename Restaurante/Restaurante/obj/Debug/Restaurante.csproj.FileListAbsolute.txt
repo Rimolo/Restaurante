@@ -463,3 +463,6 @@ C:\Users\primo\Source\Repos\Restaurante2\Restaurante\Restaurante\obj\Debug\Resta
 C:\Users\primo\Source\Repos\Restaurante2\Restaurante\Restaurante\obj\Debug\Restaurante.frm_listaMesas.resources
 C:\Users\Vitaly\Source\Repos\Restaurante\Restaurante\Restaurante\obj\Debug\Restaurante.frm_listaMesas.resources
 C:\Users\primo\Source\Repos\Restaurante3\Restaurante\Restaurante\obj\Debug\Restaurante.frm_listaMesas.resources
+C:\Users\b14011\Source\Repos\Restaurante\Restaurante\Restaurante\bin\Debug\Restaurante.exe.config
+C:\Users\b14011\Source\Repos\Restaurante\Restaurante\Restaurante\obj\Debug\Restaurante.exe
+C:\Users\b14011\Source\Repos\Restaurante\Restaurante\Restaurante\obj\Debug\Restaurante.pdb

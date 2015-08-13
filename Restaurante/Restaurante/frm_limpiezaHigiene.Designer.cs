@@ -163,6 +163,7 @@
             // 
             // txt_codigo
             // 
+            this.txt_codigo.Enabled = false;
             this.txt_codigo.Location = new System.Drawing.Point(107, 19);
             this.txt_codigo.Name = "txt_codigo";
             this.txt_codigo.Size = new System.Drawing.Size(160, 20);
@@ -204,6 +205,7 @@
             this.b_aceptar.Size = new System.Drawing.Size(45, 43);
             this.b_aceptar.TabIndex = 50;
             this.b_aceptar.UseVisualStyleBackColor = true;
+            this.b_aceptar.Click += new System.EventHandler(this.b_aceptar_Click);
             // 
             // button1
             // 
@@ -213,6 +215,7 @@
             this.button1.Size = new System.Drawing.Size(49, 43);
             this.button1.TabIndex = 55;
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // groupBox2
             // 
@@ -246,6 +249,9 @@
             // cb_tipo
             // 
             this.cb_tipo.FormattingEnabled = true;
+            this.cb_tipo.Items.AddRange(new object[] {
+            "Limpieza",
+            "Higiene"});
             this.cb_tipo.Location = new System.Drawing.Point(111, 16);
             this.cb_tipo.Name = "cb_tipo";
             this.cb_tipo.Size = new System.Drawing.Size(121, 21);

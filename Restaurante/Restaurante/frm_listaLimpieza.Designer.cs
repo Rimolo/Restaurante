@@ -53,6 +53,8 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -62,8 +64,10 @@
             this.Column5});
             this.dataGridView1.Location = new System.Drawing.Point(178, 128);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(562, 232);
             this.dataGridView1.TabIndex = 45;
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // Column1
             // 
@@ -156,6 +160,7 @@
             this.b_mas.TabIndex = 55;
             this.b_mas.Text = "button5";
             this.b_mas.UseVisualStyleBackColor = true;
+            this.b_mas.Click += new System.EventHandler(this.b_mas_Click);
             // 
             // b_menos
             // 
@@ -175,6 +180,7 @@
             this.b_aceptar.Size = new System.Drawing.Size(42, 47);
             this.b_aceptar.TabIndex = 54;
             this.b_aceptar.UseVisualStyleBackColor = true;
+            this.b_aceptar.Click += new System.EventHandler(this.b_aceptar_Click);
             // 
             // b_borrar
             // 
@@ -184,6 +190,7 @@
             this.b_borrar.Size = new System.Drawing.Size(44, 47);
             this.b_borrar.TabIndex = 52;
             this.b_borrar.UseVisualStyleBackColor = true;
+            this.b_borrar.Click += new System.EventHandler(this.b_borrar_Click);
             // 
             // button1
             // 
@@ -193,6 +200,7 @@
             this.button1.Size = new System.Drawing.Size(42, 43);
             this.button1.TabIndex = 53;
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // b_refrescar
             // 
@@ -202,6 +210,7 @@
             this.b_refrescar.Size = new System.Drawing.Size(44, 44);
             this.b_refrescar.TabIndex = 52;
             this.b_refrescar.UseVisualStyleBackColor = true;
+            this.b_refrescar.Click += new System.EventHandler(this.b_refrescar_Click);
             // 
             // label1
             // 
@@ -229,6 +238,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "frm_listaLimpieza";
             this.Text = "Lista de Limpieza e Higiene";
+            this.Load += new System.EventHandler(this.frm_listaLimpieza_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
