@@ -607,9 +607,16 @@ namespace Restaurante
 
                     if (objClientes.actualizar_consecutivo(valor))
                     {
-
-                        MessageBox.Show("Cliente insertado con éxito", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.Close();
+                        if (_accion == "Insertar")
+                        {
+                            MessageBox.Show("Cliente insertado con éxito", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Cliente facturado con éxito", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.Close();
+                        }
                     }
 
                 }
@@ -648,10 +655,10 @@ namespace Restaurante
             writer.WriteString(objClientes.horaE);
             writer.WriteEndElement();
             writer.WriteStartElement("HoraSalida");
-            writer.WriteString(objClientes.horaS);
+            writer.WriteString(txt_horaSalida.Text);
             writer.WriteEndElement();
             writer.WriteStartElement("DuracionMesa");
-            writer.WriteString(objClientes.duracion);
+            writer.WriteString(txt_duracionMesa.Text);
             writer.WriteEndElement();
             writer.WriteStartElement("ListaFactura");
             for (int i = 0; i < 4; i++) {
@@ -726,7 +733,9 @@ namespace Restaurante
                 }
                 
             }
-           
+            writer.WriteStartElement("MontoAPagar");
+            writer.WriteString(objClientes.monto.ToString());
+            writer.WriteEndElement();
             writer.WriteEndElement();
             writer.WriteEndDocument();
             writer.Close();

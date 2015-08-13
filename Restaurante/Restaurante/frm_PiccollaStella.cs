@@ -109,7 +109,13 @@ namespace Restaurante
 
         private void b_mesa7_Click(object sender, EventArgs e)
         {
-
+            frm_clientes clientes = new frm_clientes();
+            clientes.nombreR = "Piccola Stella";
+            clientes.codR = _codRest;
+            clientes.cantSillas = 4;
+            clientes.numeroMesa = 7;
+            clientes.accion = "Insertar";
+            clientes.Show();
         }
 
         private void reiniciarSesiónToolStripMenuItem_Click(object sender, EventArgs e)

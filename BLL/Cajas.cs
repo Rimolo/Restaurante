@@ -77,10 +77,10 @@ namespace BLL
                 {
                     if (apertura > cierre)
                     {
-                        sql = "Insert into Caja values(@cod,@codR,@fecha,@apertura,0,'Apertura de Caja')";
+                        sql = "Insert into Caja values(@cod,@codR,convert(datetime,@fecha,103),@apertura,0,'Apertura de Caja')";
                     }
                     else {
-                        sql = "Insert into Caja values(@cod,@codR,@fecha,@cierre,0,'Cierre de Caja')";
+                        sql = "Insert into Caja values(@cod,@codR,convert(datetime,@fecha,103),@cierre,0,'Cierre de Caja')";
                     }
                     
                 }

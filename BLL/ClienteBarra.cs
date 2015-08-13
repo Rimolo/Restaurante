@@ -125,7 +125,7 @@ namespace BLL
             {
                 if (accion.Equals("Insertar"))
                 {
-                    sql = "Insert into Cliente values(@cod,@nombre,@fecha,@monto,0,1,@codR,@horaE,null,null,'Sin pagar',null)";
+                    sql = "Insert into Cliente values(@cod,@nombre,convert(datetime,@fecha,103),@monto,0,1,@codR,@horaE,null,null,'Sin pagar',null)";
 
 
                 }

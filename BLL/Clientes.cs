@@ -195,12 +195,12 @@ namespace BLL
                 {
                     if (!_reservo)
                     {
-                        sql = "Insert into Cliente values(@cod,@nombre,@fecha,@monto,0,0,@codR,@horaE,null,null,'Sin pagar',null)";
+                        sql = "Insert into Cliente values(@cod,@nombre,convert(datetime,@fecha,103),@monto,0,0,@codR,@horaE,null,null,'Sin pagar',null)";
 
                     }
                     else
                     {
-                        sql = "Insert into Cliente values(@cod,@nombre,@fecha,@monto,1,0,@codR,@horaE,null,null,'Sin pagar',@fechaR)";
+                        sql = "Insert into Cliente values(@cod,@nombre,convert(datetime,@fecha,103),@monto,1,0,@codR,@horaE,null,null,'Sin pagar',convert(datetime,@fechaR,103))";
 
                     }
                 }

@@ -70,7 +70,7 @@ namespace Restaurante
             objCajas.codigo = codCaja;
             objCajas.apertura = Convert.ToInt32(msk_montoApertura.Text);
             objCajas.codRest = objCajas.obtener_cod_rest("Piccola Stella");
-            objCajas.fecha = DateTime.Today.ToString("dd/MM/yyyy");
+            objCajas.fecha = DateTime.Now.ToString("dd/MM/yyyy");
             if (objCajas.guardar_caja("Insertar"))
             {
                 int valor = 0;
