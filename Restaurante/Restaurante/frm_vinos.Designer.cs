@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pb_foto = new System.Windows.Forms.PictureBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.txt_año = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txt_precioBot = new System.Windows.Forms.TextBox();
@@ -53,9 +56,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.pb_foto = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_foto)).BeginInit();
             this.SuspendLayout();
@@ -94,6 +94,34 @@
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Informacion de la bebida";
+            // 
+            // pb_foto
+            // 
+            this.pb_foto.Image = global::Restaurante.Properties.Resources.no_thumb;
+            this.pb_foto.Location = new System.Drawing.Point(333, 179);
+            this.pb_foto.Name = "pb_foto";
+            this.pb_foto.Size = new System.Drawing.Size(137, 131);
+            this.pb_foto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb_foto.TabIndex = 31;
+            this.pb_foto.TabStop = false;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(9, 216);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(72, 13);
+            this.label12.TabIndex = 30;
+            this.label12.Text = "Precio Botella";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(9, 179);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(76, 13);
+            this.label11.TabIndex = 29;
+            this.label11.Text = "Precio Unitario";
             // 
             // txt_año
             // 
@@ -264,7 +292,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(69, 13);
             this.label5.TabIndex = 3;
-            this.label5.Text = "Nacionalidad";            
+            this.label5.Text = "Nacionalidad";
             // 
             // label4
             // 
@@ -301,32 +329,6 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(131, 370);
             this.label1.TabIndex = 5;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(9, 179);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(76, 13);
-            this.label11.TabIndex = 29;
-            this.label11.Text = "Precio Unitario";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(9, 216);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(72, 13);
-            this.label12.TabIndex = 30;
-            this.label12.Text = "Precio Botella";
-            // 
-            // pb_foto
-            // 
-            this.pb_foto.Location = new System.Drawing.Point(326, 178);
-            this.pb_foto.Name = "pb_foto";
-            this.pb_foto.Size = new System.Drawing.Size(135, 145);
-            this.pb_foto.TabIndex = 31;
-            this.pb_foto.TabStop = false;
             // 
             // frm_vinos
             // 

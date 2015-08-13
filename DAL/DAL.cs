@@ -226,7 +226,34 @@ namespace DAL
             }
         }
 
-        public static void guardar_imagen(SqlConnection conexion, string sql, byte[] a, ref string mensaje_error, ref int numero_error) {
+        public static void guardar_imagenMarcas(SqlConnection conexion, string sql, byte[] a, byte[] b, ref string mensaje_error, ref int numero_error) {
+            SqlCommand sql_command;
+            SqlParameter picture;
+            SqlParameter picture2;
+            try
+            {
+                sql_command = new SqlCommand();
+                sql_command.Connection = conexion;
+                picture = new SqlParameter("@img", SqlDbType.Image);
+                picture2 = new SqlParameter("@img2", SqlDbType.Image);
+                int resultado = 0;
+                sql_command.Parameters.Clear();
+                sql_command.Parameters.AddWithValue("@img", a);
+                sql_command.Parameters.AddWithValue("@img2", b);
+                sql_command.CommandText = sql;
+                resultado = sql_command.ExecuteNonQuery();
+                mensaje_error = "";
+                numero_error = 0;
+            }
+            catch (SqlException ex)
+            {
+                mensaje_error = "Error al ejecutar la sentencia sql, información adicional: " + ex.Message;
+                numero_error = ex.Number;
+            }
+        }
+
+        public static void guardar_imagen(SqlConnection conexion, string sql, byte[] a, ref string mensaje_error, ref int numero_error)
+        {
             SqlCommand sql_command;
             SqlParameter picture;
             try

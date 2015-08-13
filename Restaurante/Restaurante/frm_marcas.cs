@@ -7,12 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 using BLL;
 
 namespace Restaurante
 {
     public partial class frm_marcas : Form
     {
+        bool hayImagen = false;
+        bool cambioImagen1 = false;
+        bool cambioImagen2 = false;
         Marcas obj_marcas = new Marcas();
 
         private string _accion;
@@ -53,10 +57,16 @@ namespace Restaurante
             txt_detalleEmpresa.Text = "";
             txt_nombreEmpresa.Text = "";
             cb_nacionalidad.Text = "";
+            pictureBox1.Image = null;
+            pictureBox2.Image = null;
+            hayImagen = false;
+            cambioImagen1 = false;            
+            cambioImagen2 = false;
         }
 
         private void b_aceptar_Click(object sender, EventArgs e)
         {
+            if (pictureBox1.Image.RawFormat != null || pictureBox2.Image.RawFormat != null) { hayImagen = true; }          
             if (!cls_validacion.validar(txt_nombre))
             {
                 MessageBox.Show("Por favor digite el nomnre de la marca", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -109,6 +119,22 @@ namespace Restaurante
             obj_marcas.nombreEmp = txt_nombreEmpresa.Text;
             obj_marcas.codPais = cb_nacionalidad.SelectedValue.ToString();
             obj_marcas.cedJuridica = mtb_CedJuridica.Text;
+            if (cambioImagen1)
+            {
+                MemoryStream ms = new MemoryStream();
+                pictureBox1.Image.Save(ms, pictureBox1.Image.RawFormat);
+                byte[] a = ms.GetBuffer();
+                ms.Close();
+                obj_marcas.imagen = a;
+            }
+            if (cambioImagen2)
+            {
+                MemoryStream ms = new MemoryStream();
+                pictureBox2.Image.Save(ms, pictureBox2.Image.RawFormat);
+                byte[] b = ms.GetBuffer();
+                ms.Close();
+                obj_marcas.logo = b;
+            }
 
             int tel = 0;
             string text = mtb_Telefono.Text.Replace("-", "");
@@ -126,17 +152,29 @@ namespace Restaurante
                 int valor = 0;
                 try
                 {
+                    if (hayImagen)
+                    {
+                        obj_marcas.guardar_imagen();
+                    }
+                  
                     DataSet ds;
                     ds = obj_marcas.retorna_consecutivo_valor();
                     valor = Convert.ToInt32(ds.Tables[0].Rows[0]["valor"]);
                     valor++;
 
-
-                    if (obj_marcas.actualizar_consecutivo(valor))
+                    if (_accion.Equals("Insertar"))
                     {
+                        if (obj_marcas.actualizar_consecutivo(valor))
+                        {
 
+                            MessageBox.Show("Marca insertada con éxito", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            this.Close();
+                        }
+                    }
+                    else
+                    {
                         MessageBox.Show("Marca insertada con éxito", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                         this.Close();
                     }
 
@@ -156,12 +194,34 @@ namespace Restaurante
 
         private void b_foto_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                OpenFileDialog f = new OpenFileDialog();
+                if (f.ShowDialog() == DialogResult.OK)
+                {
+                    pictureBox1.Image = Image.FromFile(f.FileName);
+                    pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+                    hayImagen = true;
+                    cambioImagen1 = true;
+                }
+            }
+            catch (Exception) { }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                OpenFileDialog f = new OpenFileDialog();
+                if (f.ShowDialog() == DialogResult.OK)
+                {
+                    pictureBox2.Image = Image.FromFile(f.FileName);
+                    pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+                    hayImagen = true;
+                    cambioImagen2 = true;
+                }
+            }
+            catch (Exception) { }
         }
 
         private void cargar_nacionalidad()
@@ -215,6 +275,20 @@ namespace Restaurante
                 mtb_Telefono.Text = obj_marcas.telefono.ToString();
                 txt_nombreEmpresa.Text = obj_marcas.nombreEmp;
                 cb_nacionalidad.Text = obj_marcas.codPais;
+                if (!string.IsNullOrEmpty((obj_marcas.imagen.ToString())))
+                {
+                    MemoryStream ms = new MemoryStream(obj_marcas.imagen);
+                    pictureBox1.Image = Image.FromStream(ms);
+                    pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+                    ms.Close();
+                }
+                if (!string.IsNullOrEmpty((obj_marcas.logo.ToString())))
+                {
+                    MemoryStream ms2 = new MemoryStream(obj_marcas.logo);
+                    pictureBox2.Image = Image.FromStream(ms2);
+                    pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+                    ms2.Close();
+                }
             }
         }
 

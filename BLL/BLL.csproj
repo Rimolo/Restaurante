@@ -51,6 +51,7 @@
     <Compile Include="Clientes.cs" />
     <Compile Include="Empleados.cs" />
     <Compile Include="Buffet.cs" />
+    <Compile Include="Comestibles.cs" />
     <Compile Include="Vinos.cs" />
     <Compile Include="Licores.cs" />
     <Compile Include="Gaseosas.cs" />

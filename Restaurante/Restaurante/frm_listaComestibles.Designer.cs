@@ -29,10 +29,6 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txt_restaurante = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -47,12 +43,18 @@
             this.button1 = new System.Windows.Forms.Button();
             this.b_refrescar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -60,30 +62,12 @@
             this.Column2,
             this.Column4,
             this.Column5});
-            this.dataGridView1.Location = new System.Drawing.Point(214, 131);
+            this.dataGridView1.Location = new System.Drawing.Point(277, 128);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(562, 232);
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(445, 232);
             this.dataGridView1.TabIndex = 43;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Codigo";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Nombre";
-            this.Column2.Name = "Column2";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Cantidad";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Restaurante";
-            this.Column5.Name = "Column5";
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // groupBox1
             // 
@@ -95,22 +79,22 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(300, 19);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(476, 90);
+            this.groupBox1.Size = new System.Drawing.Size(445, 90);
             this.groupBox1.TabIndex = 49;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Solo Busqueda";
             // 
             // txt_restaurante
             // 
-            this.txt_restaurante.Location = new System.Drawing.Point(340, 29);
+            this.txt_restaurante.Location = new System.Drawing.Point(323, 30);
             this.txt_restaurante.Name = "txt_restaurante";
-            this.txt_restaurante.Size = new System.Drawing.Size(132, 20);
+            this.txt_restaurante.Size = new System.Drawing.Size(99, 20);
             this.txt_restaurante.TabIndex = 6;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(271, 33);
+            this.label4.Location = new System.Drawing.Point(252, 33);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(65, 13);
             this.label4.TabIndex = 4;
@@ -120,14 +104,14 @@
             // 
             this.txt_nombreComestible.Location = new System.Drawing.Point(133, 57);
             this.txt_nombreComestible.Name = "txt_nombreComestible";
-            this.txt_nombreComestible.Size = new System.Drawing.Size(132, 20);
+            this.txt_nombreComestible.Size = new System.Drawing.Size(113, 20);
             this.txt_nombreComestible.TabIndex = 3;
             // 
             // txt_codigoComestible
             // 
             this.txt_codigoComestible.Location = new System.Drawing.Point(133, 26);
             this.txt_codigoComestible.Name = "txt_codigoComestible";
-            this.txt_codigoComestible.Size = new System.Drawing.Size(132, 20);
+            this.txt_codigoComestible.Size = new System.Drawing.Size(113, 20);
             this.txt_codigoComestible.TabIndex = 2;
             // 
             // label3
@@ -150,21 +134,23 @@
             // 
             // b_mas
             // 
-            this.b_mas.Location = new System.Drawing.Point(775, 32);
+            this.b_mas.Image = global::Restaurante.Properties.Resources.green_add_icon2;
+            this.b_mas.Location = new System.Drawing.Point(751, 32);
             this.b_mas.Name = "b_mas";
-            this.b_mas.Size = new System.Drawing.Size(55, 23);
+            this.b_mas.Size = new System.Drawing.Size(44, 36);
             this.b_mas.TabIndex = 43;
-            this.b_mas.Text = "button5";
             this.b_mas.UseVisualStyleBackColor = true;
+            this.b_mas.Click += new System.EventHandler(this.b_mas_Click);
             // 
             // b_menos
             // 
-            this.b_menos.Location = new System.Drawing.Point(775, 74);
+            this.b_menos.Image = global::Restaurante.Properties.Resources.refurl1;
+            this.b_menos.Location = new System.Drawing.Point(751, 74);
             this.b_menos.Name = "b_menos";
-            this.b_menos.Size = new System.Drawing.Size(55, 23);
+            this.b_menos.Size = new System.Drawing.Size(44, 35);
             this.b_menos.TabIndex = 50;
-            this.b_menos.Text = "button6";
             this.b_menos.UseVisualStyleBackColor = true;
+            this.b_menos.Click += new System.EventHandler(this.b_menos_Click);
             // 
             // b_aceptar
             // 
@@ -174,6 +160,7 @@
             this.b_aceptar.Size = new System.Drawing.Size(42, 47);
             this.b_aceptar.TabIndex = 48;
             this.b_aceptar.UseVisualStyleBackColor = true;
+            this.b_aceptar.Click += new System.EventHandler(this.b_aceptar_Click);
             // 
             // b_borrar
             // 
@@ -183,6 +170,7 @@
             this.b_borrar.Size = new System.Drawing.Size(52, 47);
             this.b_borrar.TabIndex = 47;
             this.b_borrar.UseVisualStyleBackColor = true;
+            this.b_borrar.Click += new System.EventHandler(this.b_borrar_Click);
             // 
             // button1
             // 
@@ -192,6 +180,7 @@
             this.button1.Size = new System.Drawing.Size(42, 43);
             this.button1.TabIndex = 46;
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // b_refrescar
             // 
@@ -201,6 +190,7 @@
             this.b_refrescar.Size = new System.Drawing.Size(52, 44);
             this.b_refrescar.TabIndex = 44;
             this.b_refrescar.UseVisualStyleBackColor = true;
+            this.b_refrescar.Click += new System.EventHandler(this.b_refrescar_Click);
             // 
             // label1
             // 
@@ -211,12 +201,40 @@
             this.label1.Size = new System.Drawing.Size(189, 395);
             this.label1.TabIndex = 42;
             // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "codComestible";
+            this.Column1.HeaderText = "Codigo";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "nombre";
+            this.Column2.HeaderText = "Nombre";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "cantidad";
+            this.Column4.HeaderText = "Cantidad";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "nomrest";
+            this.Column5.HeaderText = "Restaurante";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
             // frm_listaComestibles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.ClientSize = new System.Drawing.Size(834, 392);
+            this.ClientSize = new System.Drawing.Size(802, 372);
             this.Controls.Add(this.b_menos);
             this.Controls.Add(this.b_mas);
             this.Controls.Add(this.groupBox1);
@@ -228,6 +246,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frm_listaComestibles";
             this.Text = "Lista de Comestibles";
+            this.Load += new System.EventHandler(this.frm_listaComestibles_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -239,10 +258,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.Button b_refrescar;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button b_borrar;
@@ -256,5 +271,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button b_mas;
         private System.Windows.Forms.Button b_menos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
     }
 }

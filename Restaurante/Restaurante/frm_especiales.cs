@@ -15,6 +15,7 @@ namespace Restaurante
     public partial class frm_especiales : Form
     {
         bool hayImagen = false;
+        bool cambioImagen = false;
         Especiales obj_especiales = new Especiales();
 
         private string _accion;
@@ -57,7 +58,7 @@ namespace Restaurante
 
         private void b_aceptar_Click(object sender, EventArgs e)
         {
-            bool error = false;
+            if (pb_foto.Image.RawFormat != null) { hayImagen = true; }
             if (!cls_validacion.validar(txt_nombre))
             {
                 MessageBox.Show("Por favor digite el nomnre del especial", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -90,7 +91,7 @@ namespace Restaurante
             obj_especiales.detalle = txt_detalle.Text;
             obj_especiales.precio = Convert.ToDecimal(txt_precio.Text);
             obj_especiales.ingredientes = txt_ingredientes.Text;
-            if (hayImagen)
+            if (cambioImagen)
             {
                 MemoryStream ms = new MemoryStream();
                 pb_foto.Image.Save(ms, pb_foto.Image.RawFormat);
@@ -99,7 +100,7 @@ namespace Restaurante
                 obj_especiales.imagen = a;
             }
 
-            if (error = obj_especiales.guardar_Especiales(_accion, _nick) && _accion != "Editar")
+            if (obj_especiales.guardar_Especiales(_accion, _nick) )
             {
                 if (hayImagen)
                 {
@@ -114,10 +115,16 @@ namespace Restaurante
                     valor = Convert.ToInt32(ds.Tables[0].Rows[0]["valor"]);
                     valor++;
 
-
-                    if (obj_especiales.actualizar_consecutivo(valor))
+                    if (_accion.Equals("Insertar"))
                     {
-
+                        if (obj_especiales.actualizar_consecutivo(valor))
+                        {
+                            MessageBox.Show("Especial insertado con éxito", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.Close();
+                        }
+                    }
+                    else
+                    {
                         MessageBox.Show("Especial insertado con éxito", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();
                     }
@@ -127,17 +134,7 @@ namespace Restaurante
                 {
                     MessageBox.Show("Error al actualizar el consecutivo");
                 }
-
-            }
-            else
-            {
-                if (!error)
-                {
-                    MessageBox.Show("Especial insertado con éxito", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    this.Close();
-                }
-            }
+            }          
         }
 
         private void b_cancelar_Click(object sender, EventArgs e)

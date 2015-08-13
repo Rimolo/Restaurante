@@ -37,10 +37,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.cb_nacionalidad = new System.Windows.Forms.ComboBox();
             this.cb_marca = new System.Windows.Forms.ComboBox();
-            this.b_foto = new System.Windows.Forms.Button();
-            this.b_cancelar = new System.Windows.Forms.Button();
-            this.b_aceptar = new System.Windows.Forms.Button();
-            this.b_borrar = new System.Windows.Forms.Button();
             this.txt_precioUni = new System.Windows.Forms.TextBox();
             this.txt_nombre = new System.Windows.Forms.TextBox();
             this.txt_codigo = new System.Windows.Forms.TextBox();
@@ -54,6 +50,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pb_foto = new System.Windows.Forms.PictureBox();
+            this.b_foto = new System.Windows.Forms.Button();
+            this.b_cancelar = new System.Windows.Forms.Button();
+            this.b_aceptar = new System.Windows.Forms.Button();
+            this.b_borrar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_foto)).BeginInit();
             this.SuspendLayout();
@@ -162,46 +162,6 @@
             this.cb_marca.Size = new System.Drawing.Size(100, 21);
             this.cb_marca.TabIndex = 18;
             // 
-            // b_foto
-            // 
-            this.b_foto.Image = global::Restaurante.Properties.Resources.Camara;
-            this.b_foto.Location = new System.Drawing.Point(229, 245);
-            this.b_foto.Name = "b_foto";
-            this.b_foto.Size = new System.Drawing.Size(75, 64);
-            this.b_foto.TabIndex = 17;
-            this.b_foto.UseVisualStyleBackColor = true;
-            this.b_foto.Click += new System.EventHandler(this.b_foto_Click);
-            // 
-            // b_cancelar
-            // 
-            this.b_cancelar.Image = global::Restaurante.Properties.Resources.Cancelar4;
-            this.b_cancelar.Location = new System.Drawing.Point(156, 262);
-            this.b_cancelar.Name = "b_cancelar";
-            this.b_cancelar.Size = new System.Drawing.Size(52, 47);
-            this.b_cancelar.TabIndex = 16;
-            this.b_cancelar.UseVisualStyleBackColor = true;
-            this.b_cancelar.Click += new System.EventHandler(this.b_cancelar_Click);
-            // 
-            // b_aceptar
-            // 
-            this.b_aceptar.Image = global::Restaurante.Properties.Resources.Aceptar4;
-            this.b_aceptar.Location = new System.Drawing.Point(81, 262);
-            this.b_aceptar.Name = "b_aceptar";
-            this.b_aceptar.Size = new System.Drawing.Size(52, 47);
-            this.b_aceptar.TabIndex = 15;
-            this.b_aceptar.UseVisualStyleBackColor = true;
-            this.b_aceptar.Click += new System.EventHandler(this.b_aceptar_Click);
-            // 
-            // b_borrar
-            // 
-            this.b_borrar.Image = global::Restaurante.Properties.Resources.Eliminar12;
-            this.b_borrar.Location = new System.Drawing.Point(12, 262);
-            this.b_borrar.Name = "b_borrar";
-            this.b_borrar.Size = new System.Drawing.Size(52, 47);
-            this.b_borrar.TabIndex = 14;
-            this.b_borrar.UseVisualStyleBackColor = true;
-            this.b_borrar.Click += new System.EventHandler(this.b_borrar_Click);
-            // 
             // txt_precioUni
             // 
             this.txt_precioUni.Enabled = false;
@@ -308,11 +268,53 @@
             // 
             // pb_foto
             // 
-            this.pb_foto.Location = new System.Drawing.Point(330, 169);
+            this.pb_foto.Image = global::Restaurante.Properties.Resources.no_thumb;
+            this.pb_foto.Location = new System.Drawing.Point(351, 176);
             this.pb_foto.Name = "pb_foto";
-            this.pb_foto.Size = new System.Drawing.Size(163, 126);
+            this.pb_foto.Size = new System.Drawing.Size(131, 119);
+            this.pb_foto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb_foto.TabIndex = 27;
             this.pb_foto.TabStop = false;
+            // 
+            // b_foto
+            // 
+            this.b_foto.Image = global::Restaurante.Properties.Resources.Camara;
+            this.b_foto.Location = new System.Drawing.Point(229, 245);
+            this.b_foto.Name = "b_foto";
+            this.b_foto.Size = new System.Drawing.Size(75, 64);
+            this.b_foto.TabIndex = 17;
+            this.b_foto.UseVisualStyleBackColor = true;
+            this.b_foto.Click += new System.EventHandler(this.b_foto_Click);
+            // 
+            // b_cancelar
+            // 
+            this.b_cancelar.Image = global::Restaurante.Properties.Resources.Cancelar4;
+            this.b_cancelar.Location = new System.Drawing.Point(156, 262);
+            this.b_cancelar.Name = "b_cancelar";
+            this.b_cancelar.Size = new System.Drawing.Size(52, 47);
+            this.b_cancelar.TabIndex = 16;
+            this.b_cancelar.UseVisualStyleBackColor = true;
+            this.b_cancelar.Click += new System.EventHandler(this.b_cancelar_Click);
+            // 
+            // b_aceptar
+            // 
+            this.b_aceptar.Image = global::Restaurante.Properties.Resources.Aceptar4;
+            this.b_aceptar.Location = new System.Drawing.Point(81, 262);
+            this.b_aceptar.Name = "b_aceptar";
+            this.b_aceptar.Size = new System.Drawing.Size(52, 47);
+            this.b_aceptar.TabIndex = 15;
+            this.b_aceptar.UseVisualStyleBackColor = true;
+            this.b_aceptar.Click += new System.EventHandler(this.b_aceptar_Click);
+            // 
+            // b_borrar
+            // 
+            this.b_borrar.Image = global::Restaurante.Properties.Resources.Eliminar12;
+            this.b_borrar.Location = new System.Drawing.Point(12, 262);
+            this.b_borrar.Name = "b_borrar";
+            this.b_borrar.Size = new System.Drawing.Size(52, 47);
+            this.b_borrar.TabIndex = 14;
+            this.b_borrar.UseVisualStyleBackColor = true;
+            this.b_borrar.Click += new System.EventHandler(this.b_borrar_Click);
             // 
             // frmLicores
             // 

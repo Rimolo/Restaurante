@@ -1094,6 +1094,36 @@ namespace Restaurante.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap no_image_available_big {
+            get {
+                object obj = ResourceManager.GetObject("no_image_available_big", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap no_thumb {
+            get {
+                object obj = ResourceManager.GetObject("no-thumb", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap no_user_image_square_75d7df79d3f093e0805d3d40d16ce31d {
+            get {
+                object obj = ResourceManager.GetObject("no-user-image-square-75d7df79d3f093e0805d3d40d16ce31d", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Pagos_de_Socios {
             get {
                 object obj = ResourceManager.GetObject("Pagos de Socios", resourceCulture);

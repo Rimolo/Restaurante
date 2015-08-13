@@ -30,11 +30,11 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rb_comestibles = new System.Windows.Forms.RadioButton();
-            this.rb_desechablesEmpaques = new System.Windows.Forms.RadioButton();
-            this.rb_limpieza = new System.Windows.Forms.RadioButton();
-            this.rb_tecnologia = new System.Windows.Forms.RadioButton();
             this.rb_EquiposUtencilios = new System.Windows.Forms.RadioButton();
+            this.rb_tecnologia = new System.Windows.Forms.RadioButton();
+            this.rb_limpieza = new System.Windows.Forms.RadioButton();
+            this.rb_desechablesEmpaques = new System.Windows.Forms.RadioButton();
+            this.rb_comestibles = new System.Windows.Forms.RadioButton();
             this.b_aceptar = new System.Windows.Forms.Button();
             this.b_cancelar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
@@ -63,38 +63,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Opciones";
             // 
-            // rb_comestibles
+            // rb_EquiposUtencilios
             // 
-            this.rb_comestibles.AutoSize = true;
-            this.rb_comestibles.Location = new System.Drawing.Point(20, 28);
-            this.rb_comestibles.Name = "rb_comestibles";
-            this.rb_comestibles.Size = new System.Drawing.Size(81, 17);
-            this.rb_comestibles.TabIndex = 0;
-            this.rb_comestibles.TabStop = true;
-            this.rb_comestibles.Text = "Comestibles";
-            this.rb_comestibles.UseVisualStyleBackColor = true;
-            // 
-            // rb_desechablesEmpaques
-            // 
-            this.rb_desechablesEmpaques.AutoSize = true;
-            this.rb_desechablesEmpaques.Location = new System.Drawing.Point(20, 71);
-            this.rb_desechablesEmpaques.Name = "rb_desechablesEmpaques";
-            this.rb_desechablesEmpaques.Size = new System.Drawing.Size(148, 17);
-            this.rb_desechablesEmpaques.TabIndex = 1;
-            this.rb_desechablesEmpaques.TabStop = true;
-            this.rb_desechablesEmpaques.Text = "Desechables y Empaques";
-            this.rb_desechablesEmpaques.UseVisualStyleBackColor = true;
-            // 
-            // rb_limpieza
-            // 
-            this.rb_limpieza.AutoSize = true;
-            this.rb_limpieza.Location = new System.Drawing.Point(20, 121);
-            this.rb_limpieza.Name = "rb_limpieza";
-            this.rb_limpieza.Size = new System.Drawing.Size(114, 17);
-            this.rb_limpieza.TabIndex = 2;
-            this.rb_limpieza.TabStop = true;
-            this.rb_limpieza.Text = "Limpieza e Higiene";
-            this.rb_limpieza.UseVisualStyleBackColor = true;
+            this.rb_EquiposUtencilios.AutoSize = true;
+            this.rb_EquiposUtencilios.Location = new System.Drawing.Point(204, 71);
+            this.rb_EquiposUtencilios.Name = "rb_EquiposUtencilios";
+            this.rb_EquiposUtencilios.Size = new System.Drawing.Size(123, 17);
+            this.rb_EquiposUtencilios.TabIndex = 4;
+            this.rb_EquiposUtencilios.TabStop = true;
+            this.rb_EquiposUtencilios.Text = "Equipos y Utencilios ";
+            this.rb_EquiposUtencilios.UseVisualStyleBackColor = true;
             // 
             // rb_tecnologia
             // 
@@ -107,16 +85,38 @@
             this.rb_tecnologia.Text = "Tecnologia";
             this.rb_tecnologia.UseVisualStyleBackColor = true;
             // 
-            // rb_EquiposUtencilios
+            // rb_limpieza
             // 
-            this.rb_EquiposUtencilios.AutoSize = true;
-            this.rb_EquiposUtencilios.Location = new System.Drawing.Point(204, 71);
-            this.rb_EquiposUtencilios.Name = "rb_EquiposUtencilios";
-            this.rb_EquiposUtencilios.Size = new System.Drawing.Size(123, 17);
-            this.rb_EquiposUtencilios.TabIndex = 4;
-            this.rb_EquiposUtencilios.TabStop = true;
-            this.rb_EquiposUtencilios.Text = "Equipos y Utencilios ";
-            this.rb_EquiposUtencilios.UseVisualStyleBackColor = true;
+            this.rb_limpieza.AutoSize = true;
+            this.rb_limpieza.Location = new System.Drawing.Point(20, 121);
+            this.rb_limpieza.Name = "rb_limpieza";
+            this.rb_limpieza.Size = new System.Drawing.Size(114, 17);
+            this.rb_limpieza.TabIndex = 2;
+            this.rb_limpieza.TabStop = true;
+            this.rb_limpieza.Text = "Limpieza e Higiene";
+            this.rb_limpieza.UseVisualStyleBackColor = true;
+            // 
+            // rb_desechablesEmpaques
+            // 
+            this.rb_desechablesEmpaques.AutoSize = true;
+            this.rb_desechablesEmpaques.Location = new System.Drawing.Point(20, 71);
+            this.rb_desechablesEmpaques.Name = "rb_desechablesEmpaques";
+            this.rb_desechablesEmpaques.Size = new System.Drawing.Size(148, 17);
+            this.rb_desechablesEmpaques.TabIndex = 1;
+            this.rb_desechablesEmpaques.TabStop = true;
+            this.rb_desechablesEmpaques.Text = "Desechables y Empaques";
+            this.rb_desechablesEmpaques.UseVisualStyleBackColor = true;
+            // 
+            // rb_comestibles
+            // 
+            this.rb_comestibles.AutoSize = true;
+            this.rb_comestibles.Location = new System.Drawing.Point(20, 28);
+            this.rb_comestibles.Name = "rb_comestibles";
+            this.rb_comestibles.Size = new System.Drawing.Size(81, 17);
+            this.rb_comestibles.TabIndex = 0;
+            this.rb_comestibles.TabStop = true;
+            this.rb_comestibles.Text = "Comestibles";
+            this.rb_comestibles.UseVisualStyleBackColor = true;
             // 
             // b_aceptar
             // 
@@ -126,6 +126,7 @@
             this.b_aceptar.Size = new System.Drawing.Size(52, 47);
             this.b_aceptar.TabIndex = 46;
             this.b_aceptar.UseVisualStyleBackColor = true;
+            this.b_aceptar.Click += new System.EventHandler(this.b_aceptar_Click);
             // 
             // b_cancelar
             // 
@@ -135,6 +136,7 @@
             this.b_cancelar.Size = new System.Drawing.Size(52, 43);
             this.b_cancelar.TabIndex = 47;
             this.b_cancelar.UseVisualStyleBackColor = true;
+            this.b_cancelar.Click += new System.EventHandler(this.b_cancelar_Click);
             // 
             // frm_catalogoProductos
             // 

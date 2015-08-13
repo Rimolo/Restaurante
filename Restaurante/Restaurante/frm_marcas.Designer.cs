@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.b_foto = new System.Windows.Forms.Button();
             this.cb_nacionalidad = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -40,6 +41,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.mtb_Telefono = new System.Windows.Forms.MaskedTextBox();
+            this.mtb_CedJuridica = new System.Windows.Forms.MaskedTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -52,13 +56,9 @@
             this.b_aceptar = new System.Windows.Forms.Button();
             this.b_borrar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.mtb_CedJuridica = new System.Windows.Forms.MaskedTextBox();
-            this.mtb_Telefono = new System.Windows.Forms.MaskedTextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,10 +83,20 @@
             this.groupBox1.Text = "Informacion de la Marca";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Restaurante.Properties.Resources.no_thumb;
+            this.pictureBox1.Location = new System.Drawing.Point(24, 252);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(124, 117);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 28;
+            this.pictureBox1.TabStop = false;
+            // 
             // b_foto
             // 
             this.b_foto.Image = global::Restaurante.Properties.Resources.Camara;
-            this.b_foto.Location = new System.Drawing.Point(169, 315);
+            this.b_foto.Location = new System.Drawing.Point(169, 305);
             this.b_foto.Name = "b_foto";
             this.b_foto.Size = new System.Drawing.Size(75, 64);
             this.b_foto.TabIndex = 27;
@@ -190,6 +200,32 @@
             this.groupBox2.TabIndex = 28;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Informacion del contacto";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Restaurante.Properties.Resources.no_thumb;
+            this.pictureBox2.Location = new System.Drawing.Point(17, 262);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(129, 123);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 32;
+            this.pictureBox2.TabStop = false;
+            // 
+            // mtb_Telefono
+            // 
+            this.mtb_Telefono.Location = new System.Drawing.Point(121, 196);
+            this.mtb_Telefono.Mask = "0000-0000";
+            this.mtb_Telefono.Name = "mtb_Telefono";
+            this.mtb_Telefono.Size = new System.Drawing.Size(140, 20);
+            this.mtb_Telefono.TabIndex = 31;
+            // 
+            // mtb_CedJuridica
+            // 
+            this.mtb_CedJuridica.Location = new System.Drawing.Point(121, 26);
+            this.mtb_CedJuridica.Mask = "00-0000-000000";
+            this.mtb_CedJuridica.Name = "mtb_CedJuridica";
+            this.mtb_CedJuridica.Size = new System.Drawing.Size(148, 20);
+            this.mtb_CedJuridica.TabIndex = 30;
             // 
             // label5
             // 
@@ -300,38 +336,6 @@
             this.label1.Size = new System.Drawing.Size(172, 501);
             this.label1.TabIndex = 0;
             // 
-            // mtb_CedJuridica
-            // 
-            this.mtb_CedJuridica.Location = new System.Drawing.Point(121, 26);
-            this.mtb_CedJuridica.Mask = "00-0000-000000";
-            this.mtb_CedJuridica.Name = "mtb_CedJuridica";
-            this.mtb_CedJuridica.Size = new System.Drawing.Size(148, 20);
-            this.mtb_CedJuridica.TabIndex = 30;
-            // 
-            // mtb_Telefono
-            // 
-            this.mtb_Telefono.Location = new System.Drawing.Point(121, 196);
-            this.mtb_Telefono.Mask = "0000-0000";
-            this.mtb_Telefono.Name = "mtb_Telefono";
-            this.mtb_Telefono.Size = new System.Drawing.Size(140, 20);
-            this.mtb_Telefono.TabIndex = 31;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(24, 256);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(120, 123);
-            this.pictureBox1.TabIndex = 28;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Location = new System.Drawing.Point(9, 271);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(129, 123);
-            this.pictureBox2.TabIndex = 32;
-            this.pictureBox2.TabStop = false;
-            // 
             // frm_marcas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -349,9 +353,9 @@
             this.Load += new System.EventHandler(this.frm_marcas_Load_1);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 

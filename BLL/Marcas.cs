@@ -197,7 +197,9 @@ namespace BLL
                         " nombEmp=@nombEmp," +
                         " detalleEmp=@detalleEmp," +
                         " telefonoEmp=@telefonoEmp," +
-                        " cedJuridicaEmp=@cedJuridicaEmp" +
+                        " cedJuridicaEmp=@cedJuridicaEmp," +
+                        " logoEmpresa=null," +
+                        " imagenMarca=null" +
                         " where codMarca=@codMarca";
                 }
                 ParamStruct[] parametros = new ParamStruct[8];
@@ -285,9 +287,23 @@ namespace BLL
                         _nombreEmp = ds.Tables[0].Rows[0]["nombEmp"].ToString();
                         _detalleEmpresa = ds.Tables[0].Rows[0]["detalleEmp"].ToString();
                         _telefono = Convert.ToInt32(ds.Tables[0].Rows[0]["telefonoEmp"]);
-                        _cedJuridica = ds.Tables[0].Rows[0]["cedJuridicaEmp"].ToString();                        
-                        // _imagen = (byte[])(ds.Tables[0].Rows[0]["logoEmpresa"]);
-                        // _imagen = (byte[])(ds.Tables[0].Rows[0]["imagenMarca"]);
+                        _cedJuridica = ds.Tables[0].Rows[0]["cedJuridicaEmp"].ToString();
+                        if (!string.IsNullOrEmpty(ds.Tables[0].Rows[0]["logoEmpresa"].ToString()))
+                        {
+                            _logo = (byte[])(ds.Tables[0].Rows[0]["logoEmpresa"]);
+                        }
+                        else
+                        {
+                            _logo = null;
+                        }
+                        if (!string.IsNullOrEmpty(ds.Tables[0].Rows[0]["imagenMarca"].ToString()))
+                        {
+                            _imagen = (byte[])(ds.Tables[0].Rows[0]["imagenMarca"]);
+                        }
+                        else
+                        {
+                            _imagen = null;
+                        }
 
                     }
                     else
@@ -425,7 +441,7 @@ namespace BLL
             {
                 sql = "Update Marcas set imagenMarca=@img, logoEmpresa=@img2 Where codMarca='" + _codMarca + "'";
                 cls_DAL.conectar(conexion, ref mensaje_error, ref numero_error);
-                cls_DAL.guardar_imagen(conexion, sql, _imagen, ref mensaje_error, ref numero_error);
+                cls_DAL.guardar_imagenMarcas(conexion, sql, _imagen, _logo, ref mensaje_error, ref numero_error);
                 cls_DAL.desconectar(conexion, ref mensaje_error, ref numero_error);
             }
         }

@@ -30,6 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pic_foto = new System.Windows.Forms.PictureBox();
             this.msk_ced = new System.Windows.Forms.MaskedTextBox();
             this.msk_tel1 = new System.Windows.Forms.MaskedTextBox();
             this.msk_tel2 = new System.Windows.Forms.MaskedTextBox();
@@ -55,7 +56,6 @@
             this.b_aceptar = new System.Windows.Forms.Button();
             this.b_cancelar = new System.Windows.Forms.Button();
             this.b_foto = new System.Windows.Forms.Button();
-            this.pic_foto = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_foto)).BeginInit();
             this.SuspendLayout();
@@ -99,6 +99,16 @@
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Informacion del Personal";
+            // 
+            // pic_foto
+            // 
+            this.pic_foto.Image = global::Restaurante.Properties.Resources.no_user_image_square_75d7df79d3f093e0805d3d40d16ce31d;
+            this.pic_foto.Location = new System.Drawing.Point(287, 50);
+            this.pic_foto.Name = "pic_foto";
+            this.pic_foto.Size = new System.Drawing.Size(125, 129);
+            this.pic_foto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic_foto.TabIndex = 28;
+            this.pic_foto.TabStop = false;
             // 
             // msk_ced
             // 
@@ -318,14 +328,6 @@
             this.b_foto.TabIndex = 26;
             this.b_foto.UseVisualStyleBackColor = true;
             this.b_foto.Click += new System.EventHandler(this.b_foto_Click);
-            // 
-            // pic_foto
-            // 
-            this.pic_foto.Location = new System.Drawing.Point(287, 50);
-            this.pic_foto.Name = "pic_foto";
-            this.pic_foto.Size = new System.Drawing.Size(125, 129);
-            this.pic_foto.TabIndex = 28;
-            this.pic_foto.TabStop = false;
             // 
             // frm_empleados
             // 

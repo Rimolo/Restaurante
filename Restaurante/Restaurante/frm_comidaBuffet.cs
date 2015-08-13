@@ -15,6 +15,7 @@ namespace Restaurante
     public partial class frm_comidaBuffet : Form
     {
         bool hayImagen = false;
+        bool cambioImagen = false;
         Buffet obj_buffet = new Buffet();
 
         private string _nick;
@@ -63,11 +64,13 @@ namespace Restaurante
             cbo_unidadMedida.Text = "";
             pic_foto.Image = null;
             hayImagen = false;
+            cambioImagen = false;
         }
 
         private void b_aceptar_Click(object sender, EventArgs e)
         {
-            bool error = false;
+            if (pic_foto.Image.RawFormat != null) { hayImagen = true; }
+                        
             if (!cls_validacion.validar(txt_nombreBuffet))
             {
                 MessageBox.Show("Por favor digite el nomnbre de la comida buffet", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -99,21 +102,23 @@ namespace Restaurante
             obj_buffet.precio = Convert.ToDecimal(txt_precioBuffet.Text);
             obj_buffet.codMedida = cbo_unidadMedida.SelectedValue.ToString();
             obj_buffet.tipo = cbo_tipoBuffet.SelectedItem.ToString();
-            if (hayImagen)
-            {
-                MemoryStream ms = new MemoryStream();
-                pic_foto.Image.Save(ms, pic_foto.Image.RawFormat);
-                byte[] a = ms.GetBuffer();
-                ms.Close();
-                obj_buffet.imagen = a;
-            }
 
-            if (error = obj_buffet.guardar_Buffet(_accion, _nick) && _accion != "Editar")
+            if (cambioImagen)
+                {
+                    MemoryStream ms = new MemoryStream();
+                    pic_foto.Image.Save(ms, pic_foto.Image.RawFormat);
+                    byte[] a = ms.GetBuffer();
+                    ms.Close();
+                    obj_buffet.imagen = a;
+                }            
+
+            if (obj_buffet.guardar_Buffet(_accion, _nick))
             {
                 if (hayImagen)
                 {
                     obj_buffet.guardar_imagen();
                 }
+
                 int valor = 0;
                 try
                 {
@@ -123,11 +128,16 @@ namespace Restaurante
                     valor++;
 
 
-                    if (obj_buffet.actualizar_consecutivo(valor))
+                    if (_accion.Equals("Insertar")) {
+                        if (obj_buffet.actualizar_consecutivo(valor))                        {
+
+                            MessageBox.Show("Plato insertado con éxito", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.Close();
+                        }
+                    }
+                    else
                     {
-
-                        MessageBox.Show("Producto insertado con éxito", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                        MessageBox.Show("Plato insertado con éxito", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();
                     }
 
@@ -136,17 +146,7 @@ namespace Restaurante
                 {
                     MessageBox.Show("Error al actualizar el consecutivo");
                 }
-
-            }
-            else
-            {
-                if (!error)
-                {
-                    MessageBox.Show("Plato insertado con éxito", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    this.Close();
-                }
-            }
+            }          
         }
 
         private void b_cancelar_Click(object sender, EventArgs e)
@@ -164,6 +164,7 @@ namespace Restaurante
                     pic_foto.Image = Image.FromFile(f.FileName);
                     pic_foto.SizeMode = PictureBoxSizeMode.StretchImage;
                     hayImagen = true;
+                    cambioImagen = true;
                 }
             }
             catch (Exception) { }

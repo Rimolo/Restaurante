@@ -15,6 +15,7 @@ namespace Restaurante
     public partial class frmBebidasGaseosas : Form
     {
         bool hayImagen = false;
+        bool cambioImagen = false;
         Gaseosas obj_gaseosa = new Gaseosas();
 
         private string _nick;
@@ -54,11 +55,12 @@ namespace Restaurante
             cb_marca.Text = "";
             pb_foto.Image = null;
             hayImagen = false;
+            cambioImagen = false;
         }
 
         private void b_aceptar_Click(object sender, EventArgs e)
         {
-            bool error = false;
+            if (pb_foto.Image.RawFormat != null) { hayImagen = true; }
             if (!cls_validacion.validar(txt_nombre))
             {
                 MessageBox.Show("Por favor digite el nomnre de la gaseosa", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -105,7 +107,7 @@ namespace Restaurante
             obj_gaseosa.cantidad = Convert.ToInt32(txt_cantidad.Text);
             obj_gaseosa.codPais = cb_nacionalidad.SelectedValue.ToString();
             obj_gaseosa.codMarca = cb_marca.SelectedValue.ToString();
-            if (hayImagen)
+            if (cambioImagen)
             {
                 MemoryStream ms = new MemoryStream();
                 pb_foto.Image.Save(ms, pb_foto.Image.RawFormat);
@@ -114,7 +116,7 @@ namespace Restaurante
                 obj_gaseosa.imagen = a;
             }
 
-            if (error=obj_gaseosa.guardar_Gaseosas(_accion, txt_restaurante.Text) && _accion != "Editar")
+            if (obj_gaseosa.guardar_Gaseosas(_accion, txt_restaurante.Text))
             {
                 if (hayImagen)
                 {
@@ -128,12 +130,18 @@ namespace Restaurante
                     valor = Convert.ToInt32(ds.Tables[0].Rows[0]["valor"]);
                     valor++;
 
-
-                    if (obj_gaseosa.actualizar_consecutivo(valor))
+                    if (_accion.Equals("Insertar"))
                     {
+                        if (obj_gaseosa.actualizar_consecutivo(valor))
+                        {
+                            MessageBox.Show("Producto insertado con éxito", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                            this.Close();
+                        }
+                    }
+                    else
+                    {
                         MessageBox.Show("Producto insertado con éxito", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                         this.Close();
                     }
 
@@ -141,14 +149,6 @@ namespace Restaurante
                 catch (Exception)
                 {
                     MessageBox.Show("Error al actualizar el consecutivo");
-                }
-
-            }else {
-                if (!error)
-                {
-                    MessageBox.Show("Producto insertado con éxito", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    this.Close();
                 }
             }
         }
@@ -168,6 +168,7 @@ namespace Restaurante
                     pb_foto.Image = Image.FromFile(f.FileName);
                     pb_foto.SizeMode = PictureBoxSizeMode.StretchImage;
                     hayImagen = true;
+                    cambioImagen = true;
                 }
             }
             catch (Exception) { }

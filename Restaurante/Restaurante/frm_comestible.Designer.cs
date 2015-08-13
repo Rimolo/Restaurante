@@ -102,6 +102,15 @@
             // cb_tipoComestible
             // 
             this.cb_tipoComestible.FormattingEnabled = true;
+            this.cb_tipoComestible.Items.AddRange(new object[] {
+            "Frutas",
+            "Cacao",
+            "Carnes",
+            "Aceites",
+            "Cereales",
+            "Vegetales",
+            "Legumbres",
+            "Frutos Secos"});
             this.cb_tipoComestible.Location = new System.Drawing.Point(109, 161);
             this.cb_tipoComestible.Name = "cb_tipoComestible";
             this.cb_tipoComestible.Size = new System.Drawing.Size(121, 21);
@@ -144,6 +153,10 @@
             // cb_lineaComestible
             // 
             this.cb_lineaComestible.FormattingEnabled = true;
+            this.cb_lineaComestible.Items.AddRange(new object[] {
+            "Secos",
+            "Congelados",
+            "Refrigerados"});
             this.cb_lineaComestible.Location = new System.Drawing.Point(428, 113);
             this.cb_lineaComestible.Name = "cb_lineaComestible";
             this.cb_lineaComestible.Size = new System.Drawing.Size(121, 21);
@@ -152,6 +165,13 @@
             // cb_claseComestible
             // 
             this.cb_claseComestible.FormattingEnabled = true;
+            this.cb_claseComestible.Items.AddRange(new object[] {
+            "Fibra",
+            "Grasas",
+            "Proteínas",
+            "Vitaminas",
+            "Minerales",
+            "Carbohidratos"});
             this.cb_claseComestible.Location = new System.Drawing.Point(428, 63);
             this.cb_claseComestible.Name = "cb_claseComestible";
             this.cb_claseComestible.Size = new System.Drawing.Size(121, 21);
@@ -217,8 +237,10 @@
             // 
             // txt_codigo
             // 
+            this.txt_codigo.Enabled = false;
             this.txt_codigo.Location = new System.Drawing.Point(107, 19);
             this.txt_codigo.Name = "txt_codigo";
+            this.txt_codigo.ReadOnly = true;
             this.txt_codigo.Size = new System.Drawing.Size(160, 20);
             this.txt_codigo.TabIndex = 6;
             // 
@@ -248,6 +270,7 @@
             this.button1.Size = new System.Drawing.Size(47, 47);
             this.button1.TabIndex = 47;
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // b_aceptar
             // 
@@ -257,15 +280,17 @@
             this.b_aceptar.Size = new System.Drawing.Size(45, 47);
             this.b_aceptar.TabIndex = 49;
             this.b_aceptar.UseVisualStyleBackColor = true;
+            this.b_aceptar.Click += new System.EventHandler(this.b_aceptar_Click);
             // 
             // b_limpiar
             // 
-            this.b_limpiar.Location = new System.Drawing.Point(207, 287);
+            this.b_limpiar.Image = global::Restaurante.Properties.Resources.clean1;
+            this.b_limpiar.Location = new System.Drawing.Point(221, 287);
             this.b_limpiar.Name = "b_limpiar";
-            this.b_limpiar.Size = new System.Drawing.Size(75, 23);
+            this.b_limpiar.Size = new System.Drawing.Size(55, 47);
             this.b_limpiar.TabIndex = 50;
-            this.b_limpiar.Text = "button2";
             this.b_limpiar.UseVisualStyleBackColor = true;
+            this.b_limpiar.Click += new System.EventHandler(this.b_limpiar_Click);
             // 
             // frm_comestible
             // 
@@ -280,6 +305,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frm_comestible";
             this.Text = "Comestibles";
+            this.Load += new System.EventHandler(this.frm_comestible_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
