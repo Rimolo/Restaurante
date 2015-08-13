@@ -12,6 +12,14 @@ namespace Restaurante
 {
     public partial class frm_ventanaProveedores : Form
     {
+        private string _nick;
+
+        public string nick
+        {
+            get { return _nick; }
+            set { _nick = value; }
+        }
+
         public frm_ventanaProveedores()
         {
             InitializeComponent();
@@ -36,6 +44,7 @@ namespace Restaurante
                     if (rb_proveedores.Checked == true)
                     {
                         frm_listaProveedores proveedores = new frm_listaProveedores();
+                        proveedores.nick = _nick;
                         proveedores.Show();
                     }                    
                 }
@@ -45,6 +54,11 @@ namespace Restaurante
         private void b_cancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void frm_ventanaProveedores_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

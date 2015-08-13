@@ -91,7 +91,7 @@ namespace Restaurante
             obj_especiales.detalle = txt_detalle.Text;
             obj_especiales.precio = Convert.ToDecimal(txt_precio.Text);
             obj_especiales.ingredientes = txt_ingredientes.Text;
-            if (cambioImagen)
+            if (hayImagen)
             {
                 MemoryStream ms = new MemoryStream();
                 pb_foto.Image.Save(ms, pb_foto.Image.RawFormat);
@@ -177,7 +177,7 @@ namespace Restaurante
                 txt_detalle.Text = obj_especiales.detalle;
                 txt_precio.Text = obj_especiales.precio.ToString();
                 txt_ingredientes.Text = obj_especiales.ingredientes;
-                if (!string.IsNullOrEmpty((obj_especiales.imagen.ToString())))
+                if (obj_especiales.imagen!=null)
                 {
                     MemoryStream ms = new MemoryStream(obj_especiales.imagen);
                     pb_foto.Image = Image.FromStream(ms);

@@ -241,6 +241,7 @@
             this.txt_codigo.Enabled = false;
             this.txt_codigo.Location = new System.Drawing.Point(107, 12);
             this.txt_codigo.Name = "txt_codigo";
+            this.txt_codigo.ReadOnly = true;
             this.txt_codigo.Size = new System.Drawing.Size(160, 20);
             this.txt_codigo.TabIndex = 6;
             // 

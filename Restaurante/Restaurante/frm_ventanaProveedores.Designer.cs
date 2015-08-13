@@ -124,6 +124,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frm_ventanaProveedores";
             this.Text = "frm_ventanaProveedores";
+            this.Load += new System.EventHandler(this.frm_ventanaProveedores_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

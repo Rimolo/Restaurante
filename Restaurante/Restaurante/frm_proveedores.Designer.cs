@@ -29,26 +29,33 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.maskedTextBox5 = new System.Windows.Forms.MaskedTextBox();
+            this.dtp_fecha = new System.Windows.Forms.DateTimePicker();
+            this.mtb_cedula = new System.Windows.Forms.MaskedTextBox();
+            this.pic_foto = new System.Windows.Forms.PictureBox();
+            this.b_borrar = new System.Windows.Forms.Button();
+            this.b_buscaFoto = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.b_asigna = new System.Windows.Forms.Button();
+            this.b_remueve = new System.Windows.Forms.Button();
             this.lst_productosProveedor = new System.Windows.Forms.ListBox();
             this.lst_productosRestaurante = new System.Windows.Forms.ListBox();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.maskedTextBox4 = new System.Windows.Forms.MaskedTextBox();
-            this.txt_direccion = new System.Windows.Forms.TextBox();
+            this.mtb_telefono = new System.Windows.Forms.MaskedTextBox();
+            this.txt_direccionContacto = new System.Windows.Forms.TextBox();
             this.txt_nombreContacto = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
+            this.b_cerrar = new System.Windows.Forms.Button();
+            this.b_aceptar = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
-            this.txt_dirrecion = new System.Windows.Forms.TextBox();
+            this.txt_direccion = new System.Windows.Forms.TextBox();
             this.txt_correo = new System.Windows.Forms.TextBox();
             this.txt_apellido2 = new System.Windows.Forms.TextBox();
             this.txt_apellido1 = new System.Windows.Forms.TextBox();
             this.txt_nombre = new System.Windows.Forms.TextBox();
-            this.txt_fechaIngreso = new System.Windows.Forms.TextBox();
             this.txt_codigo = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -59,33 +66,27 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.mtb_celular = new System.Windows.Forms.MaskedTextBox();
+            this.mtb_fax = new System.Windows.Forms.MaskedTextBox();
+            this.mtb_oficina = new System.Windows.Forms.MaskedTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pic_foto = new System.Windows.Forms.PictureBox();
-            this.b_borrar = new System.Windows.Forms.Button();
-            this.b_buscaFoto = new System.Windows.Forms.Button();
-            this.b_asigna = new System.Windows.Forms.Button();
-            this.b_remueve = new System.Windows.Forms.Button();
-            this.b_cerrar = new System.Windows.Forms.Button();
-            this.b_aceptar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_foto)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_foto)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.maskedTextBox5);
+            this.groupBox1.Controls.Add(this.dtp_fecha);
+            this.groupBox1.Controls.Add(this.mtb_cedula);
             this.groupBox1.Controls.Add(this.pic_foto);
             this.groupBox1.Controls.Add(this.b_borrar);
             this.groupBox1.Controls.Add(this.b_buscaFoto);
@@ -94,12 +95,11 @@
             this.groupBox1.Controls.Add(this.b_cerrar);
             this.groupBox1.Controls.Add(this.b_aceptar);
             this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Controls.Add(this.txt_dirrecion);
+            this.groupBox1.Controls.Add(this.txt_direccion);
             this.groupBox1.Controls.Add(this.txt_correo);
             this.groupBox1.Controls.Add(this.txt_apellido2);
             this.groupBox1.Controls.Add(this.txt_apellido1);
             this.groupBox1.Controls.Add(this.txt_nombre);
-            this.groupBox1.Controls.Add(this.txt_fechaIngreso);
             this.groupBox1.Controls.Add(this.txt_codigo);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.label11);
@@ -117,13 +117,53 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Informacion del Proveedor";
             // 
-            // maskedTextBox5
+            // dtp_fecha
             // 
-            this.maskedTextBox5.Location = new System.Drawing.Point(107, 70);
-            this.maskedTextBox5.Mask = "00-000-0000";
-            this.maskedTextBox5.Name = "maskedTextBox5";
-            this.maskedTextBox5.Size = new System.Drawing.Size(158, 20);
-            this.maskedTextBox5.TabIndex = 73;
+            this.dtp_fecha.CustomFormat = "dd/MM/yyyy";
+            this.dtp_fecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtp_fecha.Location = new System.Drawing.Point(108, 115);
+            this.dtp_fecha.Name = "dtp_fecha";
+            this.dtp_fecha.Size = new System.Drawing.Size(157, 20);
+            this.dtp_fecha.TabIndex = 74;
+            // 
+            // mtb_cedula
+            // 
+            this.mtb_cedula.Location = new System.Drawing.Point(107, 70);
+            this.mtb_cedula.Mask = "00-000-0000";
+            this.mtb_cedula.Name = "mtb_cedula";
+            this.mtb_cedula.Size = new System.Drawing.Size(158, 20);
+            this.mtb_cedula.TabIndex = 73;
+            // 
+            // pic_foto
+            // 
+            this.pic_foto.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pic_foto.Image = global::Restaurante.Properties.Resources.no_user_image_square_75d7df79d3f093e0805d3d40d16ce31d;
+            this.pic_foto.Location = new System.Drawing.Point(278, 62);
+            this.pic_foto.Name = "pic_foto";
+            this.pic_foto.Size = new System.Drawing.Size(133, 127);
+            this.pic_foto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic_foto.TabIndex = 72;
+            this.pic_foto.TabStop = false;
+            // 
+            // b_borrar
+            // 
+            this.b_borrar.Image = global::Restaurante.Properties.Resources.clean;
+            this.b_borrar.Location = new System.Drawing.Point(225, 409);
+            this.b_borrar.Name = "b_borrar";
+            this.b_borrar.Size = new System.Drawing.Size(46, 45);
+            this.b_borrar.TabIndex = 71;
+            this.b_borrar.UseVisualStyleBackColor = true;
+            this.b_borrar.Click += new System.EventHandler(this.b_borrar_Click);
+            // 
+            // b_buscaFoto
+            // 
+            this.b_buscaFoto.Image = global::Restaurante.Properties.Resources._40px_Examine_copyright_icon;
+            this.b_buscaFoto.Location = new System.Drawing.Point(382, 409);
+            this.b_buscaFoto.Name = "b_buscaFoto";
+            this.b_buscaFoto.Size = new System.Drawing.Size(43, 44);
+            this.b_buscaFoto.TabIndex = 70;
+            this.b_buscaFoto.UseVisualStyleBackColor = true;
+            this.b_buscaFoto.Click += new System.EventHandler(this.b_buscaFoto_Click);
             // 
             // groupBox4
             // 
@@ -140,6 +180,26 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Pase de Productos";
             // 
+            // b_asigna
+            // 
+            this.b_asigna.Image = global::Restaurante.Properties.Resources.flecha;
+            this.b_asigna.Location = new System.Drawing.Point(142, 78);
+            this.b_asigna.Name = "b_asigna";
+            this.b_asigna.Size = new System.Drawing.Size(52, 40);
+            this.b_asigna.TabIndex = 5;
+            this.b_asigna.UseVisualStyleBackColor = true;
+            this.b_asigna.Click += new System.EventHandler(this.b_asigna_Click);
+            // 
+            // b_remueve
+            // 
+            this.b_remueve.Image = global::Restaurante.Properties.Resources.izquierda;
+            this.b_remueve.Location = new System.Drawing.Point(142, 130);
+            this.b_remueve.Name = "b_remueve";
+            this.b_remueve.Size = new System.Drawing.Size(52, 40);
+            this.b_remueve.TabIndex = 4;
+            this.b_remueve.UseVisualStyleBackColor = true;
+            this.b_remueve.Click += new System.EventHandler(this.b_remueve_Click);
+            // 
             // lst_productosProveedor
             // 
             this.lst_productosProveedor.FormattingEnabled = true;
@@ -151,10 +211,11 @@
             // lst_productosRestaurante
             // 
             this.lst_productosRestaurante.FormattingEnabled = true;
-            this.lst_productosRestaurante.Location = new System.Drawing.Point(10, 37);
+            this.lst_productosRestaurante.Location = new System.Drawing.Point(13, 43);
             this.lst_productosRestaurante.Name = "lst_productosRestaurante";
             this.lst_productosRestaurante.Size = new System.Drawing.Size(126, 212);
             this.lst_productosRestaurante.TabIndex = 2;
+            this.lst_productosRestaurante.SelectedIndexChanged += new System.EventHandler(this.lst_productosRestaurante_SelectedIndexChanged);
             // 
             // label18
             // 
@@ -176,8 +237,8 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.maskedTextBox4);
-            this.groupBox3.Controls.Add(this.txt_direccion);
+            this.groupBox3.Controls.Add(this.mtb_telefono);
+            this.groupBox3.Controls.Add(this.txt_direccionContacto);
             this.groupBox3.Controls.Add(this.txt_nombreContacto);
             this.groupBox3.Controls.Add(this.label16);
             this.groupBox3.Controls.Add(this.label15);
@@ -189,20 +250,20 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Informacion del Contacto";
             // 
-            // maskedTextBox4
+            // mtb_telefono
             // 
-            this.maskedTextBox4.Location = new System.Drawing.Point(121, 50);
-            this.maskedTextBox4.Mask = "0000-0000";
-            this.maskedTextBox4.Name = "maskedTextBox4";
-            this.maskedTextBox4.Size = new System.Drawing.Size(116, 20);
-            this.maskedTextBox4.TabIndex = 5;
+            this.mtb_telefono.Location = new System.Drawing.Point(121, 50);
+            this.mtb_telefono.Mask = "0000-0000";
+            this.mtb_telefono.Name = "mtb_telefono";
+            this.mtb_telefono.Size = new System.Drawing.Size(116, 20);
+            this.mtb_telefono.TabIndex = 5;
             // 
-            // txt_direccion
+            // txt_direccionContacto
             // 
-            this.txt_direccion.Location = new System.Drawing.Point(121, 88);
-            this.txt_direccion.Name = "txt_direccion";
-            this.txt_direccion.Size = new System.Drawing.Size(151, 20);
-            this.txt_direccion.TabIndex = 4;
+            this.txt_direccionContacto.Location = new System.Drawing.Point(121, 88);
+            this.txt_direccionContacto.Name = "txt_direccionContacto";
+            this.txt_direccionContacto.Size = new System.Drawing.Size(151, 20);
+            this.txt_direccionContacto.TabIndex = 4;
             // 
             // txt_nombreContacto
             // 
@@ -238,21 +299,41 @@
             this.label14.TabIndex = 0;
             this.label14.Text = "Nombre del Contacto";
             // 
+            // b_cerrar
+            // 
+            this.b_cerrar.Image = global::Restaurante.Properties.Resources.Cancelar4;
+            this.b_cerrar.Location = new System.Drawing.Point(334, 409);
+            this.b_cerrar.Name = "b_cerrar";
+            this.b_cerrar.Size = new System.Drawing.Size(42, 44);
+            this.b_cerrar.TabIndex = 67;
+            this.b_cerrar.UseVisualStyleBackColor = true;
+            this.b_cerrar.Click += new System.EventHandler(this.b_cerrar_Click);
+            // 
+            // b_aceptar
+            // 
+            this.b_aceptar.Image = global::Restaurante.Properties.Resources.Aceptar4;
+            this.b_aceptar.Location = new System.Drawing.Point(277, 409);
+            this.b_aceptar.Name = "b_aceptar";
+            this.b_aceptar.Size = new System.Drawing.Size(43, 45);
+            this.b_aceptar.TabIndex = 66;
+            this.b_aceptar.UseVisualStyleBackColor = true;
+            this.b_aceptar.Click += new System.EventHandler(this.b_aceptar_Click);
+            // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(291, 32);
+            this.label13.Location = new System.Drawing.Point(308, 32);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(97, 13);
             this.label13.TabIndex = 17;
             this.label13.Text = "Foto del Proveedor";
             // 
-            // txt_dirrecion
+            // txt_direccion
             // 
-            this.txt_dirrecion.Location = new System.Drawing.Point(107, 308);
-            this.txt_dirrecion.Name = "txt_dirrecion";
-            this.txt_dirrecion.Size = new System.Drawing.Size(289, 20);
-            this.txt_dirrecion.TabIndex = 16;
+            this.txt_direccion.Location = new System.Drawing.Point(107, 308);
+            this.txt_direccion.Name = "txt_direccion";
+            this.txt_direccion.Size = new System.Drawing.Size(289, 20);
+            this.txt_direccion.TabIndex = 16;
             // 
             // txt_correo
             // 
@@ -282,17 +363,12 @@
             this.txt_nombre.Size = new System.Drawing.Size(158, 20);
             this.txt_nombre.TabIndex = 12;
             // 
-            // txt_fechaIngreso
-            // 
-            this.txt_fechaIngreso.Location = new System.Drawing.Point(107, 108);
-            this.txt_fechaIngreso.Name = "txt_fechaIngreso";
-            this.txt_fechaIngreso.Size = new System.Drawing.Size(158, 20);
-            this.txt_fechaIngreso.TabIndex = 11;
-            // 
             // txt_codigo
             // 
+            this.txt_codigo.Enabled = false;
             this.txt_codigo.Location = new System.Drawing.Point(107, 32);
             this.txt_codigo.Name = "txt_codigo";
+            this.txt_codigo.ReadOnly = true;
             this.txt_codigo.Size = new System.Drawing.Size(158, 20);
             this.txt_codigo.TabIndex = 9;
             // 
@@ -370,9 +446,9 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.maskedTextBox3);
-            this.groupBox2.Controls.Add(this.maskedTextBox2);
-            this.groupBox2.Controls.Add(this.maskedTextBox1);
+            this.groupBox2.Controls.Add(this.mtb_celular);
+            this.groupBox2.Controls.Add(this.mtb_fax);
+            this.groupBox2.Controls.Add(this.mtb_oficina);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label2);
@@ -383,29 +459,29 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Telefonos";
             // 
-            // maskedTextBox3
+            // mtb_celular
             // 
-            this.maskedTextBox3.Location = new System.Drawing.Point(328, 26);
-            this.maskedTextBox3.Mask = "0000-0000";
-            this.maskedTextBox3.Name = "maskedTextBox3";
-            this.maskedTextBox3.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBox3.TabIndex = 63;
+            this.mtb_celular.Location = new System.Drawing.Point(328, 26);
+            this.mtb_celular.Mask = "0000-0000";
+            this.mtb_celular.Name = "mtb_celular";
+            this.mtb_celular.Size = new System.Drawing.Size(100, 20);
+            this.mtb_celular.TabIndex = 63;
             // 
-            // maskedTextBox2
+            // mtb_fax
             // 
-            this.maskedTextBox2.Location = new System.Drawing.Point(182, 28);
-            this.maskedTextBox2.Mask = "0000-0000";
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBox2.TabIndex = 62;
+            this.mtb_fax.Location = new System.Drawing.Point(182, 28);
+            this.mtb_fax.Mask = "0000-0000";
+            this.mtb_fax.Name = "mtb_fax";
+            this.mtb_fax.Size = new System.Drawing.Size(100, 20);
+            this.mtb_fax.TabIndex = 62;
             // 
-            // maskedTextBox1
+            // mtb_oficina
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(46, 26);
-            this.maskedTextBox1.Mask = "0000-0000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBox1.TabIndex = 61;
+            this.mtb_oficina.Location = new System.Drawing.Point(46, 26);
+            this.mtb_oficina.Mask = "0000-0000";
+            this.mtb_oficina.Name = "mtb_oficina";
+            this.mtb_oficina.Size = new System.Drawing.Size(100, 20);
+            this.mtb_oficina.TabIndex = 61;
             // 
             // label4
             // 
@@ -452,69 +528,6 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // pic_foto
-            // 
-            this.pic_foto.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pic_foto.Location = new System.Drawing.Point(292, 62);
-            this.pic_foto.Name = "pic_foto";
-            this.pic_foto.Size = new System.Drawing.Size(133, 127);
-            this.pic_foto.TabIndex = 72;
-            this.pic_foto.TabStop = false;
-            // 
-            // b_borrar
-            // 
-            this.b_borrar.Image = global::Restaurante.Properties.Resources.clean;
-            this.b_borrar.Location = new System.Drawing.Point(225, 409);
-            this.b_borrar.Name = "b_borrar";
-            this.b_borrar.Size = new System.Drawing.Size(46, 45);
-            this.b_borrar.TabIndex = 71;
-            this.b_borrar.UseVisualStyleBackColor = true;
-            // 
-            // b_buscaFoto
-            // 
-            this.b_buscaFoto.Image = global::Restaurante.Properties.Resources._40px_Examine_copyright_icon;
-            this.b_buscaFoto.Location = new System.Drawing.Point(382, 409);
-            this.b_buscaFoto.Name = "b_buscaFoto";
-            this.b_buscaFoto.Size = new System.Drawing.Size(43, 44);
-            this.b_buscaFoto.TabIndex = 70;
-            this.b_buscaFoto.UseVisualStyleBackColor = true;
-            // 
-            // b_asigna
-            // 
-            this.b_asigna.Image = global::Restaurante.Properties.Resources.flecha;
-            this.b_asigna.Location = new System.Drawing.Point(142, 78);
-            this.b_asigna.Name = "b_asigna";
-            this.b_asigna.Size = new System.Drawing.Size(52, 40);
-            this.b_asigna.TabIndex = 5;
-            this.b_asigna.UseVisualStyleBackColor = true;
-            // 
-            // b_remueve
-            // 
-            this.b_remueve.Image = global::Restaurante.Properties.Resources.izquierda;
-            this.b_remueve.Location = new System.Drawing.Point(142, 130);
-            this.b_remueve.Name = "b_remueve";
-            this.b_remueve.Size = new System.Drawing.Size(52, 40);
-            this.b_remueve.TabIndex = 4;
-            this.b_remueve.UseVisualStyleBackColor = true;
-            // 
-            // b_cerrar
-            // 
-            this.b_cerrar.Image = global::Restaurante.Properties.Resources.Cancelar4;
-            this.b_cerrar.Location = new System.Drawing.Point(334, 409);
-            this.b_cerrar.Name = "b_cerrar";
-            this.b_cerrar.Size = new System.Drawing.Size(42, 44);
-            this.b_cerrar.TabIndex = 67;
-            this.b_cerrar.UseVisualStyleBackColor = true;
-            // 
-            // b_aceptar
-            // 
-            this.b_aceptar.Image = global::Restaurante.Properties.Resources.Aceptar4;
-            this.b_aceptar.Location = new System.Drawing.Point(277, 409);
-            this.b_aceptar.Name = "b_aceptar";
-            this.b_aceptar.Size = new System.Drawing.Size(43, 45);
-            this.b_aceptar.TabIndex = 66;
-            this.b_aceptar.UseVisualStyleBackColor = true;
-            // 
             // frm_proveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -525,8 +538,10 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "frm_proveedores";
             this.Text = "frm_proveedores";
+            this.Load += new System.EventHandler(this.frm_proveedores_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_foto)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -535,7 +550,6 @@
             this.groupBox2.PerformLayout();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_foto)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -547,12 +561,11 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txt_dirrecion;
+        private System.Windows.Forms.TextBox txt_direccion;
         private System.Windows.Forms.TextBox txt_correo;
         private System.Windows.Forms.TextBox txt_apellido2;
         private System.Windows.Forms.TextBox txt_apellido1;
         private System.Windows.Forms.TextBox txt_nombre;
-        private System.Windows.Forms.TextBox txt_fechaIngreso;
         private System.Windows.Forms.TextBox txt_codigo;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
@@ -570,23 +583,24 @@
         private System.Windows.Forms.Button b_buscaFoto;
         private System.Windows.Forms.Button b_borrar;
         private System.Windows.Forms.PictureBox pic_foto;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox3;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox5;
+        private System.Windows.Forms.MaskedTextBox mtb_celular;
+        private System.Windows.Forms.MaskedTextBox mtb_fax;
+        private System.Windows.Forms.MaskedTextBox mtb_oficina;
+        private System.Windows.Forms.MaskedTextBox mtb_cedula;
         private System.Windows.Forms.Button b_asigna;
         private System.Windows.Forms.Button b_remueve;
         private System.Windows.Forms.ListBox lst_productosProveedor;
         private System.Windows.Forms.ListBox lst_productosRestaurante;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox4;
-        private System.Windows.Forms.TextBox txt_direccion;
+        private System.Windows.Forms.MaskedTextBox mtb_telefono;
+        private System.Windows.Forms.TextBox txt_direccionContacto;
         private System.Windows.Forms.TextBox txt_nombreContacto;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DateTimePicker dtp_fecha;
     }
 }

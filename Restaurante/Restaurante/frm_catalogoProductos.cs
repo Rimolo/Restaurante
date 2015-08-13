@@ -12,6 +12,7 @@ namespace Restaurante
 {
     public partial class frm_catalogoProductos : Form
     {
+        
         public frm_catalogoProductos()
         {
             InitializeComponent();
@@ -61,6 +62,11 @@ namespace Restaurante
         private void b_cancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void frm_catalogoProductos_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

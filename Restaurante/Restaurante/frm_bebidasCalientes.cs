@@ -103,7 +103,7 @@ namespace Restaurante
             obj_calientes.precio = Convert.ToDecimal(txt_precio.Text);
             obj_calientes.codRestaurante = txt_restaurantes.Text;
             obj_calientes.ingredientes = txt_ingredientes.Text;
-            if (cambioImagen)
+            if (hayImagen)
             {
                 MemoryStream ms = new MemoryStream();
                 pb_foto.Image.Save(ms, pb_foto.Image.RawFormat);
@@ -183,7 +183,7 @@ namespace Restaurante
                  txt_precio.Text= obj_calientes.precio.ToString();
                  txt_restaurantes.Text= obj_calientes.codRestaurante;
                  txt_ingredientes.Text= obj_calientes.ingredientes;
-                if (!string.IsNullOrEmpty((obj_calientes.imagen.ToString())))
+                if (obj_calientes.imagen!=null)
                 {
                     MemoryStream ms = new MemoryStream(obj_calientes.imagen);
                     pb_foto.Image = Image.FromStream(ms);
