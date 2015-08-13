@@ -75,14 +75,16 @@ namespace BLL
             {
                 if (accion.Equals("Insertar"))
                 {
-                    sql = "Insert into Caja values(@cod,@codR,@fecha,@apertura,0,'Apertura de Caja')";
+                    if (apertura > cierre)
+                    {
+                        sql = "Insert into Caja values(@cod,@codR,@fecha,@apertura,0,'Apertura de Caja')";
+                    }
+                    else {
+                        sql = "Insert into Caja values(@cod,@codR,@fecha,@cierre,0,'Cierre de Caja')";
+                    }
+                    
                 }
-                else
-                {
-                    sql = "Update Caja SET" +
-                        " montoCierre=@cierre" +
-                        " where codCaja=@cod";
-                }
+               
                 ParamStruct[] parametros = new ParamStruct[5];
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@codR", SqlDbType.VarChar, _codRest);
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 1, "@fecha", SqlDbType.VarChar, _fecha);

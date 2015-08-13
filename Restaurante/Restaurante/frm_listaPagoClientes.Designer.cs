@@ -29,36 +29,36 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dt_reservacion = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
+            this.rb_reservacion = new System.Windows.Forms.RadioButton();
             this.txt_nombreCliente = new System.Windows.Forms.TextBox();
             this.txt_codigoCliente = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.rb_reservacion = new System.Windows.Forms.RadioButton();
-            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dgv_pagoClientes = new System.Windows.Forms.DataGridView();
+            this.b_aceptar = new System.Windows.Forms.Button();
+            this.b_borrar = new System.Windows.Forms.Button();
+            this.b_cerrar = new System.Windows.Forms.Button();
+            this.b_refrescar = new System.Windows.Forms.Button();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.b_aceptar = new System.Windows.Forms.Button();
-            this.b_borrar = new System.Windows.Forms.Button();
-            this.b_cerrar = new System.Windows.Forms.Button();
-            this.b_refrescar = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.txt_fechaReservacion = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_pagoClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_pagoClientes)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.txt_fechaReservacion);
+            this.groupBox1.Controls.Add(this.dt_reservacion);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.rb_reservacion);
             this.groupBox1.Controls.Add(this.txt_nombreCliente);
@@ -71,6 +71,37 @@
             this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Solo Busqueda";
+            // 
+            // dt_reservacion
+            // 
+            this.dt_reservacion.CustomFormat = "dd/MM/yyyy";
+            this.dt_reservacion.Enabled = false;
+            this.dt_reservacion.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dt_reservacion.Location = new System.Drawing.Point(357, 20);
+            this.dt_reservacion.Name = "dt_reservacion";
+            this.dt_reservacion.Size = new System.Drawing.Size(107, 20);
+            this.dt_reservacion.TabIndex = 6;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(235, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(115, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Fecha de Reservacion";
+            // 
+            // rb_reservacion
+            // 
+            this.rb_reservacion.AutoSize = true;
+            this.rb_reservacion.Location = new System.Drawing.Point(470, 24);
+            this.rb_reservacion.Name = "rb_reservacion";
+            this.rb_reservacion.Size = new System.Drawing.Size(85, 17);
+            this.rb_reservacion.TabIndex = 4;
+            this.rb_reservacion.TabStop = true;
+            this.rb_reservacion.Text = "Reservacion";
+            this.rb_reservacion.UseVisualStyleBackColor = true;
+            this.rb_reservacion.CheckedChanged += new System.EventHandler(this.rb_reservacion_CheckedChanged);
             // 
             // txt_nombreCliente
             // 
@@ -113,28 +144,19 @@
             this.panel1.Size = new System.Drawing.Size(160, 351);
             this.panel1.TabIndex = 19;
             // 
-            // rb_reservacion
+            // pictureBox1
             // 
-            this.rb_reservacion.AutoSize = true;
-            this.rb_reservacion.Location = new System.Drawing.Point(470, 24);
-            this.rb_reservacion.Name = "rb_reservacion";
-            this.rb_reservacion.Size = new System.Drawing.Size(85, 17);
-            this.rb_reservacion.TabIndex = 4;
-            this.rb_reservacion.TabStop = true;
-            this.rb_reservacion.Text = "Reservacion";
-            this.rb_reservacion.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(235, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(115, 13);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Fecha de Reservacion";
+            this.pictureBox1.Image = global::Restaurante.Properties.Resources.User_female1;
+            this.pictureBox1.Location = new System.Drawing.Point(24, 109);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(119, 140);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // dgv_pagoClientes
             // 
+            this.dgv_pagoClientes.AllowUserToAddRows = false;
+            this.dgv_pagoClientes.AllowUserToDeleteRows = false;
             this.dgv_pagoClientes.BackgroundColor = System.Drawing.Color.White;
             this.dgv_pagoClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_pagoClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -147,44 +169,10 @@
             this.Column7});
             this.dgv_pagoClientes.Location = new System.Drawing.Point(166, 110);
             this.dgv_pagoClientes.Name = "dgv_pagoClientes";
+            this.dgv_pagoClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_pagoClientes.Size = new System.Drawing.Size(662, 232);
             this.dgv_pagoClientes.TabIndex = 83;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Codigo";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Nombre";
-            this.Column2.Name = "Column2";
-            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Monto pagado";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Detalle ";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Fecha";
-            this.Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Reservacion";
-            this.Column6.Name = "Column6";
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Restaurante";
-            this.Column7.Name = "Column7";
+            this.dgv_pagoClientes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_pagoClientes_CellDoubleClick);
             // 
             // b_aceptar
             // 
@@ -194,6 +182,7 @@
             this.b_aceptar.Size = new System.Drawing.Size(42, 47);
             this.b_aceptar.TabIndex = 83;
             this.b_aceptar.UseVisualStyleBackColor = true;
+            this.b_aceptar.Click += new System.EventHandler(this.b_aceptar_Click);
             // 
             // b_borrar
             // 
@@ -203,6 +192,7 @@
             this.b_borrar.Size = new System.Drawing.Size(39, 46);
             this.b_borrar.TabIndex = 82;
             this.b_borrar.UseVisualStyleBackColor = true;
+            this.b_borrar.Click += new System.EventHandler(this.b_borrar_Click);
             // 
             // b_cerrar
             // 
@@ -212,6 +202,7 @@
             this.b_cerrar.Size = new System.Drawing.Size(42, 43);
             this.b_cerrar.TabIndex = 81;
             this.b_cerrar.UseVisualStyleBackColor = true;
+            this.b_cerrar.Click += new System.EventHandler(this.b_cerrar_Click);
             // 
             // b_refrescar
             // 
@@ -222,22 +213,52 @@
             this.b_refrescar.TabIndex = 80;
             this.b_refrescar.Text = "\r\n";
             this.b_refrescar.UseVisualStyleBackColor = true;
+            this.b_refrescar.Click += new System.EventHandler(this.b_refrescar_Click);
             // 
-            // pictureBox1
+            // Column1
             // 
-            this.pictureBox1.Image = global::Restaurante.Properties.Resources.User_female1;
-            this.pictureBox1.Location = new System.Drawing.Point(24, 109);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(119, 140);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.Column1.DataPropertyName = "codCliente";
+            this.Column1.HeaderText = "Codigo";
+            this.Column1.Name = "Column1";
             // 
-            // txt_fechaReservacion
+            // Column2
             // 
-            this.txt_fechaReservacion.Location = new System.Drawing.Point(357, 20);
-            this.txt_fechaReservacion.Name = "txt_fechaReservacion";
-            this.txt_fechaReservacion.Size = new System.Drawing.Size(100, 20);
-            this.txt_fechaReservacion.TabIndex = 6;
+            this.Column2.DataPropertyName = "nombre";
+            this.Column2.HeaderText = "Nombre";
+            this.Column2.Name = "Column2";
+            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "montoPagado";
+            this.Column3.HeaderText = "Monto pagado";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "detalleProducto";
+            this.Column4.HeaderText = "Detalle ";
+            this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "fecha";
+            this.Column5.HeaderText = "Fecha";
+            this.Column5.Name = "Column5";
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "reserva";
+            this.Column6.HeaderText = "Reservacion";
+            this.Column6.Name = "Column6";
+            this.Column6.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // Column7
+            // 
+            this.Column7.DataPropertyName = "nombreRest";
+            this.Column7.HeaderText = "Restaurante";
+            this.Column7.Name = "Column7";
             // 
             // frm_listaPagoClientes
             // 
@@ -254,11 +275,12 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "frm_listaPagoClientes";
             this.Text = "Listado de pago";
+            this.Load += new System.EventHandler(this.frm_listaPagoClientes_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_pagoClientes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_pagoClientes)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -279,13 +301,13 @@
         private System.Windows.Forms.RadioButton rb_reservacion;
         private System.Windows.Forms.DataGridView dgv_pagoClientes;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DateTimePicker dt_reservacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.TextBox txt_fechaReservacion;
     }
 }

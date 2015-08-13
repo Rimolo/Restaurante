@@ -153,77 +153,78 @@ namespace Restaurante
 
         private void cb_escala_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (cb_escala.SelectedIndex != -1) { 
             string valor = cb_escala.SelectedItem.ToString();
-            switch (valor)
-            {
+                switch (valor)
+                {
 
-                case "yotta":
-                    txt_simbolo.Text = "Y";
-                    break;
-                case "zetta":
-                    txt_simbolo.Text = "Z";
-                    break;
-                case "exa":
-                    txt_simbolo.Text = "E";
-                    break;
-                case "peta":
-                    txt_simbolo.Text = "P";
-                    break;
-                case "tera":
-                    txt_simbolo.Text = "T";
-                    break;
-                case "giga":
-                    txt_simbolo.Text = "G";
-                    break;
-                case "mega":
-                    txt_simbolo.Text = "M";
-                    break;
-                case "kilo":
-                    txt_simbolo.Text = "k";
-                    break;
-                case "hecto":
-                    txt_simbolo.Text = "h";
-                    break;
-                case "deca":
-                    txt_simbolo.Text = "da";
-                    break;
-                case "deci":
-                    txt_simbolo.Text = "d";
-                    break;
-                case "centi":
-                    txt_simbolo.Text = "c";
-                    break;
-                case "mili":
-                    txt_simbolo.Text = "m";
-                    break;
-                case "micro":
-                    txt_simbolo.Text = "µ";
-                    break;
-                case "nano":
-                    txt_simbolo.Text = "n";
-                    break;
-                case "pico":
-                    txt_simbolo.Text = "p";
-                    break;
-                case "femto":
-                    txt_simbolo.Text = "f";
-                    break;
-                case "atto":
-                    txt_simbolo.Text = "a";
-                    break;
-                case "zepto":
-                    txt_simbolo.Text = "z";
-                    break;
-                case "yocto":
-                    txt_simbolo.Text = "y";
-                    break;
-                case "UNIDAD":
-                    txt_simbolo.Text = txt_unidad.Text;
-                    break;
-                default:
-
-                    
-                    break;
+                    case "yotta":
+                        txt_simbolo.Text = "Y";
+                        break;
+                    case "zetta":
+                        txt_simbolo.Text = "Z";
+                        break;
+                    case "exa":
+                        txt_simbolo.Text = "E";
+                        break;
+                    case "peta":
+                        txt_simbolo.Text = "P";
+                        break;
+                    case "tera":
+                        txt_simbolo.Text = "T";
+                        break;
+                    case "giga":
+                        txt_simbolo.Text = "G";
+                        break;
+                    case "mega":
+                        txt_simbolo.Text = "M";
+                        break;
+                    case "kilo":
+                        txt_simbolo.Text = "k";
+                        break;
+                    case "hecto":
+                        txt_simbolo.Text = "h";
+                        break;
+                    case "deca":
+                        txt_simbolo.Text = "da";
+                        break;
+                    case "deci":
+                        txt_simbolo.Text = "d";
+                        break;
+                    case "centi":
+                        txt_simbolo.Text = "c";
+                        break;
+                    case "mili":
+                        txt_simbolo.Text = "m";
+                        break;
+                    case "micro":
+                        txt_simbolo.Text = "µ";
+                        break;
+                    case "nano":
+                        txt_simbolo.Text = "n";
+                        break;
+                    case "pico":
+                        txt_simbolo.Text = "p";
+                        break;
+                    case "femto":
+                        txt_simbolo.Text = "f";
+                        break;
+                    case "atto":
+                        txt_simbolo.Text = "a";
+                        break;
+                    case "zepto":
+                        txt_simbolo.Text = "z";
+                        break;
+                    case "yocto":
+                        txt_simbolo.Text = "y";
+                        break;
+                    case "UNIDAD":
+                        txt_simbolo.Text = txt_unidad.Text;
+                        break;
+                    default:
+                        
+                        break;
+                }
             }
             if (!string.IsNullOrEmpty(txt_simbolo.Text))
             {
@@ -236,7 +237,10 @@ namespace Restaurante
 
         private void cb_detalle_SelectedIndexChanged(object sender, EventArgs e)
         {
-            txt_simbologia.Text = txt_simbolo.Text + txt_unidad.Text[0];          
+            if (cb_detalle.SelectedIndex != -1)
+            {
+                txt_simbologia.Text = txt_simbolo.Text + txt_unidad.Text[0];
+            }          
         }
     }
 }

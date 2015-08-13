@@ -33,6 +33,7 @@
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
             this.label11 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -83,7 +84,7 @@
             this.b_barra = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label44 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.b_barras2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.rb_barraCerrada2 = new System.Windows.Forms.RadioButton();
             this.rb_barraAbierta2 = new System.Windows.Forms.RadioButton();
@@ -133,11 +134,10 @@
             this.label43 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.dgv_prod = new System.Windows.Forms.DataGridView();
-            this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pic_producto = new System.Windows.Forms.PictureBox();
             this.tmr_hora = new System.Windows.Forms.Timer(this.components);
-            this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -173,13 +173,17 @@
             // toolStripStatusLabel2
             // 
             this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(118, 17);
-            this.toolStripStatusLabel2.Text = "toolStripStatusLabel2";
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(0, 17);
             // 
             // toolStripStatusLabel3
             // 
             this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
             this.toolStripStatusLabel3.Size = new System.Drawing.Size(0, 17);
+            // 
+            // toolStripStatusLabel4
+            // 
+            this.toolStripStatusLabel4.Name = "toolStripStatusLabel4";
+            this.toolStripStatusLabel4.Size = new System.Drawing.Size(0, 17);
             // 
             // label11
             // 
@@ -639,7 +643,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label44);
-            this.groupBox1.Controls.Add(this.button3);
+            this.groupBox1.Controls.Add(this.b_barras2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.rb_barraCerrada2);
             this.groupBox1.Controls.Add(this.rb_barraAbierta2);
@@ -660,16 +664,16 @@
             this.label44.Text = "label26";
             this.label44.Visible = false;
             // 
-            // button3
+            // b_barras2
             // 
-            this.button3.Location = new System.Drawing.Point(194, 19);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(26, 23);
-            this.button3.TabIndex = 114;
-            this.button3.Text = "button5";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Visible = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.b_barras2.Location = new System.Drawing.Point(194, 19);
+            this.b_barras2.Name = "b_barras2";
+            this.b_barras2.Size = new System.Drawing.Size(26, 23);
+            this.b_barras2.TabIndex = 114;
+            this.b_barras2.Text = "button5";
+            this.b_barras2.UseVisualStyleBackColor = true;
+            this.b_barras2.Visible = false;
+            this.b_barras2.Click += new System.EventHandler(this.b_barras2_Click);
             // 
             // label1
             // 
@@ -688,6 +692,7 @@
             this.rb_barraCerrada2.Size = new System.Drawing.Size(89, 17);
             this.rb_barraCerrada2.TabIndex = 1;
             this.rb_barraCerrada2.TabStop = true;
+            this.rb_barraCerrada2.Tag = "1";
             this.rb_barraCerrada2.Text = "Barra cerrada";
             this.rb_barraCerrada2.UseVisualStyleBackColor = true;
             this.rb_barraCerrada2.CheckedChanged += new System.EventHandler(this.rb_barraCerrada2_CheckedChanged);
@@ -700,6 +705,7 @@
             this.rb_barraAbierta2.Size = new System.Drawing.Size(85, 17);
             this.rb_barraAbierta2.TabIndex = 0;
             this.rb_barraAbierta2.TabStop = true;
+            this.rb_barraAbierta2.Tag = "1";
             this.rb_barraAbierta2.Text = "Barra abierta\r\n";
             this.rb_barraAbierta2.UseVisualStyleBackColor = true;
             this.rb_barraAbierta2.CheckedChanged += new System.EventHandler(this.rb_barraAbierta2_CheckedChanged);
@@ -756,6 +762,7 @@
             this.rb_barraCerrada.Size = new System.Drawing.Size(89, 17);
             this.rb_barraCerrada.TabIndex = 1;
             this.rb_barraCerrada.TabStop = true;
+            this.rb_barraCerrada.Tag = "2";
             this.rb_barraCerrada.Text = "Barra cerrada";
             this.rb_barraCerrada.UseVisualStyleBackColor = true;
             this.rb_barraCerrada.CheckedChanged += new System.EventHandler(this.rb_barraCerrada_CheckedChanged);
@@ -768,6 +775,7 @@
             this.rb_barraAbierta.Size = new System.Drawing.Size(85, 17);
             this.rb_barraAbierta.TabIndex = 0;
             this.rb_barraAbierta.TabStop = true;
+            this.rb_barraAbierta.Tag = "2";
             this.rb_barraAbierta.Text = "Barra abierta\r\n";
             this.rb_barraAbierta.UseVisualStyleBackColor = true;
             this.rb_barraAbierta.CheckedChanged += new System.EventHandler(this.rb_barraAbierta_CheckedChanged);
@@ -807,16 +815,16 @@
             this.button4.Image = global::Restaurante.Properties.Resources.restaurant_icon_vector_illustration_315602;
             this.button4.Location = new System.Drawing.Point(3, 348);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(103, 55);
+            this.button4.Size = new System.Drawing.Size(100, 55);
             this.button4.TabIndex = 3;
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // b_salirMenu
             // 
-            this.b_salirMenu.Location = new System.Drawing.Point(3, 523);
+            this.b_salirMenu.Location = new System.Drawing.Point(3, 531);
             this.b_salirMenu.Name = "b_salirMenu";
-            this.b_salirMenu.Size = new System.Drawing.Size(82, 32);
+            this.b_salirMenu.Size = new System.Drawing.Size(90, 23);
             this.b_salirMenu.TabIndex = 4;
             this.b_salirMenu.Text = "Salir del Menu\r\n";
             this.b_salirMenu.UseVisualStyleBackColor = true;
@@ -877,19 +885,19 @@
             // restaurantesToolStripMenuItem
             // 
             this.restaurantesToolStripMenuItem.Name = "restaurantesToolStripMenuItem";
-            this.restaurantesToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+            this.restaurantesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.restaurantesToolStripMenuItem.Text = "Restaurantes";
             // 
             // licoresToolStripMenuItem
             // 
             this.licoresToolStripMenuItem.Name = "licoresToolStripMenuItem";
-            this.licoresToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+            this.licoresToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.licoresToolStripMenuItem.Text = "Licores";
             // 
             // vinosToolStripMenuItem
             // 
             this.vinosToolStripMenuItem.Name = "vinosToolStripMenuItem";
-            this.vinosToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+            this.vinosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.vinosToolStripMenuItem.Text = "Vinos";
             // 
             // procesosToolStripMenuItem
@@ -903,7 +911,7 @@
             // clientesToolStripMenuItem
             // 
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.clientesToolStripMenuItem.Text = "Clientes";
             this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
             // 
@@ -947,7 +955,6 @@
             this.label31.Size = new System.Drawing.Size(69, 13);
             this.label31.TabIndex = 9;
             this.label31.Text = "Mesas Libres";
-            this.label31.Visible = false;
             // 
             // label30
             // 
@@ -957,7 +964,6 @@
             this.label30.Size = new System.Drawing.Size(13, 13);
             this.label30.TabIndex = 8;
             this.label30.Text = "0";
-            this.label30.Visible = false;
             // 
             // label28
             // 
@@ -967,7 +973,6 @@
             this.label28.Size = new System.Drawing.Size(90, 13);
             this.label28.TabIndex = 7;
             this.label28.Text = "Mesas Ocupadas";
-            this.label28.Visible = false;
             // 
             // label27
             // 
@@ -977,7 +982,6 @@
             this.label27.Size = new System.Drawing.Size(13, 13);
             this.label27.TabIndex = 6;
             this.label27.Text = "0";
-            this.label27.Visible = false;
             // 
             // label26
             // 
@@ -987,17 +991,15 @@
             this.label26.Size = new System.Drawing.Size(31, 13);
             this.label26.TabIndex = 5;
             this.label26.Text = "Total";
-            this.label26.Visible = false;
             // 
             // label25
             // 
             this.label25.AutoSize = true;
             this.label25.Location = new System.Drawing.Point(50, 39);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(13, 13);
+            this.label25.Size = new System.Drawing.Size(19, 13);
             this.label25.TabIndex = 4;
-            this.label25.Text = "0";
-            this.label25.Visible = false;
+            this.label25.Text = "23";
             // 
             // panel2
             // 
@@ -1022,7 +1024,6 @@
             this.label32.Size = new System.Drawing.Size(64, 13);
             this.label32.TabIndex = 9;
             this.label32.Text = "Reservadas";
-            this.label32.Visible = false;
             // 
             // label33
             // 
@@ -1032,7 +1033,6 @@
             this.label33.Size = new System.Drawing.Size(13, 13);
             this.label33.TabIndex = 8;
             this.label33.Text = "0";
-            this.label33.Visible = false;
             // 
             // label34
             // 
@@ -1042,7 +1042,6 @@
             this.label34.Size = new System.Drawing.Size(81, 13);
             this.label34.TabIndex = 7;
             this.label34.Text = "No Reservadas";
-            this.label34.Visible = false;
             // 
             // label35
             // 
@@ -1052,7 +1051,6 @@
             this.label35.Size = new System.Drawing.Size(13, 13);
             this.label35.TabIndex = 6;
             this.label35.Text = "0";
-            this.label35.Visible = false;
             // 
             // label36
             // 
@@ -1062,17 +1060,15 @@
             this.label36.Size = new System.Drawing.Size(31, 13);
             this.label36.TabIndex = 5;
             this.label36.Text = "Total";
-            this.label36.Visible = false;
             // 
             // label37
             // 
             this.label37.AutoSize = true;
             this.label37.Location = new System.Drawing.Point(90, 39);
             this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(13, 13);
+            this.label37.Size = new System.Drawing.Size(19, 13);
             this.label37.TabIndex = 4;
-            this.label37.Text = "0";
-            this.label37.Visible = false;
+            this.label37.Text = "23";
             // 
             // panel3
             // 
@@ -1097,7 +1093,6 @@
             this.label38.Size = new System.Drawing.Size(38, 13);
             this.label38.TabIndex = 9;
             this.label38.Text = "Mesas";
-            this.label38.Visible = false;
             // 
             // label39
             // 
@@ -1107,7 +1102,6 @@
             this.label39.Size = new System.Drawing.Size(13, 13);
             this.label39.TabIndex = 8;
             this.label39.Text = "0";
-            this.label39.Visible = false;
             // 
             // label40
             // 
@@ -1117,7 +1111,6 @@
             this.label40.Size = new System.Drawing.Size(37, 13);
             this.label40.TabIndex = 7;
             this.label40.Text = "Barras";
-            this.label40.Visible = false;
             // 
             // label41
             // 
@@ -1127,7 +1120,6 @@
             this.label41.Size = new System.Drawing.Size(13, 13);
             this.label41.TabIndex = 6;
             this.label41.Text = "0";
-            this.label41.Visible = false;
             // 
             // label42
             // 
@@ -1137,7 +1129,6 @@
             this.label42.Size = new System.Drawing.Size(78, 13);
             this.label42.TabIndex = 5;
             this.label42.Text = "Reservaciones";
-            this.label42.Visible = false;
             // 
             // label43
             // 
@@ -1147,7 +1138,6 @@
             this.label43.Size = new System.Drawing.Size(13, 13);
             this.label43.TabIndex = 4;
             this.label43.Text = "0";
-            this.label43.Visible = false;
             // 
             // panel4
             // 
@@ -1156,7 +1146,7 @@
             this.panel4.Controls.Add(this.pic_producto);
             this.panel4.Location = new System.Drawing.Point(3, 409);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(121, 108);
+            this.panel4.Size = new System.Drawing.Size(121, 116);
             this.panel4.TabIndex = 118;
             this.panel4.Visible = false;
             // 
@@ -1172,42 +1162,35 @@
             this.dgv_prod.Name = "dgv_prod";
             this.dgv_prod.ReadOnly = true;
             this.dgv_prod.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_prod.Size = new System.Drawing.Size(115, 39);
+            this.dgv_prod.Size = new System.Drawing.Size(115, 62);
             this.dgv_prod.TabIndex = 115;
             this.dgv_prod.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_prod_CellClick);
             // 
+            // pic_producto
+            // 
+            this.pic_producto.Location = new System.Drawing.Point(3, 74);
+            this.pic_producto.Name = "pic_producto";
+            this.pic_producto.Size = new System.Drawing.Size(78, 34);
+            this.pic_producto.TabIndex = 0;
+            this.pic_producto.TabStop = false;
+            // 
+            // tmr_hora
+            // 
+            this.tmr_hora.Tick += new System.EventHandler(this.tmr_hora_Tick);
+            // 
             // Producto
             // 
-            this.Producto.DataPropertyName = "Producto";
+            this.Producto.DataPropertyName = "nombre";
             this.Producto.HeaderText = "Producto";
             this.Producto.Name = "Producto";
             this.Producto.ReadOnly = true;
             // 
             // Precio
             // 
-            this.Precio.DataPropertyName = "Precio";
+            this.Precio.DataPropertyName = "precio";
             this.Precio.HeaderText = "Precio";
             this.Precio.Name = "Precio";
             this.Precio.ReadOnly = true;
-            // 
-            // pic_producto
-            // 
-            this.pic_producto.Location = new System.Drawing.Point(3, 49);
-            this.pic_producto.Name = "pic_producto";
-            this.pic_producto.Size = new System.Drawing.Size(100, 59);
-            this.pic_producto.TabIndex = 0;
-            this.pic_producto.TabStop = false;
-            // 
-            // tmr_hora
-            // 
-            this.tmr_hora.Enabled = true;
-            this.tmr_hora.Interval = 1000;
-            // 
-            // toolStripStatusLabel4
-            // 
-            this.toolStripStatusLabel4.Name = "toolStripStatusLabel4";
-            this.toolStripStatusLabel4.Size = new System.Drawing.Size(118, 17);
-            this.toolStripStatusLabel4.Text = "toolStripStatusLabel4";
             // 
             // frm_PiccollaStella
             // 
@@ -1372,7 +1355,7 @@
         private System.Windows.Forms.ToolStripMenuItem vinosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem procesosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button b_barras2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label31;
@@ -1398,12 +1381,12 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.PictureBox pic_producto;
         private System.Windows.Forms.DataGridView dgv_prod;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Producto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
         private System.Windows.Forms.Label label44;
-        private System.Windows.Forms.Timer tmr_hora;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel4;
+        private System.Windows.Forms.Timer tmr_hora;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Producto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
     }
 }
