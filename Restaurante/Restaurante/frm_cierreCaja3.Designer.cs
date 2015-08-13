@@ -102,6 +102,7 @@
             this.b_borrar.Size = new System.Drawing.Size(62, 47);
             this.b_borrar.TabIndex = 90;
             this.b_borrar.UseVisualStyleBackColor = true;
+            this.b_borrar.Click += new System.EventHandler(this.b_borrar_Click);
             // 
             // b_aceptar
             // 
@@ -111,6 +112,7 @@
             this.b_aceptar.Size = new System.Drawing.Size(61, 47);
             this.b_aceptar.TabIndex = 91;
             this.b_aceptar.UseVisualStyleBackColor = true;
+            this.b_aceptar.Click += new System.EventHandler(this.b_aceptar_Click);
             // 
             // b_cerrar
             // 
@@ -120,6 +122,7 @@
             this.b_cerrar.Size = new System.Drawing.Size(59, 47);
             this.b_cerrar.TabIndex = 92;
             this.b_cerrar.UseVisualStyleBackColor = true;
+            this.b_cerrar.Click += new System.EventHandler(this.b_cerrar_Click);
             // 
             // frm_cierreCaja3
             // 
@@ -137,6 +140,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "frm_cierreCaja3";
             this.Text = "Cierre de Caja";
+            this.Load += new System.EventHandler(this.frm_cierreCaja3_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

@@ -43,7 +43,7 @@ namespace Restaurante
             tmr_hora.Start();
             toolStripStatusLabel2.Text = _nick;
             objRestaurantes.codRest = _codRest;
-            objRestaurantes.fecha = DateTime.Today.ToString("dd/MM/yyyy").Replace("/","-");          
+            objRestaurantes.fecha = DateTime.Today.ToString("dd/MM/yyyy");          
         }
 
         private void tmr_hora_Tick(object sender, EventArgs e)
@@ -165,7 +165,7 @@ namespace Restaurante
         {
             if (rb_barraAbierta2.Checked)
             {
-                label1.Visible = true;
+                label44.Visible = true;
                 label44.Text = "Abierta";
                 b_barras2.Visible = true;
             }

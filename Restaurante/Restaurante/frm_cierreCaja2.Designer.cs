@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.msk_montoCierre = new System.Windows.Forms.MaskedTextBox();
@@ -36,7 +37,6 @@
             this.b_cerrar = new System.Windows.Forms.Button();
             this.b_aceptar = new System.Windows.Forms.Button();
             this.b_borrar = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -49,6 +49,15 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(164, 151);
             this.panel1.TabIndex = 83;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Restaurante.Properties.Resources.Wallet;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(141, 135);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // label2
             // 
@@ -93,6 +102,7 @@
             this.b_cerrar.Size = new System.Drawing.Size(59, 47);
             this.b_cerrar.TabIndex = 93;
             this.b_cerrar.UseVisualStyleBackColor = true;
+            this.b_cerrar.Click += new System.EventHandler(this.b_cerrar_Click);
             // 
             // b_aceptar
             // 
@@ -102,6 +112,7 @@
             this.b_aceptar.Size = new System.Drawing.Size(61, 47);
             this.b_aceptar.TabIndex = 92;
             this.b_aceptar.UseVisualStyleBackColor = true;
+            this.b_aceptar.Click += new System.EventHandler(this.b_aceptar_Click);
             // 
             // b_borrar
             // 
@@ -111,15 +122,7 @@
             this.b_borrar.Size = new System.Drawing.Size(62, 47);
             this.b_borrar.TabIndex = 91;
             this.b_borrar.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Restaurante.Properties.Resources.Wallet;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(141, 135);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.b_borrar.Click += new System.EventHandler(this.b_borrar_Click);
             // 
             // frm_cierreCaja2
             // 
@@ -137,6 +140,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "frm_cierreCaja2";
             this.Text = "Cierre de Caja";
+            this.Load += new System.EventHandler(this.frm_cierreCaja2_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

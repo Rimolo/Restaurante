@@ -134,10 +134,10 @@
             this.label43 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.dgv_prod = new System.Windows.Forms.DataGridView();
-            this.pic_producto = new System.Windows.Forms.PictureBox();
-            this.tmr_hora = new System.Windows.Forms.Timer(this.components);
             this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pic_producto = new System.Windows.Forms.PictureBox();
+            this.tmr_hora = new System.Windows.Forms.Timer(this.components);
             this.statusStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -885,19 +885,19 @@
             // restaurantesToolStripMenuItem
             // 
             this.restaurantesToolStripMenuItem.Name = "restaurantesToolStripMenuItem";
-            this.restaurantesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.restaurantesToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.restaurantesToolStripMenuItem.Text = "Restaurantes";
             // 
             // licoresToolStripMenuItem
             // 
             this.licoresToolStripMenuItem.Name = "licoresToolStripMenuItem";
-            this.licoresToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.licoresToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.licoresToolStripMenuItem.Text = "Licores";
             // 
             // vinosToolStripMenuItem
             // 
             this.vinosToolStripMenuItem.Name = "vinosToolStripMenuItem";
-            this.vinosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.vinosToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.vinosToolStripMenuItem.Text = "Vinos";
             // 
             // procesosToolStripMenuItem
@@ -911,7 +911,7 @@
             // clientesToolStripMenuItem
             // 
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.clientesToolStripMenuItem.Text = "Clientes";
             this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
             // 
@@ -1166,18 +1166,6 @@
             this.dgv_prod.TabIndex = 115;
             this.dgv_prod.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_prod_CellClick);
             // 
-            // pic_producto
-            // 
-            this.pic_producto.Location = new System.Drawing.Point(3, 74);
-            this.pic_producto.Name = "pic_producto";
-            this.pic_producto.Size = new System.Drawing.Size(78, 34);
-            this.pic_producto.TabIndex = 0;
-            this.pic_producto.TabStop = false;
-            // 
-            // tmr_hora
-            // 
-            this.tmr_hora.Tick += new System.EventHandler(this.tmr_hora_Tick);
-            // 
             // Producto
             // 
             this.Producto.DataPropertyName = "nombre";
@@ -1191,6 +1179,18 @@
             this.Precio.HeaderText = "Precio";
             this.Precio.Name = "Precio";
             this.Precio.ReadOnly = true;
+            // 
+            // pic_producto
+            // 
+            this.pic_producto.Location = new System.Drawing.Point(3, 74);
+            this.pic_producto.Name = "pic_producto";
+            this.pic_producto.Size = new System.Drawing.Size(78, 34);
+            this.pic_producto.TabIndex = 0;
+            this.pic_producto.TabStop = false;
+            // 
+            // tmr_hora
+            // 
+            this.tmr_hora.Tick += new System.EventHandler(this.tmr_hora_Tick);
             // 
             // frm_PiccollaStella
             // 

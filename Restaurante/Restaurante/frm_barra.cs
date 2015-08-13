@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using BLL;
 using System.IO;
 using System.Globalization;
+using System.Xml;
 
 namespace Restaurante
 {
@@ -313,7 +314,63 @@ namespace Restaurante
         {
             _accion = "Pagar";
             txt_cuenta.Text = "Pagado";
-            
+
+            XmlTextWriter writer = new XmlTextWriter("Factura.xml", System.Text.Encoding.UTF8);
+            writer.WriteStartDocument(true);
+            writer.Formatting = Formatting.Indented;
+            writer.Indentation = 2;
+            writer.WriteStartElement("Factura");
+            writer.WriteStartElement("Restaurante");
+            writer.WriteString(_nombreR);
+            writer.WriteEndElement();
+            writer.WriteStartElement("Fecha");
+            writer.WriteString(objClientes.fechaE);
+            writer.WriteEndElement();
+            writer.WriteStartElement("NombreCliente");
+            writer.WriteString(objClientes.nombre);
+            writer.WriteEndElement();
+            writer.WriteStartElement("HoraEntrada");
+            writer.WriteString(objClientes.horaE);
+            writer.WriteEndElement();
+            writer.WriteStartElement("HoraSalida");
+            writer.WriteString(txt_horaSalida.Text);
+            writer.WriteEndElement();
+            writer.WriteStartElement("DuracionMesa");
+            writer.WriteString(txt_duracion.Text);
+            writer.WriteEndElement();
+            writer.WriteStartElement("ListaFactura");
+            if (!string.IsNullOrEmpty(objClientes.listaPedidos))
+            {
+
+                            string[] words = objClientes.listaPedidos.Remove(objClientes.listaPedidos.Length - 1).Split(',');
+                            foreach (string word in words)
+                            {
+                                crearNodo(word, "Buffet", writer);
+                            }
+                        
+                       
+
+            }
+            writer.WriteStartElement("MontoAPagar");
+            writer.WriteString(objClientes.monto.ToString());
+            writer.WriteEndElement();
+            writer.WriteEndElement();
+            writer.WriteEndDocument();
+            writer.Close();
+            MessageBox.Show("Factura Creada", "Facturas", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
+
+        private void crearNodo(string especilidad, string tipo, XmlTextWriter writer)
+        {
+            writer.WriteStartElement("Producto");
+            writer.WriteStartElement("Nombre");
+            writer.WriteString(especilidad);
+            writer.WriteEndElement();
+            writer.WriteStartElement("Tipo");
+            writer.WriteString(tipo);
+            writer.WriteEndElement();
+            writer.WriteEndElement();
         }
     }
 }
