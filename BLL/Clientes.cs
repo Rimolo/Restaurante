@@ -59,9 +59,9 @@ namespace BLL
             set { _fechaR = value; }
         }
 
-        private int _monto;
+        private double _monto;
 
-        public int monto
+        public double monto
         {
             get { return _monto; }
             set { _monto = value; }
@@ -193,14 +193,14 @@ namespace BLL
             {
                 if (accion.Equals("Insertar"))
                 {
-                    if (_reservo)
+                    if (!_reservo)
                     {
-                        sql = "Insert into Cliente values(@cod,@nombre,@fecha,@monto,true,false,@codR,@horaE,null,null,'Sin pagar',null)";
+                        sql = "Insert into Cliente values(@cod,@nombre,convert(datetime,@fecha,103),@monto,0,0,@codR,@horaE,null,null,'Sin pagar',null)";
 
                     }
                     else
                     {
-                        sql = "Insert into Cliente values(@cod,@nombre,@fecha,@monto,true,false,@codR,@horaE,null,null,'Sin pagar',@fechaR)";
+                        sql = "Insert into Cliente values(@cod,@nombre,convert(datetime,@fecha,103),@monto,1,0,@codR,@horaE,null,null,'Sin pagar',convert(datetime,@fechaR,103))";
 
                     }
                 }
@@ -210,12 +210,12 @@ namespace BLL
                         " estadoFactura='Pagado'," +
                         " horaSalida=@horaS," +
                         " duracion=@duracion" +
-                        " where codCliente=@codigo";
+                        " where codCliente=@cod";
                 }
                 ParamStruct[] parametros = new ParamStruct[9];
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@nombre", SqlDbType.VarChar, _nombre);
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 1, "@fecha", SqlDbType.VarChar, _fechaE);
-                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 2, "@monto", SqlDbType.Int, _monto);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 2, "@monto", SqlDbType.Money, _monto);
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 3, "@codR", SqlDbType.VarChar, _codR);
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 4, "@horaE", SqlDbType.VarChar, _horaE);
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 5, "@horaS", SqlDbType.VarChar, _horaS);
@@ -229,7 +229,7 @@ namespace BLL
                 cls_DAL.ejecuta_sqlcommand(conexion, sql, false, parametros, ref mensaje_error, ref numero_error);
                 if (numero_error != 0)
                 {
-                    MessageBox.Show(mensaje_error, "Error al guardar el Empleado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(mensaje_error, "Error al guardar el Cliente", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     cls_DAL.desconectar(conexion, ref mensaje_error, ref numero_error);
                     return false;
                 }
@@ -258,7 +258,7 @@ namespace BLL
             }
             else
             {
-                sql = "Insert into ClienteReserva values(@codM,@codigo,@ps1,@ps2,@ps3,@ps4,@ls1,@ls2,@ls3,@ls4)";
+                sql = "Insert into ClienteReserva values(@codM,@cod,@ps1,@ps2,@ps3,@ps4,@ls1,@ls2,@ls3,@ls4)";
 
                 ParamStruct[] parametros = new ParamStruct[10];
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@codM", SqlDbType.VarChar, _codMesa);
@@ -393,12 +393,12 @@ namespace BLL
             }
             else
             {
-                sql = "Select codEmpleado,cedula,nombre,apellido1,apellido2 from Empleados Order by codEmpleado";
+                sql = "Select c.codCliente,c.nombre,c.montoPagado,concat(concat(concat(concat(concat(concat(concat(concat(pedidoS1,' '), cr.pedidoS2), cr.pedidoS3), cr.pedidoS4), cr.buffetS1), cr.buffetS2), cr.buffetS3), cr.buffetS4) as detalleProducto,c.fecha,c.reserva,r.nombre as nombreRest from Cliente c join ClienteReserva cr on c.codCliente = cr.codCliente join Restaurante r on c.codRestaurante = r.codRestaurante Where c.codRestaurante='" + _codR + "' Order by c.CodCliente";
 
                 ds = cls_DAL.ejecuta_dataset(conexion, sql, false, ref mensaje_error, ref numero_error);
                 if (numero_error != 0)
                 {
-                    MessageBox.Show(mensaje_error, "Error al cargar los paises", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(mensaje_error, "Error al cargar los clientes", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return null;
                 }
                 else
@@ -419,26 +419,32 @@ namespace BLL
             }
             else
             {
-                string sql1 = "Select codEmpleado,cedula,nombre,apellido1,apellido2 from Empleados ";
+                string sql1 = "Select c.codCliente,c.nombre,c.montoPagado,concat(concat(concat(concat(concat(concat(concat(concat(pedidoS1,' '), cr.pedidoS2), cr.pedidoS3), cr.pedidoS4), cr.buffetS1), cr.buffetS2), cr.buffetS3), cr.buffetS4) as detalleProducto,c.fecha,c.reserva,r.nombre from Cliente c join ClienteReserva cr on c.codCliente = cr.codCliente join Restaurante r on c.codRestaurante = r.codRestaurante ";
                 string condicion = "Where ";
 
                 if (!string.IsNullOrEmpty(_codigo))
                 {
-                    sql1 += condicion + "codEmpleado ='" + _codigo + "'";
+                    sql1 += condicion + "c.codCliente ='" + _codigo + "'";
                     condicion = " and ";
                 }
                 if (!string.IsNullOrEmpty(_nombre))
                 {
-                    sql1 += condicion + "nombre ='" + _nombre + "'";
+                    sql1 += condicion + "c.nombre ='" + _nombre + "'";
+                    condicion = " and ";
+                }
+                if (_reservo)
+                {
+                    sql1 += condicion + "c.fechaReserva='" + fechaR + "'";
+                    condicion = " and ";
 
                 }
 
-                sql = sql1 + " Order by codEmpleado";
+                sql = sql1+condicion+ "c.codRestaurante='"+_codR+"' Order by c.codCliente";
 
                 ds = cls_DAL.ejecuta_dataset(conexion, sql, false, ref mensaje_error, ref numero_error);
                 if (numero_error != 0)
                 {
-                    MessageBox.Show(mensaje_error, "Error al cargar los empleados", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(mensaje_error, "Error al cargar los clientes", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return null;
                 }
                 else
@@ -447,36 +453,7 @@ namespace BLL
                 }
             }
         }
-        //Modificar cuando se ocupe (primero borrar en pBuffet,pedidos,cliente)
-        public bool eliminar_cliente(string codEmp)
-        {
-            conexion = cls_DAL.trae_conexion("Progra4", ref mensaje_error, ref numero_error);
-            if (conexion == null)
-            {
-                MessageBox.Show(mensaje_error, "Error al obtener cadena de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
-            else
-            {
-                sql = "Delete from Empleados where codEmpleado = @cod";
-
-                ParamStruct[] parametros = new ParamStruct[1];
-                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@cod", SqlDbType.VarChar, codEmp);
-                cls_DAL.conectar(conexion, ref mensaje_error, ref numero_error);
-                cls_DAL.ejecuta_sqlcommand(conexion, sql, false, parametros, ref mensaje_error, ref numero_error);
-                if (numero_error != 0)
-                {
-                    MessageBox.Show(mensaje_error, "Error al eliminar el pais", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    cls_DAL.desconectar(conexion, ref mensaje_error, ref numero_error);
-                    return false;
-                }
-                else
-                {
-                    cls_DAL.desconectar(conexion, ref mensaje_error, ref numero_error);
-                    return true;
-                }
-            }
-        }
+        
 
         public void carga_info_cliente(string codC)
         {
@@ -489,14 +466,14 @@ namespace BLL
             }
             else
             {
-                sql = "Select c.nombre,c.fecha,c.montoPagado,c.reserva,c.barra,c.codRestaurante,c.horaEntrada,c.fechaReserva,cr.codMesa,cr.pedidoS1,cr.pedidoS2,cr.pedidoS3,cr.pedidoS4,cr.buffetS1,cr.buffetS2,cr.buffetS3,cr.buffetS4" +
+                sql = "Select c.nombre,c.fecha,c.montoPagado,c.reserva,c.barra,c.codRestaurante,c.horaEntrada,c.fechaReserva,cr.codMesa,cr.pedidoS1,cr.pedidoS2,cr.pedidoS3,cr.pedidoS4,cr.buffetS1,cr.buffetS2,cr.buffetS3,cr.buffetS4 " +
                     "from Cliente c join ClienteReserva cr on c.codCliente = cr.codCliente where c.codCliente = @cod";
                 ParamStruct[] parametros = new ParamStruct[1];
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@cod", SqlDbType.VarChar, codC);
                 ds = cls_DAL.ejecuta_dataset(conexion, sql, false, parametros, ref mensaje_error, ref numero_error);
                 if (ds == null)
                 {
-                    MessageBox.Show(mensaje_error, "Error al obtener el pais", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(mensaje_error, "Error al obtener el cliente", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     _nombre = "Error";
                 }
                 else
@@ -505,7 +482,7 @@ namespace BLL
                     {
                         _nombre = ds.Tables[0].Rows[0]["nombre"].ToString();
                         _fechaE = ds.Tables[0].Rows[0]["fecha"].ToString();
-                        _monto = Convert.ToInt32(ds.Tables[0].Rows[0]["montoPagado"].ToString());
+                        _monto = Convert.ToDouble(ds.Tables[0].Rows[0]["montoPagado"].ToString());
                         _reservo = Convert.ToBoolean(ds.Tables[0].Rows[0]["reserva"].ToString());
                         _barra = Convert.ToBoolean(ds.Tables[0].Rows[0]["barra"].ToString());
                         _codR = ds.Tables[0].Rows[0]["codRestaurante"].ToString();
@@ -542,13 +519,13 @@ namespace BLL
             }
             else
             {
-                sql = "Select nombre,precio from Especiales Where codRestaurante ='" + codR + "'";
+                sql = "Select nombre,precio from Especiales Where codRestaurante ='" + _codR + "'";
 
 
                 ds = cls_DAL.ejecuta_dataset(conexion, sql, false, ref mensaje_error, ref numero_error);
                 if (numero_error != 0)
                 {
-                    MessageBox.Show(mensaje_error, "Error al cargar los restaurantes", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(mensaje_error, "Error al cargar las especialidades", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return null;
                 }
                 else
@@ -576,7 +553,7 @@ namespace BLL
                 ds = cls_DAL.ejecuta_dataset(conexion, sql, false, ref mensaje_error, ref numero_error);
                 if (numero_error != 0)
                 {
-                    MessageBox.Show(mensaje_error, "Error al cargar los paises", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(mensaje_error, "Error al cargar los buffet", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return null;
                 }
                 else
@@ -656,6 +633,41 @@ namespace BLL
             }
         }
 
+        public string cargar_cod_mesa2()
+        {
+            string cod = "";
+            conexion = cls_DAL.trae_conexion("Progra4", ref mensaje_error, ref numero_error);
+            if (conexion == null)
+            {
+                MessageBox.Show(mensaje_error, "Error al obtener cadena de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+            else
+            {
+                sql = "Select codMesa from ClienteReserva where codCliente=@cod";
+                ParamStruct[] parametros = new ParamStruct[1];
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@cod", SqlDbType.VarChar, _codigo);
+                
+                ds = cls_DAL.ejecuta_dataset(conexion, sql, false, parametros, ref mensaje_error, ref numero_error);
+                if (ds == null)
+                {
+                    MessageBox.Show(mensaje_error, "Error al obtener la mesa", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
+                else
+                {
+                    if (ds.Tables[0].Rows.Count > 0)
+                    {
+                        cod = ds.Tables[0].Rows[0]["codMesa"].ToString();
+
+
+                    }
+
+                }
+                return cod;
+            }
+        }
+
         public int cargar_num_mesa(string cod)
         {
             int num = -1;
@@ -667,9 +679,9 @@ namespace BLL
             }
             else
             {
-                sql = "Select numero from Mesas where  and codRestaurante=@codRest";
+                sql = "Select numero from Mesas where codigoMesa=@cod and codRestaurante=@codRest";
                 ParamStruct[] parametros = new ParamStruct[2];
-                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@cod", SqlDbType.Int, cod);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@cod", SqlDbType.VarChar, cod);
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 1, "@codRest", SqlDbType.VarChar, codR);
                 ds = cls_DAL.ejecuta_dataset(conexion, sql, false, parametros, ref mensaje_error, ref numero_error);
                 if (ds == null)

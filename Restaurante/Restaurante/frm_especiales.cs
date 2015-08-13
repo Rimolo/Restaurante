@@ -152,6 +152,7 @@ namespace Restaurante
                     pb_foto.Image = Image.FromFile(f.FileName);
                     pb_foto.SizeMode = PictureBoxSizeMode.StretchImage;
                     hayImagen = true;
+                    cambioImagen = true;
                 }
             }
             catch (Exception) { }

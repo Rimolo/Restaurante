@@ -82,14 +82,14 @@ namespace Restaurante
                     }
                     else if (nombreR.Equals("Turin Anivo"))
                     {
-                        frm_TurinAnivo ta = new frm_TurinAnivo();
+                        frm_aperturaCaja2 ta = new frm_aperturaCaja2();
                         ta.ShowDialog();
                         this.Hide();
 
                     }
                     else if (nombreR.Equals("Notte di Fuoco"))
                     {
-                        frm_NotteDiFouco nf = new frm_NotteDiFouco();
+                        frm_aperturaCaja3 nf = new frm_aperturaCaja3();
                         nf.ShowDialog();
                         this.Hide();
 

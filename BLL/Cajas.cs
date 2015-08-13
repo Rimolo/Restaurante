@@ -75,14 +75,16 @@ namespace BLL
             {
                 if (accion.Equals("Insertar"))
                 {
-                    sql = "Insert into Caja values(@cod,@codR,@fecha,@apertura,0,'Apertura de Caja')";
+                    if (apertura > cierre)
+                    {
+                        sql = "Insert into Caja values(@cod,@codR,convert(datetime,@fecha,103),@apertura,0,'Apertura de Caja')";
+                    }
+                    else {
+                        sql = "Insert into Caja values(@cod,@codR,convert(datetime,@fecha,103),@cierre,0,'Cierre de Caja')";
+                    }
+                    
                 }
-                else
-                {
-                    sql = "Update Caja SET" +
-                        " montoCierre=@cierre" +
-                        " where codCaja=@cod";
-                }
+               
                 ParamStruct[] parametros = new ParamStruct[5];
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@codR", SqlDbType.VarChar, _codRest);
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 1, "@fecha", SqlDbType.VarChar, _fecha);
@@ -118,7 +120,7 @@ namespace BLL
             }
             else
             {
-                sql = "Select c.codCaja,c.fecha,m.descripcion,m.saldoActual-m.saldoAnterior as monto,c.montoApertura,c.montoCierre,r.nombre from Caja c join Movimientos m on c.codCaja = m.codCaja join Restaurante r on c.codRestaurante = r.codRestaurante   Order by codCaja";
+                sql = "Select c.codCaja,c.fecha,c.descripcion,c.montoApertura as monto,c.montoCierre as monto,case  When c.descripcion ='Apertura de caja' then 1 else 0 end as ap,case When c.descripcion ='Cierre de caja' then 1 else 0 end as cr,r.nombre from Caja c  join Restaurante r on c.codRestaurante = r.codRestaurante   Order by codCaja";
 
                 ds = cls_DAL.ejecuta_dataset(conexion, sql, false, ref mensaje_error, ref numero_error);
                 if (numero_error != 0)
@@ -176,7 +178,7 @@ namespace BLL
             }
             else
             {
-                string sql1 = "Select c.codCaja,c.fecha,m.descripcion,m.saldoActual-m.saldoAnterior as monto,c.montoApertura,c.montoCierre,r.nombre from Caja c join Movimientos m on c.codCaja = m.codCaja join Restaurante r on c.codRestaurante = r.codRestaurante ";
+                string sql1 = "Select c.codCaja,c.fecha,c.descripcion,c.montoApertura as monto,c.montoCierre as monto,case  When c.descripcion ='Apertura de caja' then 1 else 0 end as ap,case When c.descripcion ='Cierre de caja' then 1 else 0 end as cr,r.nombre from Caja c  join Restaurante r on c.codRestaurante = r.codRestaurante ";
                 string condicion = "Where ";
 
                 if (!string.IsNullOrEmpty(_codigo))
@@ -191,12 +193,15 @@ namespace BLL
                 }
                 if (_apertura==1)
                 {
-                    sql1 += condicion + "m.descripcion='Apertura de caja'";
+                    sql1 += condicion + "c.descripcion='Apertura de caja'";
                     condicion = " and ";
                 }
                 if (_cierre==1)
                 {
-                    sql1 += condicion + "m.descripcion='Cierre de caja'";
+                    sql1 += condicion + "c.descripcion='Cierre de caja'";
+                }
+                if (!string.IsNullOrEmpty(_fecha)){
+                    sql1 += condicion + "convert(datetime,'" + _fecha + "',103)";
                 }
                 sql = sql1 + " Order by c.codCaja";
 

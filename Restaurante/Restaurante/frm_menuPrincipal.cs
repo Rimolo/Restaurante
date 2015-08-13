@@ -37,6 +37,23 @@ namespace Restaurante
                 toolStripStatusLabel2.Text += " ";
                 
             }
+            if (lista.Contains("administrador de Sistema")){
+                b_proveedores.Enabled = true;
+                b_restaurantes.Enabled = true;
+                b_administracion.Enabled = true;
+                b_reportes.Enabled = true;
+                b_clientes.Enabled = true;
+            }
+            if (lista.Contains("administrador de Seguridad")){
+                b_seguridad.Enabled = true;
+                b_reportes.Enabled = true;
+                
+            }
+            if (lista.Contains("administrador de Cuentas")){
+                b_seguridad.Enabled = true;
+                b_reportes.Enabled = true;
+               
+            }
         }
 
         private void reiniciarToolStripMenuItem_Click(object sender, EventArgs e)
@@ -69,6 +86,9 @@ namespace Restaurante
         private void b_seguridad_Click(object sender, EventArgs e)
         {
             frm_ventanaSeguridad ventana = new frm_ventanaSeguridad();
+            if (lista.Count==1&& lista.Contains("administrador de Cuentas")) {
+                ventana.privilegio = 1;
+            }
             ventana.Show();
         }
 

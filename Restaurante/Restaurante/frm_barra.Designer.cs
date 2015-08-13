@@ -28,8 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cb_mesa = new System.Windows.Forms.ComboBox();
+            this.txt_mesa = new System.Windows.Forms.TextBox();
+            this.txt_montoPago = new System.Windows.Forms.TextBox();
+            this.txt_duracion = new System.Windows.Forms.TextBox();
+            this.txt_horaSalida = new System.Windows.Forms.TextBox();
+            this.txt_horaEntrada = new System.Windows.Forms.TextBox();
+            this.txt_restaurante = new System.Windows.Forms.TextBox();
             this.txt_nombreCliente = new System.Windows.Forms.TextBox();
             this.txt_codigoCliente = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -41,7 +47,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lst_pedidosPrevios = new System.Windows.Forms.ListBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txt_numeroSilla = new System.Windows.Forms.TextBox();
+            this.txt_precio = new System.Windows.Forms.TextBox();
+            this.cb_pedido = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -52,18 +62,10 @@
             this.label9 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.cb_pedido = new System.Windows.Forms.ComboBox();
-            this.txt_precio = new System.Windows.Forms.TextBox();
-            this.txt_numeroSilla = new System.Windows.Forms.TextBox();
             this.b_borrar = new System.Windows.Forms.Button();
             this.b_aceptar = new System.Windows.Forms.Button();
             this.b_cerrar = new System.Windows.Forms.Button();
-            this.txt_direccion = new System.Windows.Forms.TextBox();
-            this.txt_horaSalida = new System.Windows.Forms.TextBox();
-            this.txt_horaEntrada = new System.Windows.Forms.TextBox();
-            this.txt_restaurante = new System.Windows.Forms.TextBox();
-            this.txt_montoPago = new System.Windows.Forms.TextBox();
-            this.lst_pedidosPrevios = new System.Windows.Forms.ListBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -74,12 +76,12 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txt_mesa);
             this.groupBox1.Controls.Add(this.txt_montoPago);
-            this.groupBox1.Controls.Add(this.txt_direccion);
+            this.groupBox1.Controls.Add(this.txt_duracion);
             this.groupBox1.Controls.Add(this.txt_horaSalida);
             this.groupBox1.Controls.Add(this.txt_horaEntrada);
             this.groupBox1.Controls.Add(this.txt_restaurante);
-            this.groupBox1.Controls.Add(this.cb_mesa);
             this.groupBox1.Controls.Add(this.txt_nombreCliente);
             this.groupBox1.Controls.Add(this.txt_codigoCliente);
             this.groupBox1.Controls.Add(this.label8);
@@ -97,13 +99,53 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos del cliente";
             // 
-            // cb_mesa
+            // txt_mesa
             // 
-            this.cb_mesa.FormattingEnabled = true;
-            this.cb_mesa.Location = new System.Drawing.Point(116, 80);
-            this.cb_mesa.Name = "cb_mesa";
-            this.cb_mesa.Size = new System.Drawing.Size(121, 21);
-            this.cb_mesa.TabIndex = 10;
+            this.txt_mesa.Enabled = false;
+            this.txt_mesa.Location = new System.Drawing.Point(116, 80);
+            this.txt_mesa.Name = "txt_mesa";
+            this.txt_mesa.Size = new System.Drawing.Size(121, 20);
+            this.txt_mesa.TabIndex = 12;
+            // 
+            // txt_montoPago
+            // 
+            this.txt_montoPago.Enabled = false;
+            this.txt_montoPago.Location = new System.Drawing.Point(116, 115);
+            this.txt_montoPago.Name = "txt_montoPago";
+            this.txt_montoPago.Size = new System.Drawing.Size(121, 20);
+            this.txt_montoPago.TabIndex = 11;
+            // 
+            // txt_duracion
+            // 
+            this.txt_duracion.Enabled = false;
+            this.txt_duracion.Location = new System.Drawing.Point(359, 108);
+            this.txt_duracion.Name = "txt_duracion";
+            this.txt_duracion.Size = new System.Drawing.Size(100, 20);
+            this.txt_duracion.TabIndex = 5;
+            // 
+            // txt_horaSalida
+            // 
+            this.txt_horaSalida.Enabled = false;
+            this.txt_horaSalida.Location = new System.Drawing.Point(359, 75);
+            this.txt_horaSalida.Name = "txt_horaSalida";
+            this.txt_horaSalida.Size = new System.Drawing.Size(100, 20);
+            this.txt_horaSalida.TabIndex = 6;
+            // 
+            // txt_horaEntrada
+            // 
+            this.txt_horaEntrada.Enabled = false;
+            this.txt_horaEntrada.Location = new System.Drawing.Point(359, 49);
+            this.txt_horaEntrada.Name = "txt_horaEntrada";
+            this.txt_horaEntrada.Size = new System.Drawing.Size(100, 20);
+            this.txt_horaEntrada.TabIndex = 7;
+            // 
+            // txt_restaurante
+            // 
+            this.txt_restaurante.Enabled = false;
+            this.txt_restaurante.Location = new System.Drawing.Point(359, 20);
+            this.txt_restaurante.Name = "txt_restaurante";
+            this.txt_restaurante.Size = new System.Drawing.Size(100, 20);
+            this.txt_restaurante.TabIndex = 8;
             // 
             // txt_nombreCliente
             // 
@@ -114,6 +156,7 @@
             // 
             // txt_codigoCliente
             // 
+            this.txt_codigoCliente.Enabled = false;
             this.txt_codigoCliente.Location = new System.Drawing.Point(116, 19);
             this.txt_codigoCliente.Name = "txt_codigoCliente";
             this.txt_codigoCliente.ReadOnly = true;
@@ -125,9 +168,9 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(240, 115);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(105, 13);
+            this.label8.Size = new System.Drawing.Size(103, 13);
             this.label8.TabIndex = 7;
-            this.label8.Text = "Direccion en la barra";
+            this.label8.Text = "Duración en la barra";
             // 
             // label7
             // 
@@ -202,6 +245,15 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Pedidos Previos";
             // 
+            // lst_pedidosPrevios
+            // 
+            this.lst_pedidosPrevios.FormattingEnabled = true;
+            this.lst_pedidosPrevios.Location = new System.Drawing.Point(16, 20);
+            this.lst_pedidosPrevios.Name = "lst_pedidosPrevios";
+            this.lst_pedidosPrevios.Size = new System.Drawing.Size(210, 108);
+            this.lst_pedidosPrevios.TabIndex = 0;
+            this.lst_pedidosPrevios.SelectedIndexChanged += new System.EventHandler(this.lst_pedidosPrevios_SelectedIndexChanged);
+            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.txt_numeroSilla);
@@ -216,6 +268,31 @@
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Infromacion del pedido";
+            // 
+            // txt_numeroSilla
+            // 
+            this.txt_numeroSilla.Location = new System.Drawing.Point(116, 102);
+            this.txt_numeroSilla.Name = "txt_numeroSilla";
+            this.txt_numeroSilla.Size = new System.Drawing.Size(100, 20);
+            this.txt_numeroSilla.TabIndex = 5;
+            // 
+            // txt_precio
+            // 
+            this.txt_precio.Enabled = false;
+            this.txt_precio.Location = new System.Drawing.Point(116, 60);
+            this.txt_precio.Name = "txt_precio";
+            this.txt_precio.ReadOnly = true;
+            this.txt_precio.Size = new System.Drawing.Size(100, 20);
+            this.txt_precio.TabIndex = 4;
+            // 
+            // cb_pedido
+            // 
+            this.cb_pedido.FormattingEnabled = true;
+            this.cb_pedido.Location = new System.Drawing.Point(95, 24);
+            this.cb_pedido.Name = "cb_pedido";
+            this.cb_pedido.Size = new System.Drawing.Size(121, 21);
+            this.cb_pedido.TabIndex = 3;
+            this.cb_pedido.SelectedIndexChanged += new System.EventHandler(this.cb_pedido_SelectedIndexChanged);
             // 
             // label13
             // 
@@ -259,15 +336,18 @@
             // 
             // b_imprimir
             // 
+            this.b_imprimir.Enabled = false;
             this.b_imprimir.Image = global::Restaurante.Properties.Resources.print;
             this.b_imprimir.Location = new System.Drawing.Point(116, 56);
             this.b_imprimir.Name = "b_imprimir";
             this.b_imprimir.Size = new System.Drawing.Size(60, 59);
             this.b_imprimir.TabIndex = 4;
             this.b_imprimir.UseVisualStyleBackColor = true;
+            this.b_imprimir.Click += new System.EventHandler(this.b_imprimir_Click);
             // 
             // txt_cuenta
             // 
+            this.txt_cuenta.Enabled = false;
             this.txt_cuenta.Location = new System.Drawing.Point(116, 20);
             this.txt_cuenta.Name = "txt_cuenta";
             this.txt_cuenta.Size = new System.Drawing.Size(117, 20);
@@ -309,29 +389,6 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // cb_pedido
-            // 
-            this.cb_pedido.FormattingEnabled = true;
-            this.cb_pedido.Location = new System.Drawing.Point(95, 24);
-            this.cb_pedido.Name = "cb_pedido";
-            this.cb_pedido.Size = new System.Drawing.Size(121, 21);
-            this.cb_pedido.TabIndex = 3;
-            // 
-            // txt_precio
-            // 
-            this.txt_precio.Location = new System.Drawing.Point(116, 60);
-            this.txt_precio.Name = "txt_precio";
-            this.txt_precio.ReadOnly = true;
-            this.txt_precio.Size = new System.Drawing.Size(100, 20);
-            this.txt_precio.TabIndex = 4;
-            // 
-            // txt_numeroSilla
-            // 
-            this.txt_numeroSilla.Location = new System.Drawing.Point(116, 102);
-            this.txt_numeroSilla.Name = "txt_numeroSilla";
-            this.txt_numeroSilla.Size = new System.Drawing.Size(100, 20);
-            this.txt_numeroSilla.TabIndex = 5;
-            // 
             // b_borrar
             // 
             this.b_borrar.Image = global::Restaurante.Properties.Resources.clean1;
@@ -340,6 +397,7 @@
             this.b_borrar.Size = new System.Drawing.Size(39, 46);
             this.b_borrar.TabIndex = 88;
             this.b_borrar.UseVisualStyleBackColor = true;
+            this.b_borrar.Click += new System.EventHandler(this.b_borrar_Click);
             // 
             // b_aceptar
             // 
@@ -349,6 +407,7 @@
             this.b_aceptar.Size = new System.Drawing.Size(42, 46);
             this.b_aceptar.TabIndex = 89;
             this.b_aceptar.UseVisualStyleBackColor = true;
+            this.b_aceptar.Click += new System.EventHandler(this.b_aceptar_Click);
             // 
             // b_cerrar
             // 
@@ -358,49 +417,11 @@
             this.b_cerrar.Size = new System.Drawing.Size(42, 45);
             this.b_cerrar.TabIndex = 90;
             this.b_cerrar.UseVisualStyleBackColor = true;
+            this.b_cerrar.Click += new System.EventHandler(this.b_cerrar_Click);
             // 
-            // txt_direccion
+            // timer1
             // 
-            this.txt_direccion.Location = new System.Drawing.Point(359, 108);
-            this.txt_direccion.Name = "txt_direccion";
-            this.txt_direccion.Size = new System.Drawing.Size(100, 20);
-            this.txt_direccion.TabIndex = 5;
-            // 
-            // txt_horaSalida
-            // 
-            this.txt_horaSalida.Location = new System.Drawing.Point(359, 75);
-            this.txt_horaSalida.Name = "txt_horaSalida";
-            this.txt_horaSalida.Size = new System.Drawing.Size(100, 20);
-            this.txt_horaSalida.TabIndex = 6;
-            // 
-            // txt_horaEntrada
-            // 
-            this.txt_horaEntrada.Location = new System.Drawing.Point(359, 49);
-            this.txt_horaEntrada.Name = "txt_horaEntrada";
-            this.txt_horaEntrada.Size = new System.Drawing.Size(100, 20);
-            this.txt_horaEntrada.TabIndex = 7;
-            // 
-            // txt_restaurante
-            // 
-            this.txt_restaurante.Location = new System.Drawing.Point(359, 20);
-            this.txt_restaurante.Name = "txt_restaurante";
-            this.txt_restaurante.Size = new System.Drawing.Size(100, 20);
-            this.txt_restaurante.TabIndex = 8;
-            // 
-            // txt_montoPago
-            // 
-            this.txt_montoPago.Location = new System.Drawing.Point(116, 115);
-            this.txt_montoPago.Name = "txt_montoPago";
-            this.txt_montoPago.Size = new System.Drawing.Size(121, 20);
-            this.txt_montoPago.TabIndex = 11;
-            // 
-            // lst_pedidosPrevios
-            // 
-            this.lst_pedidosPrevios.FormattingEnabled = true;
-            this.lst_pedidosPrevios.Location = new System.Drawing.Point(16, 20);
-            this.lst_pedidosPrevios.Name = "lst_pedidosPrevios";
-            this.lst_pedidosPrevios.Size = new System.Drawing.Size(210, 108);
-            this.lst_pedidosPrevios.TabIndex = 0;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // frm_barra
             // 
@@ -418,6 +439,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "frm_barra";
             this.Text = "Barra";
+            this.Load += new System.EventHandler(this.frm_barra_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -439,7 +461,6 @@
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.ComboBox cb_mesa;
         private System.Windows.Forms.TextBox txt_nombreCliente;
         private System.Windows.Forms.TextBox txt_codigoCliente;
         private System.Windows.Forms.Label label8;
@@ -464,10 +485,12 @@
         private System.Windows.Forms.Button b_aceptar;
         private System.Windows.Forms.Button b_cerrar;
         private System.Windows.Forms.TextBox txt_montoPago;
-        private System.Windows.Forms.TextBox txt_direccion;
+        private System.Windows.Forms.TextBox txt_duracion;
         private System.Windows.Forms.TextBox txt_horaSalida;
         private System.Windows.Forms.TextBox txt_horaEntrada;
         private System.Windows.Forms.TextBox txt_restaurante;
         private System.Windows.Forms.ListBox lst_pedidosPrevios;
+        private System.Windows.Forms.TextBox txt_mesa;
+        private System.Windows.Forms.Timer timer1;
     }
 }
