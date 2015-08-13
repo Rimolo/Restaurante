@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pb_foto = new System.Windows.Forms.PictureBox();
             this.txt_cantidad = new System.Windows.Forms.TextBox();
             this.txt_restaurante = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -51,7 +52,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.pb_foto = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_foto)).BeginInit();
             this.SuspendLayout();
@@ -86,6 +86,16 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Informacion de la bebida";
+            // 
+            // pb_foto
+            // 
+            this.pb_foto.Image = global::Restaurante.Properties.Resources.no_thumb;
+            this.pb_foto.Location = new System.Drawing.Point(341, 176);
+            this.pb_foto.Name = "pb_foto";
+            this.pb_foto.Size = new System.Drawing.Size(141, 130);
+            this.pb_foto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb_foto.TabIndex = 24;
+            this.pb_foto.TabStop = false;
             // 
             // txt_cantidad
             // 
@@ -279,14 +289,6 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(146, 340);
             this.label1.TabIndex = 1;
-            // 
-            // pb_foto
-            // 
-            this.pb_foto.Location = new System.Drawing.Point(330, 179);
-            this.pb_foto.Name = "pb_foto";
-            this.pb_foto.Size = new System.Drawing.Size(152, 130);
-            this.pb_foto.TabIndex = 24;
-            this.pb_foto.TabStop = false;
             // 
             // frmBebidasGaseosas
             // 

@@ -99,9 +99,11 @@
             // 
             this.pic_bandera.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.pic_bandera.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pic_bandera.Location = new System.Drawing.Point(100, 93);
+            this.pic_bandera.Image = global::Restaurante.Properties.Resources.no_thumb;
+            this.pic_bandera.Location = new System.Drawing.Point(109, 93);
             this.pic_bandera.Name = "pic_bandera";
-            this.pic_bandera.Size = new System.Drawing.Size(153, 121);
+            this.pic_bandera.Size = new System.Drawing.Size(133, 121);
+            this.pic_bandera.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pic_bandera.TabIndex = 3;
             this.pic_bandera.TabStop = false;
             // 

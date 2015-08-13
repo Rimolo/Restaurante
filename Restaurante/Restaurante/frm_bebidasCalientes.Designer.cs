@@ -105,9 +105,11 @@
             // pb_foto
             // 
             this.pb_foto.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pb_foto.Location = new System.Drawing.Point(278, 124);
+            this.pb_foto.Image = global::Restaurante.Properties.Resources.no_thumb;
+            this.pb_foto.Location = new System.Drawing.Point(268, 124);
             this.pb_foto.Name = "pb_foto";
-            this.pb_foto.Size = new System.Drawing.Size(138, 110);
+            this.pb_foto.Size = new System.Drawing.Size(118, 110);
+            this.pb_foto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb_foto.TabIndex = 18;
             this.pb_foto.TabStop = false;
             // 

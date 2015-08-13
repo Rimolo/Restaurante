@@ -1207,6 +1207,15 @@
       <Name>BLL</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\no_image_available_big.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\no-thumb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\no-user-image-square-75d7df79d3f093e0805d3d40d16ce31d.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

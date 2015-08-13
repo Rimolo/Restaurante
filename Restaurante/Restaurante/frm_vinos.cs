@@ -15,6 +15,7 @@ namespace Restaurante
     public partial class frm_vinos : Form
     {
         bool hayImagen = false;
+        bool cambioImagen = false;
         Vinos obj_vinos = new Vinos();
 
         private string _nick;
@@ -57,6 +58,7 @@ namespace Restaurante
             cb_marca.Text = "";
             pb_foto.Image = null;
             hayImagen = false;
+            cambioImagen = false;
         }
 
         private void frm_vinos_Load(object sender, EventArgs e)
@@ -73,7 +75,7 @@ namespace Restaurante
 
         private void b_aceptar_Click(object sender, EventArgs e)
         {
-            bool error = false;
+            if (pb_foto.Image.RawFormat != null) { hayImagen = true; }
             if (!cls_validacion.validar(txt_nombre))
             {
                 MessageBox.Show("Por favor digite el nomnre del vino", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -134,7 +136,7 @@ namespace Restaurante
             obj_vinos.cosecha = Convert.ToInt32(txt_año.Text);
             obj_vinos.codPais = cb_nacionalidad.SelectedValue.ToString();
             obj_vinos.codMarca = cb_marca.SelectedValue.ToString();
-            if (hayImagen)
+            if (cambioImagen)
             {
                 MemoryStream ms = new MemoryStream();
                 pb_foto.Image.Save(ms, pb_foto.Image.RawFormat);
@@ -143,7 +145,7 @@ namespace Restaurante
                 obj_vinos.imagen = a;
             }
 
-            if (error = obj_vinos.guardar_Vinos(_accion, txt_restaurante.Text) && _accion != "Editar")
+            if (obj_vinos.guardar_Vinos(_accion, txt_restaurante.Text))
             {
                 if (hayImagen)
                 {
@@ -157,11 +159,17 @@ namespace Restaurante
                     valor = Convert.ToInt32(ds.Tables[0].Rows[0]["valor"]);
                     valor++;
 
-                    if (obj_vinos.actualizar_consecutivo(valor))
+                    if (_accion.Equals("Insertar"))
                     {
-
+                        if (obj_vinos.actualizar_consecutivo(valor))
+                        {
+                            MessageBox.Show("Producto insertado con éxito", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.Close();
+                        }
+                    }
+                    else
+                    {
                         MessageBox.Show("Producto insertado con éxito", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                         this.Close();
                     }
 
@@ -170,17 +178,7 @@ namespace Restaurante
                 {
                     MessageBox.Show("Error al actualizar el consecutivo");
                 }
-
-            }
-            else
-            {
-                if (!error) { 
-                MessageBox.Show("Producto insertado con éxito", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                this.Close();
-                }
-            }
-          
+            }          
         }
 
         private void b_cancelar_Click(object sender, EventArgs e)
@@ -198,6 +196,7 @@ namespace Restaurante
                     pb_foto.Image = Image.FromFile(f.FileName);
                     pb_foto.SizeMode = PictureBoxSizeMode.StretchImage;
                     hayImagen = true;
+                    cambioImagen = true;
                 }
             }
             catch (Exception) { }

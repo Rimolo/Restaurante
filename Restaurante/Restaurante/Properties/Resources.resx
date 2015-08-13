@@ -118,8 +118,11 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="10291708-vector-de-dibujo-personas-a-la-mesa-de-caf" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\10291708-vector-de-dibujo-personas-a-la-mesa-de-caf.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="27710310-icono-del-web-bebida-fr-a" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\27710310-icono-del-web-bebida-fr-a.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bar_beer3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bar_beer3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Symbol-Delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Symbol-Delete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -127,14 +130,14 @@
   <data name="images" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\images.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="10291708-vector-de-dibujo-personas-a-la-mesa-de-caf1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\10291708-vector-de-dibujo-personas-a-la-mesa-de-caf1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="yesil_ok_isareti" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\yesil_ok_isareti.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="izquierda" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\izquierda.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="clean1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\clean1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="martini- glass" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\martini- glass.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -145,59 +148,80 @@
   <data name="beer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\beer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="best-big-biggest-hamburger" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\best-big-biggest-hamburger.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Cubiertos1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Cubiertos1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Edit-clear1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Edit-clear1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Cancelar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Cancelar.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Usuario4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Usuario4.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Edit-clear" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Edit-clear.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Menu food" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Menu food.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="bar_beer3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bar_beer3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Wine (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Wine (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="traje-de-corbata-el-hombre-de-usuario-icono-4877" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\traje-de-corbata-el-hombre-de-usuario-icono-4877.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="User_female1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\User_female1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="40px-Examine_copyright_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\40px-Examine_copyright_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Cancelar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Cancelar.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="restaurant-icon-vector-illustration-315602" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\restaurant-icon-vector-illustration-315602.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="documents-128" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\documents-128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Edit-clear" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Edit-clear.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Wine_folder" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Wine_folder.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Menu food" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Menu food.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="spy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\spy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Refresh" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Refresh.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Document-print-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Document-print-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="images (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\images (1).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="clean2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\clean2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Wine (2)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Wine (2)1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="barra llena1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\barra llena1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Bitacora1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Bitacora1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Cubiertos6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Cubiertos6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="descarga" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\descarga.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="images1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\images1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="bar_beer2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bar_beer2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Cubiertos2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Cubiertos2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Espaghetti1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Espaghetti1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Wine (1)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Wine (1)1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Socios" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Socios.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1e6e753" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1e6e753.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cash-register_145504225" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cash-register_145504225.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="clean" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\clean.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Administrator1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Administrator1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Procesos1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Procesos1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Cubiertos4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Cubiertos4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -205,68 +229,41 @@
   <data name="flecha" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\flecha.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Wine_folder" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Wine_folder.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="clean" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\clean.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="10291708-vector-de-dibujo-personas-a-la-mesa-de-caf1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\10291708-vector-de-dibujo-personas-a-la-mesa-de-caf1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="restaurant-icon-vector-illustration-315602" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\restaurant-icon-vector-illustration-315602.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="cash-register_145504225" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cash-register_145504225.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="print-preview-icone-7826-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\print-preview-icone-7826-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Cancelar5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Cancelar5.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="10291708-vector-de-dibujo-personas-a-la-mesa-de-caf" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\10291708-vector-de-dibujo-personas-a-la-mesa-de-caf.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Foto" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Foto.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="print1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\print1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Cambio Contraseña" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Cambio Contraseña.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Usuario3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Usuario3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icono-mesas-restaurante3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icono-mesas-restaurante3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Cubiertos5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Cubiertos5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="refurl1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\refurl1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icono-mesas-restaurante1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icono-mesas-restaurante1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ICONA_CHEF" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ICONA_CHEF.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icono-proveedores1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icono-proveedores1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Cubiertos" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Cubiertos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Aceptar2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Aceptar2.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Eliminar12" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Eliminar12.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Bitacora1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Bitacora1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Aceptar1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Aceptar1.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Crear2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Crear2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="green-add-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\green-add-icon.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Cancelar1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Cancelar1.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Crear1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Crear1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="print-preview-icone-7826-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\print-preview-icone-7826-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Piano" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Piano.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="People" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\People.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -274,11 +271,8 @@
   <data name="bar_beer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bar_beer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Eliminar11" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Eliminar11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="32773568-s-mbolo-del-candado-en-el-fondo-con-estilo-elegante-icono-de-un-candado-rojo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\32773568-s-mbolo-del-candado-en-el-fondo-con-estilo-elegante-icono-de-un-candado-rojo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Cubiertos3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Cubiertos3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Usuarios" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Usuarios.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -286,50 +280,56 @@
   <data name="print" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\print.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="clean1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\clean1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Espaghetti" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Espaghetti.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Administrator" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Administrator.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Config2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Config2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Cubiertos5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Cubiertos5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Wine (2)2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Wine (2)2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Config1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Config1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="green-add-icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\green-add-icon1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="110_F_26375790_DzvzkfzvicMOdvwoHEpNppbiv4TiQ0yU" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\110_F_26375790_DzvzkfzvicMOdvwoHEpNppbiv4TiQ0yU.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Wine (1)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Wine (1)1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Cambio de Contraseña" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Cambio de Contraseña.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="1e6e753" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1e6e753.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Edit-clear1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Edit-clear1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Cubiertos2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Cubiertos2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Cubiertos1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Cubiertos1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="barra llena1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\barra llena1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="images (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\images (1).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icono-proveedores" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icono-proveedores.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Aceptar5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Aceptar5.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="refrescar1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\refrescar1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="canstock27624391" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\canstock27624391.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Reportes1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Reportes1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Actualizar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Actualizar.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Usuario1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Usuario1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Config" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Config.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Cancelar3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Cancelar3.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icono-proveedores" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icono-proveedores.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icono-mesas-sillas2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icono-mesas-sillas2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Config-Tools" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Config-Tools.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -337,62 +337,95 @@
   <data name="Eliminar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Eliminar.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="green-add-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\green-add-icon.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icono-mesas-sillas1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icono-mesas-sillas1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Symbol-Help" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Symbol-Help.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Usuario2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Usuario2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="refrescar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\refrescar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cafe1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cafe1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Eliminar11" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Eliminar11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Eliminar1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Eliminar1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Config2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Config2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Aceptar3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Aceptar3.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="French_fries" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\French_fries.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="32773568-s-mbolo-del-candado-en-el-fondo-con-estilo-elegante-icono-de-un-candado-rojo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\32773568-s-mbolo-del-candado-en-el-fondo-con-estilo-elegante-icono-de-un-candado-rojo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="justice" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\justice.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Cubiertos7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Cubiertos7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icono-mesas-restaurante3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icono-mesas-restaurante3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icono-proveedores1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icono-proveedores1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Usuario" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Usuario.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="barra llena" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\barra llena.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="green-add-icon2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\green-add-icon2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Administrator1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Administrator1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="glassy-button-with-question-mark_small" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\glassy-button-with-question-mark_small.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Aceptar4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Aceptar4.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Wallet" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Wallet.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="documents-128" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\documents-128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Crear" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Crear.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Wine (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Wine (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="barra llena" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\barra llena.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icono-mesas-sillas2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icono-mesas-sillas2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="canstock27624391" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\canstock27624391.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="green-add-icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\green-add-icon1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="glassy-button-with-question-mark_small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\glassy-button-with-question-mark_small.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Aceptar2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Aceptar2.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="print1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\print1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Wallet" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Wallet.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Cancelar3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Cancelar3.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Wine (2)2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Wine (2)2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Usuario4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Usuario4.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Wine (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Wine (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icono-mesas-sillas1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icono-mesas-sillas1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Cancelar5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Cancelar5.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Rubros" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Rubros.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="images2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\images2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="images1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\images1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Aceptar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Aceptar.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -400,32 +433,35 @@
   <data name="icono-mesas-restaurante" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icono-mesas-restaurante.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="User_female1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\User_female1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Procesos" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Procesos.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Cancelar2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Cancelar2.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Aceptar4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Aceptar4.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Cancelar1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Cancelar1.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Arrow-Right" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Arrow-Right.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="bar_beer1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bar_beer1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="refurl1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\refurl1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icono-mesas-restaurante2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icono-mesas-restaurante2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="images2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\images2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Bitacora" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Bitacora.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="110_F_26375790_DzvzkfzvicMOdvwoHEpNppbiv4TiQ0yU" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\110_F_26375790_DzvzkfzvicMOdvwoHEpNppbiv4TiQ0yU.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="refrescar1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\refrescar1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Aceptar1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Aceptar1.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Wine (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Wine (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="French_fries" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\French_fries.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="blacklist_folder_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\blacklist_folder_icon.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -433,23 +469,14 @@
   <data name="Folder-Secure" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Folder-Secure.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Refresh" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Refresh.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Eliminar1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Eliminar1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="green-add-icon2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\green-add-icon2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="left-arrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\left-arrow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Eliminar12" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Eliminar12.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Rubros1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Rubros1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="User_female" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\User_female.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Wine (2)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Wine (2)1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Logout" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Logout.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -460,56 +487,50 @@
   <data name="Reserved" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Reserved.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Aceptar5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Aceptar5.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Crear2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Crear2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Camara" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Camara.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Cubiertos6" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Cubiertos6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="barra llena11" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\barra llena11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Config1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Config1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="traje-de-corbata-el-hombre-de-usuario-icono-4877" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\traje-de-corbata-el-hombre-de-usuario-icono-4877.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="27710310-icono-del-web-bebida-fr-a" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\27710310-icono-del-web-bebida-fr-a.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Usuario2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Usuario2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Usuario1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Usuario1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Lock" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Lock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Cancelar4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Cancelar4.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Cancelar2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Cancelar2.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Config" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Config.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="spy" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\spy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="User_female" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\User_female.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icono-mesas-sillas" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icono-mesas-sillas.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="refrescar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\refrescar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Cancelar4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Cancelar4.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Reportes1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Reportes1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Rubros1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Rubros1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Cubiertos7" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Cubiertos7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Facturas" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Facturas.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Reportes" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Reportes.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="barra llena11" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\barra llena11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Usuario3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Usuario3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Procesos1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Procesos1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="users1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\users1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Undo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Undo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -517,46 +538,34 @@
   <data name="Pagos de Socios" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Pagos de Socios.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Piano" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Piano.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Crear1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Crear1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="refurl" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\refurl.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icono-mesas-restaurante1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icono-mesas-restaurante1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icono_seguridad" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icono_seguridad.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="cafe1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cafe1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="bar_beer2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bar_beer2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Cubiertos3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Cubiertos3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="bar_beer1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bar_beer1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="users" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\users.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Facturas" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Facturas.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="users1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\users1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icono-mesas-restaurante2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icono-mesas-restaurante2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Facturacion" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Facturacion.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Socios" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Socios.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="best-big-biggest-hamburger" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\best-big-biggest-hamburger.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="clean2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\clean2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="no_image_available_big" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\no_image_available_big.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="no-thumb" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\no-thumb.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="no-user-image-square-75d7df79d3f093e0805d3d40d16ce31d" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\no-user-image-square-75d7df79d3f093e0805d3d40d16ce31d.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

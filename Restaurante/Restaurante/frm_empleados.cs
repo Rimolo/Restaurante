@@ -197,13 +197,20 @@ namespace Restaurante
                     valor = Convert.ToInt32(ds.Tables[0].Rows[0]["valor"]);
                     valor++;
 
-
-                    if (objEmpleados.actualizar_consecutivo(valor))
+                    if (_accion.Equals("Insertar"))
                     {
-
+                        if (objEmpleados.actualizar_consecutivo(valor))
+                        {
+                            MessageBox.Show("Empleado insertado con éxito", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.Close();
+                        }
+                    }
+                    else
+                    {
                         MessageBox.Show("Empleado insertado con éxito", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();
                     }
+
 
                 }
                 catch (Exception)

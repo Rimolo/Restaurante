@@ -30,6 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pb_foto = new System.Windows.Forms.PictureBox();
             this.b_foto = new System.Windows.Forms.Button();
             this.b_cancelar = new System.Windows.Forms.Button();
             this.b_aceptar = new System.Windows.Forms.Button();
@@ -47,7 +48,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.pb_foto = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_foto)).BeginInit();
             this.SuspendLayout();
@@ -87,6 +87,16 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Informacion de la bebida";
+            // 
+            // pb_foto
+            // 
+            this.pb_foto.Image = global::Restaurante.Properties.Resources.no_thumb;
+            this.pb_foto.Location = new System.Drawing.Point(278, 102);
+            this.pb_foto.Name = "pb_foto";
+            this.pb_foto.Size = new System.Drawing.Size(141, 131);
+            this.pb_foto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb_foto.TabIndex = 18;
+            this.pb_foto.TabStop = false;
             // 
             // b_foto
             // 
@@ -238,14 +248,6 @@
             this.label2.Size = new System.Drawing.Size(40, 13);
             this.label2.TabIndex = 0;
             this.label2.Text = "Codigo";
-            // 
-            // pb_foto
-            // 
-            this.pb_foto.Location = new System.Drawing.Point(278, 102);
-            this.pb_foto.Name = "pb_foto";
-            this.pb_foto.Size = new System.Drawing.Size(141, 131);
-            this.pb_foto.TabIndex = 18;
-            this.pb_foto.TabStop = false;
             // 
             // frm_bebidasHeladas
             // 

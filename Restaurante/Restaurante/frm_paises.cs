@@ -15,6 +15,7 @@ namespace Restaurante
     public partial class frm_paises : Form
     {
         bool hayBandera = false;
+        bool cambioBandera = false;
         Paises objPais = new Paises();
         private string _accion;
 
@@ -50,10 +51,13 @@ namespace Restaurante
             txt_nombrePais.Text = "";
             pic_bandera.Image = null;
             hayBandera = false;
+            cambioBandera = false;
         }
         
         private void b_aceptar_Click(object sender, EventArgs e)
         {
+            if (pic_bandera.Image.RawFormat!=null) { hayBandera = true; }
+
             if (!cls_validacion.validar(txt_nombrePais))
             {
                 MessageBox.Show("Por favor escriba un nombre al Pais", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -63,14 +67,16 @@ namespace Restaurante
 
             objPais.codigo = txt_codigoPais.Text.Replace(" ", "");
             objPais.nombre = txt_nombrePais.Text;
-            if (hayBandera) {
+            if (cambioBandera)
+            {
                 MemoryStream ms = new MemoryStream();
                 pic_bandera.Image.Save(ms, pic_bandera.Image.RawFormat);
                 byte[] a = ms.GetBuffer();
                 ms.Close();
                 objPais.bandera = a;
+                
             }
-            
+
             if (objPais.guardar_pais(_accion))
             {
                 if (hayBandera) {
@@ -86,9 +92,17 @@ namespace Restaurante
                     valor++;
 
 
-                    if (objPais.actualizar_consecutivo(valor))
+                    if (_accion.Equals("Insertar"))
                     {
+                        if (objPais.actualizar_consecutivo(valor))
+                        {
 
+                            MessageBox.Show("Pais insertado con éxito", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.Close();
+                        }
+                    }
+                    else
+                    {
                         MessageBox.Show("Pais insertado con éxito", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();
                     }
@@ -104,7 +118,6 @@ namespace Restaurante
 
         private void mostar_consecutivo()
         {
-
             try
             {
                 DataSet ds1;
@@ -157,6 +170,7 @@ namespace Restaurante
                     pic_bandera.Image = Image.FromFile(f.FileName);
                     pic_bandera.SizeMode = PictureBoxSizeMode.StretchImage;
                     hayBandera = true;
+                    cambioBandera = true;
                 }
             }
             catch (Exception) { }
